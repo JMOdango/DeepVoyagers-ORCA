@@ -21,10 +21,14 @@ MonoBehaviour:
       actionType: 1
       coords: {x: 0, y: 0}
       moveSpeed: 0
+    music: {fileID: 8300000, guid: 12aa04f535b17434db6eaf1ffbb2456b, type: 3}
+    sound: {fileID: 0}
   - text: It was no biggie~ but I should get going now... Good luck with your new
       job! See ya!
     speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
     actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
   - text: "Now then\u2026 I should rest early, so I won\u2019t be late for my new
       job. "
     speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
@@ -34,6 +38,7 @@ MonoBehaviour:
       actionType: 3
       coords: {x: 0, y: 0}
       moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
   background: {fileID: 21300000, guid: d28db8956fa891f42b688a18d1d57e83, type: 3}
   nextScene: {fileID: 11400000, guid: 503c2b71f5defc44eb0707b306a7cc4b, type: 2}
-  playerName: Joan
