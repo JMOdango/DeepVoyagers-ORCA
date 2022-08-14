@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 public enum GameState
 {
     wait,
@@ -19,11 +20,22 @@ public class Board : MonoBehaviour
     public GameObject destroyEffect;
     public GameObject[,] allDots;
     private FindMatches findAllMatches;
+    public TextMeshProUGUI moves;
+    [SerializeField]
+    private MovesLeft MovesLeft;
     private int i;
     private int j;
+    public int firstScore = 0;
+    public float x;
+    public scoreBar ScoreBar;
+    bool destroyed = false;
     // Start is called before the first frame update
     void Start()
     {
+       
+        ScoreBar.SetStartValue(firstScore);
+        MovesLeft.Moves = Random.Range(15,30);
+        moves.text = MovesLeft.Moves.ToString();
         findAllMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
@@ -103,6 +115,7 @@ public class Board : MonoBehaviour
             Destroy(particle, .85f);
             Destroy(allDots[column,row]);
             allDots[column, row] = null;
+            destroyed = true;
         }
     }
 
@@ -117,6 +130,12 @@ public class Board : MonoBehaviour
                     DestroyMatchesAt(i, j);
                 }
             }
+        }
+        if (destroyed)
+        {
+            x += Random.Range(300f, 700f);
+            ScoreBar.SetScore(x);
+            destroyed = false;
         }
         StartCoroutine(DecreaseRowCo());
     }
