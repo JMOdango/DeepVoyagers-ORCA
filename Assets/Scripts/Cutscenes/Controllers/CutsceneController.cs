@@ -9,6 +9,7 @@ public class CutsceneController : MonoBehaviour
     public TextBoxController textBox;
     public SpriteSwitcher backgroundController;
     public ChooseController chooseController;
+    public AudioController audioController;
     private State state = State.IDLE;
 
 
@@ -24,6 +25,7 @@ public class CutsceneController : MonoBehaviour
             StoryScene storyScene = currentScene as StoryScene;
             textBox.PlayScene(storyScene);
             backgroundController.SetImage(storyScene.background);
+            PlayAudio(storyScene.sentences[0]);
         }
     }
 
@@ -33,18 +35,27 @@ public class CutsceneController : MonoBehaviour
     }
 
     public void nextText(){
-        if (state == State.IDLE && textBox.IsCompleted())
+        if (state == State.IDLE)
         {
-            if (textBox.IsLastSentence())
-            {
-                PlayScene((currentScene as StoryScene).nextScene);
-                enterLevel();
+            if (textBox.IsCompleted())
+            {   
+                textBox.StopTyping();
+                if (textBox.IsLastSentence())
+                {
+                    PlayScene((currentScene as StoryScene).nextScene);
+                    enterLevel();
+                }
+                else
+                {   
+                    textBox.PlayNextSentence();
+                    PlayAudio((currentScene as StoryScene).sentences[textBox.GetSentenceIndex()]);
+                }
             }
             else
             {
-                textBox.PlayNextSentence();
+                textBox.SpeedUp();
             }
-        }
+        }  
     }
 
     public void enterLevel(){
@@ -68,6 +79,7 @@ public class CutsceneController : MonoBehaviour
         {
             StoryScene storyScene = scene as StoryScene;
             backgroundController.SwitchImage(storyScene.background);
+            PlayAudio(storyScene.sentences[0]);
             yield return new WaitForSeconds(1f);
             textBox.ClearText();
             textBox.Show();
@@ -80,5 +92,9 @@ public class CutsceneController : MonoBehaviour
             state = State.CHOOSE;
             chooseController.SetupChoose(scene as ChooseScene);
         }
+    }
+
+    private void PlayAudio(StoryScene.Sentence sentence){
+        audioController.PlayAudio(sentence.music, sentence.sound);
     }
 }

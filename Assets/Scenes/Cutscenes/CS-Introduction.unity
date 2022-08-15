@@ -732,6 +732,7 @@ MonoBehaviour:
   textBox: {fileID: 2018246425}
   backgroundController: {fileID: 1811750952}
   chooseController: {fileID: 1249110705}
+  audioController: {fileID: 1891365458}
 --- !u!1 &1249110699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,6 +1452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891365457}
+  - component: {fileID: 1891365458}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -1475,6 +1477,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1891365458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891365456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499da60c0b568284489ad07e320ed0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSource: {fileID: 906009019}
+  soundSource: {fileID: 1884083507}
 --- !u!1 &2018246421
 GameObject:
   m_ObjectHideFlags: 0
