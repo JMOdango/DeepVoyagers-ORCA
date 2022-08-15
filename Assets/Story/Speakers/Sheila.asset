@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: Sheila
   textColor: {r: 1, g: 1, b: 1, a: 1}
-  sprites: []
-  prefab: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: 23f6aec94a8542f4dbd586eef11b094a, type: 3}
+  - {fileID: 21300000, guid: d23cbe2b184a88045ac1a16e4f721fdc, type: 3}
+  - {fileID: 21300000, guid: e27845435b6f9184080444d5383ef6a7, type: 3}
+  prefab: {fileID: 1447476766146847419, guid: a67093c738340c646a0f4bffa974bd90, type: 3}

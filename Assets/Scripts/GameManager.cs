@@ -36,12 +36,12 @@ public class GameManager : MonoBehaviour
 
     public void Return()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Area1_LevelSelection");
     }
 
     public void nextLevel()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Area1_LevelSelection");
         Complete = false;
     }
 
