@@ -15,7 +15,12 @@ MonoBehaviour:
   sentences:
   - text: "Well, here it is\u2026"
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 8300000, guid: e678ff38a6849a4429d7aea955ecdbce, type: 3}
   - text: Why are there so much garbage here?
@@ -40,7 +45,12 @@ MonoBehaviour:
       and economy and invited a lot of investors to establish businesses here, the
       population also increased with it. "
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 2
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "The problem is there is no strict control over waste disposal, so tourists,
@@ -60,7 +70,12 @@ MonoBehaviour:
       with this problem. Some of the locals work as volunteers to help clean up this
       place, but there would always be new garbage replacing the old ones. "
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: Should we head back now? Your official work starts tomorrow so you can
@@ -81,7 +96,12 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: See you.
     speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 0
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "I can\u2019t believe this place has become like this\u2026 "

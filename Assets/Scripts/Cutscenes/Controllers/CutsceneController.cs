@@ -60,7 +60,7 @@ public class CutsceneController : MonoBehaviour
 
     public void enterLevel(){
         if((currentScene as StoryScene).nextScene == null){
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene("OrcaGame");
         }
     }
 

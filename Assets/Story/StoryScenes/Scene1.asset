@@ -71,9 +71,14 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  - text: 'Huh!? Really? What a coincidence. '
+  - text: Huh!? Really?
     speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+      spriteIndex: 5
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "U-huh\u2026 I\u2019ll be there working as marine biologist."
@@ -85,7 +90,12 @@ MonoBehaviour:
       help clean up the beach occasionally. The day is going to end soon, should
       we get to work?"
     speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: Alright.
