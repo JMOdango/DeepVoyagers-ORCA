@@ -30,8 +30,18 @@ MonoBehaviour:
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "Great! Let\u2019s see here, I could probably use this plastic water bottle
-      in my DIY project that I\u2019m currently making. I don\u2019t know about this
-      can, maybe I can use this to make a pencil case?"
+      in my DIY project that I\u2019m currently making. "
+    speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+      spriteIndex: 4
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I don\u2019t know about this can, maybe I can use this to make a pencil
+      case?"
     speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
