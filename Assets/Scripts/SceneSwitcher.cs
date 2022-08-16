@@ -42,4 +42,13 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Area1_LevelSelection");
     }
+
+    public void Return()
+    {
+        SceneManager.LoadScene("Area1_LevelSelection");
+    }
+    public void ReturnToLogin()
+    {
+        SceneManager.LoadScene("Login");
+    }
 }
