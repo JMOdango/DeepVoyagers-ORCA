@@ -33,6 +33,7 @@ public class simpleAudioManager : MonoBehaviour
 
     private void Start()
     {
+        Play("MainMenuBGM");
     }
 
     public void Play(string name)

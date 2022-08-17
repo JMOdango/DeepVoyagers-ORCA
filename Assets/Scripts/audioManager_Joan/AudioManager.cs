@@ -16,4 +16,8 @@ public class AudioManager : MonoBehaviour
         }
     }
     
+    void Start()
+    {
+        FindObjectOfType<simpleAudioManager>().Stop("MainMenuBGM");
+    }
 }
