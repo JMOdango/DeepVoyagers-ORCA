@@ -61,6 +61,7 @@ public class CutsceneController : MonoBehaviour
     public void enterLevel(){
         if((currentScene as StoryScene).nextScene == null){
             SceneManager.LoadScene("OrcaGame");
+            StopAudio();
         }
     }
 
@@ -96,5 +97,9 @@ public class CutsceneController : MonoBehaviour
 
     private void PlayAudio(StoryScene.Sentence sentence){
         audioController.PlayAudio(sentence.music, sentence.sound);
+    }
+
+    public void StopAudio(){
+        audioController.StopAudio();
     }
 }

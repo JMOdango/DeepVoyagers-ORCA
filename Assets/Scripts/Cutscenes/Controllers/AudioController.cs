@@ -17,6 +17,11 @@ public class AudioController : MonoBehaviour
             StartCoroutine(SwitchMusic(music));
         }
     }
+
+    public void StopAudio(){
+        musicSource.Stop();
+        soundSource.Stop();
+    }
     
      private IEnumerator SwitchMusic(AudioClip music){
         if(musicSource.clip != null)
