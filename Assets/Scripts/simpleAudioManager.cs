@@ -33,7 +33,6 @@ public class simpleAudioManager : MonoBehaviour
 
     private void Start()
     {
-        Play("BackgroundMusic");
     }
 
     public void Play(string name)
