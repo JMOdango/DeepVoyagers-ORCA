@@ -12,15 +12,14 @@ public class AudioController : MonoBehaviour
             soundSource.clip = sound;
             soundSource.Play();
         }
-
         if(music != null && musicSource.clip != music){
             StartCoroutine(SwitchMusic(music));
         }
     }
 
     public void StopAudio(){
-        musicSource.clip = null;
-        soundSource.clip = null;
+        musicSource.volume = 0;
+        soundSource.volume = 0;
     }
     
      private IEnumerator SwitchMusic(AudioClip music){
