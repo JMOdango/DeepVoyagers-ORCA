@@ -18,8 +18,8 @@ public class AudioController : MonoBehaviour
     }
 
     public void StopAudio(){
-        musicSource.volume = 0;
-        soundSource.volume = 0;
+        musicSource.volume = 0f;
+        soundSource.volume = 0f;
     }
     
      private IEnumerator SwitchMusic(AudioClip music){
