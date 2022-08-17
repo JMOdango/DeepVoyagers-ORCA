@@ -29,8 +29,7 @@ MonoBehaviour:
     music: {fileID: 8300000, guid: e86d398c643687e43a522087e63f0f78, type: 3}
     sound: {fileID: 0}
   - text: "I\u2019m the sure the beach you remembered when you were a child was much
-      more beautiful compared to this, but time has changed a lot of things in this
-      town. "
+      more beautiful compared to this, but things have changed now. "
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions: []
     music: {fileID: 0}
@@ -67,8 +66,8 @@ MonoBehaviour:
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "I know\u2026 That\u2019s why our organization was established to deal
-      with this problem. Some of the locals work as volunteers to help clean up this
-      place, but there would always be new garbage replacing the old ones. "
+      with this problem, but there would always be new garbage replacing the old
+      ones."
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}

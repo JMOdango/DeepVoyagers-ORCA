@@ -19,8 +19,8 @@ public class AudioController : MonoBehaviour
     }
 
     public void StopAudio(){
-        musicSource.Stop();
-        soundSource.Stop();
+        musicSource.clip = null;
+        soundSource.clip = null;
     }
     
      private IEnumerator SwitchMusic(AudioClip music){
