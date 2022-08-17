@@ -181,9 +181,11 @@ public class DotController : MonoBehaviour
 
     public void moved()
     {
-        if (movesLeft.Moves > 0) {
-            movesLeft.Moves--;
-            board.moves.text = movesLeft.Moves.ToString();
+        if (isMoving == true) {
+            if (movesLeft.Moves > 0) {
+                movesLeft.Moves--;
+                board.moves.text = movesLeft.Moves.ToString();
+            }
         }
         isMoving = false;
     }
