@@ -58,4 +58,20 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Lounge");
     }
+    public void EnterItemShop()
+    {
+        SceneManager.LoadScene("ItemShop");
+    }
+    public void EnterEditParty()
+    {
+        SceneManager.LoadScene("EditParty");
+    }
+    public void EnterRecyclingStation()
+    {
+        SceneManager.LoadScene("RecyclingStation");
+    }
+    public void EnterJournal()
+    {
+        SceneManager.LoadScene("Journal");
+    }
 }
