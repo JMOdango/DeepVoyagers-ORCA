@@ -35,4 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Areas/Area1Files/Area1_LevelSelection.unity
     guid: 5bc9f7d0cea752740a230c7113524ef5
+  - enabled: 1
+    path: Assets/Scenes/Lounge.unity
+    guid: 068f05ce90dc7ef429dd479d150466b0
+  - enabled: 1
+    path: Assets/Scenes/EditParty.unity
+    guid: d3ddf62cb5625994fbb046722a24f862
   m_configObjects: {}

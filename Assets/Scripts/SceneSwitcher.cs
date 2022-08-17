@@ -51,4 +51,9 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Login");
     }
+
+    public void EnterLounge()
+    {
+        SceneManager.LoadScene("Lounge");
+    }
 }
