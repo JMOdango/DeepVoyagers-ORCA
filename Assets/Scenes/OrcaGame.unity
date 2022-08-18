@@ -1358,7 +1358,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 93398411}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: restart
+        m_MethodName: nextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 421aed8759a2a0f40ae2183dcef01769, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8190039f2b798a48a82902d979190d9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2211,7 +2211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2068787022
 MonoBehaviour:
   m_ObjectHideFlags: 0
