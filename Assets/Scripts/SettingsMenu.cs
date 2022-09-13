@@ -10,20 +10,25 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider sfxSlider;
 
-    const string MIXER_MUSIC = "MusicVolume";
-    const string MIXER_SFX = "SFXVolume";
+    public const string MIXER_MUSIC = "MusicVolume";
+    public const string MIXER_SFX = "SFXVolume";
+
+    void Start(){
+        musicSlider.value = PlayerPrefs.GetFloat(simpleAudioManager.MUSIC_KEY, 1f);
+        sfxSlider.value = PlayerPrefs.GetFloat(simpleAudioManager.SFX_KEY, 1f);
+    }
 
     void Awake(){
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);
     }
 
-    void SetMusicVolume(float value)
+    public void SetMusicVolume(float value)
     {
         mainMixer.SetFloat(MIXER_MUSIC, Mathf.Log10(value) * 20);
     }
 
-     void SetSFXVolume(float value)
+    public void SetSFXVolume(float value)
     {
         mainMixer.SetFloat(MIXER_SFX, Mathf.Log10(value) * 20);
     }
@@ -35,6 +40,10 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetQuality(int qualityIndex){
         QualitySettings.SetQualityLevel(qualityIndex);
+    }
 
+    void OnDisable(){
+        PlayerPrefs.SetFloat(simpleAudioManager.MUSIC_KEY, musicSlider.value);
+        PlayerPrefs.SetFloat(simpleAudioManager.SFX_KEY, sfxSlider.value);
     }
 }
