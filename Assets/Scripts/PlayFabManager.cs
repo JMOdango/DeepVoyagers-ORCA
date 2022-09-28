@@ -41,11 +41,11 @@ public class PlayFabManager : MonoBehaviour
 
     public void SignUp(){
         if(userPassword.text.Length < 6){
-            errorSignUp.text = "Password must have 6 or more characters.";
+            errorSignUp.text = "Password must have 6 or more characters";
             return;
         }
         if(userPassword.text != userConfirmPass.text){
-            errorSignUp.text = "Password does not match.";
+            errorSignUp.text = "Password does not match";
             return;
         }
         var registerRequest = new RegisterPlayFabUserRequest{
@@ -82,10 +82,26 @@ public class PlayFabManager : MonoBehaviour
     }
 
     public void LoginFailure(PlayFabError error){
-        errorLogin.text = "Account or password error.";
+        errorLogin.text = "Account or password error";
     }
 
     void StartGame(){
         SceneManager.LoadScene(loading);
+    }
+
+    public void ResetPassword(){
+        var request = new SendAccountRecoveryEmailRequest{
+            Email = userEmailLogin.text,
+            TitleId = "D546A"
+        };
+        PlayFabClientAPI.SendAccountRecoveryEmail(request, PasswordResetSuccess, PasswordResetFailure);
+    }
+
+    void PasswordResetSuccess(SendAccountRecoveryEmailResult result){
+        errorLogin.text = "Password reset mail sent";
+    }
+
+    void PasswordResetFailure(PlayFabError error){
+        errorLogin.text = "There is an error with your request";
     }
 }
