@@ -24,7 +24,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 1
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 1
+      spriteIndex: 2
       actionType: 0
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 3
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 1
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 1
+      spriteIndex: 4
       actionType: 0
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 0
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -105,7 +105,12 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: Huh? I thought you were new around here.
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: I used to live here when I was young.
@@ -115,14 +120,19 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: "My\u2026 no wonder you feel so at home around here. "
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: Shall we go then?
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 3
       coords: {x: 0, y: 0}
       moveSpeed: 0

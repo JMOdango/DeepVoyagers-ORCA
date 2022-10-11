@@ -17,7 +17,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 1
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -26,7 +26,12 @@ MonoBehaviour:
   - text: It was no biggie~ but I should get going now... Good luck with your new
       job! See ya!
     speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "Now then\u2026 I should rest early, so I won\u2019t be late for my new
@@ -34,7 +39,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 3
       coords: {x: 0, y: 0}
       moveSpeed: 0

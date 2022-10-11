@@ -472,10 +472,6 @@ PrefabInstance:
       propertyPath: mixer
       value: 
       objectReference: {fileID: 24100000, guid: 5fa3a33de9f4a944dbe803c7544baeb8, type: 2}
-    - target: {fileID: 0}
-      propertyPath: mixer
-      value: 
-      objectReference: {fileID: 24100000, guid: 5fa3a33de9f4a944dbe803c7544baeb8, type: 2}
     m_RemovedComponents:
     - {fileID: 4013982402784638386, guid: e613619f395e6194a89b8ac93bedc253, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e613619f395e6194a89b8ac93bedc253, type: 3}
@@ -1111,14 +1107,14 @@ PrefabInstance:
     - target: {fileID: 2904487702828015068, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 93398411}
+      objectReference: {fileID: 965794706}
     - target: {fileID: 2904487702828015068, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Return
+      value: OpenPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2904487702828015068, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: PanelOpener, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2904487702985093505, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1145,6 +1141,18 @@ PrefabInstance:
       value: restart
       objectReference: {fileID: 0}
     - target: {fileID: 5096581642130761563, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740077029327542918, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 93398411}
+    - target: {fileID: 6740077029327542918, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Return
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740077029327542918, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}

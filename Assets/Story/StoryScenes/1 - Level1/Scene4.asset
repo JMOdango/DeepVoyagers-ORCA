@@ -17,7 +17,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 1
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -31,7 +31,12 @@ MonoBehaviour:
   - text: "I\u2019m the sure the beach you remembered when you were a child was much
       more beautiful compared to this, but things have changed now. "
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 6
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: 'Yes, I remember it being cleaner and full of life. How did it become like
@@ -46,7 +51,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 2
+      spriteIndex: 0
       actionType: 0
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -57,7 +62,12 @@ MonoBehaviour:
       to demand local authorities to do something about it, but we\u2019re just left
       ignored by them."
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 5
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "That\u2019s horrible! "
@@ -71,7 +81,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 0
+      spriteIndex: 6
       actionType: 0
       coords: {x: 0, y: 0}
       moveSpeed: 0
@@ -80,7 +90,12 @@ MonoBehaviour:
   - text: Should we head back now? Your official work starts tomorrow so you can
       head home early for today.
     speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "Thank you, but I\u2019d like to stay here for a moment\u2026"
@@ -97,7 +112,7 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
     actions:
     - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
-      spriteIndex: 0
+      spriteIndex: 1
       actionType: 3
       coords: {x: 0, y: 0}
       moveSpeed: 0

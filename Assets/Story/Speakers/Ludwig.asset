@@ -15,5 +15,12 @@ MonoBehaviour:
   speakerName: Ludwig
   textColor: {r: 1, g: 1, b: 1, a: 0}
   sprites:
-  - {fileID: 21300000, guid: 4c46fe542436db442960cca69beba3a1, type: 3}
+  - {fileID: 21300000, guid: d467117cf62eba642aa66e35ee83a54b, type: 3}
+  - {fileID: 21300000, guid: a04619d8bf9280245b4cc4fafe4b37dd, type: 3}
+  - {fileID: 21300000, guid: d66f46857028d9941afeb4ac0b41d182, type: 3}
+  - {fileID: 21300000, guid: 14d74bef75423754585950de8213e40f, type: 3}
+  - {fileID: 21300000, guid: 65a1a4d0e6f950a4ba365881b334981f, type: 3}
+  - {fileID: 21300000, guid: f2b206350055df243a619588a8c8f78a, type: 3}
+  - {fileID: 21300000, guid: 64827bd259d294a478209319de6bfb02, type: 3}
+  - {fileID: 21300000, guid: 12cdc0518b2030a449e1bfa630768db7, type: 3}
   prefab: {fileID: 1447476766146847419, guid: 69211b2ba763a3c42b6343d3070f4fc9, type: 3}

@@ -15,8 +15,8 @@ MonoBehaviour:
   speakerName: Fatima
   textColor: {r: 1, g: 1, b: 1, a: 1}
   sprites:
-  - {fileID: 21300000, guid: 30c59dffc924b9b4ab81d19101ede876, type: 3}
   - {fileID: 21300000, guid: 51ccb244dbee640498eaa959b9a5ec79, type: 3}
+  - {fileID: 21300000, guid: 30c59dffc924b9b4ab81d19101ede876, type: 3}
   - {fileID: 21300000, guid: 4b9f1d38e3b2eb14ab606421cd8a728b, type: 3}
   - {fileID: 21300000, guid: 45f27f2c33adeca4388326d4dee513e7, type: 3}
   - {fileID: 21300000, guid: 6013ebf5627cdd54b982986d21056f04, type: 3}
