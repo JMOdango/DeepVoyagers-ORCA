@@ -8,7 +8,7 @@ public class scoreBar : MonoBehaviour
 
     private void Start()
     {
-        SetMaxScore(Random.Range(5000, 10000)); ;
+        SetMaxScore(Random.Range(10000, 20000)); ;
     }
     public void SetMaxScore(int score)
     {

@@ -7,6 +7,7 @@ public class FindMatches : MonoBehaviour
 
     private Board board;
     public List<GameObject> currentMatches = new List<GameObject>();
+    public int destroyedTrash;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,16 +40,19 @@ public class FindMatches : MonoBehaviour
                             {
                                 if (!currentMatches.Contains(leftDot))
                                 {
+                                    destroyedTrash += currentMatches.Count;
                                     currentMatches.Add(leftDot);
                                 }
                                 leftDot.GetComponent<DotController>().isMatched = true;
                                 if (!currentMatches.Contains(rightDot))
                                 {
+                                    destroyedTrash += currentMatches.Count;
                                     currentMatches.Add(rightDot);
                                 }
                                 rightDot.GetComponent<DotController>().isMatched = true;
                                 if (!currentMatches.Contains(currentDot))
                                 {
+                                    destroyedTrash += currentMatches.Count;
                                     currentMatches.Add(currentDot);
                                 }
                                 currentDot.GetComponent<DotController>().isMatched = true;
@@ -67,18 +71,21 @@ public class FindMatches : MonoBehaviour
                             {
                                 if (!currentMatches.Contains(upDot))
                                 {
+                                    destroyedTrash += currentMatches.Count;
                                     currentMatches.Add(upDot);
                                 }
                                 upDot.GetComponent<DotController>().isMatched = true;
 
                                 if (!currentMatches.Contains(downDot))
                                 {
+                                    destroyedTrash += currentMatches.Count;
                                     currentMatches.Add(downDot);
                                 }
                                 downDot.GetComponent<DotController>().isMatched = true;
 
                                 if (!currentMatches.Contains(currentDot))
                                 {
+                                    destroyedTrash += currentMatches.Count;
                                     currentMatches.Add(currentDot);
                                 }
                                 currentDot.GetComponent<DotController>().isMatched = true;

@@ -133,9 +133,10 @@ public class Board : MonoBehaviour
         }
         if (destroyed)
         {
-            x += Random.Range(300f, 700f);
+            x += findAllMatches.destroyedTrash * 50;
             ScoreBar.SetScore(x);
             destroyed = false;
+            findAllMatches.destroyedTrash = 0;
         }
         StartCoroutine(DecreaseRowCo());
     }
