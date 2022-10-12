@@ -34,7 +34,7 @@ public class Board : MonoBehaviour
     {
        
         ScoreBar.SetStartValue(firstScore);
-        MovesLeft.Moves = Random.Range(15,30);
+        MovesLeft.Moves = Random.Range(18,30);
         moves.text = MovesLeft.Moves.ToString();
         findAllMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
