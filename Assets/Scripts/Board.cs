@@ -28,7 +28,7 @@ public class Board : MonoBehaviour
     public int firstScore = 0;
     public float x;
     public scoreBar ScoreBar;
-    bool destroyed = false;
+    public bool destroyed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -110,13 +110,14 @@ public class Board : MonoBehaviour
     {
         if (allDots[column,row].GetComponent<DotController>().isMatched)
         {
-            findAllMatches.currentMatches.Remove(allDots[column,row]);
+            findAllMatches.currentMatches.Remove(allDots[column, row]);
             GameObject particle =  Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
             Destroy(particle, .85f);
             Destroy(allDots[column,row]);
             allDots[column, row] = null;
             destroyed = true;
         }
+   
     }
 
     public void DestroyMatches()
@@ -125,7 +126,7 @@ public class Board : MonoBehaviour
         {
             for (int j = 0; j < height; j++)
             {
-                if(allDots[i,j] != null)
+                if (allDots[i, j] != null)
                 {
                     DestroyMatchesAt(i, j);
                 }
@@ -136,7 +137,6 @@ public class Board : MonoBehaviour
             x += findAllMatches.destroyedTrash * 50;
             ScoreBar.SetScore(x);
             destroyed = false;
-            findAllMatches.destroyedTrash = 0;
         }
         StartCoroutine(DecreaseRowCo());
     }

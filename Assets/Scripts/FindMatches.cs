@@ -40,25 +40,27 @@ public class FindMatches : MonoBehaviour
                             {
                                 if (!currentMatches.Contains(leftDot))
                                 {
-                                    destroyedTrash += currentMatches.Count;
+                                    destroyedTrash =+ currentMatches.Count;
                                     currentMatches.Add(leftDot);
                                 }
                                 leftDot.GetComponent<DotController>().isMatched = true;
                                 if (!currentMatches.Contains(rightDot))
                                 {
-                                    destroyedTrash += currentMatches.Count;
+                                    destroyedTrash =+ currentMatches.Count;
                                     currentMatches.Add(rightDot);
                                 }
                                 rightDot.GetComponent<DotController>().isMatched = true;
                                 if (!currentMatches.Contains(currentDot))
                                 {
-                                    destroyedTrash += currentMatches.Count;
+                                    destroyedTrash = +currentMatches.Count;
                                     currentMatches.Add(currentDot);
                                 }
                                 currentDot.GetComponent<DotController>().isMatched = true;
-
+                                destroyedTrash =+ currentMatches.Count;
+                            
                             }
                         }
+                        
                     }
 
                     if (j > 0 && j < board.height - 1)
@@ -71,30 +73,35 @@ public class FindMatches : MonoBehaviour
                             {
                                 if (!currentMatches.Contains(upDot))
                                 {
-                                    destroyedTrash += currentMatches.Count;
+                                    destroyedTrash =+ currentMatches.Count;
                                     currentMatches.Add(upDot);
                                 }
                                 upDot.GetComponent<DotController>().isMatched = true;
 
                                 if (!currentMatches.Contains(downDot))
                                 {
-                                    destroyedTrash += currentMatches.Count;
+                                    destroyedTrash =+ currentMatches.Count;
                                     currentMatches.Add(downDot);
                                 }
                                 downDot.GetComponent<DotController>().isMatched = true;
 
                                 if (!currentMatches.Contains(currentDot))
                                 {
-                                    destroyedTrash += currentMatches.Count;
+                                    destroyedTrash =+currentMatches.Count;
                                     currentMatches.Add(currentDot);
                                 }
                                 currentDot.GetComponent<DotController>().isMatched = true;
-
+                                destroyedTrash = +currentMatches.Count;
                             }
                         }
+                       
                     }
                 }
             }
         }
+        
     }
+
+ 
+    
 }
