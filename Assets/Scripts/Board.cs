@@ -29,6 +29,7 @@ public class Board : MonoBehaviour
     public float x;
     public scoreBar ScoreBar;
     public bool destroyed = false;
+    int trashCollected;
     // Start is called before the first frame update
     void Start()
     {
@@ -108,18 +109,20 @@ public class Board : MonoBehaviour
 
     private void DestroyMatchesAt(int column, int row)
     {
+        destroyed = true;
         if (allDots[column,row].GetComponent<DotController>().isMatched)
         {
-            findAllMatches.currentMatches.Remove(allDots[column, row]);
+            //findAllMatches.currentMatches.Remove(allDots[column, row]);
             GameObject particle =  Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
             Destroy(particle, .85f);
             Destroy(allDots[column,row]);
+            trashCollected++;
+            Debug.Log(trashCollected);
             allDots[column, row] = null;
-            destroyed = true;
+
         }
    
     }
-
     public void DestroyMatches()
     {
         for (int i = 0; i < width; i++)
@@ -129,12 +132,13 @@ public class Board : MonoBehaviour
                 if (allDots[i, j] != null)
                 {
                     DestroyMatchesAt(i, j);
+                  
                 }
             }
         }
         if (destroyed)
         {
-            x += findAllMatches.destroyedTrash * 50;
+            x =+ trashCollected * 50;
             ScoreBar.SetScore(x);
             destroyed = false;
         }
