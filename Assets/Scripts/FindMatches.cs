@@ -53,8 +53,8 @@ public class FindMatches : MonoBehaviour
                                     currentMatches.Add(currentDot);
                                 }
                                 currentDot.GetComponent<DotController>().isMatched = true;
-                                
-                               
+
+                                board.whatTrash = currentDot.GetComponent<DotController>().tag;
                             }
                         }
                         
@@ -85,8 +85,8 @@ public class FindMatches : MonoBehaviour
                                     currentMatches.Add(currentDot);
                                 }
                                 currentDot.GetComponent<DotController>().isMatched = true;
-                              
 
+                                board.whatTrash = currentDot.GetComponent<DotController>().tag;
                             }
                         }
                        

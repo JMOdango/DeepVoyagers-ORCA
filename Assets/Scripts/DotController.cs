@@ -83,10 +83,10 @@ public class DotController : MonoBehaviour
             tempPos = new Vector2(transform.position.x, targetY);
             transform.position = tempPos;
         }
-        if (movesLeft.Moves == 0)
-        {
-            manager.gameOver();
-        }
+        //if (movesLeft.Moves == 0)
+        //{
+        //    manager.gameOver();
+        //}
 
     }
 

@@ -13,4 +13,12 @@ public class MovesLeft : ScriptableObject
         set { moves = value; }
     }
 
+    private int trashCollected;
+
+    public int TrashCollected
+    {
+        get { return trashCollected; }
+        set { trashCollected = value; }
+    }
+
 }

@@ -21,22 +21,27 @@ public class Board : MonoBehaviour
     public GameObject[,] allDots;
     private FindMatches findAllMatches;
     public TextMeshProUGUI moves;
+    public TextMeshProUGUI numberToCollect;
     [SerializeField]
     private MovesLeft MovesLeft;
+    private RandomizeTrash toCollect;
     private int i;
     private int j;
     public int firstScore = 0;
     public float x;
     public scoreBar ScoreBar;
     public bool destroyed = false;
-    int trashCollected;
+    int trashDestroyed;
+    public string whatTrash;
     // Start is called before the first frame update
     void Start()
     {
-       
+        toCollect = FindObjectOfType<RandomizeTrash>();
         ScoreBar.SetStartValue(firstScore);
-        MovesLeft.Moves = Random.Range(18,30);
+        MovesLeft.Moves = Random.Range(15,25);
+        MovesLeft.TrashCollected = Random.Range(10,20);
         moves.text = MovesLeft.Moves.ToString();
+        numberToCollect.text = MovesLeft.TrashCollected.ToString();
         findAllMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
@@ -112,12 +117,20 @@ public class Board : MonoBehaviour
         destroyed = true;
         if (allDots[column,row].GetComponent<DotController>().isMatched)
         {
-            //findAllMatches.currentMatches.Remove(allDots[column, row]);
+            findAllMatches.currentMatches.Remove(allDots[column, row]);
             GameObject particle =  Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
             Destroy(particle, .85f);
             Destroy(allDots[column,row]);
-            trashCollected++;
-            Debug.Log(trashCollected);
+            trashDestroyed++;
+            if (whatTrash == toCollect.whatToCollect) {
+                if (MovesLeft.TrashCollected > 0)
+                {
+                    MovesLeft.TrashCollected--;
+                    numberToCollect.text = MovesLeft.TrashCollected.ToString();
+                }
+                
+            }
+            //Debug.Log(trashCollected);
             allDots[column, row] = null;
 
         }
@@ -138,7 +151,7 @@ public class Board : MonoBehaviour
         }
         if (destroyed)
         {
-            x =+ trashCollected * 50;
+            x =+ trashDestroyed * 400;
             ScoreBar.SetScore(x);
             destroyed = false;
         }
