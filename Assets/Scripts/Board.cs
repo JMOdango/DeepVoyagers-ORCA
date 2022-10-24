@@ -48,7 +48,12 @@ public class Board : MonoBehaviour
         SetUp();
     }
 
-   
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Space)) {
+    //        randomDestroy();
+    //    }
+    //}
 
     private void SetUp() {
         for (i = 0; i < width; i++)
@@ -136,6 +141,7 @@ public class Board : MonoBehaviour
         }
    
     }
+
     public void DestroyMatches()
     {
         for (int i = 0; i < width; i++)
@@ -157,6 +163,44 @@ public class Board : MonoBehaviour
         }
         StartCoroutine(DecreaseRowCo());
     }
+
+    //private void DestroyRandomMatchesAt(int column, int row)
+    //{
+    //    destroyed = true;
+        
+    //        findAllMatches.currentMatches.Remove(allDots[column, row]);
+    //        GameObject particle = Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
+    //        Destroy(particle, .85f);
+    //        Destroy(allDots[column, row]);
+    //        trashDestroyed++;
+    //        if (whatTrash == toCollect.whatToCollect)
+    //        {
+    //            if (MovesLeft.TrashCollected > 0)
+    //            {
+    //                MovesLeft.TrashCollected--;
+    //                numberToCollect.text = MovesLeft.TrashCollected.ToString();
+    //            }
+
+    //        }
+    //        //Debug.Log(trashCollected);
+    //        allDots[column, row] = null;
+    //}
+    //public void randomDestroy()
+    //{
+    //    int column = Random.Range(0, 6);
+    //    int row = Random.Range(0,8);
+
+    //    DestroyRandomMatchesAt(column, row);
+    //    if (destroyed)
+    //    {
+    //        x = +trashDestroyed * 400;
+    //        ScoreBar.SetScore(x);
+    //        destroyed = false;
+    //    }
+    //    StartCoroutine(DecreaseRowCo());
+    //    Debug.Log("column "+ column);
+    //    Debug.Log("row " + row);
+    //}
 
     private IEnumerator DecreaseRowCo()
     {

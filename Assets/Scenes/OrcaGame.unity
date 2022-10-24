@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 2068787021}
   completedLevel: {fileID: 2054589168}
+  moves: {fileID: 11400000, guid: c33d418135a09ec4c98c41121f0e9495, type: 2}
   GameOver: 0
   Complete: 0
   score: {fileID: 659494567}

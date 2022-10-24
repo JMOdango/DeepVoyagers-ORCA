@@ -24,11 +24,21 @@ public class DotController : MonoBehaviour
     private Vector2 firstTouch;
     private Vector2 finalTouch;
     private Vector2 tempPos;
+
     public float swipeAngle = 0;
     public float swipeResist = 1f;
+
+    public bool isColumnBomb;
+    public bool isRowBomb;
+    public GameObject rowArrow;
+    public GameObject columnArrow;
+
     // Start is called before the first frame update
     void Start()
     {
+        isColumnBomb = false;
+        isRowBomb = false;
+
         board = FindObjectOfType<Board>();
         manager = FindObjectOfType<GameManager>();
         findAllMatches = FindObjectOfType<FindMatches>();
@@ -40,10 +50,18 @@ public class DotController : MonoBehaviour
         // previousColumn = column;
     }
 
+    //for testing and debug only
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(1)) {
+            isRowBomb = true;
+            GameObject arrow = Instantiate(rowArrow, transform.position, Quaternion.identity);
+            arrow.transform.parent = this.transform;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        //findMatches();
         if (isMatched)
         {
             SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
