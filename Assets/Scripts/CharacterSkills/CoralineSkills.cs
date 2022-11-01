@@ -14,7 +14,7 @@ public class CoralineSkills : MonoBehaviour
     void Start()
     {
 
-        characterData.GaryPoints = 0;
+        characterData.CoralinePoints = 0;
         board = FindObjectOfType<Board>();
         coralineBar = FindObjectOfType<CoralineBar>();
         selectRandomSquare = FindObjectOfType<FindMatches>();
