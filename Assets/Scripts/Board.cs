@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Pool;
 public enum GameState
 {
     wait,
@@ -19,25 +20,32 @@ public class Board : MonoBehaviour
     public GameObject[] dots;
     public GameObject destroyEffect;
     public GameObject[,] allDots;
+    public DotController currentDot;
     private FindMatches findAllMatches;
     public TextMeshProUGUI moves;
     public TextMeshProUGUI numberToCollect;
+    public scoreBar ScoreBar;
+    CharacterBar characterBar;
     [SerializeField]
-    private MovesLeft MovesLeft;
-    private RandomizeTrash toCollect;
+    public MovesLeft MovesLeft;
+    [SerializeField]
+    private CharacterData characterData;
+    public RandomizeTrash toCollect;
     private int i;
     private int j;
     public int firstScore = 0;
-    public float x;
-    public scoreBar ScoreBar;
+    int x;
+    
     public bool destroyed = false;
-    int trashDestroyed;
+    public int trashDestroyed;
     public string whatTrash;
+ 
     // Start is called before the first frame update
     void Start()
     {
+
+        characterBar = FindObjectOfType<CharacterBar>();
         toCollect = FindObjectOfType<RandomizeTrash>();
-        ScoreBar.SetStartValue(firstScore);
         MovesLeft.Moves = Random.Range(15,25);
         MovesLeft.TrashCollected = Random.Range(10,20);
         moves.text = MovesLeft.Moves.ToString();
@@ -48,13 +56,7 @@ public class Board : MonoBehaviour
         SetUp();
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space)) {
-    //        randomDestroy();
-    //    }
-    //}
-
+ 
     private void SetUp() {
         for (i = 0; i < width; i++)
         {
@@ -122,10 +124,12 @@ public class Board : MonoBehaviour
         destroyed = true;
         if (allDots[column,row].GetComponent<DotController>().isMatched)
         {
-            findAllMatches.currentMatches.Remove(allDots[column, row]);
+            if (findAllMatches.currentMatches.Count == 4 || findAllMatches.currentMatches.Count == 7) {
+                findAllMatches.checkBombs();
+            }
+            Destroy(allDots[column, row]);
             GameObject particle =  Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
             Destroy(particle, .85f);
-            Destroy(allDots[column,row]);
             trashDestroyed++;
             if (whatTrash == toCollect.whatToCollect) {
                 if (MovesLeft.TrashCollected > 0)
@@ -135,7 +139,6 @@ public class Board : MonoBehaviour
                 }
                 
             }
-            //Debug.Log(trashCollected);
             allDots[column, row] = null;
 
         }
@@ -157,50 +160,16 @@ public class Board : MonoBehaviour
         }
         if (destroyed)
         {
-            x =+ trashDestroyed * 400;
-            ScoreBar.SetScore(x);
+            x =+ (trashDestroyed * 100);
+            characterPoints();
+            ScoreBar.SetScore(x); 
             destroyed = false;
         }
+        findAllMatches.currentMatches.Clear();
         StartCoroutine(DecreaseRowCo());
     }
 
-    //private void DestroyRandomMatchesAt(int column, int row)
-    //{
-    //    destroyed = true;
-        
-    //        findAllMatches.currentMatches.Remove(allDots[column, row]);
-    //        GameObject particle = Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
-    //        Destroy(particle, .85f);
-    //        Destroy(allDots[column, row]);
-    //        trashDestroyed++;
-    //        if (whatTrash == toCollect.whatToCollect)
-    //        {
-    //            if (MovesLeft.TrashCollected > 0)
-    //            {
-    //                MovesLeft.TrashCollected--;
-    //                numberToCollect.text = MovesLeft.TrashCollected.ToString();
-    //            }
-
-    //        }
-    //        //Debug.Log(trashCollected);
-    //        allDots[column, row] = null;
-    //}
-    //public void randomDestroy()
-    //{
-    //    int column = Random.Range(0, 6);
-    //    int row = Random.Range(0,8);
-
-    //    DestroyRandomMatchesAt(column, row);
-    //    if (destroyed)
-    //    {
-    //        x = +trashDestroyed * 400;
-    //        ScoreBar.SetScore(x);
-    //        destroyed = false;
-    //    }
-    //    StartCoroutine(DecreaseRowCo());
-    //    Debug.Log("column "+ column);
-    //    Debug.Log("row " + row);
-    //}
+   
 
     private IEnumerator DecreaseRowCo()
     {
@@ -230,12 +199,14 @@ public class Board : MonoBehaviour
         {
             for (int j =0; j < height; j++)
             {
-                if(allDots[i,j] == null)
+                if (allDots[i,j] == null)
                 {
-                    Vector2 tempPosition = new Vector2(i, j+ offSet);
+                    Vector2 tempPosition = new Vector2(i, j + offSet);
                     int dotToUse = Random.Range(0, dots.Length);
                     GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
                     allDots[i, j] = piece;
+                    piece.transform.parent = this.transform;
+                    piece.name = "( " + i + "," + j + ")";
                     piece.GetComponent<DotController>().row = j;
                     piece.GetComponent<DotController>().column = i;
                 }
@@ -270,8 +241,28 @@ public class Board : MonoBehaviour
             yield return new WaitForSeconds(.1f);
             DestroyMatches();
         }
+        findAllMatches.currentMatches.Clear();
+        currentDot = null;
         yield return new WaitForSeconds(.1f);
         currentState = GameState.move;
 
+    }
+
+
+    public void characterPoints()
+    {
+        if (characterBar.maribar.TargetBar < 1) {
+            characterData.MariPoints += Random.Range(0.01f, 0.05f);
+            characterBar.callMariBar(characterData.MariPoints);
+        }
+        if (characterBar.garybar.TargetBar < 1)
+        {
+            characterData.GaryPoints += Random.Range(0.01f, 0.05f);
+            characterBar.callGaryBar(characterData.GaryPoints);
+        }
+        if (characterBar.coralinebar.TargetBar < 1) {
+            characterData.CoralinePoints += Random.Range(0.01f, 0.05f);
+            characterBar.callCoralineBar(characterData.CoralinePoints);
+        }
     }
 }
