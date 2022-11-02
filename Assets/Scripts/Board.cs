@@ -292,14 +292,6 @@ public class Board : MonoBehaviour
         DestoryChild(allDots[column, row]);
     }
 
-    public void destroyReuse(int column, int row) {
-        GameObject destroy = DestroyPool.instance.getPooledObject();
-        if (destroy != null) {
-            destroy.transform.position = allDots[column, row].transform.position;
-            destroy.SetActive(true);
-        }
-    }
-
     private IEnumerator DestroyReuse(int column, int row) {
         GameObject destroy = DestroyPool.instance.getPooledObject();
         if (destroy != null)
