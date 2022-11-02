@@ -18,7 +18,6 @@ public class CoralineSkills : MonoBehaviour
         board = FindObjectOfType<Board>();
         coralineBar = FindObjectOfType<CoralineBar>();
         selectRandomSquare = FindObjectOfType<FindMatches>();
-        //destroyRandomColumn();
     }
     public void destroyRandomSquare()
     {

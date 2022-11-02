@@ -63,21 +63,15 @@ public class DotController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            isAdjacentBomb = true;
-            GameObject marker = Instantiate(adjacentMarker, transform.position, Quaternion.identity);
-            marker.transform.parent = this.transform;
+            isRowBomb = true;
+            GameObject arrow = Instantiate(rowArrow, transform.position, Quaternion.identity);
+            arrow.transform.parent = this.transform;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-       /* if (isMatched)
-        {
-            SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
-            mySprite.color = new Color(1f, 1f, 1f, .2f);
-        }
-       */
         targetX = column;
         targetY = row;
         if (Mathf.Abs(targetX - transform.position.x) > .1)
@@ -248,7 +242,6 @@ public class DotController : MonoBehaviour
             else
             {
                 board.DestroyMatches();
-
             }
             //otherDot = null;
         }

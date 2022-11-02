@@ -11,6 +11,7 @@ public class CharacterBar : MonoBehaviour
     {
         garybar = FindObjectOfType<GaryBar>();
         maribar = FindObjectOfType<MariBar>();
+        coralinebar = FindObjectOfType<CoralineBar>();
     }
     public void callMariBar(double score) {
         maribar.increaseBar(score);

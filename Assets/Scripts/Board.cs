@@ -31,6 +31,7 @@ public class Board : MonoBehaviour
     [SerializeField]
     private CharacterData characterData;
     public RandomizeTrash toCollect;
+    public ObjectPool pool;
     private int i;
     private int j;
     public int firstScore = 0;
@@ -39,7 +40,8 @@ public class Board : MonoBehaviour
     public bool destroyed = false;
     public int trashDestroyed;
     public string whatTrash;
- 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,8 +64,8 @@ public class Board : MonoBehaviour
         {
             for ( j = 0; j < height; j++)
             {
-                Vector2 tempPosition = new Vector2(i, j + offSet);
-                GameObject backgroundTile = Instantiate(tilePrefab, new Vector3(i ,j , offSet), Quaternion.identity) as GameObject;
+                Vector2 tempPosition = new Vector2(i, j +offSet);
+                GameObject backgroundTile = Instantiate(tilePrefab, new Vector3(i ,j ), Quaternion.identity) as GameObject;
                 backgroundTile.transform.parent = this.transform;
                 backgroundTile.name = "( " + i + "," + j + ")";
                 int dotToUse = Random.Range(0, dots.Length);
@@ -127,9 +129,8 @@ public class Board : MonoBehaviour
             if (findAllMatches.currentMatches.Count == 4 || findAllMatches.currentMatches.Count == 7) {
                 findAllMatches.checkBombs();
             }
-            Destroy(allDots[column, row]);
-            GameObject particle =  Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
-            Destroy(particle, .85f);
+            dotReuse(column,row);
+            StartCoroutine(DestroyReuse(column,row));
             trashDestroyed++;
             if (whatTrash == toCollect.whatToCollect) {
                 if (MovesLeft.TrashCollected > 0)
@@ -189,7 +190,7 @@ public class Board : MonoBehaviour
             }
             nullCount = 0;
         }
-        yield return new WaitForSeconds(.01f);
+        yield return new WaitForSeconds(.04f);
         StartCoroutine(FillBoardCo());
     }
 
@@ -201,14 +202,31 @@ public class Board : MonoBehaviour
             {
                 if (allDots[i,j] == null)
                 {
-                    Vector2 tempPosition = new Vector2(i, j + offSet);
-                    int dotToUse = Random.Range(0, dots.Length);
-                    GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
-                    allDots[i, j] = piece;
-                    piece.transform.parent = this.transform;
-                    piece.name = "( " + i + "," + j + ")";
-                    piece.GetComponent<DotController>().row = j;
-                    piece.GetComponent<DotController>().column = i;
+                    
+                    GameObject trashToRefill = ObjectPool.instance.getPooledObject();
+                   
+
+                    if (trashToRefill != null) {
+                        Vector2 tempPosition = new Vector2(i, j + offSet );
+                        trashToRefill.SetActive(true);
+                        allDots[i, j] = trashToRefill;
+                        trashToRefill.transform.position = tempPosition;
+                        trashToRefill.transform.parent = this.transform;
+                        trashToRefill.name = "( " + i + "," + j + ")";
+                        trashToRefill.GetComponent<DotController>().row = j;
+                        trashToRefill.GetComponent<DotController>().column = i;
+                        pool.shufflePool();
+                    }
+
+
+                    //Vector2 tempPosition = new Vector2(i, j + offSet);
+                    //int dotToUse = Random.Range(0, dots.Length);
+                    //GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
+                    //allDots[i, j] = piece;
+                    //piece.transform.parent = this.transform;
+                    //piece.name ;
+                    //piece.GetComponent<DotController>().row = j;
+                    //piece.GetComponent<DotController>().column = i;
                 }
             }
         }
@@ -248,7 +266,6 @@ public class Board : MonoBehaviour
 
     }
 
-
     public void characterPoints()
     {
         if (characterBar.maribar.TargetBar < 1) {
@@ -263,6 +280,41 @@ public class Board : MonoBehaviour
         if (characterBar.coralinebar.TargetBar < 1) {
             characterData.CoralinePoints += Random.Range(0.01f, 0.05f);
             characterBar.callCoralineBar(characterData.CoralinePoints);
+        }
+    }
+
+    public void dotReuse(int column, int row) {
+        allDots[column, row].SetActive(false);
+        allDots[column, row].GetComponent<DotController>().isMatched = false;
+        pool.pooledObjects.Add(allDots[column, row]);
+        allDots[column, row].name = allDots[column, row].tag;
+        allDots[column, row].transform.parent = this.pool.transform;
+        DestoryChild(allDots[column, row]);
+    }
+
+    public void destroyReuse(int column, int row) {
+        GameObject destroy = DestroyPool.instance.getPooledObject();
+        if (destroy != null) {
+            destroy.transform.position = allDots[column, row].transform.position;
+            destroy.SetActive(true);
+        }
+    }
+
+    private IEnumerator DestroyReuse(int column, int row) {
+        GameObject destroy = DestroyPool.instance.getPooledObject();
+        if (destroy != null)
+        {
+            destroy.transform.position = allDots[column, row].transform.position;
+            destroy.SetActive(true);
+        }
+        yield return new WaitForSeconds(.45f);
+        destroy.SetActive(false);
+    }
+    public void DestoryChild(GameObject dotsWithChild) {
+
+        for (var i = dotsWithChild.transform.childCount - 1; i >= 0; i--)
+        {
+                Destroy(dotsWithChild.transform.GetChild(i).gameObject);
         }
     }
 }
