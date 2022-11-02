@@ -542,14 +542,14 @@ PrefabInstance:
     - target: {fileID: 2904487702828015068, guid: 16decc6da2e63ec4e8fcd9eeff6831ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1100431431}
+      objectReference: {fileID: 1100431430}
     - target: {fileID: 2904487702828015068, guid: 16decc6da2e63ec4e8fcd9eeff6831ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Return
+      value: OpenPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2904487702828015068, guid: 16decc6da2e63ec4e8fcd9eeff6831ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneSwitcher, Assembly-CSharp
+      value: PanelOpener, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4752971131875487317, guid: 16decc6da2e63ec4e8fcd9eeff6831ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
