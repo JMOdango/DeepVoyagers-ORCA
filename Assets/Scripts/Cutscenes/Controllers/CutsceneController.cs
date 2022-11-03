@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class CutsceneController : MonoBehaviour
 {
@@ -11,7 +13,6 @@ public class CutsceneController : MonoBehaviour
     public ChooseController chooseController;
     public AudioController audioController;
     private State state = State.IDLE;
-
 
     private enum State
     {
@@ -62,6 +63,10 @@ public class CutsceneController : MonoBehaviour
         if((currentScene as StoryScene).nextScene == null){
             SceneManager.LoadScene("OrcaGame");
         }
+    }
+
+    public void skipCutscene(){
+        SceneManager.LoadScene("OrcaGame");
     }
 
     public void PlayScene(GameScene scene)

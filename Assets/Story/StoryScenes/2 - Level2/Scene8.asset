@@ -39,5 +39,41 @@ MonoBehaviour:
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
+  - text: Bye everyone!
+    speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Good work today, want to head back home together?
+    speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "It\u2019s alright, you go first\u2026 I still want to continue cleaning
+      up."
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Okay, I\u2019ll head back first. Good luck!"
+    speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+      spriteIndex: 0
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
   background: {fileID: 21300000, guid: 6ee42a791435b4e489c9a6a2f94ad449, type: 3}
-  nextScene: {fileID: 11400000, guid: 91dce41a6b8b00d4a87a5e7cb33ef331, type: 2}
+  nextScene: {fileID: 11400000, guid: 89425d2a51a9894428aa31312593dd5a, type: 2}

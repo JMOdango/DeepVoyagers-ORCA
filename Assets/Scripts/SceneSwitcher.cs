@@ -8,8 +8,8 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
-       
     }
+    
     public void backGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);

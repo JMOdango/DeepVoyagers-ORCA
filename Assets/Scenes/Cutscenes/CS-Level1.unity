@@ -756,14 +756,14 @@ PrefabInstance:
     - target: {fileID: 2904487702828015068, guid: 16decc6da2e63ec4e8fcd9eeff6831ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 573987649}
+      objectReference: {fileID: 573987650}
     - target: {fileID: 2904487702828015068, guid: 16decc6da2e63ec4e8fcd9eeff6831ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Return
+      value: OpenPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2904487702828015068, guid: 16decc6da2e63ec4e8fcd9eeff6831ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneSwitcher, Assembly-CSharp
+      value: PanelOpener, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4752971131875487317, guid: 16decc6da2e63ec4e8fcd9eeff6831ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1067,6 +1067,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 573987655}
     m_Modifications:
+    - target: {fileID: 985567644179225070, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788089898969572921, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788089898969572921, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292643367
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792270382419273289, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_lineSpacing
+      value: -40
+      objectReference: {fileID: 0}
     - target: {fileID: 3792270382676040069, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1163,6 +1179,38 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 573987651}
+    - target: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 573987651}
+    - target: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: skipCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CutsceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6563740038488133868, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_Name
+      value: SkipBtnTxt
+      objectReference: {fileID: 0}
+    - target: {fileID: 9153512287453543573, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_Name
+      value: SkipBtn
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
 --- !u!114 &1485685274 stripped
