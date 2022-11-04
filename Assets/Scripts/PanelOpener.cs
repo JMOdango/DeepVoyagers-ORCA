@@ -8,6 +8,7 @@ public class PanelOpener : MonoBehaviour
     public GameObject Inventory;
     public GameObject PowerUpsInventory;
     public GameObject GiftsInventory;
+    
     public void OpenPanel()
     {
         if(Panel != null){
@@ -16,6 +17,7 @@ public class PanelOpener : MonoBehaviour
         }
     }
 
+//Inventory Panels
     public void GotoInventory()
     {
         Inventory.SetActive(true);
@@ -37,4 +39,7 @@ public class PanelOpener : MonoBehaviour
         PowerUpsInventory.SetActive(true);
         GiftsInventory.SetActive(false);
     }
+
+    
+
 }
