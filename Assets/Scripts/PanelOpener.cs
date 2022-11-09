@@ -8,6 +8,9 @@ public class PanelOpener : MonoBehaviour
     public GameObject Inventory;
     public GameObject PowerUpsInventory;
     public GameObject GiftsInventory;
+
+    public GameObject PowerUpsShop;
+    public GameObject GiftsShop;
     
     public void OpenPanel()
     {
@@ -41,5 +44,17 @@ public class PanelOpener : MonoBehaviour
     }
 
     
+//Item Shop Panels
 
+    public void OpenGiftsShop()
+    {
+        GiftsShop.SetActive(true);
+        PowerUpsShop.SetActive(false);
+    }
+
+    public void OpenPowerUpsShop()
+    {
+        PowerUpsShop.SetActive(true);
+        GiftsShop.SetActive(false);
+    }
 }
