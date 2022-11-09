@@ -23,8 +23,8 @@ public class CoralineSkills : MonoBehaviour
     {
         if (coralineBar.coralineBar.fillAmount == 1)
         {
-            int randomRow = Random.Range(0, 6);
-            int randomColumn = Random.Range(0, 8);
+            int randomRow = Random.Range(1, 5);
+            int randomColumn = Random.Range(1, 7);
             selectRandomSquare.randomDestroySquare(randomColumn, randomRow);
             board.DestroyMatches();
             coralineBar.coralineBar.fillAmount = 0;

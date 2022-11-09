@@ -28,10 +28,11 @@ public class DotController : MonoBehaviour
     public float swipeAngle = 0;
     public float swipeResist = 1f;
 
-    public bool isColorBomb;
+
     public bool isColumnBomb;
     public bool isRowBomb;
     public bool isAdjacentBomb;
+    public bool isColorBomb;
 
     public GameObject adjacentMarker;
     public GameObject rowArrow;
@@ -146,19 +147,15 @@ public class DotController : MonoBehaviour
         }
         else {
             board.currentState = GameState.move;
-            
+
         }
 
     }
 
     void MovePieces()
     {
-
         if (manager.GameOver == false || manager.Complete == true)
         {
-
-
-
             if (swipeAngle > -45 && swipeAngle <= 45 && column < board.width - 1)
             {
                 //right swipe
@@ -203,8 +200,9 @@ public class DotController : MonoBehaviour
                 isMoving = true;
                 moved();
             }
-            StartCoroutine(CheckMoveCo());
+            
         }
+        StartCoroutine(CheckMoveCo());
     }
 
     public void moved()
@@ -226,7 +224,7 @@ public class DotController : MonoBehaviour
             findAllMatches.matchPiecesOfColor(this.gameObject.tag);
             otherDot.GetComponent<DotController>().isMatched = true;
         }
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.4f);
         if (otherDot != null)
         {
             if (!isMatched && otherDot.GetComponent<DotController>().isMatched == false)
@@ -235,7 +233,7 @@ public class DotController : MonoBehaviour
                 otherDot.GetComponent<DotController>().column = column;
                 row = previousRow;
                 column = previousColumn;
-                yield return new WaitForSeconds(.3f);
+                yield return new WaitForSeconds(.4f);
                 board.currentDot = null;
                 board.currentState = GameState.move;
             }

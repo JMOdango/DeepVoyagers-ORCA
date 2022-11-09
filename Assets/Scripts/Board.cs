@@ -45,7 +45,6 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         characterBar = FindObjectOfType<CharacterBar>();
         toCollect = FindObjectOfType<RandomizeTrash>();
         MovesLeft.Moves = Random.Range(15,25);
@@ -83,11 +82,9 @@ public class Board : MonoBehaviour
                 dot.transform.parent = this.transform;
                 dot.name = "( " + i + "," + j + ")";
                 allDots[i, j] = dot;
-            }
+            } 
         }
     }
-
-
 
     private bool MatchesAt(int column, int row, GameObject piece)
     {
@@ -190,8 +187,10 @@ public class Board : MonoBehaviour
             }
             nullCount = 0;
         }
-        yield return new WaitForSeconds(.04f);
-        StartCoroutine(FillBoardCo());
+        yield return new WaitForSeconds(.4f);
+   
+            StartCoroutine(FillBoardCo());
+        
     }
 
     private void RefillBoard()
@@ -207,7 +206,7 @@ public class Board : MonoBehaviour
                    
 
                     if (trashToRefill != null) {
-                        Vector2 tempPosition = new Vector2(i, j + offSet );
+                        Vector2 tempPosition = new Vector2(i, j + offSet);
                         trashToRefill.SetActive(true);
                         allDots[i, j] = trashToRefill;
                         trashToRefill.transform.position = tempPosition;
@@ -216,17 +215,8 @@ public class Board : MonoBehaviour
                         trashToRefill.GetComponent<DotController>().row = j;
                         trashToRefill.GetComponent<DotController>().column = i;
                         pool.shufflePool();
+                       
                     }
-
-
-                    //Vector2 tempPosition = new Vector2(i, j + offSet);
-                    //int dotToUse = Random.Range(0, dots.Length);
-                    //GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
-                    //allDots[i, j] = piece;
-                    //piece.transform.parent = this.transform;
-                    //piece.name ;
-                    //piece.GetComponent<DotController>().row = j;
-                    //piece.GetComponent<DotController>().column = i;
                 }
             }
         }
@@ -253,15 +243,16 @@ public class Board : MonoBehaviour
     private IEnumerator FillBoardCo()
     {
         RefillBoard();
-        yield return new WaitForSeconds(.1f);
-        while (MatchesOnBoard())
-        {
-            yield return new WaitForSeconds(.1f);
-            DestroyMatches();
-        }
+        yield return new WaitForSeconds(0.5f);
+            while (MatchesOnBoard())
+            {
+                yield return new WaitForSeconds(.5f);
+                DestroyMatches();
+                Debug.Log(MatchesOnBoard());
+            }
         findAllMatches.currentMatches.Clear();
         currentDot = null;
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.2f);
         currentState = GameState.move;
 
     }
@@ -286,11 +277,16 @@ public class Board : MonoBehaviour
     public void dotReuse(int column, int row) {
         allDots[column, row].SetActive(false);
         allDots[column, row].GetComponent<DotController>().isMatched = false;
+        allDots[column, row].GetComponent<DotController>().isRowBomb = false;
+        allDots[column, row].GetComponent<DotController>().isColumnBomb = false;
+        allDots[column, row].GetComponent<DotController>().isColorBomb = false;
+        allDots[column, row].GetComponent<DotController>().isAdjacentBomb = false;
         pool.pooledObjects.Add(allDots[column, row]);
         allDots[column, row].name = allDots[column, row].tag;
         allDots[column, row].transform.parent = this.pool.transform;
         DestoryChild(allDots[column, row]);
     }
+
 
     private IEnumerator DestroyReuse(int column, int row) {
         GameObject destroy = DestroyPool.instance.getPooledObject();

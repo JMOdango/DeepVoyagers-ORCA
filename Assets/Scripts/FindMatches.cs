@@ -8,13 +8,12 @@ public class FindMatches : MonoBehaviour
 
     private Board board;
     public List<GameObject> currentMatches = new List<GameObject>();
-    public MariSkills destroyRandomColumn;
+
 
     // Start is called before the first frame update
     void Start()
     {
         board = FindObjectOfType<Board>();
-        destroyRandomColumn = FindObjectOfType<MariSkills>();
     }
 
 
@@ -89,9 +88,9 @@ public class FindMatches : MonoBehaviour
         AddToListandMatch(dot2);
         AddToListandMatch(dot3);
     }
-    private IEnumerator FindAllMatchesCo()
+    public IEnumerator FindAllMatchesCo()
     {
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.3f);
 
         for (int i = 0; i < board.width; i++)
         {
