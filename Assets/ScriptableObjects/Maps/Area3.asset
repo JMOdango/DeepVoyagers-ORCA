@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapIndex: 2
   mapImage: {fileID: 21300000, guid: 931e1213afc3b5e4ea742be14c142288, type: 3}
-  sceneToLoad: {fileID: 102900000, guid: 9c065f12008a88b4097e866f5fc415bb, type: 3}
+  sceneToLoad: {fileID: 0}
