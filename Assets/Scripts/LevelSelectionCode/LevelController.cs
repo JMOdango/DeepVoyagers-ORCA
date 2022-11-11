@@ -8,5 +8,6 @@ public class LevelController : MonoBehaviour
      public void BacktoAreaSelection() 
     {
         SceneManager.LoadScene("AreaSelection");
+        FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
     }
 }
