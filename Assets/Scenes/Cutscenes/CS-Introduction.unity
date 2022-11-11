@@ -780,6 +780,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 1245342704}
+  Inventory: {fileID: 0}
+  PowerUpsInventory: {fileID: 0}
+  GiftsInventory: {fileID: 0}
 --- !u!114 &1100431431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,6 +977,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 10}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1459045223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+  m_PrefabInstance: {fileID: 3792270383888475795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1625290823
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,6 +1139,17 @@ MonoBehaviour:
   isSwitched: 0
   image1: {fileID: 1625290825}
   image2: {fileID: 1072026172}
+--- !u!114 &1860430319 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1788089898969572921, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+  m_PrefabInstance: {fileID: 3792270383888475795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1891365458 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4013982402784638386, guid: e613619f395e6194a89b8ac93bedc253, type: 3}
@@ -1159,6 +1184,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1100431428}
     m_Modifications:
+    - target: {fileID: 985567644179225070, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788089898969572921, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788089898969572921, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292643367
+      objectReference: {fileID: 0}
     - target: {fileID: 3792270382676040069, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1248,6 +1285,18 @@ PrefabInstance:
       value: DialogueBox
       objectReference: {fileID: 0}
     - target: {fileID: 3792270382676040074, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: skipBtn
+      value: 
+      objectReference: {fileID: 1459045223}
+    - target: {fileID: 3792270382676040074, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: skipTxt
+      value: 
+      objectReference: {fileID: 1860430319}
+    - target: {fileID: 3792270382676040074, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: skipText
+      value: 
+      objectReference: {fileID: 1860430319}
+    - target: {fileID: 3792270382676040074, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
       propertyPath: spritesPrefab
       value: 
       objectReference: {fileID: 1451989693}
@@ -1255,6 +1304,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1100431429}
+    - target: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1100431429}
+    - target: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: skipCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CutsceneController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791026343155869950, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8593214659566737295, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1100431429}
+    - target: {fileID: 8593214659566737295, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: nextText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39fe7a573a4a2a441a94957553efa281, type: 3}
 --- !u!1001 &4013982400896714720
