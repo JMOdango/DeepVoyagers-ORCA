@@ -7,11 +7,14 @@ public class CharacterBar : MonoBehaviour
     public GaryBar garybar;
     public MariBar maribar;
     public CoralineBar coralinebar;
+    public PamBar pambar;
     private void Start()
     {
         garybar = FindObjectOfType<GaryBar>();
         maribar = FindObjectOfType<MariBar>();
         coralinebar = FindObjectOfType<CoralineBar>();
+        pambar = FindObjectOfType<PamBar>();
+
     }
     public void callMariBar(double score) {
         maribar.increaseBar(score);
@@ -22,5 +25,9 @@ public class CharacterBar : MonoBehaviour
     }
     public void callCoralineBar(double score) {
        coralinebar.increaseBar(score);
+    }
+
+    public void callPamBar(double score) {
+        pambar.increaseBar(score);
     }
 }

@@ -174,6 +174,19 @@ public class FindMatches : MonoBehaviour
         return dots;
     }
 
+    List<GameObject> GetRandomPiece(int column, int row) {
+        List<GameObject> dots = new List<GameObject>();
+        for (int i = 0; i < board.width; i++) {
+            for (int j = 0; j < board.height; j++) {
+                if (board.allDots[column, row] == board.allDots[i,j]) {
+                    dots.Add(board.allDots[i,j]);
+                    board.allDots[i, j].GetComponent<DotController>().isMatched = true;
+                }
+            }
+        }
+        return dots;
+    }
+
     public void matchPiecesOfColor(string color) {
         for (int i = 0; i < board.width; i++) {
             for (int j = 0; j < board.height; j++) {
@@ -251,5 +264,9 @@ public class FindMatches : MonoBehaviour
 
     public void randomDestroySquare(int column, int row) {
         getAdjacentPieces(column, row);
+    }
+
+    public void randomTrashDestroy(int column, int row) {
+        GetRandomPiece(column,row);
     }
 }

@@ -31,4 +31,12 @@ public class CharacterData : ScriptableObject
         set { coralinePoints = value; }
     }
 
+    private double pamPoints;
+    public double PamPoints
+    {
+        get { return pamPoints; }
+        set { pamPoints = value; }
+    }
+
+
 }

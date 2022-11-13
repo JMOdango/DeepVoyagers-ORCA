@@ -268,9 +268,13 @@ public class Board : MonoBehaviour
             characterData.GaryPoints += Random.Range(0.01f, 0.05f);
             characterBar.callGaryBar(characterData.GaryPoints);
         }
-        if (characterBar.coralinebar.TargetBar < 1) {
-            characterData.CoralinePoints += Random.Range(0.01f, 0.05f);
-            characterBar.callCoralineBar(characterData.CoralinePoints);
+        //if (characterBar.coralinebar.TargetBar < 1) {
+        //    characterData.CoralinePoints += Random.Range(0.01f, 0.05f);
+        //    characterBar.callCoralineBar(characterData.CoralinePoints);
+        //}
+        if (characterBar.pambar.TargetBar < 1) {
+             characterData.PamPoints += Random.Range(0.01f, 0.05f);
+            characterBar.callPamBar(characterData.PamPoints);
         }
     }
 
