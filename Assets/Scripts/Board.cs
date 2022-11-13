@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Pool;
 public enum GameState
 {
     wait,
@@ -19,38 +20,51 @@ public class Board : MonoBehaviour
     public GameObject[] dots;
     public GameObject destroyEffect;
     public GameObject[,] allDots;
+    public DotController currentDot;
     private FindMatches findAllMatches;
     public TextMeshProUGUI moves;
+    public TextMeshProUGUI numberToCollect;
+    public scoreBar ScoreBar;
+    CharacterBar characterBar;
     [SerializeField]
-    private MovesLeft MovesLeft;
+    public MovesLeft MovesLeft;
+    [SerializeField]
+    private CharacterData characterData;
+    public RandomizeTrash toCollect;
+    public ObjectPool pool;
     private int i;
     private int j;
     public int firstScore = 0;
-    public float x;
-    public scoreBar ScoreBar;
-    bool destroyed = false;
+    int x;
+    
+    public bool destroyed = false;
+    public int trashDestroyed;
+    public string whatTrash;
+
+
     // Start is called before the first frame update
     void Start()
     {
-       
-        ScoreBar.SetStartValue(firstScore);
-        MovesLeft.Moves = Random.Range(15,30);
+        characterBar = FindObjectOfType<CharacterBar>();
+        toCollect = FindObjectOfType<RandomizeTrash>();
+        MovesLeft.Moves = Random.Range(15,25);
+        MovesLeft.TrashCollected = Random.Range(10,20);
         moves.text = MovesLeft.Moves.ToString();
+        numberToCollect.text = MovesLeft.TrashCollected.ToString();
         findAllMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
         SetUp();
     }
 
-   
-
+ 
     private void SetUp() {
         for (i = 0; i < width; i++)
         {
             for ( j = 0; j < height; j++)
             {
-                Vector2 tempPosition = new Vector2(i, j + offSet);
-                GameObject backgroundTile = Instantiate(tilePrefab, new Vector3(i ,j , offSet), Quaternion.identity) as GameObject;
+                Vector2 tempPosition = new Vector2(i, j +offSet);
+                GameObject backgroundTile = Instantiate(tilePrefab, new Vector3(i ,j ), Quaternion.identity) as GameObject;
                 backgroundTile.transform.parent = this.transform;
                 backgroundTile.name = "( " + i + "," + j + ")";
                 int dotToUse = Random.Range(0, dots.Length);
@@ -68,11 +82,9 @@ public class Board : MonoBehaviour
                 dot.transform.parent = this.transform;
                 dot.name = "( " + i + "," + j + ")";
                 allDots[i, j] = dot;
-            }
+            } 
         }
     }
-
-
 
     private bool MatchesAt(int column, int row, GameObject piece)
     {
@@ -108,15 +120,27 @@ public class Board : MonoBehaviour
 
     private void DestroyMatchesAt(int column, int row)
     {
+        destroyed = true;
         if (allDots[column,row].GetComponent<DotController>().isMatched)
         {
-            findAllMatches.currentMatches.Remove(allDots[column,row]);
-            GameObject particle =  Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
-            Destroy(particle, .85f);
-            Destroy(allDots[column,row]);
+            if (findAllMatches.currentMatches.Count == 4 || findAllMatches.currentMatches.Count == 7) {
+                findAllMatches.checkBombs();
+            }
+            dotReuse(column,row);
+            StartCoroutine(DestroyReuse(column,row));
+            trashDestroyed++;
+            if (whatTrash == toCollect.whatToCollect) {
+                if (MovesLeft.TrashCollected > 0)
+                {
+                    MovesLeft.TrashCollected--;
+                    numberToCollect.text = MovesLeft.TrashCollected.ToString();
+                }
+                
+            }
             allDots[column, row] = null;
-            destroyed = true;
+
         }
+   
     }
 
     public void DestroyMatches()
@@ -125,20 +149,25 @@ public class Board : MonoBehaviour
         {
             for (int j = 0; j < height; j++)
             {
-                if(allDots[i,j] != null)
+                if (allDots[i, j] != null)
                 {
                     DestroyMatchesAt(i, j);
+                  
                 }
             }
         }
         if (destroyed)
         {
-            x += Random.Range(300f, 700f);
-            ScoreBar.SetScore(x);
+            x =+ (trashDestroyed * 100);
+            characterPoints();
+            ScoreBar.SetScore(x); 
             destroyed = false;
         }
+        findAllMatches.currentMatches.Clear();
         StartCoroutine(DecreaseRowCo());
     }
+
+   
 
     private IEnumerator DecreaseRowCo()
     {
@@ -158,8 +187,10 @@ public class Board : MonoBehaviour
             }
             nullCount = 0;
         }
-        yield return new WaitForSeconds(.01f);
-        StartCoroutine(FillBoardCo());
+        yield return new WaitForSeconds(.4f);
+   
+            StartCoroutine(FillBoardCo());
+        
     }
 
     private void RefillBoard()
@@ -168,14 +199,24 @@ public class Board : MonoBehaviour
         {
             for (int j =0; j < height; j++)
             {
-                if(allDots[i,j] == null)
+                if (allDots[i,j] == null)
                 {
-                    Vector2 tempPosition = new Vector2(i, j+ offSet);
-                    int dotToUse = Random.Range(0, dots.Length);
-                    GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
-                    allDots[i, j] = piece;
-                    piece.GetComponent<DotController>().row = j;
-                    piece.GetComponent<DotController>().column = i;
+                    
+                    GameObject trashToRefill = ObjectPool.instance.getPooledObject();
+                   
+
+                    if (trashToRefill != null) {
+                        Vector2 tempPosition = new Vector2(i, j + offSet);
+                        trashToRefill.SetActive(true);
+                        allDots[i, j] = trashToRefill;
+                        trashToRefill.transform.position = tempPosition;
+                        trashToRefill.transform.parent = this.transform;
+                        trashToRefill.name = "( " + i + "," + j + ")";
+                        trashToRefill.GetComponent<DotController>().row = j;
+                        trashToRefill.GetComponent<DotController>().column = i;
+                        pool.shufflePool();
+                       
+                    }
                 }
             }
         }
@@ -202,14 +243,70 @@ public class Board : MonoBehaviour
     private IEnumerator FillBoardCo()
     {
         RefillBoard();
-        yield return new WaitForSeconds(.1f);
-        while (MatchesOnBoard())
-        {
-            yield return new WaitForSeconds(.1f);
-            DestroyMatches();
-        }
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(0.5f);
+            while (MatchesOnBoard())
+            {
+                yield return new WaitForSeconds(.5f);
+                DestroyMatches();
+                Debug.Log(MatchesOnBoard());
+            }
+        findAllMatches.currentMatches.Clear();
+        currentDot = null;
+        yield return new WaitForSeconds(.2f);
         currentState = GameState.move;
 
+    }
+
+    public void characterPoints()
+    {
+        if (characterBar.maribar.TargetBar < 1) {
+            characterData.MariPoints += Random.Range(0.01f, 0.05f);
+            characterBar.callMariBar(characterData.MariPoints);
+        }
+        if (characterBar.garybar.TargetBar < 1)
+        {
+            characterData.GaryPoints += Random.Range(0.01f, 0.05f);
+            characterBar.callGaryBar(characterData.GaryPoints);
+        }
+        //if (characterBar.coralinebar.TargetBar < 1) {
+        //    characterData.CoralinePoints += Random.Range(0.01f, 0.05f);
+        //    characterBar.callCoralineBar(characterData.CoralinePoints);
+        //}
+        if (characterBar.pambar.TargetBar < 1) {
+             characterData.PamPoints += Random.Range(0.01f, 0.05f);
+            characterBar.callPamBar(characterData.PamPoints);
+        }
+    }
+
+    public void dotReuse(int column, int row) {
+        allDots[column, row].SetActive(false);
+        allDots[column, row].GetComponent<DotController>().isMatched = false;
+        allDots[column, row].GetComponent<DotController>().isRowBomb = false;
+        allDots[column, row].GetComponent<DotController>().isColumnBomb = false;
+        allDots[column, row].GetComponent<DotController>().isColorBomb = false;
+        allDots[column, row].GetComponent<DotController>().isAdjacentBomb = false;
+        pool.pooledObjects.Add(allDots[column, row]);
+        allDots[column, row].name = allDots[column, row].tag;
+        allDots[column, row].transform.parent = this.pool.transform;
+        DestoryChild(allDots[column, row]);
+    }
+
+
+    private IEnumerator DestroyReuse(int column, int row) {
+        GameObject destroy = DestroyPool.instance.getPooledObject();
+        if (destroy != null)
+        {
+            destroy.transform.position = allDots[column, row].transform.position;
+            destroy.SetActive(true);
+        }
+        yield return new WaitForSeconds(.45f);
+        destroy.SetActive(false);
+    }
+    public void DestoryChild(GameObject dotsWithChild) {
+
+        for (var i = dotsWithChild.transform.childCount - 1; i >= 0; i--)
+        {
+                Destroy(dotsWithChild.transform.GetChild(i).gameObject);
+        }
     }
 }
