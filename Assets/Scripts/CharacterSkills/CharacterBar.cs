@@ -8,6 +8,7 @@ public class CharacterBar : MonoBehaviour
     public MariBar maribar;
     public CoralineBar coralinebar;
     public PamBar pambar;
+    SpawnCharacters charList;
     private void Start()
     {
         garybar = FindObjectOfType<GaryBar>();
