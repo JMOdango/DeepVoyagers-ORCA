@@ -372,19 +372,15 @@ MonoBehaviour:
   moves: {fileID: 416405096}
   numberToCollect: {fileID: 1320326549}
   ScoreBar: {fileID: 1081680346}
-  characterBar: {fileID: 816146265}
   MovesLeft: {fileID: 11400000, guid: c33d418135a09ec4c98c41121f0e9495, type: 2}
   toCollect: {fileID: 0}
+  givePoints: {fileID: 2105652343}
   pool: {fileID: 1203656097}
   firstScore: 0
   destroyed: 0
   getPoints: 0
   trashDestroyed: 0
   whatTrash: 
-  isCoraline: 0
-  isDiane: 0
-  isGary: 0
-  isPam: 0
 --- !u!4 &252130372
 Transform:
   m_ObjectHideFlags: 0
@@ -2658,6 +2654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2105652342}
+  - component: {fileID: 2105652343}
   m_Layer: 0
   m_Name: GivePoints
   m_TagString: Untagged
@@ -2680,6 +2677,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2105652343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105652341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ea9db9ba06ac0488073084e6fcd56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  party: {fileID: 11400000, guid: 6176a04dd1b956646b79d510d820cfc1, type: 2}
+  isCoraline: 0
+  isDiane: 0
+  isGary: 0
+  isPam: 0
+  isMari: 0
 --- !u!224 &2109575338 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1006181922841260411, guid: 9b3c5d0742ce77244854e9b00f708749, type: 3}
