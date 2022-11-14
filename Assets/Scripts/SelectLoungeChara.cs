@@ -8,6 +8,7 @@ public class SelectLoungeChara : MonoBehaviour
      public GameObject talkingsection;
      public GameObject giftingsection;
      public GameObject bondstats;
+     public GameObject Inventory;
 
      public GameObject GarySprite;
      public GameObject CoralineSprite;
@@ -229,9 +230,21 @@ public class SelectLoungeChara : MonoBehaviour
     {
         iconholder.SetActive(false);
        bondstats.SetActive(true);
-       talkingsection.SetActive(true);
-       giftingsection.SetActive(false);
+       talkingsection.SetActive(false);
+       giftingsection.SetActive(true);
     }
+
+     public void GotoInventory()
+    {
+        Inventory.SetActive(true);
+    }
+
+    public void CloseInventory()
+    {
+        Inventory.SetActive(false);
+    }
+
+    
 
 
 }

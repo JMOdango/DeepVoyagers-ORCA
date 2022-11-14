@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 83109832}
         m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
         m_MethodName: CloseCloseUp
         m_Mode: 1
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 83109832}
         m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
         m_MethodName: CloseCloseUp
         m_Mode: 1
@@ -1087,7 +1087,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 66434287}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109832}
+        m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
+        m_MethodName: OpenHistoryBook
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &66434287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,6 +1148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 83109831}
   - component: {fileID: 83109830}
+  - component: {fileID: 83109832}
   m_Layer: 0
   m_Name: SelectController
   m_TagString: Untagged
@@ -1159,6 +1172,7 @@ MonoBehaviour:
   talkingsection: {fileID: 1374384433}
   giftingsection: {fileID: 1768531613}
   bondstats: {fileID: 1792644528}
+  Inventory: {fileID: 600969264}
   GarySprite: {fileID: 1271308719}
   CoralineSprite: {fileID: 2023823030}
   PamSprite: {fileID: 1216598977}
@@ -1191,10 +1205,42 @@ Transform:
   m_LocalPosition: {x: 3.9199219, y: 4.1500244, z: 0}
   m_LocalScale: {x: 0.9065, y: 0.9065, z: 0.9065}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1869936370}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &83109832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83109829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce789937918ff4a4f9e18b67efd92c6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallenergy: {fileID: 1869936369}
+  mediumenergy: {fileID: 1869936369}
+  largeenergy: {fileID: 1869936369}
+  mysterysnack: {fileID: 1869936369}
+  magnet: {fileID: 1869936369}
+  neptunestrident: {fileID: 1869936369}
+  voidgem: {fileID: 1869936369}
+  net: {fileID: 1869936369}
+  plasticeatingfungi: {fileID: 1869936369}
+  pocketwatch: {fileID: 1869936369}
+  mermaidsorb: {fileID: 1869936369}
+  basket: {fileID: 1869936369}
+  stufftoy: {fileID: 1894962572}
+  waterproofcamera: {fileID: 492546661}
+  map: {fileID: 900744918}
+  historybook: {fileID: 1734989889}
+  seaweed: {fileID: 136028411}
+  crystals: {fileID: 1291544972}
+  toyfigure: {fileID: 1656501561}
 --- !u!1 &136028411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,6 +1710,7 @@ MonoBehaviour:
   talkingsection: {fileID: 0}
   giftingsection: {fileID: 0}
   bondstats: {fileID: 0}
+  Inventory: {fileID: 0}
   GarySprite: {fileID: 0}
   CoralineSprite: {fileID: 0}
   PamSprite: {fileID: 0}
@@ -2533,7 +2580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: -35}
+  m_AnchoredPosition: {x: 0.000022888, y: 65}
   m_SizeDelta: {x: 398.7986, y: 318.1301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &300308595
@@ -2580,8 +2627,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
+      - m_Target: {fileID: 83109830}
+        m_TargetAssemblyTypeName: SelectLoungeChara, Assembly-CSharp
         m_MethodName: GotoInventory
         m_Mode: 1
         m_Arguments:
@@ -2713,8 +2760,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PanelOpener, Assembly-CSharp
+      - m_Target: {fileID: 83109830}
+        m_TargetAssemblyTypeName: SelectLoungeChara, Assembly-CSharp
         m_MethodName: CloseInventory
         m_Mode: 1
         m_Arguments:
@@ -6011,7 +6058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &860066234
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6341,7 +6388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &902946322
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7472,7 +7519,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 989931972}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109832}
+        m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
+        m_MethodName: OpenSeaweed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &989931972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8117,7 +8176,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1034688944}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109832}
+        m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
+        m_MethodName: OpenToyfigure
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1034688944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8239,7 +8310,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1041513923}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109832}
+        m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
+        m_MethodName: OpenMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1041513923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8758,7 +8841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1115676457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8864,7 +8947,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1117938477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109832}
+        m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
+        m_MethodName: OpenWaterproofCamera
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1117938477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9317,7 +9412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 248}
+  m_AnchoredPosition: {x: -2, y: -153}
   m_SizeDelta: {x: 444.4111, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1180902139
@@ -9349,8 +9444,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286282619
-  m_fontColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
+    rgba: 1283160955
+  m_fontColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 0.29803923}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9500,7 +9595,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 83109832}
         m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
         m_MethodName: CloseCloseUp
         m_Mode: 1
@@ -10133,7 +10228,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267664409}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10190,7 +10285,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1267664412}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109832}
+        m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
+        m_MethodName: OpenCrystals
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1267664412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10610,7 +10717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1313176712
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12257,7 +12364,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1462825926}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109832}
+        m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
+        m_MethodName: CloseCloseUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1462825926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12433,7 +12552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1522441028
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15640,7 +15759,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1806074748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109832}
+        m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
+        m_MethodName: OpenStufftoy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1806074748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16162,7 +16293,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1867754259}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109830}
+        m_TargetAssemblyTypeName: SelectLoungeChara, Assembly-CSharp
+        m_MethodName: GiftToCharacter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1867754259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16201,6 +16344,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867754256}
   m_CullTransparentMesh: 1
+--- !u!1 &1869936369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869936370}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1869936370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869936369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 83109831}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1872204090
 GameObject:
   m_ObjectHideFlags: 0
@@ -17104,7 +17278,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 83109832}
         m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
         m_MethodName: CloseCloseUp
         m_Mode: 1
@@ -18744,7 +18918,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 83109832}
         m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
         m_MethodName: CloseCloseUp
         m_Mode: 1
@@ -18953,7 +19127,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 83109832}
         m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
         m_MethodName: CloseCloseUp
         m_Mode: 1
@@ -19343,7 +19517,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 83109832}
         m_TargetAssemblyTypeName: ItemShopCloseUp, Assembly-CSharp
         m_MethodName: CloseCloseUp
         m_Mode: 1
