@@ -12,7 +12,7 @@ public class DotController : MonoBehaviour
     public int targetX;
     public int targetY;
     public bool isMatched = false;
-    bool isMoving = false;
+    public bool isMoving = false;
     private FindMatches findAllMatches;
     private Board board;
     public GameObject otherDot;

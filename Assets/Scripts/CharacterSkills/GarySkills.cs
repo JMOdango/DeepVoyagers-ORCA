@@ -1,36 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GarySkills : MonoBehaviour
 {
 
     public FindMatches selectRandomRow;
-    GaryBar garyBar;
-    public bool isUsed = false;
     private Board board;
-    [SerializeField]
-    private CharacterData characterData;
+    public Image garyImage;
+    public float fillSpeed = 0.5f;
+    public double TargetBar = 0;
+    double points;
     // Start is called before the first frame update
     void Start()
     {
-
-        characterData.GaryPoints = 0;
+        garyImage.fillAmount = 0;
         board = FindObjectOfType<Board>();
-        garyBar = FindObjectOfType<GaryBar>();
         selectRandomRow = FindObjectOfType<FindMatches>();
-        //destroyRandomColumn();
     }
+    void Update()
+    {
+        if (garyImage.fillAmount < TargetBar)
+        {
+            garyImage.fillAmount += fillSpeed * Time.deltaTime;
+        }
+    }
+
+    public void GetPoints()
+    {
+        if (garyImage.fillAmount < 1)
+        {
+            points += Random.Range(0.04f, 0.08f);
+            increaseBar(points);
+
+        }
+    }
+    public void increaseBar(double score)
+    {
+        TargetBar = score;
+    }
+
     public void destroyRandomRow()
     {
-        if (garyBar.garyBar.fillAmount == 1)
+        if (garyImage.fillAmount == 1)
         {
             int randomRow = Random.Range(0, 6);
             selectRandomRow.randomDestroyRow(randomRow);
             board.DestroyMatches();
-            garyBar.garyBar.fillAmount = 0;
-            garyBar.TargetBar = 0;
-            characterData.GaryPoints = 0;
+            garyImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
         }
 
 

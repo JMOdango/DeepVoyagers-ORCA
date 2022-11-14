@@ -5,43 +5,28 @@ using UnityEngine;
 public class SpawnCharacters : MonoBehaviour
 {
     public List<GameObject> spawnChars = new List<GameObject>();
-
+    Board board;
     public GameObject[] allChars;
     public GameObject canvas;
     [SerializeField]
     private PartyObject partList;
-    public Transform char1;
-    public Transform char2;
-    public Transform char3;
+    public Transform[] chars = new Transform[3];
     private void Start()
     {
-        for (int i = 0; i <allChars.Length; i++) {
-            GameObject characters = Instantiate(allChars[i], canvas.transform) as GameObject;
-            characters.SetActive(false);
-            spawnChars.Add(characters);
-        }
-
-        for (int i = 0; i < spawnChars.Count; i++)
-        {
-            if (partList.party1 == spawnChars[i].tag)
-            {
-                spawnChars[i].SetActive(true);
-                spawnChars[i].transform.position = char1.transform.position;
-            }
-
-            if (partList.party2 == spawnChars[i].tag)
-            {
-                spawnChars[i].SetActive(true);
-                spawnChars[i].transform.position = char2.transform.position;
-            }
-
-            if (partList.party3 == spawnChars[i].tag)
-            {
-                spawnChars[i].SetActive(true);
-                spawnChars[i].transform.position = char3.transform.position;
+        board = FindObjectOfType<Board>();
+      
+        for (int i = 0; i < partList.party.Length; i++) {
+            for (int j = 0; j < allChars.Length; j++) {
+                if (allChars[j].CompareTag(partList.party[i]))
+                {
+                    GameObject characters = Instantiate(allChars[j], canvas.transform);
+                    characters.transform.position = chars[i].transform.position;
+                }
             }
         }
+        
+       }
     }
 
     
-}
+

@@ -25,12 +25,10 @@ public class Board : MonoBehaviour
     public TextMeshProUGUI moves;
     public TextMeshProUGUI numberToCollect;
     public scoreBar ScoreBar;
-    public CharacterBar characterBar;
     [SerializeField]
     public MovesLeft MovesLeft;
-    [SerializeField]
-    private CharacterData characterData;
     public RandomizeTrash toCollect;
+    public GivePointsToChar givePoints;
     public ObjectPool pool;
     private int i;
     private int j;
@@ -38,14 +36,15 @@ public class Board : MonoBehaviour
     int x;
     
     public bool destroyed = false;
+    public bool getPoints = false;
     public int trashDestroyed;
     public string whatTrash;
 
-
+   
     // Start is called before the first frame update
     void Start()
     {
-        characterBar = FindObjectOfType<CharacterBar>();
+
         toCollect = FindObjectOfType<RandomizeTrash>();
         MovesLeft.Moves = Random.Range(15,25);
         MovesLeft.TrashCollected = Random.Range(10,20);
@@ -55,6 +54,7 @@ public class Board : MonoBehaviour
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
         SetUp();
+
     }
 
  
@@ -128,6 +128,8 @@ public class Board : MonoBehaviour
             }
             dotReuse(column,row);
             StartCoroutine(DestroyReuse(column,row));
+            givePoints.checkInstantiate();
+
             trashDestroyed++;
             if (whatTrash == toCollect.whatToCollect) {
                 if (MovesLeft.TrashCollected > 0)
@@ -159,7 +161,7 @@ public class Board : MonoBehaviour
         if (destroyed)
         {
             x =+ (trashDestroyed * 100);
-            characterPoints();
+            givePoints.givePoints();
             ScoreBar.SetScore(x); 
             destroyed = false;
         }
@@ -203,8 +205,6 @@ public class Board : MonoBehaviour
                 {
                     
                     GameObject trashToRefill = ObjectPool.instance.getPooledObject();
-                   
-
                     if (trashToRefill != null) {
                         Vector2 tempPosition = new Vector2(i, j + offSet);
                         trashToRefill.SetActive(true);
@@ -220,6 +220,7 @@ public class Board : MonoBehaviour
                 }
             }
         }
+        getPoints = false;
     }
 
     private bool MatchesOnBoard()
@@ -257,28 +258,29 @@ public class Board : MonoBehaviour
 
     }
 
-    public void characterPoints()
-    {
-        if (characterBar.maribar.TargetBar < 1)
-        {
-            characterData.MariPoints += Random.Range(0.01f, 0.05f);
-            characterBar.callMariBar(characterData.MariPoints);
-        }
-        if (characterBar.garybar.TargetBar < 1)
-        {
-            characterData.GaryPoints += Random.Range(0.01f, 0.05f);
-            characterBar.callGaryBar(characterData.GaryPoints);
-        }
-        if (characterBar.coralinebar.TargetBar < 1)
-        {
-            characterData.CoralinePoints += Random.Range(0.01f, 0.05f);
-            characterBar.callCoralineBar(characterData.CoralinePoints);
-        }
-        //if (characterBar.pambar.TargetBar < 1) {
-        //     characterData.PamPoints += Random.Range(0.01f, 0.05f);
-        //    characterBar.callPamBar(characterData.PamPoints);
-        //}
-    }
+    //public void characterPoints()
+    //{
+    //    if (characterBar.maribar.TargetBar < 1)
+    //    {
+    //        characterData.MariPoints += Random.Range(0.01f, 0.05f);
+    //        characterBar.callMariBar(characterData.MariPoints);
+    //    }
+    //    if (characterBar.garybar.TargetBar < 1)
+    //    {
+    //        characterData.GaryPoints += Random.Range(0.01f, 0.05f);
+    //        characterBar.callGaryBar(characterData.GaryPoints);
+    //    }
+    //    if (characterBar.coralinebar.TargetBar < 1)
+    //    {
+    //        characterData.CoralinePoints += Random.Range(0.01f, 0.05f);
+    //        characterBar.callCoralineBar(characterData.CoralinePoints);
+    //    }
+    //    if (characterBar.pambar.TargetBar < 1)
+    //    {
+    //        characterData.PamPoints += Random.Range(0.01f, 0.05f);
+    //        characterBar.callPamBar(characterData.PamPoints);
+    //    }
+    //}
 
     public void dotReuse(int column, int row) {
         allDots[column, row].SetActive(false);

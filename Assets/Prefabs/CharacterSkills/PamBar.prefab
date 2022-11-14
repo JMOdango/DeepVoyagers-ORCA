@@ -1,52 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5197685884664273862
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5197685884664273863}
-  - component: {fileID: 3640550325427257330}
-  m_Layer: 0
-  m_Name: PamSkill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5197685884664273863
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5197685884664273862}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.079895, y: -25.000015, z: -8986.246}
-  m_LocalScale: {x: 108, y: 108, z: 108}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5197685884664293620}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3640550325427257330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5197685884664273862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490598d048330224fb96e30968070df3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectRandomPiece: {fileID: 0}
-  isUsed: 0
-  characterData: {fileID: 11400000, guid: b9b40fd57e3db074394057066e191290, type: 2}
 --- !u!1 &5197685884664293579
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,8 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5197685884664293620}
-  - component: {fileID: 4025194003148668565}
-  - component: {fileID: 7244819559891795287}
+  - component: {fileID: 1721141613555714717}
   - component: {fileID: 8408745794079630343}
   m_Layer: 5
   m_Name: PamBar
@@ -78,7 +30,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5197685884664273863}
   - {fileID: 5197685885241569082}
   - {fileID: 5197685885615017566}
   m_Father: {fileID: 0}
@@ -89,7 +40,7 @@ RectTransform:
   m_AnchoredPosition: {x: 736.21, y: -265}
   m_SizeDelta: {x: 239.52, y: 203.58}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4025194003148668565
+--- !u!114 &1721141613555714717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,28 +49,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5197685884664293579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d77ffb7c1c89151469335bda0bd13678, type: 3}
+  m_Script: {fileID: 11500000, guid: 490598d048330224fb96e30968070df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pamBar: {fileID: 5197685885241569083}
+  selectRandomPiece: {fileID: 0}
+  pamImage: {fileID: 5197685885241569083}
   fillSpeed: 0.5
   TargetBar: 0
---- !u!114 &7244819559891795287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5197685884664293579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5640f63f6d5cf5f40a2c4c8685dd9245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  garybar: {fileID: 0}
-  maribar: {fileID: 0}
-  coralinebar: {fileID: 0}
-  pambar: {fileID: 4025194003148668565}
 --- !u!114 &8408745794079630343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +73,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3640550325427257330}
+        - m_Target: {fileID: 1721141613555714717}
           m_TargetAssemblyTypeName: PamSkills, Assembly-CSharp
           m_MethodName: destroyRandomTrash
           m_Mode: 1
@@ -180,7 +116,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5197685884664293620}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -256,7 +192,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5197685884664293620}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

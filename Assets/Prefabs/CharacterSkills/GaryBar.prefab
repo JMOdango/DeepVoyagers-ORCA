@@ -31,7 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6019560297839165324}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -76,53 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &6019560297838972094
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6019560297838972095}
-  - component: {fileID: 4934336744111076789}
-  m_Layer: 0
-  m_Name: GarySkill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6019560297838972095
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6019560297838972094}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.079895, y: -25.000015, z: -8986.246}
-  m_LocalScale: {x: 108, y: 108, z: 108}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6019560297839165324}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4934336744111076789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6019560297838972094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13fc713893f684147881df5f4e671dcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectRandomRow: {fileID: 0}
-  isUsed: 0
-  characterData: {fileID: 11400000, guid: b9b40fd57e3db074394057066e191290, type: 2}
 --- !u!1 &6019560297839165363
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6019560297839165324}
-  - component: {fileID: 8188216056311289141}
-  - component: {fileID: 1512419570499390782}
+  - component: {fileID: 138651091854813972}
   - component: {fileID: 6019560297839165326}
   m_Layer: 5
   m_Name: GaryBar
@@ -154,7 +106,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6019560297838972095}
   - {fileID: 6019560297325918274}
   - {fileID: 6019560298831173926}
   m_Father: {fileID: 0}
@@ -165,7 +116,7 @@ RectTransform:
   m_AnchoredPosition: {x: 731, y: -145}
   m_SizeDelta: {x: 266.0985, y: 226.1714}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8188216056311289141
+--- !u!114 &138651091854813972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,28 +125,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6019560297839165363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f7ecc58785f40142a84d83d418ed4df, type: 3}
+  m_Script: {fileID: 11500000, guid: 13fc713893f684147881df5f4e671dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garyBar: {fileID: 6019560297325918275}
+  selectRandomRow: {fileID: 0}
+  garyImage: {fileID: 6019560297325918275}
   fillSpeed: 0.5
   TargetBar: 0
---- !u!114 &1512419570499390782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6019560297839165363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5640f63f6d5cf5f40a2c4c8685dd9245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  garybar: {fileID: 8188216056311289141}
-  maribar: {fileID: 0}
-  coralinebar: {fileID: 0}
-  pambar: {fileID: 0}
 --- !u!114 &6019560297839165326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +149,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4934336744111076789}
+        - m_Target: {fileID: 138651091854813972}
           m_TargetAssemblyTypeName: GarySkills, Assembly-CSharp
           m_MethodName: destroyRandomRow
           m_Mode: 1
@@ -256,7 +192,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6019560297839165324}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

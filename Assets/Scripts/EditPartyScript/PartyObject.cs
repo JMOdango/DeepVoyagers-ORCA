@@ -6,8 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PartyObject : ScriptableObject
 {
+    public string[] party = new string[3];
 
-    public string party1;
-    public string party2;
-    public string party3;
+
 }

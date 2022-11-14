@@ -128,17 +128,11 @@ public class IsCharacterPicked : MonoBehaviour
         }
 
         for (int i = 0; i < Party.Length; i++) {
-            if (Party[0] != null) {
-                partyList.party1 = Party[0].tag;
+
+            if (Party[i] != null) {
+                partyList.party[i] = Party[i].tag;
             }
-            if (Party[1] != null)
-            {
-                partyList.party2 = Party[1].tag;
-            }
-            if (Party[2] != null)
-            {
-                partyList.party3 = Party[2].tag;
-            }
+            
         }
     }
 }

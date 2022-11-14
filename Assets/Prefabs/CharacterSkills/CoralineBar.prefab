@@ -31,7 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3958550386214140281}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -76,53 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &3958550386213947979
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3958550386213947978}
-  - component: {fileID: 5639642968665983530}
-  m_Layer: 0
-  m_Name: CoralineSkill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3958550386213947978
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3958550386213947979}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.079895, y: -25.000015, z: -8986.246}
-  m_LocalScale: {x: 108, y: 108, z: 108}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3958550386214140281}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5639642968665983530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3958550386213947979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77980922aec5fcd448a8187cbdd0a990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectRandomSquare: {fileID: 0}
-  isUsed: 0
-  characterData: {fileID: 11400000, guid: b9b40fd57e3db074394057066e191290, type: 2}
 --- !u!1 &3958550386214140230
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3958550386214140281}
-  - component: {fileID: 3969021705776993245}
-  - component: {fileID: 1892847050506874074}
+  - component: {fileID: 5482944943889656975}
   - component: {fileID: 756506760001385866}
   m_Layer: 5
   m_Name: CoralineBar
@@ -141,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3958550386214140281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -154,7 +106,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3958550386213947978}
   - {fileID: 3958550386710675127}
   - {fileID: 3958550384952762323}
   m_Father: {fileID: 0}
@@ -165,7 +116,7 @@ RectTransform:
   m_AnchoredPosition: {x: 736.21, y: -10}
   m_SizeDelta: {x: 239.52, y: 203.58}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3969021705776993245
+--- !u!114 &5482944943889656975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,28 +125,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3958550386214140230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92192d7c03a3bee4c9768c284d304392, type: 3}
+  m_Script: {fileID: 11500000, guid: 77980922aec5fcd448a8187cbdd0a990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coralineBar: {fileID: 3958550386710675126}
+  selectRandomSquare: {fileID: 0}
+  isUsed: 0
+  characterData: {fileID: 11400000, guid: b9b40fd57e3db074394057066e191290, type: 2}
+  coralineImage: {fileID: 3958550386710675126}
   fillSpeed: 0.5
   TargetBar: 0
---- !u!114 &1892847050506874074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3958550386214140230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5640f63f6d5cf5f40a2c4c8685dd9245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  garybar: {fileID: 0}
-  maribar: {fileID: 0}
-  coralinebar: {fileID: 3969021705776993245}
-  pambar: {fileID: 0}
 --- !u!114 &756506760001385866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +151,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5639642968665983530}
+        - m_Target: {fileID: 5482944943889656975}
           m_TargetAssemblyTypeName: CoralineSkills, Assembly-CSharp
           m_MethodName: destroyRandomSquare
           m_Mode: 1
@@ -256,7 +194,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3958550386214140281}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

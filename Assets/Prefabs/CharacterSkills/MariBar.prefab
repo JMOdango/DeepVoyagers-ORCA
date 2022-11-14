@@ -31,7 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4479335286704895871}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -107,7 +107,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4479335286704895871}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -152,53 +152,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4479335286704768077
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4479335286704768076}
-  - component: {fileID: 4479335286704768075}
-  m_Layer: 0
-  m_Name: mariSkill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4479335286704768076
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4479335286704768077}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.079895, y: -25.000015, z: -8986.246}
-  m_LocalScale: {x: 108, y: 108, z: 108}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4479335286704895871}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4479335286704768075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4479335286704768077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47f523e286e19d48b4ce991d3324f99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectRandomColumn: {fileID: 0}
-  isUsed: 0
-  characterData: {fileID: 11400000, guid: b9b40fd57e3db074394057066e191290, type: 2}
 --- !u!1 &4479335286704895808
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,8 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4479335286704895871}
-  - component: {fileID: 4479335286704895870}
-  - component: {fileID: 7410318406767501742}
+  - component: {fileID: 6643179880779071364}
   - component: {fileID: 4479335286704895869}
   m_Layer: 5
   m_Name: MariBar
@@ -230,7 +182,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4479335286704768076}
   - {fileID: 4479335286193680561}
   - {fileID: 4479335285778665941}
   m_Father: {fileID: 0}
@@ -241,7 +192,7 @@ RectTransform:
   m_AnchoredPosition: {x: 722.92, y: 160}
   m_SizeDelta: {x: 266.0985, y: 226.1714}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4479335286704895870
+--- !u!114 &6643179880779071364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,28 +201,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4479335286704895808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10b421ef392d94e41820949664be1d30, type: 3}
+  m_Script: {fileID: 11500000, guid: d47f523e286e19d48b4ce991d3324f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mariBar: {fileID: 4479335286193680560}
+  selectRandomColumn: {fileID: 0}
+  mariImage: {fileID: 4479335286193680560}
   fillSpeed: 0.5
   TargetBar: 0
---- !u!114 &7410318406767501742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4479335286704895808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5640f63f6d5cf5f40a2c4c8685dd9245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  garybar: {fileID: 0}
-  maribar: {fileID: 4479335286704895870}
-  coralinebar: {fileID: 0}
-  pambar: {fileID: 0}
 --- !u!114 &4479335286704895869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +225,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 4479335286704768075}
+        - m_Target: {fileID: 6643179880779071364}
           m_TargetAssemblyTypeName: MariSkills, Assembly-CSharp
           m_MethodName: destroyRandomColumn
           m_Mode: 1

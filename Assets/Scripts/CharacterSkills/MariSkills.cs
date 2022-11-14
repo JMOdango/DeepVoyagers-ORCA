@@ -1,34 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class MariSkills : MonoBehaviour
 {
 
     public FindMatches selectRandomColumn;
-    MariBar mariBar;
-    public bool isUsed = false;
     private Board board;
-    [SerializeField]
-    private CharacterData characterData;
+
+    public Image mariImage;
+    public float fillSpeed = 0.5f;
+    public double TargetBar = 0;
+    double points;
     // Start is called before the first frame update
     void Start()
     {
-       
-        characterData.MariPoints = 0;
+        mariImage.fillAmount = 0;
         board = FindObjectOfType<Board>();
-        mariBar = FindObjectOfType<MariBar>();
         selectRandomColumn = FindObjectOfType<FindMatches>();
-        //destroyRandomColumn();
     }
+
+    void Update()
+    {
+        if (mariImage.fillAmount < TargetBar)
+        {
+            mariImage.fillAmount += fillSpeed * Time.deltaTime;
+        }   
+    }
+
+    public void GetPoints()
+    {
+        if ( mariImage.fillAmount < 1)
+        {
+            points += Random.Range(0.04f, 0.08f);
+            increaseBar(points);
+
+        }
+    }
+    public void increaseBar(double score)
+    {
+        TargetBar = score;
+    }
+
+
     public void destroyRandomColumn() {
-        if (mariBar.mariBar.fillAmount == 1) {
+        if (mariImage.fillAmount == 1) {
             int randomColumn = Random.Range(0, 8);
             selectRandomColumn.randomDestroyColumn(randomColumn);
             board.DestroyMatches();
-            mariBar.mariBar.fillAmount = 0;
-            mariBar.TargetBar = 0;
-            characterData.MariPoints = 0;
+            mariImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
         }
             
         
