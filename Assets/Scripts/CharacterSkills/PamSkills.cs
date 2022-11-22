@@ -1,35 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PamSkills : MonoBehaviour
 {
 
     public FindMatches selectRandomPiece;
-    PamBar pamBar;
-    public bool isUsed = false;
+
     private Board board;
-    [SerializeField]
-    private CharacterData characterData;
+
+    public Image pamImage;
+    public float fillSpeed = 0.5f;
+    public double TargetBar = 0;
+    double points;
     void Start()
     {
-
-        characterData.MariPoints = 0;
+        pamImage.fillAmount = 0;
         board = FindObjectOfType<Board>();
-        pamBar = FindObjectOfType<PamBar>();
         selectRandomPiece = FindObjectOfType<FindMatches>();
-        //destroyRandomColumn();
+
     }
+
+    void Update()
+    {
+        if (pamImage.fillAmount < TargetBar)
+        {
+            pamImage.fillAmount += fillSpeed * Time.deltaTime;
+        }
+    }
+
+    public void GetPoints()
+    {
+        if (pamImage.fillAmount < 1)
+        {
+            points += Random.Range(0.04f, 0.08f);
+            increaseBar(points);
+            board.getPoints = false;
+        }
+    }
+    public void increaseBar(double score)
+    {
+        TargetBar = score;
+    }
+
     public void destroyRandomTrash()
     {
-        if (pamBar.pamBar.fillAmount == 1)
+        if (pamImage.fillAmount == 1)
         {
             int randomColumn = Random.Range(0, 8);
             int randomRow = Random.Range(0, 6);
             selectRandomPiece.randomTrashDestroy(randomColumn, randomRow);
             board.DestroyMatches();
-            pamBar.pamBar.fillAmount = 0;
-            pamBar.TargetBar = 0;
+            pamImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
         }
 
 
