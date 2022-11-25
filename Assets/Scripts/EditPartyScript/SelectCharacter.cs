@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SelectCharacter : MonoBehaviour
 {
+    IsCharacterPicked picked;
     CharacterClick clicked;
     public List<GameObject> characters = new List<GameObject>();
     public GameObject[] allChars;
@@ -15,6 +16,7 @@ public class SelectCharacter : MonoBehaviour
     public Vector2 currentCard;
 
     int currentCharacter;
+    
 
     public bool isCoraline = false;
     public bool isDiane = false;
@@ -23,6 +25,11 @@ public class SelectCharacter : MonoBehaviour
     public bool isMari = false;
     public bool isOscar = false;
     public bool isPam = false;
+
+    public bool x_char1 = false;
+    public bool x_char2 = false;
+    public bool x_char3 = false;
+
 
     private void Start()
     {
@@ -104,7 +111,6 @@ public class SelectCharacter : MonoBehaviour
                 characters[5].SetActive(false);
             }
 
-
             if (clicked.characterClicked == "Pam" && isPam == false)
             {
                 characters[6].SetActive(true);
@@ -114,6 +120,17 @@ public class SelectCharacter : MonoBehaviour
             {
                 characters[6].SetActive(false);
             }
+
+            
+
+
+            
+
+
+            
+
+
+        
         }
     }
 
