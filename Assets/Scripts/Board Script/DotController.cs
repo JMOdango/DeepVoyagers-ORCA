@@ -172,53 +172,25 @@ public class DotController : MonoBehaviour
             {
 
                 //////right swipe
-                ////otherDot = board.allDots[column + 1, row];
-                ////previousRow = row;
-                ////previousColumn = column;
-                ////otherDot.GetComponent<DotController>().column -= 1;
-                ////column += 1;
-                ////StartCoroutine(CheckMoveCo());
-                //isMoving = true;
-                //moved();
+             
                 MovePiecesActual(Vector2.right);
             }
             else if (swipeAngle > 45 && swipeAngle <= 135 && row < board.height - 1)
             {
                 ////up swipe
-                //otherDot = board.allDots[column, row + 1];
-                //previousRow = row;
-                //previousColumn = column;
-                //otherDot.GetComponent<DotController>().row -= 1;
-                //row += 1;
-                //isMoving = true;
-                //moved();
-                //StartCoroutine(CheckMoveCo());
+              
                 MovePiecesActual(Vector2.up);
             }
             else if ((swipeAngle > 135 || swipeAngle <= -135) && column > 0)
             {
                 ////left swipe
-                //otherDot = board.allDots[column - 1, row];
-                //previousRow = row;
-                //previousColumn = column;
-                //otherDot.GetComponent<DotController>().column += 1;
-                //column -= 1;
-                //isMoving = true;
-                //moved();
-                //StartCoroutine(CheckMoveCo());
+          
                 MovePiecesActual(Vector2.left);
             }
             else if (swipeAngle < -45 && swipeAngle >= -135 && row > 0)
             {
                 ////down swipe
-                //otherDot = board.allDots[column, row - 1];
-                //previousRow = row;
-                //previousColumn = column;
-                //otherDot.GetComponent<DotController>().row += 1;
-                //row -= 1;
-                //isMoving = true;
-                //moved();
-                //StartCoroutine(CheckMoveCo());
+             
                 MovePiecesActual(Vector2.down);
             }
             else
