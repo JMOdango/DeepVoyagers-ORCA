@@ -14,17 +14,17 @@ public class SpawnCharacters : MonoBehaviour
     private void Start()
     {
         board = FindObjectOfType<Board>();
-      
-        for (int i = 0; i < partList.party.Length; i++) {
-            for (int j = 0; j < allChars.Length; j++) {
-                if (allChars[j].CompareTag(partList.party[i]))
+            for (int i = 0; i < partList.party.Length; i++)
+            {
+                for (int j = 0; j < allChars.Length; j++)
                 {
-                    GameObject characters = Instantiate(allChars[j], canvas.transform);
-                    characters.transform.position = chars[i].transform.position;
+                    if (allChars[j].CompareTag(partList.party[i]))
+                    {
+                        GameObject characters = Instantiate(allChars[j], canvas.transform);
+                        characters.transform.position = chars[i].transform.position;
+                    }
                 }
             }
-        }
-        
        }
     }
 
