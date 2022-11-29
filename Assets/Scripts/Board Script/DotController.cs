@@ -140,9 +140,9 @@ public class DotController : MonoBehaviour
     {
         if (Mathf.Abs(finalTouch.y - firstTouch.y) > swipeResist || Mathf.Abs(finalTouch.x - firstTouch.x) > swipeResist)
         {
+            board.currentState = GameState.wait;
             swipeAngle = Mathf.Atan2(finalTouch.y - firstTouch.y, finalTouch.x - firstTouch.x) * 180 / Mathf.PI;
             MovePieces();
-            board.currentState = GameState.wait;
             board.currentDot = this;
         }
         else {
@@ -152,57 +152,54 @@ public class DotController : MonoBehaviour
 
     }
 
+    void MovePiecesActual(Vector2 direction) {
+        otherDot = board.allDots[column + (int)direction.x, row + (int)direction.y];
+        previousRow = row;
+        previousColumn = column;
+        otherDot.GetComponent<DotController>().column += -1*(int)direction.x;
+        otherDot.GetComponent<DotController>().row += -1 * (int)direction.y;
+        column += (int)direction.x;
+        row += (int)direction.y;
+        isMoving = true;
+        moved();
+        StartCoroutine(CheckMoveCo());
+    }
     void MovePieces()
     {
         if (manager.GameOver == false || manager.Complete == true)
         {
             if (swipeAngle > -45 && swipeAngle <= 45 && column < board.width - 1)
             {
-                //right swipe
-                otherDot = board.allDots[column + 1, row];
-                previousRow = row;
-                previousColumn = column;
-                otherDot.GetComponent<DotController>().column -= 1;
-                column += 1;
-                isMoving = true;
-                moved();
+
+                //////right swipe
+             
+                MovePiecesActual(Vector2.right);
             }
             else if (swipeAngle > 45 && swipeAngle <= 135 && row < board.height - 1)
             {
-                //up swipe
-                otherDot = board.allDots[column, row + 1];
-                previousRow = row;
-                previousColumn = column;
-                otherDot.GetComponent<DotController>().row -= 1;
-                row += 1;
-                isMoving = true;
-                moved();
+                ////up swipe
+              
+                MovePiecesActual(Vector2.up);
             }
             else if ((swipeAngle > 135 || swipeAngle <= -135) && column > 0)
             {
-                //left swipe
-                otherDot = board.allDots[column - 1, row];
-                previousRow = row;
-                previousColumn = column;
-                otherDot.GetComponent<DotController>().column += 1;
-                column -= 1;
-                isMoving = true;
-                moved();
+                ////left swipe
+          
+                MovePiecesActual(Vector2.left);
             }
             else if (swipeAngle < -45 && swipeAngle >= -135 && row > 0)
             {
-                //down swipe
-                otherDot = board.allDots[column, row - 1];
-                previousRow = row;
-                previousColumn = column;
-                otherDot.GetComponent<DotController>().row += 1;
-                row -= 1;
-                isMoving = true;
-                moved();
+                ////down swipe
+             
+                MovePiecesActual(Vector2.down);
+            }
+            else
+            {
+                board.currentState = GameState.move;
             }
             
         }
-        StartCoroutine(CheckMoveCo());
+        
     }
 
     public void moved()
@@ -224,7 +221,7 @@ public class DotController : MonoBehaviour
             findAllMatches.matchPiecesOfColor(this.gameObject.tag);
             otherDot.GetComponent<DotController>().isMatched = true;
         }
-        yield return new WaitForSeconds(.46f);
+        yield return new WaitForSeconds(.5f);
         if (otherDot != null)
         {
             if (!isMatched && otherDot.GetComponent<DotController>().isMatched == false)
@@ -233,7 +230,7 @@ public class DotController : MonoBehaviour
                 otherDot.GetComponent<DotController>().column = column;
                 row = previousRow;
                 column = previousColumn;
-                yield return new WaitForSeconds(.46f);
+                yield return new WaitForSeconds(.5f);
                 board.currentDot = null;
                 board.currentState = GameState.move;
             }
