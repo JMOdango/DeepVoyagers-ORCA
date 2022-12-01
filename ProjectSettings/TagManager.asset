@@ -9,6 +9,14 @@ TagManager:
   - Trash3
   - Trash4
   - Trash5
+  - Coraline
+  - Gary
+  - Malachi
+  - Mari
+  - Oscar
+  - Pam
+  - Diane
+  - CharacterCanvas
   layers:
   - Default
   - TransparentFX
@@ -16,7 +24,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Status
   - 
   - 
   - 
