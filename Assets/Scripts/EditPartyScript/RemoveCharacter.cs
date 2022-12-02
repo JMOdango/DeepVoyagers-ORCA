@@ -12,6 +12,10 @@ public class RemoveCharacter : MonoBehaviour
     public Transform card2;
     public Transform card3;
 
+    public bool isempty_char1 = false;
+    public bool isempty_char2 = false;
+    public bool isempty_char3 = false;
+
     void Awake()
     {
         picked = GameObject.Find("PickCharacter").GetComponent<IsCharacterPicked>();
@@ -26,7 +30,8 @@ public class RemoveCharacter : MonoBehaviour
 
     public void Remove_Char1()
     {
-        
+        if (isempty_char1 == false)
+        {
         if (picked.slot_coraline == 1 && selectCharacter.isCoraline == true)
         {
          selectCharacter.characters[0].SetActive(false);
@@ -76,12 +81,14 @@ public class RemoveCharacter : MonoBehaviour
 
         status.selected_char1.SetActive(false);
         status.unselected_char1.SetActive(true);
-
+        }
   
     }
 
     public void Remove_Char2()
     {
+        if (isempty_char2 == false)
+        {
         if (picked.slot_coraline == 2 && selectCharacter.isCoraline == true)
         {
          selectCharacter.characters[0].SetActive(false);
@@ -131,11 +138,12 @@ public class RemoveCharacter : MonoBehaviour
 
         status.selected_char2.SetActive(false);
         status.unselected_char2.SetActive(true);
+        }
     }
 
     public void Remove_Char3()
     {
-        
+        if (isempty_char3 == false) {
         if (picked.slot_coraline == 3 && selectCharacter.isCoraline == true)
         {
          selectCharacter.characters[0].SetActive(false);
@@ -185,5 +193,6 @@ public class RemoveCharacter : MonoBehaviour
 
         status.selected_char3.SetActive(false);
         status.unselected_char3.SetActive(true);
+        }
     }
 }
