@@ -43,6 +43,7 @@ public class Board : MonoBehaviour
     public RandomizeTrash toCollect;
     public GivePointsToChar givePoints;
     public ObjectPool pool;
+    public float refillDelay = 0.5f;
     private int i;
     private int j;
     public int firstScore = 0;
@@ -208,34 +209,31 @@ public class Board : MonoBehaviour
             destroyed = false;
         }
         findAllMatches.currentMatches.Clear();
-        StartCoroutine(DecreaseRowCo());
+        StartCoroutine(DecreaseRowCo2());
     }
 
-   
 
-    private IEnumerator DecreaseRowCo()
-    {
-        int nullCount = 0;
-        for(int i = 0; i < width; i++)
+    private IEnumerator DecreaseRowCo2() {
+        for (int i = 0; i < width; i++)
         {
             for (int j = 0; j < height; j++)
             {
-                if (allDots[i,j] == null)
-                {
-                    nullCount++;
-                }else if (nullCount > 0)
-                {
-                    allDots[i, j].GetComponent<DotController>().row -= nullCount;
-                    allDots[i, j] = null;
+                if (!blankSpaces[i,j] && allDots[i,j] == null) {
+                    for (int k = j+1; k < height; k++)
+                    {
+                        if (allDots[i,k] != null) {
+                            allDots[i, k].GetComponent<DotController>().row = j;
+                            allDots[i, k] = null;
+                             break;
+                        }
+                    }
                 }
             }
-            nullCount = 0;
         }
-        yield return new WaitForSeconds(.4f);
-   
-            StartCoroutine(FillBoardCo());
-        
+        yield return new WaitForSeconds(refillDelay * 0.5f);
+        StartCoroutine(FillBoardCo());
     }
+   
 
     private void RefillBoard()
     {
@@ -243,7 +241,7 @@ public class Board : MonoBehaviour
         {
             for (int j =0; j < height; j++)
             {
-                if (allDots[i,j] == null)
+                if (allDots[i,j] == null && !blankSpaces[i,j])
                 {
                     
                     GameObject trashToRefill = ObjectPool.instance.getPooledObject();
@@ -286,43 +284,26 @@ public class Board : MonoBehaviour
     private IEnumerator FillBoardCo()
     {
         RefillBoard();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(refillDelay);
             while (MatchesOnBoard())
             {
-                yield return new WaitForSeconds(.5f);
-                DestroyMatches();
-                Debug.Log(MatchesOnBoard());
+            DestroyMatches();
+            yield return new WaitForSeconds(2 * refillDelay);
+                
             }
         findAllMatches.currentMatches.Clear();
         currentDot = null;
-        yield return new WaitForSeconds(.2f);
+        
+
+        if (isDeadLocked()) {
+            Debug.Log("Deadlocked"); 
+        }
+        yield return new WaitForSeconds(refillDelay);
         currentState = GameState.move;
 
     }
 
-    //public void characterPoints()
-    //{
-    //    if (characterBar.maribar.TargetBar < 1)
-    //    {
-    //        characterData.MariPoints += Random.Range(0.01f, 0.05f);
-    //        characterBar.callMariBar(characterData.MariPoints);
-    //    }
-    //    if (characterBar.garybar.TargetBar < 1)
-    //    {
-    //        characterData.GaryPoints += Random.Range(0.01f, 0.05f);
-    //        characterBar.callGaryBar(characterData.GaryPoints);
-    //    }
-    //    if (characterBar.coralinebar.TargetBar < 1)
-    //    {
-    //        characterData.CoralinePoints += Random.Range(0.01f, 0.05f);
-    //        characterBar.callCoralineBar(characterData.CoralinePoints);
-    //    }
-    //    if (characterBar.pambar.TargetBar < 1)
-    //    {
-    //        characterData.PamPoints += Random.Range(0.01f, 0.05f);
-    //        characterBar.callPamBar(characterData.PamPoints);
-    //    }
-    //}
+ 
 
     public void dotReuse(int column, int row) {
         allDots[column, row].SetActive(false);
@@ -354,5 +335,79 @@ public class Board : MonoBehaviour
         {
                 Destroy(dotsWithChild.transform.GetChild(i).gameObject);
         }
+    }
+
+    private void SwitchPieces(int column, int row, Vector2 direction) {
+
+
+        GameObject holder = allDots[column + (int)direction.x, row + (int)direction.y] as GameObject;
+        allDots[column + (int)direction.x, row + (int)direction.y] = allDots[column, row];
+        allDots[column, row] = holder;
+    }
+
+    private bool CheckForMatches() {
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (allDots[i,j]!= null) {
+                    if (i < width - 2)
+                    {
+                        if (allDots[i + 1, j] != null & allDots[i + 2, j] != null)
+                        {
+                            if (allDots[i + 1, j].tag == allDots[i, j].tag && allDots[i + 2, j].tag == allDots[i, j].tag)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    if (j < height - 2)
+                    {
+                        if (allDots[i, j + 1] != null && allDots[i, j + 2] != null)
+                        {
+                            if (allDots[i, j + 1].tag == allDots[i, j].tag && allDots[i, j + 2].tag == allDots[i, j].tag)
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private bool SwitchAndCheck(int column, int row, Vector2 direction) {
+        SwitchPieces(column, row, direction);
+        if (CheckForMatches()) {
+            SwitchPieces(column,row,direction);
+            return true;
+        }
+        SwitchPieces(column, row, direction);
+        return false;
+    }
+
+    private bool isDeadLocked() {
+
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (allDots[i, j] != null) {
+                    if (i < width - 1) {
+                        if (SwitchAndCheck(i,j,Vector2.right)) {
+                            return false;
+                        }
+                    }
+                    if (j < height - 1)
+                    {
+                        if (SwitchAndCheck(i,j,Vector2.up)) {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+        return true;
     }
 }

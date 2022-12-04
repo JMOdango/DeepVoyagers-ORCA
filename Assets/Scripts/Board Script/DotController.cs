@@ -156,13 +156,20 @@ public class DotController : MonoBehaviour
         otherDot = board.allDots[column + (int)direction.x, row + (int)direction.y];
         previousRow = row;
         previousColumn = column;
-        otherDot.GetComponent<DotController>().column += -1*(int)direction.x;
-        otherDot.GetComponent<DotController>().row += -1 * (int)direction.y;
-        column += (int)direction.x;
-        row += (int)direction.y;
-        isMoving = true;
-        moved();
-        StartCoroutine(CheckMoveCo());
+        if (otherDot != null)
+        {
+
+            otherDot.GetComponent<DotController>().column += -1 * (int)direction.x;
+            otherDot.GetComponent<DotController>().row += -1 * (int)direction.y;
+            column += (int)direction.x;
+            row += (int)direction.y;
+            isMoving = true;
+            moved();
+            StartCoroutine(CheckMoveCo());
+        }
+        else {
+            board.currentState = GameState.move;
+        }
     }
     void MovePieces()
     {
