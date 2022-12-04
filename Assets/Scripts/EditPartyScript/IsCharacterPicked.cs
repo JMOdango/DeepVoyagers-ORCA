@@ -7,6 +7,7 @@ public class IsCharacterPicked : MonoBehaviour
     CharacterClick clicked;
     SelectCharacter selectCharacter;
     SelectionStatus status;
+    
     public Transform card1;
     public Transform card2;
     public Transform card3;
@@ -21,6 +22,10 @@ public class IsCharacterPicked : MonoBehaviour
     public int slot_oscar = 1;
     public int slot_pam = 1;
 
+    public bool isempty_char1;
+    public bool isempty_char2;
+    public bool isempty_char3;
+
     List<GameObject> party = new List<GameObject>();
     [SerializeField]
     public PartyObject partyList;
@@ -33,6 +38,7 @@ public class IsCharacterPicked : MonoBehaviour
         clicked = FindObjectOfType<CharacterClick>();
         selectCharacter = FindObjectOfType<SelectCharacter>();
         status = FindObjectOfType<SelectionStatus>();
+        
     }
     public void CharacterSelected()
     {
@@ -199,18 +205,21 @@ public class IsCharacterPicked : MonoBehaviour
             {
                 status.selected_char1.SetActive(true);
                 status.unselected_char1.SetActive(false);
+                isempty_char1 = false;
             }
 
             if (Party[1] != null)
             {
                 status.selected_char2.SetActive(true);
                 status.unselected_char2.SetActive(false);
+                isempty_char2 = false;
             }
 
             if (Party[2] != null)
             {
                 status.selected_char3.SetActive(true);
                 status.unselected_char3.SetActive(false);
+                isempty_char3 = false;
             }
     }
 

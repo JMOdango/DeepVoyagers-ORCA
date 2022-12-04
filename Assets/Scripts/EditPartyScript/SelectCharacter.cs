@@ -26,9 +26,12 @@ public class SelectCharacter : MonoBehaviour
     public bool isOscar = false;
     public bool isPam = false;
 
-    public bool x_char1 = false;
-    public bool x_char2 = false;
-    public bool x_char3 = false;
+   
+
+    void Awake()
+    {
+        picked = GameObject.Find("PickCharacter").GetComponent<IsCharacterPicked>();
+    }
 
 
     private void Start()
@@ -55,6 +58,22 @@ public class SelectCharacter : MonoBehaviour
             {
                 characters[0].SetActive(true);
                 characters[0].transform.position = currentCard;
+                
+                picked.slot_coraline = picked.slot;
+
+                if (picked.slot_coraline == 1)
+                {
+                 picked.isempty_char1 = false;
+                }
+                else if (picked.slot_coraline == 2)
+                {
+                  picked.isempty_char2 = false;  
+                }
+                else if (picked.slot_coraline == 3)
+                {
+                  picked.isempty_char3 = false;  
+                }
+                
             }
             else if(clicked.characterClicked != "Coraline" && isCoraline == false)
             {
@@ -65,6 +84,20 @@ public class SelectCharacter : MonoBehaviour
             {
                 characters[1].SetActive(true);
                 characters[1].transform.position = currentCard;
+                picked.slot_diane = picked.slot;
+
+                if (picked.slot_diane == 1)
+                {
+                 picked.isempty_char1 = false;
+                }
+                else if (picked.slot_diane == 2)
+                {
+                  picked.isempty_char2 = false;  
+                }
+                else if (picked.slot_diane == 3)
+                {
+                  picked.isempty_char3 = false;  
+                }
             }
             else if (clicked.characterClicked != "Diane" && isDiane == false)
             {
@@ -75,6 +108,19 @@ public class SelectCharacter : MonoBehaviour
             {
                 characters[2].SetActive(true);
                 characters[2].transform.position = currentCard;
+                picked.slot_gary = picked.slot;
+                if (picked.slot_gary == 1)
+                {
+                 picked.isempty_char1 = false;
+                }
+                else if (picked.slot_gary == 2)
+                {
+                  picked.isempty_char2 = false;  
+                }
+                else if (picked.slot_gary == 3)
+                {
+                  picked.isempty_char3 = false;  
+                }
             }
             else if (clicked.characterClicked != "Gary" && isGary == false)
             {
@@ -85,6 +131,19 @@ public class SelectCharacter : MonoBehaviour
             {
                 characters[3].SetActive(true);
                 characters[3].transform.position = currentCard;
+                picked.slot_malachi = picked.slot;
+                if (picked.slot_malachi == 1)
+                {
+                 picked.isempty_char1 = false;
+                }
+                else if (picked.slot_malachi == 2)
+                {
+                  picked.isempty_char2 = false;  
+                }
+                else if (picked.slot_malachi == 3)
+                {
+                  picked.isempty_char3 = false;  
+                }
             }
             else if (clicked.characterClicked != "Malachi" && isMalachi == false)
             {
@@ -95,6 +154,19 @@ public class SelectCharacter : MonoBehaviour
             {
                 characters[4].SetActive(true);
                 characters[4].transform.position = currentCard;
+                picked.slot_mari = picked.slot;
+                if (picked.slot_mari == 1)
+                {
+                 picked.isempty_char1 = false;
+                }
+                else if (picked.slot_mari == 2)
+                {
+                  picked.isempty_char2 = false;  
+                }
+                else if (picked.slot_mari == 3)
+                {
+                  picked.isempty_char3 = false;  
+                }
             }
             else if (clicked.characterClicked != "Mari" && isMari == false)
             {
@@ -105,6 +177,19 @@ public class SelectCharacter : MonoBehaviour
             {
                 characters[5].SetActive(true);
                 characters[5].transform.position = currentCard;
+                 picked.slot_oscar = picked.slot;
+                if (picked.slot_oscar == 1)
+                {
+                 picked.isempty_char1 = false;
+                }
+                else if (picked.slot_oscar == 2)
+                {
+                  picked.isempty_char2 = false;  
+                }
+                else if (picked.slot_oscar == 3)
+                {
+                  picked.isempty_char3 = false;  
+                }
             }
             else if (clicked.characterClicked != "Oscar" && isOscar == false)
             {
@@ -115,6 +200,19 @@ public class SelectCharacter : MonoBehaviour
             {
                 characters[6].SetActive(true);
                 characters[6].transform.position = currentCard;
+                 picked.slot_pam = picked.slot;
+                if (picked.slot_pam == 1)
+                {
+                 picked.isempty_char1 = false;
+                }
+                else if (picked.slot_pam == 2)
+                {
+                  picked.isempty_char2 = false;  
+                }
+                else if (picked.slot_pam == 3)
+                {
+                  picked.isempty_char3 = false;  
+                }
             }
             else if (clicked.characterClicked != "Pam" && isPam == false)
             {
