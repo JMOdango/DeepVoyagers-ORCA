@@ -8,6 +8,19 @@ public enum GameState
     wait,
     move
 }
+
+public enum Tileclass { 
+    Breakable,
+    Blank,
+    Normal
+}
+
+[System.Serializable]
+public class tileType {
+    public int x;
+    public int y;
+    public Tileclass tileClass;
+}
 public class Board : MonoBehaviour
 {
     
@@ -16,7 +29,7 @@ public class Board : MonoBehaviour
     public int height;
     public int offSet;
     public GameObject tilePrefab;
-    private BackgroundTile[,] allTiles;
+    private bool[,] blankSpaces;
     public GameObject[] dots;
     public GameObject destroyEffect;
     public GameObject[,] allDots;
@@ -40,6 +53,8 @@ public class Board : MonoBehaviour
     public int trashDestroyed;
     public string whatTrash;
 
+    public tileType[] boardLayout;
+
    
     // Start is called before the first frame update
     void Start()
@@ -51,67 +66,94 @@ public class Board : MonoBehaviour
         moves.text = MovesLeft.Moves.ToString();
         numberToCollect.text = MovesLeft.TrashCollected.ToString();
         findAllMatches = FindObjectOfType<FindMatches>();
-        allTiles = new BackgroundTile[width, height];
+        blankSpaces = new bool[width, height];
         allDots = new GameObject[width, height];
         SetUp();
 
     }
 
- 
+
+    public void generateBlank() {
+        for (int i = 0; i < boardLayout.Length; i++)
+        {
+            if (boardLayout[i].tileClass == Tileclass.Blank ) {
+                blankSpaces[boardLayout[i].x, boardLayout[i].y] = true;
+            }
+        }
+    
+    }
     private void SetUp() {
+        generateBlank();
         for (i = 0; i < width; i++)
         {
-            for ( j = 0; j < height; j++)
+            for (j = 0; j < height; j++)
             {
-                Vector2 tempPosition = new Vector2(i, j);
-                GameObject backgroundTile = Instantiate(tilePrefab, new Vector3(i ,j ), Quaternion.identity) as GameObject;
-                backgroundTile.transform.parent = this.transform;
-                backgroundTile.name = "( " + i + "," + j + ")";
-                int dotToUse = Random.Range(0, dots.Length);
-
-                int maxIterations = 0;
-                while(MatchesAt(i, j, dots[dotToUse]) && maxIterations < 100)
+                if (!blankSpaces[i, j])
                 {
-                    dotToUse = Random.Range(0, dots.Length);
-                    maxIterations++;
+                    Vector2 tempPosition = new Vector2(i, j);
+                    GameObject backgroundTile = Instantiate(tilePrefab, new Vector3(i, j), Quaternion.identity) as GameObject;
+                    backgroundTile.transform.parent = this.transform;
+                    backgroundTile.name = "( " + i + "," + j + ")";
+                    int dotToUse = Random.Range(0, dots.Length);
+
+                    int maxIterations = 0;
+                    while (MatchesAt(i, j, dots[dotToUse]) && maxIterations < 100)  
+                    {
+                        dotToUse = Random.Range(0, dots.Length);
+                        maxIterations++;
+                    }
+                    maxIterations = 0;
+                    GameObject dot = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
+                    dot.GetComponent<DotController>().row = j;
+                    dot.GetComponent<DotController>().column = i;
+                    dot.transform.parent = this.transform;
+                    dot.name = "( " + i + "," + j + ")";
+                    allDots[i, j] = dot;
                 }
-                maxIterations = 0;
-                GameObject dot = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
-                dot.GetComponent<DotController>().row = j;
-                dot.GetComponent<DotController>().column = i;
-                dot.transform.parent = this.transform;
-                dot.name = "( " + i + "," + j + ")";
-                allDots[i, j] = dot;
-            } 
+            }
         }
     }
 
     private bool MatchesAt(int column, int row, GameObject piece)
     {
         if (column > 1 && row > 1) {
-            if (allDots[column - 1, row].tag == piece.tag && allDots[column-2, row].tag == piece.tag)
+            if (allDots[column - 1, row] != null && allDots[column - 2, row] != null)
             {
-                return true;
+                if (allDots[column - 1, row].tag == piece.tag && allDots[column - 2, row].tag == piece.tag)
+                {
+                    return true;
+                }
             }
-            if (allDots[column, row - 1].tag == piece.tag && allDots[column, row - 2].tag == piece.tag)
-            {
-                return true;
-            }
-        }else if (column <= 1 || row <= 1)
-        {
-            if (row > 1)
+
+            if (allDots[column, row - 1] != null && allDots[column, row - 2] != null)
             {
                 if (allDots[column, row - 1].tag == piece.tag && allDots[column, row - 2].tag == piece.tag)
                 {
                     return true;
                 }
             }
+            
+        }else if (column <= 1 || row <= 1)
+        {
+            if (row > 1)
+            {
+                if (allDots[column, row - 1] != null && allDots[column, row - 2] != null) {
+                    if (allDots[column, row - 1].tag == piece.tag && allDots[column, row - 2].tag == piece.tag)
+                    {
+                        return true;
+                    }
+                }
+               
+            }
             if (column > 1)
             {
-                if (allDots[column - 1, row].tag == piece.tag && allDots[column - 2, row].tag == piece.tag)
-                {
-                    return true;
+                if (allDots[column - 1, row] != null && allDots[column - 2, row] != null) {
+                    if (allDots[column - 1, row].tag == piece.tag && allDots[column - 2, row].tag == piece.tag)
+                    {
+                        return true;
+                    }
                 }
+                    
             }
         }
         

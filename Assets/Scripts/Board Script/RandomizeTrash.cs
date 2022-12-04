@@ -9,7 +9,7 @@ public class RandomizeTrash : MonoBehaviour
     public string whatToCollect;
     void Start()
     {
-        spawnTrash();
+        //spawnTrash();
         Debug.Log(whatToCollect);
     }
     public void spawnTrash() {
