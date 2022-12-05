@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/AreaSelection.unity
     guid: 1f99dfaf6f3e57f45925eae99fb34e7a
   - enabled: 1
-    path: Assets/Scenes/OrcaGame.unity
+    path: Assets/Scenes/Levels/Level1.unity
     guid: e2e549d62b628c1408ce590c52a8f2d5
   - enabled: 1
     path: Assets/Scenes/RecyclingStation/SelectRequest.unity
