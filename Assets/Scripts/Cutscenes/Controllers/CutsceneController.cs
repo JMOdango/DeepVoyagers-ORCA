@@ -13,6 +13,7 @@ public class CutsceneController : MonoBehaviour
     public ChooseController chooseController;
     public AudioController audioController;
     private State state = State.IDLE;
+    public string Level;
 
     private enum State
     {
@@ -61,12 +62,12 @@ public class CutsceneController : MonoBehaviour
 
     public void enterLevel(){
         if((currentScene as StoryScene).nextScene == null){
-            SceneManager.LoadScene("OrcaGame");
+            SceneManager.LoadScene(Level);
         }
     }
 
     public void skipCutscene(){
-        SceneManager.LoadScene("OrcaGame");
+        SceneManager.LoadScene(Level);
     }
 
     public void PlayScene(GameScene scene)

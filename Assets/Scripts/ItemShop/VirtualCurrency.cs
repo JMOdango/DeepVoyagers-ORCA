@@ -14,6 +14,9 @@ public class VirtualCurrency : MonoBehaviour
     void Start(){
         GetVirtualCurrencies();
     }
+    private void Awake(){
+        VC = this;
+    }
     
     public void GetVirtualCurrencies(){
         PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(), OnGetUserInventorySuccess, error => Debug.LogError(error.GenerateErrorReport()));
