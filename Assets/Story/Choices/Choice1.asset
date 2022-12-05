@@ -15,5 +15,9 @@ MonoBehaviour:
   labels:
   - text: I'm busy
     nextScene: {fileID: 11400000, guid: 57c9c2d0da524c84bb8c84a82bb05db0, type: 2}
+    character: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+    liked: 0
   - text: Sure thing.
     nextScene: {fileID: 11400000, guid: 29c59ea796e7f1f4a9e576ac2da0d7bb, type: 2}
+    character: {fileID: 11400000, guid: 9128ff89124e80b44954639d95916cc1, type: 2}
+    liked: 1

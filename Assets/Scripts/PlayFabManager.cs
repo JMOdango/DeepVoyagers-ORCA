@@ -9,10 +9,35 @@ using UnityEngine.SceneManagement;
 
 public class PlayFabManager : MonoBehaviour
 {
+    //SignIn/SignUp
+    public static PlayFabManager PFM;
+    VirtualCurrency virtualCurrency;
     [SerializeField] GameObject signUpTab, logInTab, startPanel, HUD;
     public TextMeshProUGUI username, userEmail, userPassword, userConfirmPass, userEmailLogin, userPasswordLogin, errorSignUp, errorLogin;
     string encryptedPassword;
     public int loading = 1;
+
+    void OnEnable() {
+        if(PlayFabManager.PFM == null)
+        {
+            PlayFabManager.PFM = this;
+        }
+        else
+        {
+            if(PlayFabManager.PFM != this){
+                Destroy(this.gameObject);
+            }
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void Start(){
+         if (string.IsNullOrEmpty(PlayFabSettings.TitleId))
+        {
+            PlayFabSettings.TitleId = "D546A";
+        }
+    }
+
 
     public void SwitchToSignUpTab(){
         signUpTab.SetActive(true);
@@ -79,6 +104,8 @@ public class PlayFabManager : MonoBehaviour
         errorSignUp.text = "";
         errorLogin.text = "";
         StartGame();
+        //virtualCurrency.GetVirtualCurrencies();
+        GetItemPrices();
     }
 
     public void LoginFailure(PlayFabError error){
@@ -104,4 +131,65 @@ public class PlayFabManager : MonoBehaviour
     void PasswordResetFailure(PlayFabError error){
         errorLogin.text = "There is an error with your request";
     }
+
+    public void OnError(PlayFabError error){
+        Debug.Log("Error: " + error.ErrorMessage);
+    }
+
+    //PlayerStats
+
+    public int playerLevel;
+
+    public void SetStats()
+    {
+        PlayFabClientAPI.UpdatePlayerStatistics( new UpdatePlayerStatisticsRequest {
+            // request.Statistics is a list, so multiple StatisticUpdate objects can be defined if required.
+            Statistics = new List<StatisticUpdate> {
+                new StatisticUpdate { StatisticName = "PlayerLevel", Value = playerLevel },
+            }
+        },
+        result => { Debug.Log("User statistics updated"); },
+        error => { Debug.LogError(error.GenerateErrorReport()); });
+    }
+
+    void GetStats()
+    {
+        PlayFabClientAPI.GetPlayerStatistics(
+            new GetPlayerStatisticsRequest(),
+            OnGetStats,
+            error => Debug.LogError(error.GenerateErrorReport())
+        );
+    }
+
+    void OnGetStats(GetPlayerStatisticsResult result)
+    {
+        Debug.Log("Received the following Statistics:");
+        foreach (var eachStat in result.Statistics){
+            Debug.Log("Statistic (" + eachStat.StatisticName + "): " + eachStat.Value);
+            switch(eachStat.StatisticName)
+            {
+                case "PlayerLevel":
+                    playerLevel = eachStat.Value;
+                    break;
+            }
+        }
+        
+    }
+
+    //Item Shop
+    public void GetItemPrices()
+    {
+        GetCatalogItemsRequest request = new GetCatalogItemsRequest();
+        request.CatalogVersion = "Items";
+        PlayFabClientAPI.GetCatalogItems(request, result => {
+            List<CatalogItem> items = result.Catalog;
+            foreach(CatalogItem i in items){
+               uint cost = i.VirtualCurrencyPrices["SH"];
+               Debug.Log(cost);
+            }
+        }, error => {
+
+        });
+    }
+
 }
