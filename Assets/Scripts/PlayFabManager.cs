@@ -105,6 +105,7 @@ public class PlayFabManager : MonoBehaviour
         errorLogin.text = "";
         StartGame();
         //virtualCurrency.GetVirtualCurrencies();
+        GetItemPrices();
     }
 
     public void LoginFailure(PlayFabError error){
@@ -174,4 +175,21 @@ public class PlayFabManager : MonoBehaviour
         }
         
     }
+
+    //Item Shop
+    public void GetItemPrices()
+    {
+        GetCatalogItemsRequest request = new GetCatalogItemsRequest();
+        request.CatalogVersion = "Items";
+        PlayFabClientAPI.GetCatalogItems(request, result => {
+            List<CatalogItem> items = result.Catalog;
+            foreach(CatalogItem i in items){
+               uint cost = i.VirtualCurrencyPrices["SH"];
+               Debug.Log(cost);
+            }
+        }, error => {
+
+        });
+    }
+
 }
