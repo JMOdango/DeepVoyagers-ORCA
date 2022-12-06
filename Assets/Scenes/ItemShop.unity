@@ -660,7 +660,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Grants 5 stamina
+  m_text: Grants 100 stamina
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f91b5bff4262394fa7dc2fde87e22ba, type: 2}
   m_sharedMaterial: {fileID: 870006119753134404, guid: 5f91b5bff4262394fa7dc2fde87e22ba, type: 2}
@@ -4153,6 +4153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 150
 --- !u!1 &398858707
 GameObject:
@@ -5117,6 +5118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &509654586
 GameObject:
@@ -5347,6 +5349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &521825684
 GameObject:
@@ -5710,6 +5713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &551365250
 GameObject:
@@ -8575,6 +8579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &896406426
 GameObject:
@@ -10188,6 +10193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &1044745272
 GameObject:
@@ -10703,6 +10709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &1109515157
 GameObject:
@@ -11765,7 +11772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Grants 3 stamina
+  m_text: Grants 20 stamina
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f91b5bff4262394fa7dc2fde87e22ba, type: 2}
   m_sharedMaterial: {fileID: 870006119753134404, guid: 5f91b5bff4262394fa7dc2fde87e22ba, type: 2}
@@ -14288,6 +14295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 450
 --- !u!1 &1439773420
 GameObject:
@@ -15745,6 +15753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &1500457314
 GameObject:
@@ -16232,6 +16241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &1567289173
 GameObject:
@@ -16751,6 +16761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &1624968658
 GameObject:
@@ -17937,6 +17948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &1740238015
 GameObject:
@@ -18302,6 +18314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &1769622257
 GameObject:
@@ -18802,6 +18815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 180
 --- !u!1 &1820170217
 GameObject:
@@ -20425,7 +20439,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Grants 5 stamina
+  m_text: Grants 40 stamina
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f91b5bff4262394fa7dc2fde87e22ba, type: 2}
   m_sharedMaterial: {fileID: 870006119753134404, guid: 5f91b5bff4262394fa7dc2fde87e22ba, type: 2}
@@ -20596,6 +20610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &1942848282
 GameObject:
@@ -20826,6 +20841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &1972633458
 GameObject:
@@ -21900,6 +21916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &2076978740
 GameObject:
@@ -22130,6 +22147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 100
 --- !u!1 &2108973515
 GameObject:
@@ -22225,6 +22243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
   itemPrice: 90
 --- !u!1 &2117710877
 GameObject:

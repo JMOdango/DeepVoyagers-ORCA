@@ -9,7 +9,7 @@ public class VirtualCurrency : MonoBehaviour
 {
     public static VirtualCurrency VC;
     PlayFabManager playFab;
-    public TextMeshProUGUI coinsValueText, shellsValueText;
+    public TextMeshProUGUI coinsValueText, shellsValueText, energyValueText;
 
     void Start(){
         GetVirtualCurrencies();
@@ -28,6 +28,9 @@ public class VirtualCurrency : MonoBehaviour
 
         int shells = result.VirtualCurrency["SH"];
         shellsValueText.text = shells.ToString();
+
+        int energy = result.VirtualCurrency["EN"];
+        energyValueText.text = energy.ToString();
     }
 
     void currencyError(PlayFabError error){
