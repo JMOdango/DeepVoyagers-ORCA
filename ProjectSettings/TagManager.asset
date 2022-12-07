@@ -17,6 +17,11 @@ TagManager:
   - Pam
   - Diane
   - CharacterCanvas
+  - Fertilizer
+  - BirdFeeder
+  - ClotheBag
+  - PenHolder
+  - PlasticPot
   layers:
   - Default
   - TransparentFX
