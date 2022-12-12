@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class Quest : MonoBehaviour
 {
@@ -22,13 +22,35 @@ public class Quest : MonoBehaviour
   public Project goal1_project;
   public Project goal2_project;
 
+  public int goal1_requiredAmount=2; //can be randomized
+  public int goal1_currentAmount;
+  
+
+  public int goal2_requiredAmount=2; //can be randomized
+  public int goal2_currentAmount;
+
+  public Text required1;
+  public Text required2;
+  
+  public Timer timer;
+
+  public GameObject submit_off;
+  public GameObject submit_on;
+
+  public TempPlayerInventory player;
+
   void Start()
   {
+    
+    required1.text = goal1_requiredAmount.ToString();
+    required2.text = goal2_requiredAmount.ToString();
     spawnGoal1();
     spawnGoal2();
 
     CheckGoal1();
     CheckGoal2();
+
+    GoalChecking();
   }
 
   public void Complete()
@@ -42,6 +64,21 @@ public class Quest : MonoBehaviour
   public GameObject[] randomGoal1Project;
   public Transform Goal1_Point;
   public string goal1_whatToMake;
+
+   public void hideall()
+   {
+    randomGoal1Project[0].SetActive(false);
+    randomGoal1Project[1].SetActive(false);
+    randomGoal1Project[2].SetActive(false);
+    randomGoal1Project[3].SetActive(false);
+    randomGoal1Project[4].SetActive(false);
+
+    randomGoal2Project[0].SetActive(false);
+    randomGoal2Project[1].SetActive(false);
+    randomGoal2Project[2].SetActive(false);
+    randomGoal2Project[3].SetActive(false);
+    randomGoal2Project[4].SetActive(false);
+   }
 
    public void spawnGoal1() {
         int goal1_projectToMake = Random.Range(0, randomGoal1Project.Length);
@@ -71,7 +108,7 @@ public class Quest : MonoBehaviour
                 break;
 
         }
-
+         
         randomGoal1Project[goal1_projectToMake].SetActive(true);
     }
 
@@ -109,17 +146,11 @@ public class Quest : MonoBehaviour
                 break;
 
         }
-
+        
         randomGoal2Project[goal2_projectToMake].SetActive(true);
     }
 
-    public int goal1_requiredAmount=2; //can be randomized
-    public int goal1_currentAmount;
-
-    public int goal2_requiredAmount=2; //can be randomized
-    public int goal2_currentAmount;
-
-    public TempPlayerInventory player;
+    
 
     
 
@@ -135,7 +166,7 @@ public class Quest : MonoBehaviour
         goal1_currentAmount = player.BirdFeeder;
       }
 
-      if (goal1_project == Project.PenHolder)
+      if (goal1_project == Project.ClotheBag)
       {
         goal1_currentAmount = player.ClotheBag;
       }
@@ -163,7 +194,7 @@ public class Quest : MonoBehaviour
         goal2_currentAmount = player.BirdFeeder;
       }
 
-      if (goal2_project == Project.PenHolder)
+      if (goal2_project == Project.ClotheBag)
       {
         goal2_currentAmount = player.ClotheBag;
       }
@@ -189,6 +220,16 @@ public class Quest : MonoBehaviour
       return (goal2_currentAmount >= goal2_requiredAmount);
     }
 
+    public void GoalChecking()
+    {
+      if (Goal1IsReached() && Goal2IsReached())
+        {
+          
+          submit_off.SetActive(false);
+          submit_on.SetActive(true);
+        }
+    }
+
     public GameObject questdonebutton;
 
     public void SubmitProjects() ///needs to reference inventory
@@ -203,6 +244,9 @@ public class Quest : MonoBehaviour
           Complete();
           ////add buttons changing here
           questdonebutton.SetActive(true);
+          timer.TimeLeft = 5; //restart time here
+          submit_off.SetActive(true);
+          submit_on.SetActive(false);
         }
 
 
