@@ -42,7 +42,7 @@ public class Quest : MonoBehaviour
   public GameObject submit_off;
   public GameObject submit_on;
 
-  public TempPlayerInventory player;
+  public TempPlayerInventory player; //connect each quest to the actual inventory code. prolly more convenient to use the subname 'player'
 
   public GameObject[] randomGoal1Project;
   public Transform Goal1_Point;
