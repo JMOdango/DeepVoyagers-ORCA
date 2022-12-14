@@ -55,6 +55,9 @@ public class Quest2 : MonoBehaviour
     CheckGoal1();
     CheckGoal2();
 
+    Goal1IsReached();
+    Goal2IsReached();
+
     GoalChecking();
   }
 
@@ -202,7 +205,35 @@ public class Quest2 : MonoBehaviour
 
         }
        
-         randomGoal2Project[goal2_projectToMake].SetActive(true);
+         if (goal2_whatToMake == "Fertilizer")
+      {
+       hidegoal2();
+       randomGoal2Project[0].SetActive(true);
+      }
+
+      if (goal2_whatToMake == "BirdFeeder")
+      {
+        hidegoal2();
+        randomGoal2Project[1].SetActive(true);
+      }
+
+      if (goal2_whatToMake == "ClotheBag")
+      {
+        hidegoal2();
+        randomGoal2Project[2].SetActive(true);
+      }
+
+      if (goal2_whatToMake == "PenHolder")
+      {
+        hidegoal2();
+        randomGoal2Project[3].SetActive(true);
+      }
+
+      if (goal2_whatToMake == "PlasticPot")
+      {
+        hidegoal2();
+        randomGoal2Project[4].SetActive(true);
+      }
        
     }
 
@@ -284,6 +315,12 @@ public class Quest2 : MonoBehaviour
           submit_off.SetActive(false);
           submit_on.SetActive(true);
         }
+        else
+      {
+        
+        submit_on.SetActive(false);
+        submit_off.SetActive(true);
+      }
     }
 
     public GameObject questdonebutton;

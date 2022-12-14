@@ -42,6 +42,24 @@ public class RealTimeCounter : MonoBehaviour
         timer -= TimeMaster.instance.CheckDate();
         timer1 -= TimeMaster.instance.CheckDate();
         timer2 -= TimeMaster.instance.CheckDate();
+
+        quest.CheckGoal1();
+        quest.CheckGoal2();
+        quest.Goal1IsReached();
+        quest.Goal2IsReached();
+        quest.GoalChecking();
+
+        quest1.CheckGoal1();
+        quest1.CheckGoal2();
+        quest1.Goal1IsReached();
+        quest1.Goal2IsReached();
+        quest1.GoalChecking();
+
+        quest2.CheckGoal1();
+        quest2.CheckGoal2();
+        quest2.Goal1IsReached();
+        quest2.Goal2IsReached();
+        quest2.GoalChecking();
      
     }
 
@@ -52,6 +70,24 @@ public class RealTimeCounter : MonoBehaviour
         
 
         //  timer -= Time.deltaTime;
+        quest.CheckGoal1();
+        quest.CheckGoal2();
+        quest.Goal1IsReached();
+        quest.Goal2IsReached();
+        quest.GoalChecking();
+
+        quest1.CheckGoal1();
+        quest1.CheckGoal2();
+        quest1.Goal1IsReached();
+        quest1.Goal2IsReached();
+        quest1.GoalChecking();
+
+        quest2.CheckGoal1();
+        quest2.CheckGoal2();
+        quest2.Goal1IsReached();
+        quest2.Goal2IsReached();
+        quest2.GoalChecking();
+
 
         if (quest.isCompleted)
         {
@@ -68,9 +104,9 @@ public class RealTimeCounter : MonoBehaviour
                 quest.hideall();
                 quest.spawnGoal1();
                 quest.spawnGoal2();
-                quest.CheckGoal1();
-                quest.CheckGoal2();
-                quest.GoalChecking();
+                // quest.CheckGoal1();
+                // quest.CheckGoal2();
+               
                 timer = 0;
                 timeron= false;
                 quest.isCompleted = false;
@@ -95,9 +131,9 @@ public class RealTimeCounter : MonoBehaviour
                 quest1.hideall();
                 quest1.spawnGoal1();
                 quest1.spawnGoal2();
-                quest1.CheckGoal1();
-                quest1.CheckGoal2();
-                quest1.GoalChecking();
+                // quest1.CheckGoal1();
+                // quest1.CheckGoal2();
+                
                 timer1 = 0;
                 timeron1= false;
                 quest1.isCompleted = false;
@@ -122,9 +158,9 @@ public class RealTimeCounter : MonoBehaviour
                 quest2.hideall();
                 quest2.spawnGoal1();
                 quest2.spawnGoal2();
-                quest2.CheckGoal1();
-                quest2.CheckGoal2();
-                quest2.GoalChecking();
+                // quest2.CheckGoal1();
+                // quest2.CheckGoal2();
+                
                 timer2 = 0;
                 timeron2= false;
                 quest2.isCompleted = false;

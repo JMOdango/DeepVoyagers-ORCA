@@ -65,6 +65,9 @@ public class Quest : MonoBehaviour
     CheckGoal1();
     CheckGoal2();
 
+    Goal1IsReached();
+    Goal2IsReached();
+
     GoalChecking();
   }
 
@@ -400,6 +403,12 @@ public class Quest : MonoBehaviour
           submit_off.SetActive(false);
           submit_on.SetActive(true);
         }
+      else
+      {
+        
+        submit_on.SetActive(false);
+        submit_off.SetActive(true);
+      }
     }
 
     public GameObject questdonebutton;
