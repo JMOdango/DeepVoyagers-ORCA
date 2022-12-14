@@ -4194,7 +4194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00:00
+  m_Text: '00 : 00'
 --- !u!222 &871496838
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7798,6 +7798,10 @@ MonoBehaviour:
   player: {fileID: 1631665486}
   submit_off: {fileID: 1991799035}
   submit_on: {fileID: 1855721046}
+  submit_off1: {fileID: 1443563291}
+  submit_on1: {fileID: 903683955}
+  submit_off2: {fileID: 1613557089}
+  submit_on2: {fileID: 494104340}
 --- !u!114 &1750657734
 MonoBehaviour:
   m_ObjectHideFlags: 0

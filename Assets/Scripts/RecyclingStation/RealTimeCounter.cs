@@ -68,7 +68,9 @@ public class RealTimeCounter : MonoBehaviour
                 quest.hideall();
                 quest.spawnGoal1();
                 quest.spawnGoal2();
-                GoalChecking();
+                quest.CheckGoal1();
+                quest.CheckGoal2();
+                quest.GoalChecking();
                 timer = 0;
                 timeron= false;
                 quest.isCompleted = false;
@@ -93,7 +95,9 @@ public class RealTimeCounter : MonoBehaviour
                 quest1.hideall();
                 quest1.spawnGoal1();
                 quest1.spawnGoal2();
-                GoalChecking1();
+                quest1.CheckGoal1();
+                quest1.CheckGoal2();
+                quest1.GoalChecking();
                 timer1 = 0;
                 timeron1= false;
                 quest1.isCompleted = false;
@@ -118,7 +122,9 @@ public class RealTimeCounter : MonoBehaviour
                 quest2.hideall();
                 quest2.spawnGoal1();
                 quest2.spawnGoal2();
-                GoalChecking2();
+                quest2.CheckGoal1();
+                quest2.CheckGoal2();
+                quest2.GoalChecking();
                 timer2 = 0;
                 timeron2= false;
                 quest2.isCompleted = false;
