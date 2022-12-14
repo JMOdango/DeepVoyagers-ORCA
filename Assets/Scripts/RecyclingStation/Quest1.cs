@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Quest : MonoBehaviour
+public class Quest1 : MonoBehaviour
 {
   public bool isCompleted = false;
   
@@ -32,8 +32,9 @@ public class Quest : MonoBehaviour
   public Text required1;
   public Text required2;
   
-  // public Timer timer;
-
+  
+  // public Timer1 timer1;
+  
   public TimeMaster timemaster;
   public RealTimeCounter realcounter;
 
@@ -246,16 +247,15 @@ public class Quest : MonoBehaviour
           player.player_shells += shellReward;
           Complete();
           timemaster.SaveDate();
+          realcounter.ResetClock();
           
-         
           ////add buttons changing here
           questdonebutton.SetActive(true);
-           //restart time here
+          // timer1.TimeLeft = 5; //restart time here
           submit_off.SetActive(true);
           submit_on.SetActive(false);
           
-          realcounter.timeron = true;
-          realcounter.ResetClock();
+          
         }
 
 
