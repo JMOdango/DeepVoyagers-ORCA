@@ -246,13 +246,14 @@ public class Quest2 : MonoBehaviour
           player.player_shells += shellReward;
           Complete();
           timemaster.SaveDate();
-          realcounter.ResetClock();
+         
           ////add buttons changing here
           questdonebutton.SetActive(true);
           // timer2.TimeLeft = 5; //restart time here
           submit_off.SetActive(true);
           submit_on.SetActive(false);
-          
+          realcounter.timeron2 = true;
+          realcounter.ResetClock2();
           
         }
 
