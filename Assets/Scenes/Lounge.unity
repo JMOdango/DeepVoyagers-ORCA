@@ -541,7 +541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &37651591
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1225,6 +1225,7 @@ GameObject:
   - component: {fileID: 83109831}
   - component: {fileID: 83109830}
   - component: {fileID: 83109832}
+  - component: {fileID: 83109833}
   m_Layer: 0
   m_Name: SelectController
   m_TagString: Untagged
@@ -1308,6 +1309,8 @@ MonoBehaviour:
   character: 1
   item: {fileID: 83109832}
   notifanim: {fileID: 2058447313}
+  notif: {fileID: 2058447314}
+  bondpoints: {fileID: 83109833}
 --- !u!4 &83109831
 Transform:
   m_ObjectHideFlags: 0
@@ -1356,6 +1359,19 @@ MonoBehaviour:
   crystals: {fileID: 1291544972}
   toyfigure: {fileID: 1656501561}
   chosengift: 
+--- !u!114 &83109833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83109829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9332f1059c27f1d43bc763358385f073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  garybondpoints: 0
 --- !u!1 &136028411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,6 +1892,8 @@ MonoBehaviour:
   character: 1
   item: {fileID: 0}
   notifanim: {fileID: 0}
+  notif: {fileID: 0}
+  bondpoints: {fileID: 0}
 --- !u!1 &169916630
 GameObject:
   m_ObjectHideFlags: 0
@@ -4866,7 +4884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &596278173
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5434,7 +5452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &673406330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5698,7 +5716,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 682356383}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109830}
+        m_TargetAssemblyTypeName: SelectLoungeChara, Assembly-CSharp
+        m_MethodName: GiveGift
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &682356383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6082,7 +6112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &768886460
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6576,7 +6606,7 @@ GameObject:
   - component: {fileID: 832476490}
   - component: {fileID: 832476489}
   m_Layer: 5
-  m_Name: use
+  m_Name: gift
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6646,7 +6676,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 832476490}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109830}
+        m_TargetAssemblyTypeName: SelectLoungeChara, Assembly-CSharp
+        m_MethodName: GiveGift
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &832476490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7483,7 +7525,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 940463986}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109830}
+        m_TargetAssemblyTypeName: SelectLoungeChara, Assembly-CSharp
+        m_MethodName: GiveGift
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &940463986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9981,7 +10035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1139538167
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10991,7 +11045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1255358525
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11928,7 +11982,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1321366602}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109830}
+        m_TargetAssemblyTypeName: SelectLoungeChara, Assembly-CSharp
+        m_MethodName: GiveGift
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1321366602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12119,7 +12185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1343798489
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12479,7 +12545,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1376743556}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109830}
+        m_TargetAssemblyTypeName: SelectLoungeChara, Assembly-CSharp
+        m_MethodName: GiveGift
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1376743556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12927,7 +13005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1421806967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13138,7 +13216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1449203509
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13862,7 +13940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1530455023
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14417,7 +14495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1603879112
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14615,7 +14693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1623623352
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15520,7 +15598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1679507477
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16062,7 +16140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1751652360
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17220,7 +17298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1799627594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19149,7 +19227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1938300274
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19719,7 +19797,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1991698911}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 83109830}
+        m_TargetAssemblyTypeName: SelectLoungeChara, Assembly-CSharp
+        m_MethodName: GiveGift
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1991698911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20208,7 +20298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2013239901
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20284,7 +20374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2014444423
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22108,7 +22198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2126635223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22225,7 +22315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: USE
+  m_text: GIFT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f91b5bff4262394fa7dc2fde87e22ba, type: 2}
   m_sharedMaterial: {fileID: 870006119753134404, guid: 5f91b5bff4262394fa7dc2fde87e22ba, type: 2}
