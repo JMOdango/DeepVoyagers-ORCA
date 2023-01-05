@@ -55,8 +55,6 @@ public class PamSkills : MonoBehaviour
             points = 0;
             TargetBar = 0;
         }
-
-
     }
 
 }
