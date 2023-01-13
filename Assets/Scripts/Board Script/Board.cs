@@ -47,10 +47,13 @@ public class Board : MonoBehaviour
     private int i;
     private int j;
     public int firstScore = 0;
-    int x;
-    
+    public int x;
+    public int numberOfTrashDestroyed;
+
+
     public bool destroyed = false;
     public bool getPoints = false;
+    public bool isDeadlocked = false;
     public int trashDestroyed;
     public string whatTrash;
 
@@ -203,13 +206,16 @@ public class Board : MonoBehaviour
         }
         if (destroyed)
         {
-            x =+ (trashDestroyed * 100);
+            x += (trashDestroyed * 100);
             givePoints.givePoints();
             ScoreBar.SetScore(x); 
             destroyed = false;
         }
         findAllMatches.currentMatches.Clear();
         StartCoroutine(DecreaseRowCo2());
+        numberOfTrashDestroyed += trashDestroyed;
+        trashDestroyed = 0;
+        x = 0;
     }
 
 
@@ -295,8 +301,9 @@ public class Board : MonoBehaviour
         currentDot = null;
         
 
-        if (isDeadLocked()) {
-            Debug.Log("Deadlocked"); 
+        if (DeadLocked()) {
+            isDeadlocked = true;
+            Debug.Log("DEADLOCKED!!");
         }
         yield return new WaitForSeconds(refillDelay);
         currentState = GameState.move;
@@ -387,7 +394,7 @@ public class Board : MonoBehaviour
         return false;
     }
 
-    private bool isDeadLocked() {
+    private bool DeadLocked() {
 
         for (int i = 0; i < width; i++)
         {

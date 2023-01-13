@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool GameOver = false;
     public bool Complete = false;
     public scoreBar score;
+    public Board board;
     private void Start()
     {
         gameOverCanvas.SetActive(false);
@@ -32,7 +33,10 @@ public class GameManager : MonoBehaviour
         if (score.slider.value >= score.slider.maxValue && moves.TrashCollected > 0) {
             gameOver();
         }
-      
+
+        if (board.isDeadlocked) {
+            gameOver();
+        }
     }
     public void gameOver()
     {
@@ -64,4 +68,5 @@ public class GameManager : MonoBehaviour
             completedLevel.SetActive(true);
             Complete = true;
     }
+
 }

@@ -111,8 +111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.511, y: 9.1297}
-  m_SizeDelta: {x: 263.01, y: 228.44}
+  m_AnchoredPosition: {x: 1.8439, y: -0.37766}
+  m_SizeDelta: {x: 287.72, y: 247.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8882174252783544712
 CanvasRenderer:
@@ -161,6 +161,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8882174253295742552}
+  - component: {fileID: 8084501914444442233}
+  - component: {fileID: -277831327853817418}
   m_Layer: 5
   m_Name: Malachi
   m_TagString: Malachi
@@ -190,3 +192,49 @@ RectTransform:
   m_AnchoredPosition: {x: 731, y: -145}
   m_SizeDelta: {x: 266.0985, y: 226.1714}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8084501914444442233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8882174253295742567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d07fb841b92861a4f844c1d57f28ba0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  malachiImage: {fileID: 8882174252783544727}
+  fillSpeed: 0.5
+  TargetBar: 0
+  ScoreBar: {fileID: 0}
+  pointGive: 250
+--- !u!114 &-277831327853817418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8882174253295742567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8084501914444442233}
+          m_TargetAssemblyTypeName: MalachiSkills, Assembly-CSharp
+          m_MethodName: giveScore
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
