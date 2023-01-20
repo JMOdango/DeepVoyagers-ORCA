@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PanelOpener : MonoBehaviour
 {
-    public GameObject Panel;
+    public GameObject Settings;
     public GameObject Inventory;
     public GameObject PowerUpsInventory;
     public GameObject GiftsInventory;
@@ -15,9 +15,9 @@ public class PanelOpener : MonoBehaviour
     
     public void OpenPanel()
     {
-        if(Panel != null){
-            bool isActive = Panel.activeSelf;
-            Panel.SetActive(!isActive);
+        if(Settings != null){
+            bool isActive = Settings.activeSelf;
+            Settings.SetActive(!isActive);
         }
     }
 

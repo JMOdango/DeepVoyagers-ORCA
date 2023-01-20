@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using PlayFab;
+using PlayFab.ClientModels;
 public class SceneSwitcher : MonoBehaviour
 {
+    InventoryManager inventory;
+    StoreAmount storeAmount;
+
     public void playGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -54,10 +59,6 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Area1_LevelSelection");
     }
-    public void ReturnToLogin()
-    {
-        SceneManager.LoadScene("Login");
-    }
 
     public void EnterLounge()
     {
@@ -68,6 +69,7 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("ItemShop");
         FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
+        StoreAmount.storeAmount.restartAmount();
     }
     public void EnterEditParty()
     {
@@ -83,5 +85,11 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("Journal");
         FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
+    }
+
+    public void Logout()
+    {
+        SceneManager.LoadScene("Login");
+        PlayFabClientAPI.ForgetAllCredentials();
     }
 }

@@ -7,13 +7,15 @@ using PlayFab.ClientModels;
 using TMPro;
 using UnityEngine.SceneManagement; 
 
+
 public class PlayFabManager : MonoBehaviour
 {
     //SignIn/SignUp
     public static PlayFabManager PFM;
     VirtualCurrency virtualCurrency;
+    InventoryManager inventory;
     [SerializeField] GameObject signUpTab, logInTab, startPanel, HUD;
-    public TextMeshProUGUI username, userEmail, userPassword, userConfirmPass, userEmailLogin, userPasswordLogin, errorSignUp, errorLogin;
+    [SerializeField] TextMeshProUGUI username, userEmail, userPassword, userConfirmPass, userEmailLogin, userPasswordLogin, errorSignUp, errorLogin;
     string encryptedPassword;
     public int loading = 1;
 
@@ -28,11 +30,14 @@ public class PlayFabManager : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void Awake(){
+
     }
 
     public void Start(){
-         if (string.IsNullOrEmpty(PlayFabSettings.TitleId))
+        if (string.IsNullOrEmpty(PlayFabSettings.TitleId))
         {
             PlayFabSettings.TitleId = "D546A";
         }
@@ -104,7 +109,7 @@ public class PlayFabManager : MonoBehaviour
         errorSignUp.text = "";
         errorLogin.text = "";
         StartGame();
-        //virtualCurrency.GetVirtualCurrencies();
+        // InventoryManager.inventory.GetInventory();
     }
 
     public void LoginFailure(PlayFabError error){
@@ -172,6 +177,5 @@ public class PlayFabManager : MonoBehaviour
                     break;
             }
         }
-        
     }
 }

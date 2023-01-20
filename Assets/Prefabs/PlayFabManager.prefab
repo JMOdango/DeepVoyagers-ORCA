@@ -56,6 +56,5 @@ MonoBehaviour:
   userPasswordLogin: {fileID: 0}
   errorSignUp: {fileID: 0}
   errorLogin: {fileID: 0}
-  coinsValueText: {fileID: 0}
-  shellsValueText: {fileID: 0}
   loading: 1
+  playerLevel: 0

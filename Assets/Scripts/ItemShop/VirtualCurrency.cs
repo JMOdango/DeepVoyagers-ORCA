@@ -9,13 +9,24 @@ public class VirtualCurrency : MonoBehaviour
 {
     public static VirtualCurrency VC;
     PlayFabManager playFab;
-    public TextMeshProUGUI coinsValueText, shellsValueText, energyValueText;
+    public TextMeshProUGUI coinsValueText, shellsValueText, energyValueText, energyRechargeTimeText;
+    float secondsLeftToRefreshEnergy = 1;
 
     void Start(){
         GetVirtualCurrencies();
     }
+    
     private void Awake(){
         VC = this;
+    }
+
+    private void Update(){
+        secondsLeftToRefreshEnergy -= Time.deltaTime;
+        System.TimeSpan time = System.TimeSpan.FromSeconds(secondsLeftToRefreshEnergy);
+        energyRechargeTimeText.text = time.ToString("mm' : 'ss");
+        if(secondsLeftToRefreshEnergy < 0){
+            GetVirtualCurrencies();
+        }
     }
     
     public void GetVirtualCurrencies(){
@@ -31,6 +42,7 @@ public class VirtualCurrency : MonoBehaviour
 
         int energy = result.VirtualCurrency["EN"];
         energyValueText.text = energy.ToString();
+        secondsLeftToRefreshEnergy = result.VirtualCurrencyRechargeTimes["EN"].SecondsToRecharge;
     }
 
     void currencyError(PlayFabError error){

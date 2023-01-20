@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7475278749829834926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7475278749829834924}
+  - component: {fileID: 7475278749829834925}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7475278749829834924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7475278749829834926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 649.2064, y: 618.8974, z: 14.022178}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7475278749829834925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7475278749829834926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca4a896cf0a0224783bb7f45a1df904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryManager:
+  - {fileID: 7475278749829834925}
+  smallenergytext: {fileID: 0}
+  mediumenergytext: {fileID: 0}
+  largeenergytext: {fileID: 0}
+  mysterysnacktext: {fileID: 0}
+  magnettext: {fileID: 0}
+  neptunestridenttext: {fileID: 0}
+  voidgemtext: {fileID: 0}
+  nettext: {fileID: 0}
+  fungitext: {fileID: 0}
+  pocketwatchtext: {fileID: 0}
+  mermaidsorbtext: {fileID: 0}
+  baskettext: {fileID: 0}
+  smallenergycount: 0
+  mediumenergycount: 0
+  largeenergycount: 0
+  mysterysnackcount: 0
+  magnetcount: 0
+  neptunestridentcount: 0
+  voidgemcount: 0
+  netcount: 0
+  fungicount: 0
+  pocketwatchcount: 0
+  mermaidsorbcount: 0
+  basketcount: 0

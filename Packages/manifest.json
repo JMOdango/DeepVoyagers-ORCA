@@ -1,4 +1,11 @@
 {
+    "scopedRegistries": [
+        {
+            "name": "Packages from jillejr",
+            "url": "https://npm.cloudsmith.io/jillejr/newtonsoft-json-for-unity/",
+            "scopes": [ "jillejr" ]
+        }
+    ],
   "dependencies": {
     "com.unity.collab-proxy": "1.15.18",
     "com.unity.entities": "0.51.0-preview.32",
