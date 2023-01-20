@@ -10,16 +10,20 @@ public class GivePointsToChar : MonoBehaviour
     private GarySkills gary;
     private MariSkills mari;
     private PamSkills pam;
+    private OscarSkills oscar;
+    private MalachiSkills malachi;
+    private DianeSkills diane;
 
     public bool isCoraline = false;
-    public bool isDiane = false;
     public bool isGary = false;
     public bool isPam = false;
     public bool isMari = false;
+    public bool isOscar = false;
+    public bool isDiane = false;
+    public bool isMalachi = false;
+
     private void Start()
     {
-      
-
         for (int i = 0; i < party.party.Length; i++) {
             if (party.party[i] == "Coraline") {
                 isCoraline = true;
@@ -40,6 +44,14 @@ public class GivePointsToChar : MonoBehaviour
             {
                 isMari = true;
             }
+            if (party.party[i] == "Oscar")
+            {
+                isOscar = true;
+            }
+            if (party.party[i] == "Malachi")
+            {
+                isMalachi = true;
+            }
         }
     }
 
@@ -50,7 +62,9 @@ public class GivePointsToChar : MonoBehaviour
         gary = FindObjectOfType<GarySkills>();
         mari = FindObjectOfType<MariSkills>();
         pam = FindObjectOfType<PamSkills>();
-        
+        oscar = FindObjectOfType<OscarSkills>();
+        malachi = FindObjectOfType<MalachiSkills>();
+        diane = FindObjectOfType<DianeSkills>();
     }
 
     public void givePoints() {
@@ -66,6 +80,18 @@ public class GivePointsToChar : MonoBehaviour
 
         if (isPam) {
             pam.GetPoints();
+        }
+        if (isOscar)
+        {
+            oscar.GetPoints();
+        }
+        if (isMalachi)
+        {
+            malachi.GetPoints();
+        }
+        if (isDiane)
+        {
+            diane.GetPoints();
         }
 
     }

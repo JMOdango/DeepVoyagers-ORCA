@@ -2,36 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class PamSkills : MonoBehaviour
+public class MalachiSkills : MonoBehaviour
 {
-
-    public FindMatches selectRandomPiece;
+  
 
     private Board board;
 
-    public Image pamImage;
+    public Image malachiImage;
     public float fillSpeed = 0.5f;
     public double TargetBar = 0;
     double points;
+
+    public scoreBar ScoreBar;
+    public int pointGive = 250;
     void Start()
     {
-        pamImage.fillAmount = 0;
+        malachiImage.fillAmount = 0;
         board = FindObjectOfType<Board>();
-        selectRandomPiece = FindObjectOfType<FindMatches>();
+        ScoreBar = FindObjectOfType<scoreBar>();
 
     }
 
     void Update()
     {
-        if (pamImage.fillAmount < TargetBar)
+        if (malachiImage.fillAmount < TargetBar)
         {
-            pamImage.fillAmount += fillSpeed * Time.deltaTime;
+            malachiImage.fillAmount += fillSpeed * Time.deltaTime;
         }
     }
 
     public void GetPoints()
     {
-        if (pamImage.fillAmount < 1)
+        if (malachiImage.fillAmount < 1)
         {
             points += Random.Range(0.04f, 0.08f);
             increaseBar(points);
@@ -43,18 +45,13 @@ public class PamSkills : MonoBehaviour
         TargetBar = score;
     }
 
-    public void destroyRandomTrash()
-    {
-        if (pamImage.fillAmount == 1)
+    public void giveScore() {
+        if (malachiImage.fillAmount == 1)
         {
-            int randomColumn = Random.Range(0, 8);
-            int randomRow = Random.Range(0, 6);
-            selectRandomPiece.randomTrashDestroy(randomColumn, randomRow);
-            board.DestroyMatches();
-            pamImage.fillAmount = 0;
+            ScoreBar.SetScore(pointGive);
+            malachiImage.fillAmount = 0;
             points = 0;
             TargetBar = 0;
         }
     }
-
 }

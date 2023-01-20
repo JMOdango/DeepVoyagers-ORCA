@@ -8,22 +8,6 @@ public class scoreBar : MonoBehaviour
     public int fillSpeed = 1;
     public int targetProgress = 0;
     float points;
-   
-    //private void Start()
-    //{
-    //    SetMaxScore(Random.Range(10000, 20000)); 
-    //}
-    //public void SetMaxScore(int score)
-    //{
-    //    slider.maxValue = score;
-    //}
-    //public void SetScore(float score)
-    //{
-    //    slider.value = score;
-    //}
-
-   
-
 
     private void Awake()
     {
@@ -49,7 +33,7 @@ public class scoreBar : MonoBehaviour
     }
     
     public void SetScore(int score) {
-        targetProgress =  score;
+        targetProgress +=  score;
     }
 
     public void SetStartValue(int score)

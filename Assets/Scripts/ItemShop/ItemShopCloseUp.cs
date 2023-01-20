@@ -27,6 +27,9 @@ public class ItemShopCloseUp : MonoBehaviour
     public GameObject crystals;
     public GameObject toyfigure;
 
+    //for storing which gift was chosen or used
+    public string chosengift;
+
     public void CloseCloseUp()
     {
         smallenergy.SetActive(false);
@@ -55,100 +58,126 @@ public class ItemShopCloseUp : MonoBehaviour
 
     public void OpenSmallEnergy()
     {
+        CloseCloseUp();
         smallenergy.SetActive(true);
     }
 
     public void OpenMediumEnergy()
     {
+        CloseCloseUp();
         mediumenergy.SetActive(true);
     }
 
     public void OpenLargeEnergy()
     {
+        CloseCloseUp();
         largeenergy.SetActive(true);
     }
 
     public void OpenMysterySnack()
     {
+        CloseCloseUp();
         mysterysnack.SetActive(true);
     }
 
     public void OpenMagnet()
     {
+        CloseCloseUp();
         magnet.SetActive(true);
     }
 
     public void OpenNeptunesTrident()
     {
+        CloseCloseUp();
         neptunestrident.SetActive(true);
     }
 
     public void OpenVoidGem()
     {
+        CloseCloseUp();
         voidgem.SetActive(true);
     }
 
     
     public void OpenPlasticFungi()
     {
+        CloseCloseUp();
         plasticeatingfungi.SetActive(true);
     }
 
     public void OpenPocketWatch()
     {
+        CloseCloseUp();
         pocketwatch.SetActive(true);
     }
 
     public void OpenMermaidsOrb()
     {
+        CloseCloseUp();
         mermaidsorb.SetActive(true);
     }
 
     public void OpenBasket()
     {
+        CloseCloseUp();
         basket.SetActive(true);
     }
 
     public void OpenNet()
     {
+        CloseCloseUp();
         net.SetActive(true);
     }
 
 
     //Gifts
 
-    public void OpenStufftoy()
+    public void OpenStufftoy() 
     {
+        CloseCloseUp();
+        chosengift = "stufftoy";
         stufftoy.SetActive(true);
     }
 
     public void OpenWaterproofCamera()
     {
+        CloseCloseUp();
+        chosengift = "waterproofcamera";
         waterproofcamera.SetActive(true);
     }
 
     public void OpenMap()
     {
+        CloseCloseUp();
+        chosengift = "map";
         map.SetActive(true);
     }
 
     public void OpenHistoryBook()
     {
+        CloseCloseUp();
+        chosengift = "historybook";
         historybook.SetActive(true);
     }
 
     public void OpenSeaweed()
     {
+        CloseCloseUp();
+        chosengift = "seaweed";
         seaweed.SetActive(true);
     }
 
     public void OpenCrystals()
     {
+        CloseCloseUp();
+        chosengift = "crystals";
         crystals.SetActive(true);
     }
 
     public void OpenToyfigure()
     {
+        CloseCloseUp();
+        chosengift = "toyfigure";
         toyfigure.SetActive(true);
     }
 }

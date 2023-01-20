@@ -2,36 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class PamSkills : MonoBehaviour
+using TMPro;
+public class DianeSkills : MonoBehaviour
 {
 
-    public FindMatches selectRandomPiece;
 
     private Board board;
 
-    public Image pamImage;
+    public Image dianeImage;
     public float fillSpeed = 0.5f;
     public double TargetBar = 0;
     double points;
+
+    public FindMatches selectRandomColumn;
+    public FindMatches selectRandomRow;
     void Start()
     {
-        pamImage.fillAmount = 0;
+        dianeImage.fillAmount = 0;
         board = FindObjectOfType<Board>();
-        selectRandomPiece = FindObjectOfType<FindMatches>();
+        selectRandomRow = FindObjectOfType<FindMatches>();
+        selectRandomColumn = FindObjectOfType<FindMatches>();
 
     }
 
     void Update()
     {
-        if (pamImage.fillAmount < TargetBar)
+        if (dianeImage.fillAmount < TargetBar)
         {
-            pamImage.fillAmount += fillSpeed * Time.deltaTime;
+            dianeImage.fillAmount += fillSpeed * Time.deltaTime;
         }
     }
 
     public void GetPoints()
     {
-        if (pamImage.fillAmount < 1)
+        if (dianeImage.fillAmount < 1)
         {
             points += Random.Range(0.04f, 0.08f);
             increaseBar(points);
@@ -43,18 +47,22 @@ public class PamSkills : MonoBehaviour
         TargetBar = score;
     }
 
-    public void destroyRandomTrash()
+
+    public void destroyRandomColumn()
     {
-        if (pamImage.fillAmount == 1)
+        if (dianeImage.fillAmount == 1)
         {
             int randomColumn = Random.Range(0, 8);
+            selectRandomColumn.randomDestroyColumn(randomColumn);
             int randomRow = Random.Range(0, 6);
-            selectRandomPiece.randomTrashDestroy(randomColumn, randomRow);
+            selectRandomRow.randomDestroyRow(randomRow);
             board.DestroyMatches();
-            pamImage.fillAmount = 0;
+            dianeImage.fillAmount = 0;
             points = 0;
             TargetBar = 0;
         }
+
+
     }
 
 }

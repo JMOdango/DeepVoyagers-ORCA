@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnCharacters : MonoBehaviour
 {
-    public List<GameObject> spawnChars = new List<GameObject>();
     Board board;
     public GameObject[] allChars;
     public GameObject canvas;
