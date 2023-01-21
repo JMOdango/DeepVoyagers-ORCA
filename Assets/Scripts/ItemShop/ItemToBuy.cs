@@ -84,7 +84,7 @@ public class ItemToBuy : MonoBehaviour
         }
     }
 
-     public void BuyGift(){
+    public void BuyGift(){
         var request = new SubtractUserVirtualCurrencyRequest{
             VirtualCurrency = "CN",
             Amount = itemPrice
@@ -93,7 +93,7 @@ public class ItemToBuy : MonoBehaviour
     }
 
     void OnSubtractCoinsSuccess(ModifyUserVirtualCurrencyResult result){
-        VirtualCurrency.VC.GetVirtualCurrencies();
+        VirtualCurrency.virtualCurrency.GetVirtualCurrencies();
     }
 
     void OnError(PlayFabError error){

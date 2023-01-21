@@ -825,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278e3c6f5bf5bf847beda59ba534f4e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 820103556}
+  Settings: {fileID: 820103556}
   Inventory: {fileID: 0}
   PowerUpsInventory: {fileID: 0}
   GiftsInventory: {fileID: 0}

@@ -7,26 +7,46 @@ using TMPro;
 
 public class VirtualCurrency : MonoBehaviour
 {
-    public static VirtualCurrency VC;
+    public static VirtualCurrency virtualCurrency;
+    CurrencyManager currencyManager;
     PlayFabManager playFab;
-    public TextMeshProUGUI coinsValueText, shellsValueText, energyValueText, energyRechargeTimeText;
+    // public TextMeshProUGUI coinsValueText, shellsValueText, energyValueText, 
+    // public TextMeshProUGUI energyRechargeTimeText;
+    [SerializeField]
     float secondsLeftToRefreshEnergy = 1;
+    [SerializeField]
+    private int coins, shells, energy;
+    System.TimeSpan time;
 
     void Start(){
         GetVirtualCurrencies();
     }
     
     private void Awake(){
-        VC = this;
+        if(virtualCurrency == null)
+        {
+            virtualCurrency = this;
+        }
+        else
+        {
+            if(virtualCurrency != this){
+                Destroy(this.gameObject);
+            }
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update(){
         secondsLeftToRefreshEnergy -= Time.deltaTime;
-        System.TimeSpan time = System.TimeSpan.FromSeconds(secondsLeftToRefreshEnergy);
-        energyRechargeTimeText.text = time.ToString("mm' : 'ss");
-        if(secondsLeftToRefreshEnergy < 0){
+        time = System.TimeSpan.FromSeconds(secondsLeftToRefreshEnergy);
+        // energyRechargeTimeText.text = time.ToString("mm' : 'ss");
+        if(secondsLeftToRefreshEnergy <= 0){
             GetVirtualCurrencies();
         }
+        CurrencyManager.currencyManager.SetCoins(coins);
+        CurrencyManager.currencyManager.SetShells(shells);
+        CurrencyManager.currencyManager.SetStamina(energy);
+        CurrencyManager.currencyManager.SetTimer(secondsLeftToRefreshEnergy);
     }
     
     public void GetVirtualCurrencies(){
@@ -34,14 +54,11 @@ public class VirtualCurrency : MonoBehaviour
     }
 
     void OnGetUserInventorySuccess(GetUserInventoryResult result){
-        int coins = result.VirtualCurrency["CN"];
-        coinsValueText.text = coins.ToString();
+        coins = result.VirtualCurrency["CN"];
 
-        int shells = result.VirtualCurrency["SH"];
-        shellsValueText.text = shells.ToString();
+        shells = result.VirtualCurrency["SH"];
 
-        int energy = result.VirtualCurrency["EN"];
-        energyValueText.text = energy.ToString();
+        energy = result.VirtualCurrency["EN"];
         secondsLeftToRefreshEnergy = result.VirtualCurrencyRechargeTimes["EN"].SecondsToRecharge;
     }
 
@@ -49,6 +66,5 @@ public class VirtualCurrency : MonoBehaviour
         Debug.Log(error.ErrorMessage);
     }
 };
-
 
 

@@ -39,7 +39,7 @@ public class PlayFabManager : MonoBehaviour
     public void Start(){
         if (string.IsNullOrEmpty(PlayFabSettings.TitleId))
         {
-            PlayFabSettings.TitleId = "D546A";
+            PlayFabSettings.TitleId = "AA270";
         }
     }
 
@@ -109,6 +109,7 @@ public class PlayFabManager : MonoBehaviour
         errorSignUp.text = "";
         errorLogin.text = "";
         StartGame();
+        // VirtualCurrency.virtualCurrency.GetVirtualCurrencies();
         // InventoryManager.inventory.GetInventory();
     }
 
@@ -123,7 +124,7 @@ public class PlayFabManager : MonoBehaviour
     public void ResetPassword(){
         var request = new SendAccountRecoveryEmailRequest{
             Email = userEmailLogin.text,
-            TitleId = "D546A"
+            TitleId = "AA270"
         };
         PlayFabClientAPI.SendAccountRecoveryEmail(request, PasswordResetSuccess, PasswordResetFailure);
     }
