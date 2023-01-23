@@ -7,7 +7,6 @@ using PlayFab.ClientModels;
 public class SceneSwitcher : MonoBehaviour
 {
     InventoryManager inventory;
-    StoreAmount storeAmount;
 
     public void playGame()
     {
@@ -69,7 +68,6 @@ public class SceneSwitcher : MonoBehaviour
     {
         SceneManager.LoadScene("ItemShop");
         FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
-        StoreAmount.storeAmount.restartAmount();
     }
     public void EnterEditParty()
     {

@@ -1845,6 +1845,7 @@ GameObject:
   - component: {fileID: 9177342608601297785}
   - component: {fileID: 9177342608601297790}
   - component: {fileID: 9177342608601297791}
+  - component: {fileID: 8311550154748782643}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -1914,6 +1915,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8311550154748782643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9177342608601297788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035db8dd89b792041864ae87556dbeae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallenergytext: {fileID: 9177342610265329142}
+  mediumenergytext: {fileID: 9177342609362718549}
+  largeenergytext: {fileID: 9177342609242506524}
+  mysterysnacktext: {fileID: 9177342609976391892}
+  magnettext: {fileID: 9177342608501588293}
+  neptunestridenttext: {fileID: 9177342609020151032}
+  voidgemtext: {fileID: 9177342609111720529}
+  nettext: {fileID: 9177342608667255368}
+  fungitext: {fileID: 9177342608521368757}
+  pocketwatchtext: {fileID: 9177342608357572322}
+  mermaidsorbtext: {fileID: 9177342609752716909}
+  baskettext: {fileID: 9177342609353542159}
+  stufftoytext: {fileID: 9177342608417769037}
+  waterproofcameratext: {fileID: 9177342608429759067}
+  maptext: {fileID: 9177342608266918067}
+  historybooktext: {fileID: 9177342608739995743}
+  seaweedtext: {fileID: 9177342610022760123}
+  crystalstext: {fileID: 9177342609099332719}
+  toyfiguretext: {fileID: 9177342608366254620}
 --- !u!1 &9177342608612319206
 GameObject:
   m_ObjectHideFlags: 0

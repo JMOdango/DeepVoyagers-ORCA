@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using PlayFab;
 using PlayFab.ClientModels;
 using Newtonsoft.Json;
@@ -19,6 +18,13 @@ public class Inventory{
     pocketwatch, 
     mermaidsorb, 
     basket;
+    public int stufftoy, 
+    waterproofcamera, 
+    map, 
+    historybook, 
+    seaweed, 
+    crystals, 
+    toyfigure;
 
     public Inventory(
         int smallenergy,
@@ -32,7 +38,14 @@ public class Inventory{
         int fungi, 
         int pocketwatch,
         int mermaidsorb,
-        int basket
+        int basket,
+        int stufftoy, 
+        int waterproofcamera, 
+        int map, 
+        int historybook, 
+        int seaweed, 
+        int crystals, 
+        int toyfigure
     ){
         this.smallenergy = smallenergy;
         this.mediumenergy = mediumenergy;
@@ -46,18 +59,27 @@ public class Inventory{
         this.pocketwatch = pocketwatch;
         this.mermaidsorb = mermaidsorb;
         this.basket = basket;
+        this.stufftoy = stufftoy;
+        this.waterproofcamera = waterproofcamera;
+        this.map = map;
+        this.historybook = historybook;
+        this.seaweed = seaweed;
+        this.crystals = crystals;
+        this.toyfigure = toyfigure;
     }
 }
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager inventory;
-    StoreAmount storeAmount;
+    InventoryUI inventoryUI;
     public InventoryManager[] inventoryManager;
-    public TextMeshProUGUI smallenergytext, mediumenergytext, largeenergytext, mysterysnacktext, magnettext, neptunestridenttext, voidgemtext, 
-    nettext, fungitext, pocketwatchtext, mermaidsorbtext, baskettext;
-    public int smallenergycount, mediumenergycount, largeenergycount, mysterysnackcount, magnetcount, neptunestridentcount, voidgemcount, 
+    
+    [SerializeField]
+    private int smallenergycount, mediumenergycount, largeenergycount, mysterysnackcount, magnetcount, neptunestridentcount, voidgemcount, 
     netcount, fungicount, pocketwatchcount, mermaidsorbcount, basketcount;
+    [SerializeField]
+    private int stufftoycount, waterproofcameracount, mapcount, historybookcount, seaweedcount, crystalscount, toyfigurecount;
 
     public Inventory ReturnClass(){
         return new Inventory(smallenergycount, 
@@ -71,8 +93,19 @@ public class InventoryManager : MonoBehaviour
         fungicount, 
         pocketwatchcount, 
         mermaidsorbcount, 
-        basketcount
+        basketcount,
+        stufftoycount, 
+        waterproofcameracount, 
+        mapcount, 
+        historybookcount, 
+        seaweedcount, 
+        crystalscount, 
+        toyfigurecount
         );
+    }
+
+    public void Start(){
+        GetInventory();
     }
 
     public void Awake(){
@@ -86,37 +119,54 @@ public class InventoryManager : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        // GetInventory();
     }
 
-    public void SetUI(Inventory inventory){
-        smallenergytext.text = ""+inventory.smallenergy+"";
-        mediumenergytext.text = ""+inventory.mediumenergy+"";
-        largeenergytext.text = ""+inventory.largeenergy+"";
-        mysterysnacktext.text = ""+inventory.mysterysnack+"";
-        magnettext.text = ""+inventory.magnet+"";
-        neptunestridenttext.text = ""+inventory.neptunestrident+"";
-        voidgemtext.text = ""+inventory.voidgem+"";
-        nettext.text = ""+inventory.net+"";
-        fungitext.text = ""+inventory.fungi+"";
-        pocketwatchtext.text = ""+inventory.pocketwatch+"";
-        mermaidsorbtext.text = ""+inventory.mermaidsorb+"";
-        baskettext.text = ""+inventory.basket+"";
+    public void SetUI()
+    {
+        InventoryUI.inventoryUI.SetUIPowerUps(smallenergycount, 
+        mediumenergycount, 
+        largeenergycount, 
+        mysterysnackcount,
+        magnetcount, 
+        neptunestridentcount, 
+        voidgemcount, 
+        netcount, 
+        fungicount, 
+        pocketwatchcount, 
+        mermaidsorbcount, 
+        basketcount
+        );
+        
+       InventoryUI.inventoryUI.SetUIGifts(stufftoycount, 
+       waterproofcameracount, 
+       mapcount, 
+       historybookcount, 
+       seaweedcount, 
+       crystalscount, 
+       toyfigurecount
+       );
     }
 
     public void SetCount(Inventory inventory){
-        smallenergycount = inventory.smallenergy + StoreAmount.storeAmount.smallenergyamount;
-        mediumenergycount = inventory.mediumenergy + StoreAmount.storeAmount.mediumenergyamount;
-        largeenergycount = inventory.largeenergy + StoreAmount.storeAmount.largeenergyamount;
-        mysterysnackcount = inventory.mysterysnack + StoreAmount.storeAmount.mysterysnackamount;
-        magnetcount = inventory.magnet + StoreAmount.storeAmount.magnetamount;
-        neptunestridentcount = inventory.neptunestrident + StoreAmount.storeAmount.neptunestridentamount;
-        voidgemcount = inventory.voidgem + StoreAmount.storeAmount.voidgemamount;
-        netcount = inventory.net + StoreAmount.storeAmount.netamount;
-        fungicount = inventory.fungi + StoreAmount.storeAmount.fungiamount;
-        pocketwatchcount = inventory.pocketwatch + StoreAmount.storeAmount.pocketwatchamount;
-        mermaidsorbcount = inventory.pocketwatch + StoreAmount.storeAmount.mermaidsorbamount;
-        basketcount = inventory.basket + StoreAmount.storeAmount.basketamount;
+        smallenergycount = inventory.smallenergy;
+        mediumenergycount = inventory.mediumenergy;
+        largeenergycount = inventory.largeenergy;
+        mysterysnackcount = inventory.mysterysnack;
+        magnetcount = inventory.magnet;
+        neptunestridentcount = inventory.neptunestrident;
+        voidgemcount = inventory.voidgem;
+        netcount = inventory.net;
+        fungicount = inventory.fungi;
+        pocketwatchcount = inventory.pocketwatch;
+        mermaidsorbcount = inventory.mermaidsorb;
+        basketcount = inventory.basket;
+        stufftoycount = inventory.stufftoy;
+        waterproofcameracount = inventory.waterproofcamera;
+        mapcount = inventory.map;
+        historybookcount = inventory.historybook;
+        seaweedcount = inventory.seaweed;
+        crystalscount = inventory.crystals;
+        toyfigurecount = inventory.toyfigure;
     }
 
     public void SaveInventory(){
@@ -134,13 +184,13 @@ public class InventoryManager : MonoBehaviour
         );
     }
 
+    public void OnDataSend(UpdateUserDataResult result){
+        Debug.Log("User data successfully sent.");
+    }
+
     public void GetInventory(){
         PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OnInventoryDataReceived, 
         error => Debug.LogError(error.GenerateErrorReport()));
-    }
-
-    public void OnDataSend(UpdateUserDataResult result){
-        Debug.Log("User data successfully sent.");
     }
 
     void OnInventoryDataReceived(GetUserDataResult result){
@@ -148,11 +198,71 @@ public class InventoryManager : MonoBehaviour
         if(result.Data != null && result.Data.ContainsKey("Inventory")){
             List<Inventory> inventories = JsonConvert.DeserializeObject<List<Inventory>>(result.Data["Inventory"].Value);
             for(int i = 0; i < inventoryManager.Length; i++){
-                inventoryManager[i].SetUI(inventories[i]);
                 inventoryManager[i].SetCount(inventories[i]);
             }
         }
-        SaveInventory();
+    }
+
+    public void AddInventory(string item){
+        switch(item){
+            case "smallenergy": 
+            smallenergycount++;
+            break;
+            case "mediumenergy": 
+            mediumenergycount++;
+            break;
+            case "largeenergy": 
+            largeenergycount++;
+            break;
+            case "mysterysnack": 
+            mysterysnackcount++;
+            break;
+            case "magnet": 
+            magnetcount++;
+            break;
+            case "neptunestrident": 
+            neptunestridentcount++; 
+            break;
+            case "voidgem": 
+            voidgemcount++; 
+            break;
+            case "net": 
+            netcount++; 
+            break;
+            case "fungi": 
+            fungicount++; 
+            break;
+            case "pocketwatch": 
+            pocketwatchcount++; 
+            break;
+            case "mermaidsorb": 
+            mermaidsorbcount++; 
+            break;
+            case "basket": 
+            basketcount++; 
+            break;
+            case "stufftoy": 
+            stufftoycount++;
+            break;
+            case "waterproofcamera": 
+            waterproofcameracount++;
+            break;
+            case "map": 
+            mapcount++;
+            break;
+            case "historybook": 
+            historybookcount++;
+            break;
+            case "seaweed": 
+            seaweedcount++;
+            break;
+            case "crystals": 
+            crystalscount++; 
+            break;
+            case "toyfigure": 
+            toyfigurecount++; 
+            break;
+        }
     }
 }
    

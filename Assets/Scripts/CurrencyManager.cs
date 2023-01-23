@@ -75,4 +75,11 @@ public class CurrencyManager : MonoBehaviour
         return storeStamina;
     }
     
+    public int GetShellsLeft(){
+        return storeShells;
+    }
+
+    public int GetCoinsLeft(){
+        return storeCoins;
+    }
 }
