@@ -13,7 +13,7 @@ public class PanelOpener : MonoBehaviour
     public GameObject PowerUpsShop;
     public GameObject GiftsShop;
     
-    public void OpenPanel()
+    public void OpenSettings()
     {
         if(Settings != null){
             bool isActive = Settings.activeSelf;
