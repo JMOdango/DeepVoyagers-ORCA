@@ -258,6 +258,87 @@ public class FindMatches : MonoBehaviour
         }
     }
 
+    List<GameObject> GetAllGlassPiece() {
+        List<GameObject> dots = new List<GameObject>();
+        for (int i = 0; i < board.width; i++) {
+            for (int j = 0; j < board.height; j++) {
+                if (board.allDots[i, j]!= null) {
+                    if (board.allDots[i, j].tag == "Trash1" )
+                    {
+                        dots.Add(board.allDots[i, j]);
+                        board.allDots[i, j].GetComponent<DotController>().isMatched = true;
+                    }
+                }
+            }
+        }
+        return dots;
+    }
+
+    List<GameObject> GetAllFabricPiece() {
+        List<GameObject> dots = new List<GameObject>();
+        for (int i = 0; i < board.width; i++) {
+            for (int j = 0; j < board.height; j++) {
+                if (board.allDots[i, j]!= null) {
+                    if (board.allDots[i, j].tag == "Trash2" )
+                    {
+                        dots.Add(board.allDots[i, j]);
+                        board.allDots[i, j].GetComponent<DotController>().isMatched = true;
+                    }
+                }
+            }
+        }
+        return dots;
+    }
+
+
+    List<GameObject> GetAllMetalPiece() {
+        List<GameObject> dots = new List<GameObject>();
+        for (int i = 0; i < board.width; i++) {
+            for (int j = 0; j < board.height; j++) {
+                if (board.allDots[i, j]!= null) {
+                    if (board.allDots[i, j].tag == "Trash3" )
+                    {
+                        dots.Add(board.allDots[i, j]);
+                        board.allDots[i, j].GetComponent<DotController>().isMatched = true;
+                    }
+                }
+            }
+        }
+        return dots;
+    }
+
+    List<GameObject> GetAllOrganicPiece() {
+        List<GameObject> dots = new List<GameObject>();
+        for (int i = 0; i < board.width; i++) {
+            for (int j = 0; j < board.height; j++) {
+                if (board.allDots[i, j]!= null) {
+                    if (board.allDots[i, j].tag == "Trash4" )
+                    {
+                        dots.Add(board.allDots[i, j]);
+                        board.allDots[i, j].GetComponent<DotController>().isMatched = true;
+                    }
+                }
+            }
+        }
+        return dots;
+    }
+
+    List<GameObject> GetAllPlasticPiece() {
+        List<GameObject> dots = new List<GameObject>();
+        for (int i = 0; i < board.width; i++) {
+            for (int j = 0; j < board.height; j++) {
+                if (board.allDots[i, j]!= null) {
+                    if (board.allDots[i, j].tag == "Trash5" )
+                    {
+                        dots.Add(board.allDots[i, j]);
+                        board.allDots[i, j].GetComponent<DotController>().isMatched = true;
+                    }
+                }
+            }
+        }
+        return dots;
+    }
+
     public void randomDestroyColumn(int column) {
 
         GetColumnPieces(column);
@@ -273,5 +354,25 @@ public class FindMatches : MonoBehaviour
 
     public void randomTrashDestroy(int column, int row) {
         GetRandomPiece(column,row);
+    }
+
+    public void getGlassPieces(){
+        GetAllGlassPiece();
+    }
+
+    public void getFabricPieces(){
+        GetAllFabricPiece();
+    }
+
+    public void getMetalPieces(){
+        GetAllMetalPiece();
+    }
+
+    public void getOrganicPieces(){
+        GetAllOrganicPiece();
+    }
+
+    public void getPlasticPieces(){
+        GetAllPlasticPiece();
     }
 }
