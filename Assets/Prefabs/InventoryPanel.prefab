@@ -181,6 +181,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovesLeft: {fileID: 11400000, guid: c33d418135a09ec4c98c41121f0e9495, type: 2}
   board: {fileID: 0}
+  closeup: {fileID: 0}
+  selectPieces: {fileID: 0}
+  inventmanager: {fileID: 0}
 --- !u!1 &1621889607393933519
 GameObject:
   m_ObjectHideFlags: 0
@@ -5646,7 +5649,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -600, y: 326}
+  m_AnchoredPosition: {x: -742, y: 75}
   m_SizeDelta: {x: 110.368, y: 89.441}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6532978550276367365

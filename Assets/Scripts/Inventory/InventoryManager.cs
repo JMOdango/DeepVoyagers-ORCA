@@ -264,5 +264,68 @@ public class InventoryManager : MonoBehaviour
             break;
         }
     }
+
+
+    public void ReduceInventory(string item){
+        switch(item){
+            case "smallenergy": 
+            smallenergycount--;
+            break;
+            case "mediumenergy": 
+            mediumenergycount--;
+            break;
+            case "largeenergy": 
+            largeenergycount--;
+            break;
+            case "mysterysnack": 
+            mysterysnackcount--;
+            break;
+            case "magnet": 
+            magnetcount--;
+            break;
+            case "neptunestrident": 
+            neptunestridentcount--; 
+            break;
+            case "voidgem": 
+            voidgemcount--; 
+            break;
+            case "net": 
+            netcount--; 
+            break;
+            case "fungi": 
+            fungicount--; 
+            break;
+            case "pocketwatch": 
+            pocketwatchcount--; 
+            break;
+            case "mermaidsorb": 
+            mermaidsorbcount--; 
+            break;
+            case "basket": 
+            basketcount--; 
+            break;
+            case "stufftoy": 
+            stufftoycount--;
+            break;
+            case "waterproofcamera": 
+            waterproofcameracount--;
+            break;
+            case "map": 
+            mapcount--;
+            break;
+            case "historybook": 
+            historybookcount--;
+            break;
+            case "seaweed": 
+            seaweedcount--;
+            break;
+            case "crystals": 
+            crystalscount--; 
+            break;
+            case "toyfigure": 
+            toyfigurecount--; 
+            break;
+        }
+    }
 }
    

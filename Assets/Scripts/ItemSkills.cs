@@ -9,7 +9,7 @@ public class ItemSkills : MonoBehaviour
     public Board board;
     public ItemShopCloseUp closeup;
     public FindMatches selectPieces;
-
+    public InventoryManager inventmanager;
    
 
     // Start is called before the first frame update
@@ -18,6 +18,7 @@ public class ItemSkills : MonoBehaviour
         board = board.GetComponent<Board>();
         closeup = closeup.GetComponent<ItemShopCloseUp>();
         selectPieces = FindObjectOfType<FindMatches>();
+        inventmanager = FindObjectOfType<InventoryManager>();
     }
 
     // Update is called once per frame
@@ -33,6 +34,7 @@ public class ItemSkills : MonoBehaviour
     {
     MovesLeft.Moves += 3;
     board.moves.text = MovesLeft.Moves.ToString();
+    inventmanager.ReduceInventory("mysterysnack");
     closeup.CloseCloseUp();
     }
 
@@ -40,10 +42,11 @@ public class ItemSkills : MonoBehaviour
 
     public void UseVoidGem()
     {
-        int randomColumn = Random.Range(0, 8);
-        int randomRow = Random.Range(0, 6);
+        int randomColumn = Random.Range(1, 8);
+        int randomRow = Random.Range(1, 6);
         selectPieces.randomTrashDestroy(randomColumn, randomRow);
         board.DestroyMatches();
+        inventmanager.ReduceInventory("voidgem");
         closeup.CloseCloseUp();
     }
 
@@ -54,7 +57,7 @@ public class ItemSkills : MonoBehaviour
         int randomColumn = Random.Range(1, 7);
         int randomRow = Random.Range(1, 5);
         selectPieces.randomDestroySquare(randomColumn, randomRow);
-        board.DestroyMatches();
+        inventmanager.ReduceInventory("net");
         closeup.CloseCloseUp();
     }
 
@@ -65,6 +68,8 @@ public class ItemSkills : MonoBehaviour
         int randomColumn = Random.Range(0, 8);
         selectPieces.randomDestroyColumn(randomColumn);
         board.DestroyMatches();
+        inventmanager.ReduceInventory("neptunestrident");
+        closeup.CloseCloseUp();
     }
 
     //UseMermaidOrb - get all glass trash 1
@@ -75,6 +80,7 @@ public class ItemSkills : MonoBehaviour
         int allRows = board.height;
         selectPieces.getGlassPieces();
         board.DestroyMatches();
+        inventmanager.ReduceInventory("mermaidsorb");
         closeup.CloseCloseUp();
     }
 
@@ -86,6 +92,7 @@ public class ItemSkills : MonoBehaviour
         int allRows = board.height;
         selectPieces.getFabricPieces();
         board.DestroyMatches();
+        inventmanager.ReduceInventory("basket");
         closeup.CloseCloseUp();
     }
 
@@ -97,6 +104,7 @@ public class ItemSkills : MonoBehaviour
         int allRows = board.height;
         selectPieces.getMetalPieces();
         board.DestroyMatches();
+        inventmanager.ReduceInventory("magnet");
         closeup.CloseCloseUp();
     }
 
@@ -108,6 +116,7 @@ public class ItemSkills : MonoBehaviour
         int allRows = board.height;
         selectPieces.getOrganicPieces();
         board.DestroyMatches();
+        inventmanager.ReduceInventory("pocketwatch");
         closeup.CloseCloseUp();
     }
 
@@ -119,6 +128,7 @@ public class ItemSkills : MonoBehaviour
         int allRows = board.height;
         selectPieces.getPlasticPieces();
         board.DestroyMatches();
+        inventmanager.ReduceInventory("fungi");
         closeup.CloseCloseUp();
     }
 
