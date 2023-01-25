@@ -63,7 +63,7 @@ public class Quest : MonoBehaviour
     DontDestroyOnLoad(this.gameObject);
     DontDestroyOnLoad(sceneinfo);
     DontDestroyOnLoad(realcounter);
-    if (sceneinfo.instantiated == false)
+    if (sceneinfo.instantiated == false && sceneinfo.timeron == false)
     {
      required1.text = sceneinfo.goal1_requiredAmount.ToString();
      required2.text = sceneinfo.goal2_requiredAmount.ToString();

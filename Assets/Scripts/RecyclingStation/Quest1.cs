@@ -52,10 +52,10 @@ public class Quest1 : MonoBehaviour
     DontDestroyOnLoad(sceneinfo);
     DontDestroyOnLoad(realcounter);
 
-    if (sceneinfo.instantiated == false)
+    if (sceneinfo.instantiated == false && sceneinfo.timeron == false)
     {
-    required1.text = sceneinfo.requiredAmount.ToString();
-    required2.text = sceneinfo.requiredAmount.ToString();
+    required1.text = sceneinfo.goal1_requiredAmount.ToString();
+    required2.text = sceneinfo.goal2_requiredAmount.ToString();
     spawnGoal1();
     spawnGoal2();
 
@@ -85,7 +85,7 @@ public class Quest1 : MonoBehaviour
 
   public void Complete()
   {
-    isCompleted = true;
+    sceneinfo.isCompleted = true;
     Debug.Log("Completed");
     
   }
@@ -216,7 +216,7 @@ public class Quest1 : MonoBehaviour
             case 4:
             if(sceneinfo.goal1_whatToMake != "PlasticPot")
                 {
-                sceneinfo.oal2_whatToMake = "PlasticPot";
+                sceneinfo.goal2_whatToMake = "PlasticPot";
                 sceneinfo.goal2_project = SceneInfo.Project.PlasticPot;
                 }
                 else
@@ -264,68 +264,68 @@ public class Quest1 : MonoBehaviour
 
     public void CheckGoal1()  ///needs to reference inventory
     {
-      if (sceneinfo.goal1_project == Project.Fertilizer)
+      if (sceneinfo.goal1_project == SceneInfo.Project.Fertilizer)
       {
         sceneinfo.goal1_currentAmount = player.Fertilizer;
       }
 
-      if (goal1_project == Project.BirdFeeder)
+      if (sceneinfo.goal1_project == SceneInfo.Project.BirdFeeder)
       {
-        goal1_currentAmount = player.BirdFeeder;
+        sceneinfo.goal1_currentAmount = player.BirdFeeder;
       }
 
-      if (goal1_project == Project.ClotheBag)
+      if (sceneinfo.goal1_project == SceneInfo.Project.ClotheBag)
       {
-        goal1_currentAmount = player.ClotheBag;
+        sceneinfo.goal1_currentAmount = player.ClotheBag;
       }
 
-      if (goal1_project == Project.PenHolder)
+      if (sceneinfo.goal1_project == SceneInfo.Project.PenHolder)
       {
-        goal1_currentAmount = player.PenHolder;
+        sceneinfo.goal1_currentAmount = player.PenHolder;
       }
 
-      if (goal1_project == Project.PlasticPot)
+      if (sceneinfo.goal1_project == SceneInfo.Project.PlasticPot)
       {
-        goal1_currentAmount = player.PlasticPot;
+        sceneinfo.goal1_currentAmount = player.PlasticPot;
       }
     }
 
     public void CheckGoal2() ///needs to reference inventory
     {
-      if (goal2_project == Project.Fertilizer)
+      if (sceneinfo.goal2_project == SceneInfo.Project.Fertilizer)
       {
-        goal2_currentAmount = player.Fertilizer;
+        sceneinfo.goal2_currentAmount = player.Fertilizer;
       }
 
-      if (goal2_project == Project.BirdFeeder)
+      if (sceneinfo.goal2_project == SceneInfo.Project.BirdFeeder)
       {
-        goal2_currentAmount = player.BirdFeeder;
+        sceneinfo.goal2_currentAmount = player.BirdFeeder;
       }
 
-      if (goal2_project == Project.ClotheBag)
+      if (sceneinfo.goal2_project == SceneInfo.Project.ClotheBag)
       {
-        goal2_currentAmount = player.ClotheBag;
+        sceneinfo.goal2_currentAmount = player.ClotheBag;
       }
 
-      if (goal2_project == Project.PenHolder)
+      if (sceneinfo.goal2_project == SceneInfo.Project.PenHolder)
       {
-        goal2_currentAmount = player.PenHolder;
+        sceneinfo.goal2_currentAmount = player.PenHolder;
       }
 
-      if (goal2_project == Project.PlasticPot)
+      if (sceneinfo.goal2_project == SceneInfo.Project.PlasticPot)
       {
-        goal2_currentAmount = player.PlasticPot;
+        sceneinfo.goal2_currentAmount = player.PlasticPot;
       }
     }
 
     public bool Goal1IsReached()
     {
-      return (goal1_currentAmount >= goal1_requiredAmount);
+      return (sceneinfo.goal1_currentAmount >= sceneinfo.goal1_requiredAmount);
     }
 
     public bool Goal2IsReached()
     {
-      return (goal2_currentAmount >= goal2_requiredAmount);
+      return (sceneinfo.goal2_currentAmount >= sceneinfo.goal2_requiredAmount);
     }
 
     public void GoalChecking()
@@ -353,7 +353,7 @@ public class Quest1 : MonoBehaviour
     public void SubmitProjects() ///needs to reference inventory
     {
 
-      if (isCompleted == false)
+      if (sceneinfo.isCompleted == false)
       {
         if (Goal1IsReached() && Goal2IsReached())
         {
@@ -370,7 +370,7 @@ public class Quest1 : MonoBehaviour
           // timer1.TimeLeft = 5; //restart time here
           submit_off.SetActive(true);
           submit_on.SetActive(false);
-          realcounter.timeron1 = true;
+          sceneinfo.timeron = true;
           realcounter.ResetClock1();
           
         }
@@ -382,57 +382,57 @@ public class Quest1 : MonoBehaviour
 
     public void DecreaseGoal1()  ///needs to reference inventory
     {
-      if (goal1_project == Project.Fertilizer)
+      if (sceneinfo.goal1_project == SceneInfo.Project.Fertilizer)
       {
-         player.Fertilizer-=goal1_requiredAmount;
+         player.Fertilizer-=sceneinfo.goal1_requiredAmount;
       }
 
-      if (goal1_project == Project.BirdFeeder)
+      if (sceneinfo.goal1_project == SceneInfo.Project.BirdFeeder)
       {
-         player.BirdFeeder-=goal1_requiredAmount;
+         player.BirdFeeder-=sceneinfo.goal1_requiredAmount;
       }
 
-      if (goal1_project == Project.ClotheBag)
+      if (sceneinfo.goal1_project == SceneInfo.Project.ClotheBag)
       {
-        player.ClotheBag-=goal1_requiredAmount;
+        player.ClotheBag-=sceneinfo.goal1_requiredAmount;
       }
 
-      if (goal1_project == Project.PenHolder)
+      if (sceneinfo.goal1_project == SceneInfo.Project.PenHolder)
       {
-        player.PenHolder-=goal1_requiredAmount;
+        player.PenHolder-=sceneinfo.goal1_requiredAmount;
       }
 
-      if (goal1_project == Project.PlasticPot)
+      if (sceneinfo.goal1_project == SceneInfo.Project.PlasticPot)
       {
-        player.PlasticPot-=goal1_requiredAmount;
+        player.PlasticPot-=sceneinfo.goal1_requiredAmount;
       }
     }
 
     public void DecreaseGoal2()  ///needs to reference inventory
     {
-      if (goal2_project == Project.Fertilizer)
+      if (sceneinfo.goal2_project == SceneInfo.Project.Fertilizer)
       {
-         player.Fertilizer-=goal2_requiredAmount;
+         player.Fertilizer-=sceneinfo.goal2_requiredAmount;
       }
 
-      if (goal2_project == Project.BirdFeeder)
+      if (sceneinfo.goal2_project == SceneInfo.Project.BirdFeeder)
       {
-         player.BirdFeeder-=goal2_requiredAmount;
+         player.BirdFeeder-=sceneinfo.goal2_requiredAmount;
       }
 
-      if (goal2_project == Project.ClotheBag)
+      if (sceneinfo.goal2_project == SceneInfo.Project.ClotheBag)
       {
-        player.ClotheBag-=goal2_requiredAmount;
+        player.ClotheBag-=sceneinfo.goal2_requiredAmount;
       }
 
-      if (goal2_project == Project.PenHolder)
+      if (sceneinfo.goal2_project == SceneInfo.Project.PenHolder)
       {
-        player.PenHolder-=goal2_requiredAmount;
+        player.PenHolder-=sceneinfo.goal2_requiredAmount;
       }
 
-      if (goal2_project == Project.PlasticPot)
+      if (sceneinfo.goal2_project == SceneInfo.Project.PlasticPot)
       {
-        player.PlasticPot-=goal2_requiredAmount;
+        player.PlasticPot-=sceneinfo.goal2_requiredAmount;
       }
     }
 
