@@ -980,22 +980,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2848a1eecde98cf43b57d9ca65240729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCompleted: 0
   shellReward: 40
   coinReward: 100
-  goal1_project: 0
-  goal2_project: 0
-  goal1_requiredAmount: 2
-  goal1_currentAmount: 0
-  goal2_requiredAmount: 2
-  goal2_currentAmount: 0
-  required1: {fileID: 2001960232}
-  required2: {fileID: 1554433929}
-  timemaster: {fileID: 1750657734}
-  realcounter: {fileID: 1750657733}
   submit_off: {fileID: 1991799035}
   submit_on: {fileID: 1855721046}
-  player: {fileID: 1631665486}
   randomGoal1Project:
   - {fileID: 538655375}
   - {fileID: 528792122}
@@ -1003,7 +991,6 @@ MonoBehaviour:
   - {fileID: 1284108880}
   - {fileID: 643422466}
   Goal1_Point: {fileID: 979620995}
-  goal1_whatToMake: 
   randomGoal2Project:
   - {fileID: 680767204}
   - {fileID: 1291141342}
@@ -1011,7 +998,12 @@ MonoBehaviour:
   - {fileID: 157919858}
   - {fileID: 1295383514}
   Goal2_Point: {fileID: 5649445}
-  goal2_whatToMake: 
+  required1: {fileID: 2001960232}
+  required2: {fileID: 1554433929}
+  timemaster: {fileID: 1750657734}
+  realcounter: {fileID: 1750657733}
+  player: {fileID: 1631665486}
+  sceneinfo: {fileID: 11400000, guid: 3e78952922a717c448e13885d501312a, type: 2}
   questdonebutton: {fileID: 1520807063}
 --- !u!1 &143805087
 GameObject:
@@ -7802,6 +7794,7 @@ MonoBehaviour:
   submit_on1: {fileID: 903683955}
   submit_off2: {fileID: 1613557089}
   submit_on2: {fileID: 494104340}
+  sceneinfo: {fileID: 11400000, guid: 3e78952922a717c448e13885d501312a, type: 2}
 --- !u!114 &1750657734
 MonoBehaviour:
   m_ObjectHideFlags: 0

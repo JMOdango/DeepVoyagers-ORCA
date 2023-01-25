@@ -3805,7 +3805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[0].name
-      value: MainMenuBGM
+      value: BGM
       objectReference: {fileID: 0}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].clip
