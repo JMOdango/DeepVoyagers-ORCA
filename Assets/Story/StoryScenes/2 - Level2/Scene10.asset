@@ -68,5 +68,27 @@ MonoBehaviour:
       moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
+  - text: "I can\u2019t feel my powers! The ocean\u2026 My subjects\u2026 I can hear
+      their cries. "
+    speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 6
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I can\u2019t feel my powers! The ocean\u2026 My subjects\u2026 I can hear
+      their cries. "
+    speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 6
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
   background: {fileID: 21300000, guid: 6ee42a791435b4e489c9a6a2f94ad449, type: 3}
   nextScene: {fileID: 11400000, guid: 91dce41a6b8b00d4a87a5e7cb33ef331, type: 2}

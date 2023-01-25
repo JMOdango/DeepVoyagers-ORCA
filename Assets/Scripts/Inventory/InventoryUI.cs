@@ -2,14 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {   
     public static InventoryUI inventoryUI;
     InventoryManager inventory;
+    [Header("Powerups-Text")]
     public TextMeshProUGUI smallenergytext, mediumenergytext, largeenergytext, mysterysnacktext, magnettext, neptunestridenttext, voidgemtext, 
     nettext, fungitext, pocketwatchtext, mermaidsorbtext, baskettext;
+    [Header("Gifts-Text")]
     public TextMeshProUGUI stufftoytext, waterproofcameratext, maptext, historybooktext, seaweedtext, crystalstext, toyfiguretext;
+    [Header("Powerups-Button")]
+    public Button smallenergybtn, mediumenergybtn, largeenergybtn, mysterysnackbtn, magnetbtn, neptunestridentbtn, voidgembtn, 
+    netbtn, fungibtn, pocketwatchbtn, mermaidsorbbtn, basketbtn;
+    [Header("Gifts-Button")]
+    public TextMeshProUGUI stufftoybtn, waterproofcamerabtn, mapbtn, historybookbtn, seaweedbtn, crystalsbtn, toyfigurebtn;
 
     public void Awake(){
         if(inventoryUI == null)
@@ -49,6 +57,15 @@ public class InventoryUI : MonoBehaviour
         pocketwatchtext.text = pocketwatchcount.ToString();
         mermaidsorbtext.text = mermaidsorbcount.ToString();
         baskettext.text = basketcount.ToString();
+
+        if(smallenergycount != 0)
+        {
+            smallenergybtn.interactable = true;
+        }
+        else
+        {
+            smallenergybtn.interactable = false;
+        }
     }
 
        public void SetUIGifts(int stufftoycount, 
@@ -67,4 +84,6 @@ public class InventoryUI : MonoBehaviour
         crystalstext.text = crystalscount.ToString();
         toyfiguretext.text = toyfigurecount.ToString();
     }
+
+
 }

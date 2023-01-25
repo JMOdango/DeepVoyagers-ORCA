@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 1100431430}
     - target: {fileID: 1006181922841260410, guid: 9b3c5d0742ce77244854e9b00f708749, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenPanel
+      value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 1006181922841260411, guid: 9b3c5d0742ce77244854e9b00f708749, type: 3}
       propertyPath: m_Pivot.x
