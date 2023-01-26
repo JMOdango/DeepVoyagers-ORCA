@@ -35,7 +35,7 @@ public class RealTimeCounter : MonoBehaviour
     [SerializeField]
     public SceneInfo sceneinfo;
     public SceneInfo sceneinfo1;
-
+    public SceneInfo sceneinfo2;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +43,7 @@ public class RealTimeCounter : MonoBehaviour
         // timer = 300;
         sceneinfo.timer -= TimeMaster.instance.CheckDate();
         sceneinfo1.timer -= TimeMaster.instance.CheckDate();
-        timer2 -= TimeMaster.instance.CheckDate();
+        sceneinfo2.timer -= TimeMaster.instance.CheckDate();
 
         quest.CheckGoal1();
         quest.CheckGoal2();
@@ -151,15 +151,15 @@ public class RealTimeCounter : MonoBehaviour
         
 
         
-        if (quest2.isCompleted)
+        if (sceneinfo2.isCompleted == true || sceneinfo2.timeron == true)
         {
         
-          if(timer2>0)
+          if(sceneinfo2.timer>0)
             {
-              timer2 -= Time.deltaTime;
+              sceneinfo2.timer -= Time.deltaTime;
               submit_off2.SetActive(true);
               submit_on2.SetActive(false);
-              updateTimer2(timer2);
+              updateTimer2(sceneinfo2.timer);
             }
             else
             {
@@ -169,10 +169,11 @@ public class RealTimeCounter : MonoBehaviour
                 // quest2.CheckGoal1();
                 // quest2.CheckGoal2();
                 
-                timer2 = 0;
-                timeron2= false;
-                quest2.isCompleted = false;
+                sceneinfo2.timer = 0;
+                sceneinfo2.timeron= false;
+                sceneinfo2.isCompleted = false;
                 quest2.questdonebutton.SetActive(false);
+                sceneinfo2.isCompleted = false;
             }
         
         }
@@ -216,11 +217,11 @@ public class RealTimeCounter : MonoBehaviour
          sceneinfo1.timer -= TimeMaster.instance.CheckDate();
         }
 
-        if (timeron2)
+        if (sceneinfo2.timeron)
         {
          TimeMaster.instance.SaveDate();
-         timer2 = 10;
-         timer2 -= TimeMaster.instance.CheckDate();
+         sceneinfo2.timer = 10;
+         sceneinfo2.timer -= TimeMaster.instance.CheckDate();
         }
         
     }
@@ -242,11 +243,11 @@ public class RealTimeCounter : MonoBehaviour
     {
         
 
-        if (timeron2)
+        if (sceneinfo2.timeron)
         {
          TimeMaster.instance.SaveDate();
-         timer2 = 10;
-         timer2 -= TimeMaster.instance.CheckDate();
+         sceneinfo2.timer = 10;
+         sceneinfo2.timer -= TimeMaster.instance.CheckDate();
         }
         
     }

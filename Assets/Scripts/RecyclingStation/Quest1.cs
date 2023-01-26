@@ -81,6 +81,8 @@ public class Quest1 : MonoBehaviour
      DontDestroyOnLoad(this.gameObject);
      DontDestroyOnLoad(sceneinfo);
      DontDestroyOnLoad(realcounter);
+     required1.text = sceneinfo.goal1_requiredAmount.ToString();
+     required2.text = sceneinfo.goal2_requiredAmount.ToString();
   }
 
   public void Complete()

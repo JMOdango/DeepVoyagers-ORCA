@@ -3536,7 +3536,7 @@ PrefabInstance:
       objectReference: {fileID: 24100000, guid: 5fa3a33de9f4a944dbe803c7544baeb8, type: 2}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[0].clip
@@ -3553,14 +3553,14 @@ PrefabInstance:
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: abe68deba14fb954f91ecb6c643d43bc, type: 3}
+      objectReference: {fileID: 8300000, guid: 0832f4756b2fc70448f09b1f0e33088d, type: 3}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].name
-      value: AreaSelectionBGM
+      value: BGM
       objectReference: {fileID: 0}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[0].pitch
@@ -3568,7 +3568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].pitch
-      value: 1
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[0].volume
@@ -7771,15 +7771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887bae6e14912bc46b7b8d856560bd8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCompleted: 0
   shellReward: 40
   coinReward: 100
-  goal1_project: 0
-  goal2_project: 0
-  goal1_requiredAmount: 2
-  goal1_currentAmount: 0
-  goal2_requiredAmount: 2
-  goal2_currentAmount: 0
   required1: {fileID: 775348083}
   required2: {fileID: 1276587552}
   timemaster: {fileID: 1750657734}
@@ -7787,6 +7780,7 @@ MonoBehaviour:
   submit_off: {fileID: 1613557089}
   submit_on: {fileID: 494104340}
   player: {fileID: 1631665486}
+  sceneinfo: {fileID: 11400000, guid: 640ec5d607208be4098bd0277a68f497, type: 2}
   randomGoal1Project:
   - {fileID: 2119939771}
   - {fileID: 1457831496}
@@ -7794,7 +7788,6 @@ MonoBehaviour:
   - {fileID: 1676549185}
   - {fileID: 985983357}
   Goal1_Point: {fileID: 1714804522}
-  goal1_whatToMake: 
   randomGoal2Project:
   - {fileID: 650115471}
   - {fileID: 1591572666}
@@ -7802,7 +7795,6 @@ MonoBehaviour:
   - {fileID: 1342611329}
   - {fileID: 1319771730}
   Goal2_Point: {fileID: 1165516610}
-  goal2_whatToMake: 
   questdonebutton: {fileID: 475725718}
 --- !u!1 &1750657731
 GameObject:
@@ -7876,6 +7868,7 @@ MonoBehaviour:
   submit_on2: {fileID: 494104340}
   sceneinfo: {fileID: 11400000, guid: 3e78952922a717c448e13885d501312a, type: 2}
   sceneinfo1: {fileID: 11400000, guid: 7df6fe0a861793642a0b7bf325cfbfaa, type: 2}
+  sceneinfo2: {fileID: 11400000, guid: 640ec5d607208be4098bd0277a68f497, type: 2}
 --- !u!114 &1750657734
 MonoBehaviour:
   m_ObjectHideFlags: 0
