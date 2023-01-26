@@ -642,7 +642,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 9177342608331895617}
   m_OnClick:
     m_PersistentCalls:
@@ -1829,7 +1829,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 9177342608595372891}
   m_OnClick:
     m_PersistentCalls:
@@ -1946,6 +1946,25 @@ MonoBehaviour:
   seaweedtext: {fileID: 9177342610022760123}
   crystalstext: {fileID: 9177342609099332719}
   toyfiguretext: {fileID: 9177342608366254620}
+  smallenergybtn: {fileID: 0}
+  mediumenergybtn: {fileID: 0}
+  largeenergybtn: {fileID: 0}
+  mysterysnackbtn: {fileID: 0}
+  magnetbtn: {fileID: 0}
+  neptunestridentbtn: {fileID: 0}
+  voidgembtn: {fileID: 0}
+  netbtn: {fileID: 0}
+  fungibtn: {fileID: 0}
+  pocketwatchbtn: {fileID: 0}
+  mermaidsorbbtn: {fileID: 0}
+  basketbtn: {fileID: 0}
+  stufftoybtn: {fileID: 0}
+  waterproofcamerabtn: {fileID: 0}
+  mapbtn: {fileID: 0}
+  historybookbtn: {fileID: 0}
+  seaweedbtn: {fileID: 0}
+  crystalsbtn: {fileID: 0}
+  toyfigurebtn: {fileID: 0}
 --- !u!1 &9177342608612319206
 GameObject:
   m_ObjectHideFlags: 0
@@ -4338,7 +4357,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 9177342609147969313}
   m_OnClick:
     m_PersistentCalls:
@@ -4460,7 +4479,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 9177342609240038205}
   m_OnClick:
     m_PersistentCalls:
@@ -5437,7 +5456,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 9177342609454780665}
   m_OnClick:
     m_PersistentCalls:
