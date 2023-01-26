@@ -31,17 +31,19 @@ public class RealTimeCounter : MonoBehaviour
 
     public GameObject submit_off2;
     public GameObject submit_on2;
-
     
-
-
+    [SerializeField]
+    public SceneInfo sceneinfo;
+    public SceneInfo sceneinfo1;
+    public SceneInfo sceneinfo2;
     // Start is called before the first frame update
     void Start()
     {
+       
         // timer = 300;
-        timer -= TimeMaster.instance.CheckDate();
-        timer1 -= TimeMaster.instance.CheckDate();
-        timer2 -= TimeMaster.instance.CheckDate();
+        sceneinfo.timer -= TimeMaster.instance.CheckDate();
+        sceneinfo1.timer -= TimeMaster.instance.CheckDate();
+        sceneinfo2.timer -= TimeMaster.instance.CheckDate();
 
         quest.CheckGoal1();
         quest.CheckGoal2();
@@ -68,6 +70,7 @@ public class RealTimeCounter : MonoBehaviour
     {
         //****only update when submit is pressed then connect to UI
         
+       
 
         //  timer -= Time.deltaTime;
         quest.CheckGoal1();
@@ -88,16 +91,18 @@ public class RealTimeCounter : MonoBehaviour
         quest2.Goal2IsReached();
         quest2.GoalChecking();
 
+        
 
-        if (quest.isCompleted)
+
+        if (sceneinfo.isCompleted == true || sceneinfo.timeron == true)
         {
         
-          if(timer>0)
+          if(sceneinfo.timer>0)
             {
-              timer -= Time.deltaTime;
+              sceneinfo.timer -= Time.deltaTime;
               submit_off.SetActive(true);
               submit_on.SetActive(false);
-              updateTimer(timer);
+              updateTimer(sceneinfo.timer);
             }
             else
             {
@@ -107,24 +112,25 @@ public class RealTimeCounter : MonoBehaviour
                 // quest.CheckGoal1();
                 // quest.CheckGoal2();
                
-                timer = 0;
-                timeron= false;
-                quest.isCompleted = false;
+                sceneinfo.timer = 0;
+                sceneinfo.timeron= false;
+                sceneinfo.isCompleted = false;
                 quest.questdonebutton.SetActive(false);
+                sceneinfo.isCompleted = false;
             }
         
         }
 
         
-        if (quest1.isCompleted)
+        if (sceneinfo1.isCompleted == true || sceneinfo1.timeron == true)
         {
         
-          if(timer1>0)
+          if(sceneinfo1.timer>0)
             {
-              timer1 -= Time.deltaTime;
+              sceneinfo1.timer -= Time.deltaTime;
               submit_off1.SetActive(true);
               submit_on1.SetActive(false);
-              updateTimer1(timer1);
+              updateTimer1(sceneinfo1.timer);
             }
             else
             {
@@ -134,24 +140,26 @@ public class RealTimeCounter : MonoBehaviour
                 // quest1.CheckGoal1();
                 // quest1.CheckGoal2();
                 
-                timer1 = 0;
-                timeron1= false;
-                quest1.isCompleted = false;
+                sceneinfo1.timer = 0;
+                sceneinfo1.timeron= false;
+                sceneinfo1.isCompleted = false;
                 quest1.questdonebutton.SetActive(false);
+                sceneinfo1.isCompleted = false;
             }
         
         }
+        
 
         
-        if (quest2.isCompleted)
+        if (sceneinfo2.isCompleted == true || sceneinfo2.timeron == true)
         {
         
-          if(timer2>0)
+          if(sceneinfo2.timer>0)
             {
-              timer2 -= Time.deltaTime;
+              sceneinfo2.timer -= Time.deltaTime;
               submit_off2.SetActive(true);
               submit_on2.SetActive(false);
-              updateTimer2(timer2);
+              updateTimer2(sceneinfo2.timer);
             }
             else
             {
@@ -161,10 +169,11 @@ public class RealTimeCounter : MonoBehaviour
                 // quest2.CheckGoal1();
                 // quest2.CheckGoal2();
                 
-                timer2 = 0;
-                timeron2= false;
-                quest2.isCompleted = false;
+                sceneinfo2.timer = 0;
+                sceneinfo2.timeron= false;
+                sceneinfo2.isCompleted = false;
                 quest2.questdonebutton.SetActive(false);
+                sceneinfo2.isCompleted = false;
             }
         
         }
@@ -194,25 +203,25 @@ public class RealTimeCounter : MonoBehaviour
 
     public void ResetClock()
     {
-        if (timeron)
+        if (sceneinfo.timeron)
         {
          TimeMaster.instance.SaveDate();
-         timer = 10;
-         timer -= TimeMaster.instance.CheckDate();
+         sceneinfo.timer = 10;
+         sceneinfo.timer -= TimeMaster.instance.CheckDate();
         }
 
-        if (timeron1)
+        if (sceneinfo1.timeron)
         {
          TimeMaster.instance.SaveDate();
-         timer1 = 10;
-         timer1 -= TimeMaster.instance.CheckDate();
+         sceneinfo1.timer = 10;
+         sceneinfo1.timer -= TimeMaster.instance.CheckDate();
         }
 
-        if (timeron2)
+        if (sceneinfo2.timeron)
         {
          TimeMaster.instance.SaveDate();
-         timer2 = 10;
-         timer2 -= TimeMaster.instance.CheckDate();
+         sceneinfo2.timer = 10;
+         sceneinfo2.timer -= TimeMaster.instance.CheckDate();
         }
         
     }
@@ -220,11 +229,11 @@ public class RealTimeCounter : MonoBehaviour
     public void ResetClock1()
     {
 
-        if (timeron1)
+        if (sceneinfo1.timeron)
         {
          TimeMaster.instance.SaveDate();
-         timer1 = 10;
-         timer1 -= TimeMaster.instance.CheckDate();
+         sceneinfo1.timer = 10;
+         sceneinfo1.timer -= TimeMaster.instance.CheckDate();
         }
 
         
@@ -234,11 +243,11 @@ public class RealTimeCounter : MonoBehaviour
     {
         
 
-        if (timeron2)
+        if (sceneinfo2.timeron)
         {
          TimeMaster.instance.SaveDate();
-         timer2 = 10;
-         timer2 -= TimeMaster.instance.CheckDate();
+         sceneinfo2.timer = 10;
+         sceneinfo2.timer -= TimeMaster.instance.CheckDate();
         }
         
     }
