@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f35a6beab37dc048a47baab3e320922, type: 3}
+  m_Name: SceneInfo 2
+  m_EditorClassIdentifier: 
+  instantiated: 1
+  isCompleted: 0
+  goal1_project: 4
+  goal2_project: 0
+  goal1_requiredAmount: 2
+  goal1_currentAmount: 3
+  goal2_requiredAmount: 2
+  goal2_currentAmount: 3
+  goal1_whatToMake: PlasticPot
+  goal1_projectToMake: 4
+  goal2_whatToMake: Fertilizer
+  goal2_projectToMake: 0
+  timer: 0
+  timeron: 0
