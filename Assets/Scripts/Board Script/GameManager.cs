@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using PlayFab;
+using PlayFab.ClientModels;
+using TMPro;
+
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverCanvas;
@@ -12,6 +16,12 @@ public class GameManager : MonoBehaviour
     public bool Complete = false;
     public scoreBar score;
     public Board board;
+    public Scene nextLevelScene;
+    public TextMeshProUGUI shellsText;
+    public TextMeshProUGUI coinsText;
+    public int shellsReward;
+    public int coinsReward;
+    
     private void Start()
     {
         gameOverCanvas.SetActive(false);
@@ -58,15 +68,44 @@ public class GameManager : MonoBehaviour
 
     public void nextLevel()
     {
-        SceneManager.LoadScene("Area1_LevelSelection");
+        SceneManager.LoadScene(nextLevelScene.name);
         Complete = false;
     }
 
     public void stageComplete()
     {
-        
-            completedLevel.SetActive(true);
-            Complete = true;
+        completedLevel.SetActive(true);
+        Complete = true;
+        // GiveShells(); problem 
+        // GiveCoins();
+        shellsText.text = shellsReward.ToString();
+        coinsText.text = coinsReward.ToString();
+    }
+
+    void OnAddCoinsSuccess(ModifyUserVirtualCurrencyResult result){
+        VirtualCurrency.virtualCurrency.GetVirtualCurrencies();
+    }
+
+    void OnError(PlayFabError error){
+        Debug.Log("Error: " + error.ErrorMessage);
+    }
+
+    public void GiveCoins()
+    {
+        var request = new AddUserVirtualCurrencyRequest{
+                VirtualCurrency = "CN",
+                Amount = coinsReward
+        };
+        PlayFabClientAPI.AddUserVirtualCurrency(request, OnAddCoinsSuccess, OnError);
+    }
+
+    public void GiveShells()
+    {
+        var request = new AddUserVirtualCurrencyRequest{
+                VirtualCurrency = "SH",
+                Amount = shellsReward
+        };
+        PlayFabClientAPI.AddUserVirtualCurrency(request, OnAddCoinsSuccess, OnError);
     }
 
 }

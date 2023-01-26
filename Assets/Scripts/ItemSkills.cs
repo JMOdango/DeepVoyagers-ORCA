@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using PlayFab;
+using PlayFab.ClientModels;
+
 public class ItemSkills : MonoBehaviour
 {
     [SerializeField]
@@ -9,8 +12,7 @@ public class ItemSkills : MonoBehaviour
     public Board board;
     public ItemShopCloseUp closeup;
     public FindMatches selectPieces;
-    public InventoryManager inventmanager;
-   
+    public InventoryManager inventoryManager;   
 
     // Start is called before the first frame update
     void Start()
@@ -18,13 +20,57 @@ public class ItemSkills : MonoBehaviour
         board = board.GetComponent<Board>();
         closeup = closeup.GetComponent<ItemShopCloseUp>();
         selectPieces = FindObjectOfType<FindMatches>();
-        inventmanager = FindObjectOfType<InventoryManager>();
+        inventoryManager = FindObjectOfType<InventoryManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void OnAddCoinsSuccess(ModifyUserVirtualCurrencyResult result){
+        VirtualCurrency.virtualCurrency.GetVirtualCurrencies();
+    }
+
+    void OnError(PlayFabError error){
+        Debug.Log("Error: " + error.ErrorMessage);
+    }
+
+    //small energy 
+
+    public void UseSmallEnergy()
+    {
+        var request = new AddUserVirtualCurrencyRequest{
+                VirtualCurrency = "EN",
+                Amount = 20
+        };
+        PlayFabClientAPI.AddUserVirtualCurrency(request, OnAddCoinsSuccess, OnError);
+        inventoryManager.ReduceInventory("smallenergy");
+    }
+
+    //medium energy 
+
+    public void UseMediumEnergy()
+    {
+        var request = new AddUserVirtualCurrencyRequest{
+                VirtualCurrency = "EN",
+                Amount = 40
+        };
+        PlayFabClientAPI.AddUserVirtualCurrency(request, OnAddCoinsSuccess, OnError);
+        inventoryManager.ReduceInventory("mediumenergy");
+    }
+
+    //medium energy 
+    
+    public void UseLargeEnergy()
+    {
+        var request = new AddUserVirtualCurrencyRequest{
+                VirtualCurrency = "EN",
+                Amount = 100
+        };
+        PlayFabClientAPI.AddUserVirtualCurrency(request, OnAddCoinsSuccess, OnError);
+        inventoryManager.ReduceInventory("largeenergy");
     }
 
     
@@ -34,7 +80,7 @@ public class ItemSkills : MonoBehaviour
     {
     MovesLeft.Moves += 3;
     board.moves.text = MovesLeft.Moves.ToString();
-    inventmanager.ReduceInventory("mysterysnack");
+    inventoryManager.ReduceInventory("mysterysnack");
     closeup.CloseCloseUp();
     }
 
@@ -46,7 +92,7 @@ public class ItemSkills : MonoBehaviour
         int randomRow = Random.Range(1, 6);
         selectPieces.randomTrashDestroy(randomColumn, randomRow);
         board.DestroyMatches();
-        inventmanager.ReduceInventory("voidgem");
+        inventoryManager.ReduceInventory("voidgem");
         closeup.CloseCloseUp();
     }
 
@@ -57,7 +103,7 @@ public class ItemSkills : MonoBehaviour
         int randomColumn = Random.Range(1, 7);
         int randomRow = Random.Range(1, 5);
         selectPieces.randomDestroySquare(randomColumn, randomRow);
-        inventmanager.ReduceInventory("net");
+        inventoryManager.ReduceInventory("net");
         closeup.CloseCloseUp();
     }
 
@@ -68,7 +114,7 @@ public class ItemSkills : MonoBehaviour
         int randomColumn = Random.Range(0, 8);
         selectPieces.randomDestroyColumn(randomColumn);
         board.DestroyMatches();
-        inventmanager.ReduceInventory("neptunestrident");
+        inventoryManager.ReduceInventory("neptunestrident");
         closeup.CloseCloseUp();
     }
 
@@ -80,7 +126,7 @@ public class ItemSkills : MonoBehaviour
         int allRows = board.height;
         selectPieces.getGlassPieces();
         board.DestroyMatches();
-        inventmanager.ReduceInventory("mermaidsorb");
+        inventoryManager.ReduceInventory("mermaidsorb");
         closeup.CloseCloseUp();
     }
 
@@ -92,7 +138,7 @@ public class ItemSkills : MonoBehaviour
         int allRows = board.height;
         selectPieces.getFabricPieces();
         board.DestroyMatches();
-        inventmanager.ReduceInventory("basket");
+        inventoryManager.ReduceInventory("basket");
         closeup.CloseCloseUp();
     }
 
@@ -104,7 +150,7 @@ public class ItemSkills : MonoBehaviour
         int allRows = board.height;
         selectPieces.getMetalPieces();
         board.DestroyMatches();
-        inventmanager.ReduceInventory("magnet");
+        inventoryManager.ReduceInventory("magnet");
         closeup.CloseCloseUp();
     }
 
@@ -116,7 +162,7 @@ public class ItemSkills : MonoBehaviour
         int allRows = board.height;
         selectPieces.getOrganicPieces();
         board.DestroyMatches();
-        inventmanager.ReduceInventory("pocketwatch");
+        inventoryManager.ReduceInventory("pocketwatch");
         closeup.CloseCloseUp();
     }
 
@@ -128,7 +174,7 @@ public class ItemSkills : MonoBehaviour
         int allRows = board.height;
         selectPieces.getPlasticPieces();
         board.DestroyMatches();
-        inventmanager.ReduceInventory("fungi");
+        inventoryManager.ReduceInventory("fungi");
         closeup.CloseCloseUp();
     }
 

@@ -16596,6 +16596,13 @@ MonoBehaviour:
   pocketwatchcount: 0
   mermaidsorbcount: 0
   basketcount: 0
+  stufftoycount: 0
+  waterproofcameracount: 0
+  mapcount: 0
+  historybookcount: 0
+  seaweedcount: 0
+  crystalscount: 0
+  toyfigurecount: 0
 --- !u!4 &1508820093
 Transform:
   m_ObjectHideFlags: 0
