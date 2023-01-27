@@ -12,7 +12,7 @@ public class ItemSkills : MonoBehaviour
     public Board board;
     public ItemShopCloseUp closeup;
     public FindMatches selectPieces;
-    public InventoryManager inventoryManager;   
+    InventoryManager inventoryManager;   
 
     // Start is called before the first frame update
     void Start()

@@ -21,7 +21,7 @@ public class ItemToBuy : MonoBehaviour
 
     public void Update(){
         shellsLeft = CurrencyManager.currencyManager.GetShellsLeft();
-        coinsLeft = CurrencyManager.currencyManager.GetShellsLeft();
+        coinsLeft = CurrencyManager.currencyManager.GetCoinsLeft();
     }
 
     public void BuyPowerup(){
@@ -91,7 +91,7 @@ public class ItemToBuy : MonoBehaviour
     }
 
      public void BuyGift(){
-        if(shellsLeft < itemPrice)
+        if(coinsLeft < itemPrice)
         {
             NoCurrencyPanel.SetActive(true);
         }

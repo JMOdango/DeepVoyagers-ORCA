@@ -318,7 +318,7 @@ MonoBehaviour:
   board: {fileID: 0}
   closeup: {fileID: 0}
   selectPieces: {fileID: 0}
-  inventmanager: {fileID: 0}
+  inventoryManager: {fileID: 0}
 --- !u!1 &1621889607393933519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,7 +1828,6 @@ GameObject:
   - component: {fileID: 6532978549312359975}
   - component: {fileID: 6532978549312359962}
   - component: {fileID: 6532978549312359961}
-  - component: {fileID: 6532978549312359960}
   m_Layer: 5
   m_Name: plasticeatingungi
   m_TagString: Untagged
@@ -1899,21 +1898,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6532978549312359960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532978549312359974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemPrice: 100
-  NoCurrencyPanel: {fileID: 0}
 --- !u!1 &6532978549314914191
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,7 +2019,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6532978550924351687}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyPowerup
         m_Mode: 1
@@ -2959,7 +2943,6 @@ GameObject:
   - component: {fileID: 6532978549546402543}
   - component: {fileID: 6532978549546402530}
   - component: {fileID: 6532978549546402529}
-  - component: {fileID: 6532978549546402528}
   m_Layer: 5
   m_Name: mysterysnack
   m_TagString: Untagged
@@ -3030,21 +3013,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6532978549546402528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532978549546402542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemPrice: 150
-  NoCurrencyPanel: {fileID: 0}
 --- !u!1 &6532978549551257936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3916,7 +3884,6 @@ GameObject:
   - component: {fileID: 6532978549784478728}
   - component: {fileID: 6532978549784478731}
   - component: {fileID: 6532978549784478730}
-  - component: {fileID: 6532978549784478729}
   m_Layer: 5
   m_Name: magnet
   m_TagString: Untagged
@@ -3987,21 +3954,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6532978549784478729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532978549784478743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemPrice: 100
-  NoCurrencyPanel: {fileID: 0}
 --- !u!1 &6532978549797628866
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,7 +4785,6 @@ GameObject:
   - component: {fileID: 6532978550011062522}
   - component: {fileID: 6532978550011062525}
   - component: {fileID: 6532978550011062524}
-  - component: {fileID: 6532978550011062523}
   m_Layer: 5
   m_Name: neptunestrident
   m_TagString: Untagged
@@ -4904,21 +4855,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6532978550011062523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532978550011062521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemPrice: 100
-  NoCurrencyPanel: {fileID: 0}
 --- !u!1 &6532978550014974013
 GameObject:
   m_ObjectHideFlags: 0
@@ -6387,7 +6323,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6532978550800132671}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyPowerup
         m_Mode: 1
@@ -6520,7 +6456,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6532978549784478729}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyPowerup
         m_Mode: 1
@@ -6653,7 +6589,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6532978550564293946}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyPowerup
         m_Mode: 1
@@ -7191,7 +7127,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6532978549312359960}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyPowerup
         m_Mode: 1
@@ -7347,7 +7283,6 @@ GameObject:
   - component: {fileID: 6532978550432530447}
   - component: {fileID: 6532978550432530434}
   - component: {fileID: 6532978550432530433}
-  - component: {fileID: 6532978550432530432}
   m_Layer: 5
   m_Name: basket
   m_TagString: Untagged
@@ -7418,21 +7353,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6532978550432530432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532978550432530446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemPrice: 100
-  NoCurrencyPanel: {fileID: 0}
 --- !u!1 &6532978550466909476
 GameObject:
   m_ObjectHideFlags: 0
@@ -7444,7 +7364,6 @@ GameObject:
   - component: {fileID: 6532978550466909477}
   - component: {fileID: 6532978550466909464}
   - component: {fileID: 6532978550466909479}
-  - component: {fileID: 6532978550466909478}
   m_Layer: 5
   m_Name: voidgem
   m_TagString: Untagged
@@ -7515,21 +7434,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6532978550466909478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532978550466909476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemPrice: 100
-  NoCurrencyPanel: {fileID: 0}
 --- !u!1 &6532978550505553563
 GameObject:
   m_ObjectHideFlags: 0
@@ -7676,7 +7580,6 @@ GameObject:
   - component: {fileID: 6532978550564293945}
   - component: {fileID: 6532978550564293948}
   - component: {fileID: 6532978550564293947}
-  - component: {fileID: 6532978550564293946}
   m_Layer: 5
   m_Name: mermaidsorb
   m_TagString: Untagged
@@ -7747,21 +7650,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6532978550564293946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532978550564293944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemPrice: 100
-  NoCurrencyPanel: {fileID: 0}
 --- !u!1 &6532978550576117443
 GameObject:
   m_ObjectHideFlags: 0
@@ -8394,7 +8282,6 @@ GameObject:
   - component: {fileID: 6532978550800132670}
   - component: {fileID: 6532978550800132657}
   - component: {fileID: 6532978550800132656}
-  - component: {fileID: 6532978550800132671}
   m_Layer: 5
   m_Name: pocketwatch
   m_TagString: Untagged
@@ -8465,21 +8352,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6532978550800132671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532978550800132669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemPrice: 100
-  NoCurrencyPanel: {fileID: 0}
 --- !u!1 &6532978550853153473
 GameObject:
   m_ObjectHideFlags: 0
@@ -9005,7 +8877,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6532978550432530432}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyPowerup
         m_Mode: 1
@@ -9163,7 +9035,6 @@ GameObject:
   - component: {fileID: 6532978550924351686}
   - component: {fileID: 6532978550924352313}
   - component: {fileID: 6532978550924352312}
-  - component: {fileID: 6532978550924351687}
   m_Layer: 5
   m_Name: net
   m_TagString: Untagged
@@ -9234,21 +9105,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6532978550924351687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6532978550924351685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f245b9108bccc941aa30f40865970c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: 
-  itemPrice: 100
-  NoCurrencyPanel: {fileID: 0}
 --- !u!1 &6532978550927987456
 GameObject:
   m_ObjectHideFlags: 0
@@ -9505,7 +9361,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6532978550011062523}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyPowerup
         m_Mode: 1
@@ -9638,7 +9494,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6532978550466909478}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyPowerup
         m_Mode: 1

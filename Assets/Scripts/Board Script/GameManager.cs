@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public bool Complete = false;
     public scoreBar score;
     public Board board;
-    public Scene nextLevelScene;
+    public string nextSceneName;
     public TextMeshProUGUI shellsText;
     public TextMeshProUGUI coinsText;
     public int shellsReward;
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverCanvas.SetActive(false);
         completedLevel.SetActive(false);
+        Time.timeScale = 1;
 
     }
     private void Update()
@@ -48,10 +49,16 @@ public class GameManager : MonoBehaviour
             gameOver();
         }
     }
+
+    public void Awake(){
+        
+    }
+
     public void gameOver()
     {
         gameOverCanvas.SetActive(true);
         GameOver = true;
+        Time.timeScale = 0;
     }
 
     public void restart()
@@ -68,7 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void nextLevel()
     {
-        SceneManager.LoadScene(nextLevelScene.name);
+        SceneManager.LoadScene(nextSceneName);
         Complete = false;
     }
 
@@ -76,10 +83,9 @@ public class GameManager : MonoBehaviour
     {
         completedLevel.SetActive(true);
         Complete = true;
-        // GiveShells(); problem 
-        // GiveCoins();
         shellsText.text = shellsReward.ToString();
         coinsText.text = coinsReward.ToString();
+        Time.timeScale = 0;
     }
 
     void OnAddCoinsSuccess(ModifyUserVirtualCurrencyResult result){
@@ -90,22 +96,18 @@ public class GameManager : MonoBehaviour
         Debug.Log("Error: " + error.ErrorMessage);
     }
 
-    public void GiveCoins()
+    public void GiveRewards()
     {
-        var request = new AddUserVirtualCurrencyRequest{
+        var coinsReq = new AddUserVirtualCurrencyRequest{
                 VirtualCurrency = "CN",
                 Amount = coinsReward
         };
-        PlayFabClientAPI.AddUserVirtualCurrency(request, OnAddCoinsSuccess, OnError);
-    }
+        PlayFabClientAPI.AddUserVirtualCurrency(coinsReq, OnAddCoinsSuccess, OnError);
 
-    public void GiveShells()
-    {
-        var request = new AddUserVirtualCurrencyRequest{
+        var shellsReq = new AddUserVirtualCurrencyRequest{
                 VirtualCurrency = "SH",
                 Amount = shellsReward
         };
-        PlayFabClientAPI.AddUserVirtualCurrency(request, OnAddCoinsSuccess, OnError);
+        PlayFabClientAPI.AddUserVirtualCurrency(shellsReq, OnAddCoinsSuccess, OnError);
     }
-
 }
