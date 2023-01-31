@@ -189,6 +189,7 @@ MonoBehaviour:
   GameOver: 0
   Complete: 0
   score: {fileID: 1081680346}
+  board: {fileID: 252130371}
 --- !u!4 &93398412
 Transform:
   m_ObjectHideFlags: 0
@@ -378,8 +379,11 @@ MonoBehaviour:
   pool: {fileID: 1203656097}
   refillDelay: 0.5
   firstScore: 0
+  x: 0
+  numberOfTrashDestroyed: 0
   destroyed: 0
   getPoints: 0
+  isDeadlocked: 0
   trashDestroyed: 0
   whatTrash: 
   boardLayout:
@@ -1374,6 +1378,7 @@ MonoBehaviour:
   Inventory: {fileID: 0}
   PowerUpsInventory: {fileID: 0}
   GiftsInventory: {fileID: 0}
+  ProjectsInventory: {fileID: 0}
   PowerUpsShop: {fileID: 0}
   GiftsShop: {fileID: 0}
 --- !u!1 &1061883446
@@ -2282,12 +2287,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6d87548ba7c2246a64792895adb818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChars: []
   allChars:
   - {fileID: 3958550386214140230, guid: c734b2aa0823ec643aa145b5006cbee1, type: 3}
   - {fileID: 6019560297839165363, guid: 2d36a7c10e128c745a5da81f519dbd87, type: 3}
   - {fileID: 4479335286704895808, guid: cd147c101dcfb5c43971ccee957faed9, type: 3}
   - {fileID: 5197685884664293579, guid: 41397e5cb5fb241499d58b12c5c3891f, type: 3}
+  - {fileID: 970625150386588091, guid: 11612703a8eb8794fab5777a7d96dd9b, type: 3}
+  - {fileID: 8882174253295742567, guid: d84981f55df51f743a6bac8ba39e0540, type: 3}
+  - {fileID: 4190338391225734980, guid: 57c78b6807b1d7245bc8baedf43661fa, type: 3}
   canvas: {fileID: 1759490374}
   partList: {fileID: 11400000, guid: 6176a04dd1b956646b79d510d820cfc1, type: 2}
   chars:
@@ -3029,10 +3036,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   party: {fileID: 11400000, guid: 6176a04dd1b956646b79d510d820cfc1, type: 2}
   isCoraline: 0
-  isDiane: 0
   isGary: 0
   isPam: 0
   isMari: 0
+  isOscar: 0
+  isDiane: 0
+  isMalachi: 0
 --- !u!224 &2109575338 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1006181922841260411, guid: 9b3c5d0742ce77244854e9b00f708749, type: 3}
