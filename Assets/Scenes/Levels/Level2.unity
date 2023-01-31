@@ -3234,6 +3234,9 @@ MonoBehaviour:
   - {fileID: 6019560297839165363, guid: 2d36a7c10e128c745a5da81f519dbd87, type: 3}
   - {fileID: 4479335286704895808, guid: cd147c101dcfb5c43971ccee957faed9, type: 3}
   - {fileID: 5197685884664293579, guid: 41397e5cb5fb241499d58b12c5c3891f, type: 3}
+  - {fileID: 970625150386588091, guid: 11612703a8eb8794fab5777a7d96dd9b, type: 3}
+  - {fileID: 8882174253295742567, guid: d84981f55df51f743a6bac8ba39e0540, type: 3}
+  - {fileID: 4190338391225734980, guid: 57c78b6807b1d7245bc8baedf43661fa, type: 3}
   canvas: {fileID: 1759490374}
   partList: {fileID: 11400000, guid: 6176a04dd1b956646b79d510d820cfc1, type: 2}
   chars:

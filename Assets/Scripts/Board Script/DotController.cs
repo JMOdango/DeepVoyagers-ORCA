@@ -60,15 +60,7 @@ public class DotController : MonoBehaviour
     //        color.transform.parent = this.transform;
     //    }
     //}
-    private void OnMouseOver()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            isRowBomb = true;
-            GameObject arrow = Instantiate(rowArrow, transform.position, Quaternion.identity);
-            arrow.transform.parent = this.transform;
-        }
-    }
+ 
 
     // Update is called once per frame
     void Update()
