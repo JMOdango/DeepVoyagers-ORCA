@@ -9,16 +9,32 @@ public class PanelOpener : MonoBehaviour
     public GameObject PowerUpsInventory;
     public GameObject GiftsInventory;
     public GameObject ProjectsInventory;
+    public GameObject TopUpShop;
 
     public GameObject PowerUpsShop;
     public GameObject GiftsShop;
-    
+
+    public GameObject ShellTopUp;
+    public GameObject CoinTopUp;
+    public GameObject PromoTopUp;
     public void OpenSettings()
     {
         if(Settings != null){
             bool isActive = Settings.activeSelf;
             Settings.SetActive(!isActive);
         }
+    }
+
+    public void OpenTopUpShop()
+    {
+      TopUpShop.SetActive(true);
+    }
+
+//TopUpShop
+    
+    public void OpenShellTopUp()
+    {
+
     }
 
 //Inventory Panels
