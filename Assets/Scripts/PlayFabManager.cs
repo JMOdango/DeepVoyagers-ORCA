@@ -12,10 +12,13 @@ public class PlayFabManager : MonoBehaviour
 {
     //SignIn/SignUp
     public static PlayFabManager PFM;
-    VirtualCurrency virtualCurrency;
+    
+    UsernameManager usernameManager;
     InventoryManager inventory;
+    
     [SerializeField] GameObject signUpTab, logInTab, startPanel, HUD;
-    [SerializeField] TextMeshProUGUI username, userEmail, userPassword, userConfirmPass, userEmailLogin, userPasswordLogin, errorSignUp, errorLogin;
+    [SerializeField] TextMeshProUGUI username, userEmail, userPassword, userConfirmPass, userEmailLogin, userPasswordLogin, errorSignUp, errorLogin, successfulSignUp;
+    string displayName;
     string encryptedPassword;
     public int loading = 1;
 
@@ -39,7 +42,7 @@ public class PlayFabManager : MonoBehaviour
     public void Start(){
         if (string.IsNullOrEmpty(PlayFabSettings.TitleId))
         {
-            PlayFabSettings.TitleId = "4F3D8";
+            PlayFabSettings.TitleId = "B4202";
         }
     }
 
@@ -47,6 +50,7 @@ public class PlayFabManager : MonoBehaviour
     public void SwitchToSignUpTab(){
         signUpTab.SetActive(true);
         logInTab.SetActive(false);
+        successfulSignUp.text = "";
         errorSignUp.text = "";
         errorLogin.text = "";
     }
@@ -54,6 +58,7 @@ public class PlayFabManager : MonoBehaviour
     public void SwitchToLoginTab(){
         signUpTab.SetActive(false);
         logInTab.SetActive(true);
+        successfulSignUp.text = "";
         errorSignUp.text = "";
         errorLogin.text = "";
     }
@@ -82,6 +87,7 @@ public class PlayFabManager : MonoBehaviour
             Email = userEmail.text, 
             Password = Encrypt(userPassword.text),
             Username = username.text.Remove(username.text.Length-1),
+            DisplayName = username.text.Remove(username.text.Length-1),
             RequireBothUsernameAndEmail = true
         };
         PlayFabClientAPI.RegisterPlayFabUser(registerRequest, RegisterSuccess, RegisterFailure);
@@ -90,7 +96,7 @@ public class PlayFabManager : MonoBehaviour
     public void RegisterSuccess(RegisterPlayFabUserResult result){
         errorSignUp.text = "";
         errorLogin.text = "";
-        StartGame();
+        successfulSignUp.text = "Successfully created an account.";
     }
 
     public void RegisterFailure(PlayFabError error){
@@ -101,6 +107,11 @@ public class PlayFabManager : MonoBehaviour
         var request = new LoginWithEmailAddressRequest{
             Email = userEmailLogin.text, 
             Password = Encrypt(userPasswordLogin.text),
+
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
+            {
+                GetPlayerProfile = true
+            }
         };
         PlayFabClientAPI.LoginWithEmailAddress(request, LoginSuccess, LoginFailure);
     }
@@ -108,6 +119,11 @@ public class PlayFabManager : MonoBehaviour
     public void LoginSuccess(LoginResult result){
         errorSignUp.text = "";
         errorLogin.text = "";
+
+        if(result.InfoResultPayload != null){
+            displayName = result.InfoResultPayload.PlayerProfile.DisplayName;
+        }
+        UsernameManager.usernameManager.SetDisplayName(displayName);
         StartGame();
     }
 
@@ -122,7 +138,7 @@ public class PlayFabManager : MonoBehaviour
     public void ResetPassword(){
         var request = new SendAccountRecoveryEmailRequest{
             Email = userEmailLogin.text,
-            TitleId = "4F3D8"
+            TitleId = "B4202"
         };
         PlayFabClientAPI.SendAccountRecoveryEmail(request, PasswordResetSuccess, PasswordResetFailure);
     }
@@ -141,40 +157,40 @@ public class PlayFabManager : MonoBehaviour
 
     //PlayerStats
 
-    public int playerLevel;
+    // public int playerLevel;
 
-    public void SetStats()
-    {
-        PlayFabClientAPI.UpdatePlayerStatistics( new UpdatePlayerStatisticsRequest {
-            // request.Statistics is a list, so multiple StatisticUpdate objects can be defined if required.
-            Statistics = new List<StatisticUpdate> {
-                new StatisticUpdate { StatisticName = "PlayerLevel", Value = playerLevel },
-            }
-        },
-        result => { Debug.Log("User statistics updated"); },
-        error => { Debug.LogError(error.GenerateErrorReport()); });
-    }
+    // public void SetStats()
+    // {
+    //     PlayFabClientAPI.UpdatePlayerStatistics( new UpdatePlayerStatisticsRequest {
+    //         // request.Statistics is a list, so multiple StatisticUpdate objects can be defined if required.
+    //         Statistics = new List<StatisticUpdate> {
+    //             new StatisticUpdate { StatisticName = "PlayerLevel", Value = playerLevel },
+    //         }
+    //     },
+    //     result => { Debug.Log("User statistics updated"); },
+    //     error => { Debug.LogError(error.GenerateErrorReport()); });
+    // }
 
-    void GetStats()
-    {
-        PlayFabClientAPI.GetPlayerStatistics(
-            new GetPlayerStatisticsRequest(),
-            OnGetStats,
-            error => Debug.LogError(error.GenerateErrorReport())
-        );
-    }
+    // void GetStats()
+    // {
+    //     PlayFabClientAPI.GetPlayerStatistics(
+    //         new GetPlayerStatisticsRequest(),
+    //         OnGetStats,
+    //         error => Debug.LogError(error.GenerateErrorReport())
+    //     );
+    // }
 
-    void OnGetStats(GetPlayerStatisticsResult result)
-    {
-        Debug.Log("Received the following Statistics:");
-        foreach (var eachStat in result.Statistics){
-            Debug.Log("Statistic (" + eachStat.StatisticName + "): " + eachStat.Value);
-            switch(eachStat.StatisticName)
-            {
-                case "PlayerLevel":
-                    playerLevel = eachStat.Value;
-                    break;
-            }
-        }
-    }
+    // void OnGetStats(GetPlayerStatisticsResult result)
+    // {
+    //     Debug.Log("Received the following Statistics:");
+    //     foreach (var eachStat in result.Statistics){
+    //         Debug.Log("Statistic (" + eachStat.StatisticName + "): " + eachStat.Value);
+    //         switch(eachStat.StatisticName)
+    //         {
+    //             case "PlayerLevel":
+    //                 playerLevel = eachStat.Value;
+    //                 break;
+    //         }
+    //     }
+    // }
 }

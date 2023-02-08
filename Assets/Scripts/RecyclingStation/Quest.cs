@@ -60,9 +60,9 @@ public class Quest : MonoBehaviour
   void Start()
   {
     //DontDestroyOnLoad(this.gameObject);
-    DontDestroyOnLoad(this.gameObject);
-    DontDestroyOnLoad(sceneinfo);
-    DontDestroyOnLoad(realcounter);
+    // DontDestroyOnLoad(this.gameObject);
+    // DontDestroyOnLoad(sceneinfo);
+    // DontDestroyOnLoad(realcounter);
     if (sceneinfo.instantiated == false && sceneinfo.timeron == false)
     {
      required1.text = sceneinfo.goal1_requiredAmount.ToString();

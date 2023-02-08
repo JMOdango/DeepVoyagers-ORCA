@@ -9,6 +9,7 @@ public class VirtualCurrency : MonoBehaviour
 {
     public static VirtualCurrency virtualCurrency;
     CurrencyManager currencyManager;
+    TrashCollectionManager trashCollectionManager;
     PlayFabManager playFab;
     // public TextMeshProUGUI coinsValueText, shellsValueText, energyValueText, 
     // public TextMeshProUGUI energyRechargeTimeText;
@@ -16,6 +17,8 @@ public class VirtualCurrency : MonoBehaviour
     float secondsLeftToRefreshEnergy = 1;
     [SerializeField]
     private int coins, shells, energy;
+    [SerializeField]
+    private int plastic, organic, metal, glass, fabric;
     System.TimeSpan time;
 
     void Start(){
@@ -47,6 +50,12 @@ public class VirtualCurrency : MonoBehaviour
         CurrencyManager.currencyManager.SetShells(shells);
         CurrencyManager.currencyManager.SetStamina(energy);
         CurrencyManager.currencyManager.SetTimer(secondsLeftToRefreshEnergy);
+
+        TrashCollectionManager.trashCollectionManager.SetPlastic(plastic);
+        TrashCollectionManager.trashCollectionManager.SetOrganic(organic);
+        TrashCollectionManager.trashCollectionManager.SetMetal(metal);
+        TrashCollectionManager.trashCollectionManager.SetGlass(glass);
+        TrashCollectionManager.trashCollectionManager.SetFabric(fabric);
     }
     
     public void GetVirtualCurrencies(){
@@ -55,11 +64,16 @@ public class VirtualCurrency : MonoBehaviour
 
     void OnGetUserInventorySuccess(GetUserInventoryResult result){
         coins = result.VirtualCurrency["CN"];
-
         shells = result.VirtualCurrency["SH"];
 
         energy = result.VirtualCurrency["EN"];
         secondsLeftToRefreshEnergy = result.VirtualCurrencyRechargeTimes["EN"].SecondsToRecharge;
+
+        plastic = result.VirtualCurrency["PL"];
+        organic = result.VirtualCurrency["OR"];
+        metal = result.VirtualCurrency["ME"];
+        glass = result.VirtualCurrency["GL"];
+        fabric = result.VirtualCurrency["FA"];
     }
 
     void currencyError(PlayFabError error){
