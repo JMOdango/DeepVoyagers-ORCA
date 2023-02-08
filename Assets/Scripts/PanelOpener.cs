@@ -9,10 +9,23 @@ public class PanelOpener : MonoBehaviour
     public GameObject PowerUpsInventory;
     public GameObject GiftsInventory;
     public GameObject ProjectsInventory;
+    public GameObject TopUpShop;
 
     public GameObject PowerUpsShop;
     public GameObject GiftsShop;
-    public GameObject TopUpShop;
+    
+    //TopUp Shop Variable
+    public GameObject ShellTopUp;
+    public GameObject CoinTopUp;
+    public GameObject PromoTopUp;
+
+    public GameObject on_shell;
+    public GameObject off_shell;
+    public GameObject on_coin;
+    public GameObject off_coin;
+    public GameObject on_promo;
+    public GameObject off_promo;
+
 
     public void OpenSettings()
     {
@@ -20,6 +33,63 @@ public class PanelOpener : MonoBehaviour
             bool isActive = Settings.activeSelf;
             Settings.SetActive(!isActive);
         }
+    }
+
+    public void OpenTopUpShop()
+    {
+      TopUpShop.SetActive(true);
+    }
+
+    public void CloseTopUpShop()
+    {
+      TopUpShop.SetActive(false);
+    }
+
+//TopUpShop
+    
+    public void OpenShellTopUp()
+    {
+     OpenTopUpShop();
+     ShellTopUp.SetActive(true);
+     CoinTopUp.SetActive(false);
+     PromoTopUp.SetActive(false);
+
+     on_shell.SetActive(true);
+     off_shell.SetActive(false);
+     on_coin.SetActive(false);
+     off_coin.SetActive(true);
+     on_promo.SetActive(false);
+     off_promo.SetActive(true);
+    }
+
+    public void OpenCoinTopUp()
+    {
+     OpenTopUpShop();
+     ShellTopUp.SetActive(false);
+     CoinTopUp.SetActive(true);
+     PromoTopUp.SetActive(false);
+
+     on_shell.SetActive(false);
+     off_shell.SetActive(true);
+     on_coin.SetActive(true);
+     off_coin.SetActive(false);
+     on_promo.SetActive(false);
+     off_promo.SetActive(true);
+    }
+
+    public void OpenPromoTopUp()
+    {
+     OpenTopUpShop();
+     ShellTopUp.SetActive(false);
+     CoinTopUp.SetActive(false);
+     PromoTopUp.SetActive(true);
+
+     on_shell.SetActive(false);
+     off_shell.SetActive(true);
+     on_coin.SetActive(false);
+     off_coin.SetActive(true);
+     on_promo.SetActive(true);
+     off_promo.SetActive(false);
     }
 
 //Inventory Panels
