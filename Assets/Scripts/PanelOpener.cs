@@ -12,7 +12,8 @@ public class PanelOpener : MonoBehaviour
 
     public GameObject PowerUpsShop;
     public GameObject GiftsShop;
-    
+    public GameObject TopUpShop;
+
     public void OpenSettings()
     {
         if(Settings != null){
