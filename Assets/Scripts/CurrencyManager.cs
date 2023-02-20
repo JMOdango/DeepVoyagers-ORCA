@@ -8,7 +8,7 @@ public class CurrencyManager : MonoBehaviour
     public static CurrencyManager currencyManager;
     VirtualCurrency virtualCurrency;
     [SerializeField]
-    private int storeStamina, storeShells, storeCoins;
+    private int storeStamina, storeShells, storeCoins, storePlastic, storeGlass, storeMetal, storeOrganic, storeFabric;
     [SerializeField]
     public float secondsLeft;
     System.TimeSpan time;
@@ -65,6 +65,36 @@ public class CurrencyManager : MonoBehaviour
         return;
     }
 
+    public void SetPlastic(int plastic)
+    {
+        storePlastic = plastic;
+        return;
+    }
+
+    public void SetGlass(int glass)
+    {
+        storeGlass = glass;
+        return;
+    }
+
+    public void SetMetal(int metal)
+    {
+        storeMetal = metal;
+        return;
+    }
+
+    public void SetOrganic(int organic)
+    {
+        storeOrganic = organic;
+        return;
+    }
+
+    public void SetFabric(int fabric)
+    {
+        storeFabric = fabric;
+        return;
+    }
+
     public void SetTimer(float secondsLeftToRefreshEnergy){
         secondsLeft = secondsLeftToRefreshEnergy;
         time = System.TimeSpan.FromSeconds(secondsLeftToRefreshEnergy);
@@ -81,5 +111,25 @@ public class CurrencyManager : MonoBehaviour
 
     public int GetCoinsLeft(){
         return storeCoins;
+    }
+
+    public int GetPlasticLeft(){
+        return storePlastic;
+    }
+
+    public int GetGlassLeft(){
+        return storeGlass;
+    }
+
+    public int GetMetalLeft(){
+        return storeMetal;
+    }
+
+    public int GetOrganicLeft(){
+        return storeOrganic;
+    }
+
+    public int GetFabricLeft(){
+        return storeFabric;
     }
 }

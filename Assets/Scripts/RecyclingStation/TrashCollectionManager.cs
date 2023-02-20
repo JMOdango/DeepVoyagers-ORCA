@@ -8,7 +8,7 @@ public class TrashCollectionManager : MonoBehaviour
     public static TrashCollectionManager trashCollectionManager;
     [SerializeField]
     private int storePlastic, storeOrganic, storeMetal, storeGlass, storeFabric;
-    public TextMeshProUGUI plasticValueText, organicValueText, metalValueText, glassValueText, fabricValueText;
+    // public TextMeshProUGUI plasticValueText, organicValueText, metalValueText, glassValueText, fabricValueText;
   
     private void Awake(){
         if(trashCollectionManager == null)
@@ -21,20 +21,20 @@ public class TrashCollectionManager : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        plasticValueText.text = storePlastic.ToString();
-        organicValueText.text = storeOrganic.ToString();
-        metalValueText.text = storeMetal.ToString();
-        glassValueText.text = storeGlass.ToString();
-        fabricValueText.text = storeFabric.ToString();
+        // plasticValueText.text = storePlastic.ToString();
+        // organicValueText.text = storeOrganic.ToString();
+        // metalValueText.text = storeMetal.ToString();
+        // glassValueText.text = storeGlass.ToString();
+        // fabricValueText.text = storeFabric.ToString();
     }
 
     void Update()
     {
-        plasticValueText.text = storePlastic.ToString();
-        organicValueText.text = storeOrganic.ToString();
-        metalValueText.text = storeMetal.ToString();
-        glassValueText.text = storeGlass.ToString();
-        fabricValueText.text = storeFabric.ToString();
+        // plasticValueText.text = storePlastic.ToString();
+        // organicValueText.text = storeOrganic.ToString();
+        // metalValueText.text = storeMetal.ToString();
+        // glassValueText.text = storeGlass.ToString();
+        // fabricValueText.text = storeFabric.ToString();
     }
 
     public void SetPlastic(int plastic)
