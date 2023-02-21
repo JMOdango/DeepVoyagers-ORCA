@@ -28,8 +28,16 @@ public class InventoryUI : MonoBehaviour
     public TextMeshProUGUI waterproofcameratext;
     public TextMeshProUGUI maptext;
     public TextMeshProUGUI historybooktext;
-    public TextMeshProUGUI seaweedtext, crystalstext;
+    public TextMeshProUGUI seaweedtext;
+    public TextMeshProUGUI crystalstext;
     public TextMeshProUGUI toyfiguretext;
+
+    [Header("Projects-Text")]
+    public TextMeshProUGUI fertilizertext;
+    public TextMeshProUGUI birdfeedertext;
+    public TextMeshProUGUI clothebagtext;
+    public TextMeshProUGUI penholdertext;
+    public TextMeshProUGUI plasticpottext;
 
     [Header("Powerups-Button")]
     public Button smallenergybtn;
@@ -220,7 +228,7 @@ public class InventoryUI : MonoBehaviour
 
     }
 
-       public void SetUIGifts(int stufftoycount, 
+    public void SetUIGifts(int stufftoycount, 
        int waterproofcameracount, 
        int mapcount, 
        int historybookcount, 
@@ -298,5 +306,18 @@ public class InventoryUI : MonoBehaviour
         {
             toyfigurebtn.interactable = false;
         }
+    }
+
+    public void SetUIProjects(int fertilizercount, 
+       int birdfeedercount, 
+       int clothebagcount, 
+       int penholdercount, 
+       int plasticpotcount
+    ){
+        fertilizertext.text = fertilizercount.ToString();
+        birdfeedertext.text = birdfeedercount.ToString();
+        clothebagtext.text = clothebagcount.ToString();
+        penholdertext.text = penholdercount.ToString();
+        plasticpottext.text = plasticpotcount.ToString();
     }
 }

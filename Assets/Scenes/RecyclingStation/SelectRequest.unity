@@ -1060,8 +1060,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2848a1eecde98cf43b57d9ca65240729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellReward: 40
-  coinReward: 100
+  shellsReward: 40
+  coinsReward: 100
   submit_off: {fileID: 1991799035}
   submit_on: {fileID: 1855721046}
   randomGoal1Project:
@@ -1082,7 +1082,6 @@ MonoBehaviour:
   required2: {fileID: 115878512}
   timemaster: {fileID: 1750657734}
   realcounter: {fileID: 1750657733}
-  player: {fileID: 1631665486}
   sceneinfo: {fileID: 11400000, guid: 3e78952922a717c448e13885d501312a, type: 2}
   questdonebutton: {fileID: 1520807063}
 --- !u!1 &143805087
@@ -2670,7 +2669,7 @@ Transform:
   - {fileID: 762701034}
   - {fileID: 304605149}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522981447 stripped
 GameObject:
@@ -6989,72 +6988,6 @@ RectTransform:
   m_AnchoredPosition: {x: 21, y: -119}
   m_SizeDelta: {x: 219.9934, y: 86.377}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1631665485
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1631665487}
-  - component: {fileID: 1631665486}
-  m_Layer: 5
-  m_Name: Inventory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1631665486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631665485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50721d332c9f4594db538784916f5410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plasticValueText: {fileID: 6418388616648126699}
-  organicValueText: {fileID: 2017396083807439700}
-  metalValueText: {fileID: 3036743274257866991}
-  glassValueText: {fileID: 6280508253048171028}
-  fabricValueText: {fileID: 4695915497407689954}
-  plasticLeft: 0
-  organicLeft: 0
-  metalLeft: 0
-  glassLeft: 0
-  fabricLeft: 0
-  player_shells: 0
-  player_coins: 0
-  Fertilizer: 3
-  BirdFeeder: 3
-  ClotheBag: 3
-  PenHolder: 3
-  PlasticPot: 3
---- !u!224 &1631665487
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631665485}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 895, y: 510}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1669462108
 GameObject:
   m_ObjectHideFlags: 0
@@ -7901,15 +7834,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887bae6e14912bc46b7b8d856560bd8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellReward: 40
-  coinReward: 100
+  shellsReward: 40
+  coinsReward: 100
   required1: {fileID: 775348083}
   required2: {fileID: 1276587552}
   timemaster: {fileID: 1750657734}
   realcounter: {fileID: 1750657733}
   submit_off: {fileID: 1613557089}
   submit_on: {fileID: 494104340}
-  player: {fileID: 1631665486}
   sceneinfo: {fileID: 11400000, guid: 640ec5d607208be4098bd0277a68f497, type: 2}
   randomGoal1Project:
   - {fileID: 2119939771}
@@ -9395,15 +9327,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9241f8a5f7a236b4f8ec56f2527e585b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shellReward: 40
-  coinReward: 100
+  shellsReward: 40
+  coinsReward: 100
   required1: {fileID: 435517286}
   required2: {fileID: 1039752978}
   timemaster: {fileID: 1750657734}
   realcounter: {fileID: 1750657733}
   submit_off: {fileID: 1443563291}
   submit_on: {fileID: 903683955}
-  player: {fileID: 1631665486}
   sceneinfo: {fileID: 11400000, guid: 7df6fe0a861793642a0b7bf325cfbfaa, type: 2}
   randomGoal1Project:
   - {fileID: 828997387}

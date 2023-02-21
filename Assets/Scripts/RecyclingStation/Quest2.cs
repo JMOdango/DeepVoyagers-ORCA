@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PlayFab;
+using PlayFab.ClientModels;
 
 public class Quest2 : MonoBehaviour
 {
   // public bool isCompleted = false;
-  
-  public int shellReward;
-  public int coinReward;
-
-  
+  InventoryManager inventory;
+  TrashCollectionManager trashCollectionManager;
+  public int shellsReward;
+  public int coinsReward;
 
   // public enum Project 
   // {
@@ -42,16 +43,15 @@ public class Quest2 : MonoBehaviour
   public GameObject submit_off;
   public GameObject submit_on;
 
-  public TempPlayerInventory player;
 
   [SerializeField]
   public SceneInfo sceneinfo;
 
   void Start()
   {
-    DontDestroyOnLoad(this.gameObject);
-    DontDestroyOnLoad(sceneinfo);
-    DontDestroyOnLoad(realcounter);
+    // DontDestroyOnLoad(this.gameObject);
+    // DontDestroyOnLoad(sceneinfo);
+    // DontDestroyOnLoad(realcounter);
 
     if (sceneinfo.instantiated == false && sceneinfo.timeron == false)
     {
@@ -77,11 +77,11 @@ public class Quest2 : MonoBehaviour
 
   void Update()
   {
-     DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal1_projectToMake]);
-     DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal2_projectToMake]);
-     DontDestroyOnLoad(this.gameObject);
-     DontDestroyOnLoad(sceneinfo);
-     DontDestroyOnLoad(realcounter);
+    //  DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal1_projectToMake]);
+    //  DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal2_projectToMake]);
+    //  DontDestroyOnLoad(this.gameObject);
+    //  DontDestroyOnLoad(sceneinfo);
+    //  DontDestroyOnLoad(realcounter);
      required1.text = sceneinfo.goal1_requiredAmount.ToString();
      required2.text = sceneinfo.goal2_requiredAmount.ToString();
   }
@@ -90,9 +90,6 @@ public class Quest2 : MonoBehaviour
   {
     sceneinfo.isCompleted = true;
     Debug.Log("Completed");
-
-    
-    
   }
 
     /////for generating goal 1
@@ -127,7 +124,7 @@ public class Quest2 : MonoBehaviour
    public void spawnGoal1() {
         sceneinfo.goal1_projectToMake = Random.Range(0, randomGoal1Project.Length);
         Instantiate(randomGoal1Project[sceneinfo.goal1_projectToMake], Goal1_Point.position, Goal1_Point.rotation);
-        DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal1_projectToMake]);
+        // DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal1_projectToMake]);
         sceneinfo.isCompleted = false;
         switch (sceneinfo.goal1_projectToMake)
         {
@@ -166,7 +163,7 @@ public class Quest2 : MonoBehaviour
    public void spawnGoal2() {
         sceneinfo.goal2_projectToMake = Random.Range(0, randomGoal2Project.Length);
         Instantiate(randomGoal2Project[sceneinfo.goal2_projectToMake], Goal2_Point.position, Goal2_Point.rotation);
-        DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal2_projectToMake]);
+        // DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal2_projectToMake]);
         switch (sceneinfo.goal2_projectToMake)
         {
             case 0: 
@@ -265,35 +262,31 @@ public class Quest2 : MonoBehaviour
        
     }
 
-    
-
-    
-
     public void CheckGoal1()  ///needs to reference inventory
     {
       if (sceneinfo.goal1_project == SceneInfo.Project.Fertilizer)
       {
-        sceneinfo.goal1_currentAmount = player.Fertilizer;
+        sceneinfo.goal1_currentAmount = TrashCollectionManager.trashCollectionManager.GetFertilizerLeft();
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.BirdFeeder)
       {
-        sceneinfo.goal1_currentAmount = player.BirdFeeder;
+        sceneinfo.goal1_currentAmount = TrashCollectionManager.trashCollectionManager.GetBirdFeederLeft();
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.ClotheBag)
       {
-        sceneinfo.goal1_currentAmount = player.ClotheBag;
+        sceneinfo.goal1_currentAmount = TrashCollectionManager.trashCollectionManager.GetClotheBagLeft();
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.PenHolder)
       {
-        sceneinfo.goal1_currentAmount = player.PenHolder;
+        sceneinfo.goal1_currentAmount = TrashCollectionManager.trashCollectionManager.GetPenHolderLeft();
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.PlasticPot)
       {
-        sceneinfo.goal1_currentAmount = player.PlasticPot;
+        sceneinfo.goal1_currentAmount = TrashCollectionManager.trashCollectionManager.GetPlasticPotLeft();
       }
     }
 
@@ -301,27 +294,27 @@ public class Quest2 : MonoBehaviour
     {
       if (sceneinfo.goal2_project == SceneInfo.Project.Fertilizer)
       {
-        sceneinfo.goal2_currentAmount = player.Fertilizer;
+        sceneinfo.goal2_currentAmount = TrashCollectionManager.trashCollectionManager.GetFertilizerLeft();
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.BirdFeeder)
       {
-        sceneinfo.goal2_currentAmount = player.BirdFeeder;
+        sceneinfo.goal2_currentAmount = TrashCollectionManager.trashCollectionManager.GetBirdFeederLeft();
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.ClotheBag)
       {
-        sceneinfo.goal2_currentAmount = player.ClotheBag;
+        sceneinfo.goal2_currentAmount = TrashCollectionManager.trashCollectionManager.GetClotheBagLeft();
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.PenHolder)
       {
-        sceneinfo.goal2_currentAmount = player.PenHolder;
+        sceneinfo.goal2_currentAmount = TrashCollectionManager.trashCollectionManager.GetPenHolderLeft();
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.PlasticPot)
       {
-        sceneinfo.goal2_currentAmount = player.PlasticPot;
+        sceneinfo.goal2_currentAmount = TrashCollectionManager.trashCollectionManager.GetPlasticPotLeft();
       }
     }
 
@@ -362,8 +355,19 @@ public class Quest2 : MonoBehaviour
         {
           DecreaseGoal1();
           DecreaseGoal2();
-          player.player_coins += coinReward;
-          player.player_shells += shellReward;
+          
+          var coinsReq = new AddUserVirtualCurrencyRequest{
+                  VirtualCurrency = "CN",
+                  Amount = coinsReward
+          };
+          PlayFabClientAPI.AddUserVirtualCurrency(coinsReq, OnAddCoinsSuccess, OnError);
+
+          var shellsReq = new AddUserVirtualCurrencyRequest{
+                  VirtualCurrency = "SH",
+                  Amount = shellsReward
+          };
+          PlayFabClientAPI.AddUserVirtualCurrency(shellsReq, OnAddCoinsSuccess, OnError);
+
           Complete();
           timemaster.SaveDate();
          
@@ -376,10 +380,15 @@ public class Quest2 : MonoBehaviour
           realcounter.ResetClock2();
           
         }
-
-
       }
+    }
 
+    void OnAddCoinsSuccess(ModifyUserVirtualCurrencyResult result){
+        VirtualCurrency.virtualCurrency.GetVirtualCurrencies();
+    }
+
+    void OnError(PlayFabError error){
+        Debug.Log("Error: " + error.ErrorMessage);
     }
 
 
@@ -387,27 +396,27 @@ public class Quest2 : MonoBehaviour
     {
       if (sceneinfo.goal1_project == SceneInfo.Project.Fertilizer)
       {
-         player.Fertilizer-=sceneinfo.goal1_requiredAmount;
+        inventory.ReduceProjects("fertilizer", sceneinfo.goal1_requiredAmount);
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.BirdFeeder)
       {
-         player.BirdFeeder-=sceneinfo.goal1_requiredAmount;
+        inventory.ReduceProjects("birdfeeder", sceneinfo.goal1_requiredAmount);
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.ClotheBag)
       {
-        player.ClotheBag-=sceneinfo.goal1_requiredAmount;
+        inventory.ReduceProjects("clothebag", sceneinfo.goal1_requiredAmount);
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.PenHolder)
       {
-        player.PenHolder-=sceneinfo.goal1_requiredAmount;
+        inventory.ReduceProjects("penholder", sceneinfo.goal1_requiredAmount);
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.PlasticPot)
       {
-        player.PlasticPot-=sceneinfo.goal1_requiredAmount;
+        inventory.ReduceProjects("plasticpot", sceneinfo.goal1_requiredAmount);
       }
     }
 
@@ -415,28 +424,27 @@ public class Quest2 : MonoBehaviour
     {
       if (sceneinfo.goal2_project == SceneInfo.Project.Fertilizer)
       {
-         player.Fertilizer-=sceneinfo.goal2_requiredAmount;
+        inventory.ReduceProjects("fertilizer", sceneinfo.goal2_requiredAmount);
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.BirdFeeder)
       {
-         player.BirdFeeder-=sceneinfo.goal2_requiredAmount;
+        inventory.ReduceProjects("birdfeeder", sceneinfo.goal2_requiredAmount);
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.ClotheBag)
       {
-        player.ClotheBag-=sceneinfo.goal2_requiredAmount;
+        inventory.ReduceProjects("clothebag", sceneinfo.goal2_requiredAmount);
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.PenHolder)
       {
-        player.PenHolder-=sceneinfo.goal2_requiredAmount;
+        inventory.ReduceProjects("penholder", sceneinfo.goal2_requiredAmount);
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.PlasticPot)
       {
-        player.PlasticPot-=sceneinfo.goal2_requiredAmount;
+        inventory.ReduceProjects("plasticpot", sceneinfo.goal2_requiredAmount);
       }
     }
-
 }

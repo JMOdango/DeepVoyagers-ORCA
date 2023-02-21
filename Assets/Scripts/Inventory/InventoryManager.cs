@@ -25,6 +25,11 @@ public class Inventory{
     seaweed, 
     crystals, 
     toyfigure;
+    public int fertilizer,
+    birdfeeder,
+    clothebag,
+    penholder,
+    plasticpot;
 
     public Inventory(
         int smallenergy,
@@ -45,7 +50,12 @@ public class Inventory{
         int historybook, 
         int seaweed, 
         int crystals, 
-        int toyfigure
+        int toyfigure,
+        int fertilizer,
+        int birdfeeder,
+        int clothebag,
+        int penholder,
+        int plasticpot
     ){
         this.smallenergy = smallenergy;
         this.mediumenergy = mediumenergy;
@@ -66,6 +76,11 @@ public class Inventory{
         this.seaweed = seaweed;
         this.crystals = crystals;
         this.toyfigure = toyfigure;
+        this.fertilizer = fertilizer;
+        this.birdfeeder = birdfeeder;
+        this.clothebag = clothebag;
+        this.penholder = penholder;
+        this.plasticpot = plasticpot;
     }
 }
 
@@ -73,6 +88,7 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager inventory;
     InventoryUI inventoryUI;
+    TrashCollectionManager trashCollectionManager;
     public InventoryManager[] inventoryManager;
     
     [SerializeField]
@@ -80,6 +96,8 @@ public class InventoryManager : MonoBehaviour
     netcount, fungicount, pocketwatchcount, mermaidsorbcount, basketcount;
     [SerializeField]
     private int stufftoycount, waterproofcameracount, mapcount, historybookcount, seaweedcount, crystalscount, toyfigurecount;
+    [SerializeField]
+    private int fertilizercount, birdfeedercount, clothebagcount, penholdercount, plasticpotcount;
 
     public Inventory ReturnClass(){
         return new Inventory(smallenergycount, 
@@ -100,7 +118,12 @@ public class InventoryManager : MonoBehaviour
         historybookcount, 
         seaweedcount, 
         crystalscount, 
-        toyfigurecount
+        toyfigurecount,
+        fertilizercount,
+        birdfeedercount,
+        clothebagcount,
+        penholdercount,
+        plasticpotcount
         );
     }
 
@@ -119,6 +142,10 @@ public class InventoryManager : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    public void Update(){
+        TrashCollectionManager.trashCollectionManager.SetProjects(fertilizercount, birdfeedercount, clothebagcount, penholdercount, plasticpotcount);
     }
 
     public void SetUI()
@@ -145,6 +172,13 @@ public class InventoryManager : MonoBehaviour
        crystalscount, 
        toyfigurecount
        );
+
+       InventoryUI.inventoryUI.SetUIProjects(fertilizercount, 
+       birdfeedercount, 
+       clothebagcount, 
+       penholdercount, 
+       plasticpotcount
+       );
     }
 
     public void SetCount(Inventory inventory){
@@ -167,6 +201,11 @@ public class InventoryManager : MonoBehaviour
         seaweedcount = inventory.seaweed;
         crystalscount = inventory.crystals;
         toyfigurecount = inventory.toyfigure;
+        fertilizercount = inventory.fertilizer;
+        birdfeedercount = inventory.birdfeeder;
+        clothebagcount = inventory.clothebag;
+        penholdercount = inventory.penholder;
+        plasticpotcount = inventory.plasticpot;
     }
 
     public void SaveInventory(){
@@ -262,6 +301,21 @@ public class InventoryManager : MonoBehaviour
             case "toyfigure": 
             toyfigurecount++; 
             break;
+            case "fertilizer":
+            fertilizercount++;
+            break;
+            case "birdfeeder":
+            birdfeedercount++;
+            break;
+            case "clothebag":
+            clothebagcount++;
+            break;
+            case "penholder":
+            penholdercount++;
+            break;
+            case "plasticpot":
+            plasticpotcount++;
+            break;
         }
     }
 
@@ -324,6 +378,26 @@ public class InventoryManager : MonoBehaviour
             break;
             case "toyfigure": 
             toyfigurecount--; 
+            break;
+        }
+    }
+
+    public void ReduceProjects(string item, int amount){
+        switch(item){
+            case "fertilizer":
+            fertilizercount -= amount;
+            break;
+            case "birdfeeder":
+            birdfeedercount -= amount;
+            break;
+            case "clothebag":
+            clothebagcount -= amount;
+            break;
+            case "penholder":
+            penholdercount -= amount;
+            break;
+            case "plasticpot":
+            plasticpotcount -= amount;
             break;
         }
     }

@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 
 public class ItemToMake : MonoBehaviour
 {
+    TrashCollectionManager trashCollectionManager;
     InventoryManager inventory;
     public string itemName;
     public int itemReq;
@@ -19,11 +20,11 @@ public class ItemToMake : MonoBehaviour
     }
 
     public void Update(){
-        plasticLeft = CurrencyManager.currencyManager.GetPlasticLeft();
-        glassLeft = CurrencyManager.currencyManager.GetGlassLeft();
-        metalLeft = CurrencyManager.currencyManager.GetMetalLeft();
-        organicLeft = CurrencyManager.currencyManager.GetOrganicLeft();
-        fabricLeft = CurrencyManager.currencyManager.GetFabricLeft();
+        plasticLeft = TrashCollectionManager.trashCollectionManager.GetPlasticLeft();
+        glassLeft = TrashCollectionManager.trashCollectionManager.GetGlassLeft();
+        metalLeft = TrashCollectionManager.trashCollectionManager.GetMetalLeft();
+        organicLeft = TrashCollectionManager.trashCollectionManager.GetOrganicLeft();
+        fabricLeft = TrashCollectionManager.trashCollectionManager.GetFabricLeft();
     }
 
     public void MakeFertilizer(){

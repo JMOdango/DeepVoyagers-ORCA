@@ -1947,6 +1947,11 @@ MonoBehaviour:
   seaweedtext: {fileID: 9177342610022760123}
   crystalstext: {fileID: 9177342609099332719}
   toyfiguretext: {fileID: 9177342608366254620}
+  fertilizertext: {fileID: 9177342609582626192}
+  birdfeedertext: {fileID: 9177342608274364270}
+  clothebagtext: {fileID: 9177342608612319200}
+  penholdertext: {fileID: 9177342610031455493}
+  plasticpottext: {fileID: 9177342610047575080}
   smallenergybtn: {fileID: 0}
   mediumenergybtn: {fileID: 0}
   largeenergybtn: {fileID: 0}
@@ -1982,7 +1987,6 @@ MonoBehaviour:
   board: {fileID: 0}
   closeup: {fileID: 0}
   selectPieces: {fileID: 0}
-  inventoryManager: {fileID: 0}
 --- !u!1 &9177342608612319206
 GameObject:
   m_ObjectHideFlags: 0
