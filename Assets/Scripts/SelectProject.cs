@@ -5,7 +5,7 @@ using UnityEngine;
 public class SelectProject : MonoBehaviour
 {
     public GameObject RecycleCloseup;
-
+    public GameObject ProjectSelection;
     //Project Panels
      public GameObject OrganicFertilizer;
      public GameObject PenHolder;
@@ -22,6 +22,16 @@ public void ReturnToSelection()
         PlasticPot.SetActive(false);
         BirdFeeder.SetActive(false);
         ClotheBag.SetActive(false);
+    }
+
+public void GoToSelection()
+    {
+        ProjectSelection.SetActive(true);
+    }
+
+public void BackToRequests()
+    {
+        ProjectSelection.SetActive(false);
     }
 
 //Projects
