@@ -90,8 +90,13 @@ public class Quest : MonoBehaviour
 
   void Update()
   {
+<<<<<<< Updated upstream
     //  DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal1_projectToMake]);
     //  DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal2_projectToMake]);
+=======
+     //DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal1_projectToMake]);
+     //DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal2_projectToMake]);
+>>>>>>> Stashed changes
     //  DontDestroyOnLoad(this.gameObject);
     //  DontDestroyOnLoad(sceneinfo);
     //  DontDestroyOnLoad(realcounter);
@@ -146,7 +151,11 @@ public class Quest : MonoBehaviour
    public void spawnGoal1() {
         sceneinfo.goal1_projectToMake = Random.Range(0, randomGoal1Project.Length);
         Instantiate(randomGoal1Project[sceneinfo.goal1_projectToMake], Goal1_Point.position, Goal1_Point.rotation);
+<<<<<<< Updated upstream
         // DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal1_projectToMake]);
+=======
+        //DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal1_projectToMake]);
+>>>>>>> Stashed changes
         sceneinfo.isCompleted = false;
         switch (sceneinfo.goal1_projectToMake)
         {
@@ -184,7 +193,11 @@ public class Quest : MonoBehaviour
    public void spawnGoal2() {
         sceneinfo.goal2_projectToMake = Random.Range(0, randomGoal2Project.Length);
         Instantiate(randomGoal2Project[sceneinfo.goal2_projectToMake], Goal2_Point.position, Goal2_Point.rotation);
+<<<<<<< Updated upstream
         // DontDestroyOnLoad(randomGoal1Project[sceneinfo.goal2_projectToMake]);
+=======
+        //DestroyOnLoad(randomGoal1Project[sceneinfo.goal2_projectToMake]);
+>>>>>>> Stashed changes
         
         switch (sceneinfo.goal2_projectToMake)
         {
