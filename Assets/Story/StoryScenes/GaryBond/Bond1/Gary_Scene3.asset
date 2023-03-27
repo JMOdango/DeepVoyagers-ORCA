@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Gary_Scene3
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: You shouldn't have ran away without warning me.
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 8300000, guid: e86d398c643687e43a522087e63f0f78, type: 3}
+    sound: {fileID: 0}
+  - text: I'm sorry, I won't do it again.
+    speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 2
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I\u2019m a bit curious\u2026 Why do you like to explore so much even when
+      you always get yourself in trouble because of it?"
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Because our lives here are too limited so we should always make the most
+      out of it.
+    speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I didn\u2019t expect to hear that from you. Don\u2019t sea turtles have
+      a longer lifespan?"
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "That is if you survive long enough\u2026 In fact, I was one of the few
+      survivors the moment me and siblings hatched. My other siblings weren\u2019t
+      given a chance to experience life more. "
+    speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 2
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Oh right\u2026 baby sea turtles have a 1 in 1000 chance of survival. I
+      sometimes forget how rough it is out there in the wild. "
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "U-huh\u2026 You will never know what will happen to you that\u2019s why
+      it\u2019s better to do things you enjoy while you still can."
+    speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I guess you are right\u2026 I get it now. "
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Once your injury heals, how about we explore more together?
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Really!? Pinky promise!?
+    speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Pinky promise.
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 1
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: a946cf9e397aa724d9d2f4db8dc6110e, type: 3}
+  nextScene: {fileID: 11400000, guid: 9c0540034cad1cc419145f4ca7d79fe7, type: 2}

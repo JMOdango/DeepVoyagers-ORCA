@@ -1219,7 +1219,6 @@ GameObject:
   - component: {fileID: 4789060847955813410}
   - component: {fileID: 4789060847955813408}
   - component: {fileID: 4789060847955813409}
-  - component: {fileID: 4789060847955813423}
   m_Layer: 5
   m_Name: SP-MainMenu
   m_TagString: Untagged
@@ -1292,21 +1291,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4789060847955813423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4789060847955813411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f41a519f50832c4a9372017c447da9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMixer: {fileID: 24100000, guid: 5fa3a33de9f4a944dbe803c7544baeb8, type: 2}
-  musicSlider: {fileID: 4789060847059324629}
-  sfxSlider: {fileID: 4789060847634472532}
 --- !u!1 &4789060848056703320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,7 +1452,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4789060847955813423}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 0
@@ -3232,7 +3216,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4789060847955813423}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 0

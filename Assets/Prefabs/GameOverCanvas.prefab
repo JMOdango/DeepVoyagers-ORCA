@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 7868012874650273992}
   - component: {fileID: 7868012874650274006}
   m_Layer: 5
-  m_Name: return
+  m_Name: quitBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f828b419afd3f1439106657844bac6f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 951a694c30684284d8920188eede8580, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 7868012875102934565}
   - component: {fileID: 7868012875102934563}
   m_Layer: 5
-  m_Name: retry
+  m_Name: restartBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

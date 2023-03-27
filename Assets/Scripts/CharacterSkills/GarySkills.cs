@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class GarySkills : MonoBehaviour
 {
+    RelationshipManager relationship;
+    public const int firstthreshold = 15;
+    public const int secondthreshold = 45;
+    public const int thirdthreshold = 150;
 
     public FindMatches selectRandomRow;
     private Board board;
@@ -11,6 +16,8 @@ public class GarySkills : MonoBehaviour
     public float fillSpeed = 0.5f;
     public double TargetBar = 0;
     double points;
+    string level;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +33,23 @@ public class GarySkills : MonoBehaviour
         }
     }
 
+    void Awake(){
+        level = SceneManager.GetActiveScene().name;
+    }
+
     public void GetPoints()
     {
         if (garyImage.fillAmount < 1)
         {
-            points += Random.Range(0.04f, 0.08f);
+            switch(level){
+                case "Level1": points += Random.Range(0.30f, 0.50f); break;
+                case "Level2": points += Random.Range(0.30f, 0.40f); break;
+                case "Level3": points += Random.Range(0.20f, 0.40f); break;
+                case "Level4": points += Random.Range(0.20f, 0.30f); break;
+                case "Level5": points += Random.Range(0.10f, 0.30f); break;
+            }
             increaseBar(points);
-
+            board.getPoints = false;
         }
     }
     public void increaseBar(double score)
@@ -42,10 +59,33 @@ public class GarySkills : MonoBehaviour
 
     public void destroyRandomRow()
     {
-        if (garyImage.fillAmount == 1)
+        int GaryBond = RelationshipManager.relationship.GetGary();
+        if (garyImage.fillAmount == 1 && GaryBond < secondthreshold)
         {
             int randomRow = Random.Range(0, 6);
             selectRandomRow.randomDestroyRow(randomRow);
+            board.DestroyMatches();
+            garyImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
+        }
+        else if(garyImage.fillAmount == 1 && GaryBond >= secondthreshold && GaryBond < thirdthreshold){
+            int randomRow = Random.Range(0, 6);
+            int randomRow2 = Random.Range(0, 6);
+            selectRandomRow.randomDestroyRow(randomRow);
+            selectRandomRow.randomDestroyRow(randomRow2);
+            board.DestroyMatches();
+            garyImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
+        }
+        else if(garyImage.fillAmount == 1 && GaryBond >= thirdthreshold){
+            int randomRow = Random.Range(0, 6);
+            int randomRow2 = Random.Range(0, 6);
+            int randomRow3 = Random.Range(0, 6);
+            selectRandomRow.randomDestroyRow(randomRow);
+            selectRandomRow.randomDestroyRow(randomRow2);
+            selectRandomRow.randomDestroyRow(randomRow3);
             board.DestroyMatches();
             garyImage.fillAmount = 0;
             points = 0;

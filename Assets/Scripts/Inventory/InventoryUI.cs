@@ -144,7 +144,7 @@ public class InventoryUI : MonoBehaviour
         }
         else
         {
-            if(mysterysnackcount != 0)
+            if(mysterysnackcount > 0)
             {
                 mysterysnackbtn.interactable = true;
             }
@@ -153,7 +153,7 @@ public class InventoryUI : MonoBehaviour
                 mysterysnackbtn.interactable = false;
             }
 
-            if(magnetcount != 0)
+            if(magnetcount > 0)
             {
                 magnetbtn.interactable = true;
             }
@@ -162,7 +162,7 @@ public class InventoryUI : MonoBehaviour
                 magnetbtn.interactable = false;
             }
 
-            if(neptunestridentcount != 0)
+            if(neptunestridentcount > 0)
             {
                 neptunestridentbtn.interactable = true;
             }
@@ -171,7 +171,7 @@ public class InventoryUI : MonoBehaviour
                 neptunestridentbtn.interactable = false;
             }
 
-            if(voidgemcount != 0)
+            if(voidgemcount > 0)
             {
                 voidgembtn.interactable = true;
             }
@@ -180,7 +180,7 @@ public class InventoryUI : MonoBehaviour
                 voidgembtn.interactable = false;
             }
 
-            if(netcount != 0)
+            if(netcount > 0)
             {
                 netbtn.interactable = true;
             }
@@ -189,7 +189,7 @@ public class InventoryUI : MonoBehaviour
                 netbtn.interactable = false;
             }
 
-            if(fungicount != 0)
+            if(fungicount > 0)
             {
                 fungibtn.interactable = true;
             }
@@ -198,7 +198,7 @@ public class InventoryUI : MonoBehaviour
                 fungibtn.interactable = false;
             }
 
-            if(pocketwatchcount != 0)
+            if(pocketwatchcount > 0)
             {
                 pocketwatchbtn.interactable = true;
             }
@@ -207,7 +207,7 @@ public class InventoryUI : MonoBehaviour
                 pocketwatchbtn.interactable = false;
             }
 
-            if(mermaidsorbcount != 0)
+            if(mermaidsorbcount > 0)
             {
                 mermaidsorbbtn.interactable = true;
             }
@@ -216,7 +216,7 @@ public class InventoryUI : MonoBehaviour
                 mermaidsorbbtn.interactable = false;
             }
 
-            if(basketcount != 0)
+            if(basketcount > 0)
             {
                 basketbtn.interactable = true;
             }
@@ -236,6 +236,8 @@ public class InventoryUI : MonoBehaviour
        int crystalscount, 
        int toyfigurecount
     ){
+        Scene scene = SceneManager.GetActiveScene();
+
         stufftoytext.text = stufftoycount.ToString();
         waterproofcameratext.text = waterproofcameracount.ToString();
         maptext.text = mapcount.ToString();
@@ -244,67 +246,81 @@ public class InventoryUI : MonoBehaviour
         crystalstext.text = crystalscount.ToString();
         toyfiguretext.text = toyfigurecount.ToString();
 
-        if(stufftoycount != 0)
+        if(scene.name == "MainMenu")
         {
-            stufftoybtn.interactable = true;
+            mysterysnackbtn.interactable = false;
+            magnetbtn.interactable = false;
+            neptunestridentbtn.interactable = false;
+            voidgembtn.interactable = false;
+            netbtn.interactable = false;
+            fungibtn.interactable = false;
+            pocketwatchbtn.interactable = false;
+            mermaidsorbbtn.interactable = false;
+            basketbtn.interactable = false;
         }
-        else
-        {
-            stufftoybtn.interactable = false;
-        }
+        else{
+            if(stufftoycount > 0)
+            {
+                stufftoybtn.interactable = true;
+            }
+            else
+            {
+                stufftoybtn.interactable = false;
+            }
 
-        if(waterproofcameracount != 0)
-        {
-            waterproofcamerabtn.interactable = true;
-        }
-        else
-        {
-            waterproofcamerabtn.interactable = false;
-        }
+            if(waterproofcameracount > 0)
+            {
+                waterproofcamerabtn.interactable = true;
+            }
+            else
+            {
+                waterproofcamerabtn.interactable = false;
+            }
 
-        if(mapcount != 0)
-        {
-            mapbtn.interactable = true;
-        }
-        else
-        {
-            mapbtn.interactable = false;
-        }
+            if(mapcount > 0)
+            {
+                mapbtn.interactable = true;
+            }
+            else
+            {
+                mapbtn.interactable = false;
+            }
 
-        if(historybookcount != 0)
-        {
-            historybookbtn.interactable = true;
-        }
-        else
-        {
-            historybookbtn.interactable = false;
-        }
+            if(historybookcount > 0)
+            {
+                historybookbtn.interactable = true;
+            }
+            else
+            {
+                historybookbtn.interactable = false;
+            }
 
-        if(seaweedcount != 0)
-        {
-            seaweedbtn.interactable = true;
-        }
-        else
-        {
-            seaweedbtn.interactable = false;
-        }
+            if(seaweedcount > 0)
+            {
+                seaweedbtn.interactable = true;
+            }
+            else
+            {
+                seaweedbtn.interactable = false;
+            }
 
-        if(crystalscount != 0)
-        {
-            crystalsbtn.interactable = true;
-        }
-        else
-        {
-            crystalsbtn.interactable = false;
-        }
+            if(crystalscount > 0)
+            {
+                crystalsbtn.interactable = true;
+            }
+            else
+            {
+                crystalsbtn.interactable = false;
+            }
 
-        if(toyfigurecount != 0)
-        {
-            toyfigurebtn.interactable = true;
-        }
-        else
-        {
-            toyfigurebtn.interactable = false;
+            if(toyfigurecount > 0)
+            {
+                toyfigurebtn.interactable = true;
+            }
+            else
+            {
+                toyfigurebtn.interactable = false;
+            }
         }
     }
 

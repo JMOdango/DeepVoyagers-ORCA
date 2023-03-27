@@ -31,18 +31,6 @@ public class SceneSwitcher : MonoBehaviour
         FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
     }
 
-    public void enterRequests()
-    {
-        SceneManager.LoadScene("SelectRequest");
-        FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
-    }
-
-      public void enterRecycling()
-    {
-        SceneManager.LoadScene("SelectProject");
-        FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
-    }
-
     public void enterMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -62,32 +50,32 @@ public class SceneSwitcher : MonoBehaviour
     public void EnterLounge()
     {
         SceneManager.LoadScene("Lounge");
-        FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
     }
     public void EnterItemShop()
     {
         SceneManager.LoadScene("ItemShop");
-        FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
     }
     public void EnterEditParty()
     {
         SceneManager.LoadScene("EditParty");
-        FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
     }
     public void EnterRecyclingStation()
     {
         SceneManager.LoadScene("RecyclingStation");
-        FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
     }
     public void EnterJournal()
     {
         SceneManager.LoadScene("Journal");
-        FindObjectOfType<simpleAudioManager>().Play("MenuButtons");
     }
 
     public void Logout()
     {
         SceneManager.LoadScene("Login");
         PlayFabClientAPI.ForgetAllCredentials();
+    }
+
+    public void EnterBondCutscene(string cutscene)
+    {
+        SceneManager.LoadScene(cutscene);
     }
 }

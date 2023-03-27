@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd88a8ae081a3e249a931b4f4a0526f1, type: 3}
+  m_Name: Gary
+  m_EditorClassIdentifier: 
+  speakerName: Gary
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  sprites:
+  - {fileID: 21300000, guid: d901e8fc85b80fe48820d139909a934b, type: 3}
+  - {fileID: 21300000, guid: ab1d73ac241a8f641a15494d42aad777, type: 3}
+  - {fileID: 21300000, guid: a3239d339d6b66645804b4b04cf027f2, type: 3}
+  - {fileID: 21300000, guid: 3bcedd5c80eee9c46a953aa15dff238c, type: 3}
+  - {fileID: 21300000, guid: 50bb8837f850f4245b5fb2e7780b1540, type: 3}
+  - {fileID: 21300000, guid: 5880b773072f4eb4ea2cdede297bce94, type: 3}
+  - {fileID: 21300000, guid: 0da08d39a910e594e84e03d8d70a95dc, type: 3}
+  prefab: {fileID: 3391946363442740235, guid: 5c3344057ac9103419df521394e468ef, type: 3}

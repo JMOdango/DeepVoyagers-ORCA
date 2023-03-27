@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 50719550}
   - component: {fileID: 50719554}
   - component: {fileID: 50719555}
+  - component: {fileID: 50719556}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -253,6 +254,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a32277486a28f4f8bd381ca3ec3080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!222 &50719556
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50719549}
+  m_CullTransparentMesh: 1
 --- !u!1 &73070342
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +601,7 @@ SpriteRenderer:
   m_SortingLayerID: 401302821
   m_SortingLayer: -5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a280ad12760c2c64582f2991d75d4e00, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 493652b65a8e46b46a98e2b24e92d7a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -730,7 +739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 15.218018, y: 15.216003}
+  m_AnchoredPosition: {x: 15.218018, y: 15.216064}
   m_SizeDelta: {x: 30.436, y: 30.433}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1146059881
@@ -814,7 +823,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1146059881}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 50719555}
+        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1295176049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1100,7 +1121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: -113}
+  m_AnchoredPosition: {x: 0, y: -113}
   m_SizeDelta: {x: -543.784, y: -282.837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1384204873
@@ -1129,7 +1150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474611818}
   - component: {fileID: 1474611817}
-  - component: {fileID: 1474611816}
+  - component: {fileID: 1474611819}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1137,14 +1158,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1474611816
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474611815}
-  m_Enabled: 1
 --- !u!20 &1474611817
 Camera:
   m_ObjectHideFlags: 0
@@ -1203,6 +1216,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1474611819
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474611815}
+  m_Enabled: 1
 --- !u!1 &1576833322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,10 +1313,10 @@ PrefabInstance:
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: a09e5848c3e111a41ae5e0b0f81cd4f7, type: 3}
+      objectReference: {fileID: 8300000, guid: 4ee749d78b98424469787feb38f9335b, type: 3}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].loop
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].name
@@ -1332,7 +1353,7 @@ PrefabInstance:
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].audioMixerGroup
       value: 
-      objectReference: {fileID: -7127318803320155652, guid: 5fa3a33de9f4a944dbe803c7544baeb8, type: 2}
+      objectReference: {fileID: -6411316276369680846, guid: 5fa3a33de9f4a944dbe803c7544baeb8, type: 2}
     - target: {fileID: 5604207792396620537, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: m_Name
       value: AudioManager

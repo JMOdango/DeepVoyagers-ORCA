@@ -9,7 +9,7 @@ public class ButtonController : MonoBehaviour
     CurrencyManager currencyManager;
     public GameObject staminaRequirementScreen;
     private int levelNo;
-    public int sceneIndex;
+    public string sceneName;
     public int staminaReq;
     [SerializeField]
     private int staminaLeft;
@@ -53,7 +53,7 @@ public class ButtonController : MonoBehaviour
                 Amount = staminaReq,
             };
             PlayFabClientAPI.SubtractUserVirtualCurrency(request, OnSubtractCoinsSuccess, OnError);
-            SceneManager.LoadScene(sceneIndex);
+            SceneManager.LoadScene(sceneName);
         }
     }
 

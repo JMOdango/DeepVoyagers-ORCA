@@ -18,14 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/AreaSelection.unity
     guid: 1f99dfaf6f3e57f45925eae99fb34e7a
   - enabled: 1
-    path: Assets/Scenes/RecyclingStation/SelectRequest.unity
+    path: Assets/Scenes/RecyclingStation.unity
     guid: bd0baee9d77cf6842bf682bbe50b76c1
-  - enabled: 1
-    path: Assets/Scenes/RecyclingStation/SelectProject.unity
-    guid: 6abce406a99d20048b986e92350baaf1
-  - enabled: 1
-    path: Assets/Scenes/RecyclingStation/ProjectCloseup.unity
-    guid: 69f2bac08dbf222408f6ef70450d94c3
   - enabled: 1
     path: Assets/Scenes/Areas/Area1Files/Area1_LevelSelection.unity
     guid: 5bc9f7d0cea752740a230c7113524ef5
@@ -45,21 +39,54 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/CS-Level1.unity
     guid: 208296d8c534b5742baef51eb24c9b85
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/CS-Level2.unity
-    guid: 880b9601a6f68b6478baa06531e8c172
-  - enabled: 1
     path: Assets/Scenes/Levels/Level1.unity
     guid: e2e549d62b628c1408ce590c52a8f2d5
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/CS-Level2.unity
+    guid: 880b9601a6f68b6478baa06531e8c172
   - enabled: 1
     path: Assets/Scenes/Levels/Level2.unity
     guid: 7a4d34a70eaab8d44b90df40990f2275
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/CS-Level3.unity
+    guid: ef4a14c38af1d064293f433b4171cb69
+  - enabled: 1
     path: Assets/Scenes/Levels/Level3.unity
     guid: d8be04aaaba07f74ba3e8e8b7f794e58
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/CS-Level4.unity
+    guid: b4ac1e10ce8e7154a984a0fde0ae40b3
   - enabled: 1
     path: Assets/Scenes/Levels/Level4.unity
     guid: e983a38036566fa40850231297ff9da8
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/CS-Level5.unity
+    guid: c7bcf3c80e84e394cb386b11a49277fb
+  - enabled: 1
     path: Assets/Scenes/Levels/Level5.unity
     guid: 579028cf5e3a7cd4e9c0cbddbbdb85d3
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/GaryConvos/Gary_Bond1.unity
+    guid: f4dbda8c7659dd34abfe9c11524245a1
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/GaryConvos/Gary_Bond2.unity
+    guid: 5bf16eb540aa5b845975caa2b068b5bc
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/GaryConvos/Gary_Bond3.unity
+    guid: 6a879f47a7f18b740894b1bc2367eee1
+  - enabled: 1
+    path: Assets/Scenes/Areas/Area2Files/Area2_LevelSelection.unity
+    guid: 3e3bcec7650644242934006a9c950028
+  - enabled: 1
+    path: Assets/Scenes/Areas/Area3Files/Area3_LevelSelection.unity
+    guid: 9c065f12008a88b4097e866f5fc415bb
+  - enabled: 1
+    path: Assets/Scenes/Areas/Area4Files/Area4_LevelSelection.unity
+    guid: 44503631cbb823d41905468ecb29c73b
+  - enabled: 1
+    path: Assets/Scenes/Areas/Area5Files/Area5_LevelSelection.unity
+    guid: 98cd75d1b69f4ad459fdaa57976ac676
+  - enabled: 1
+    path: Assets/Scenes/Areas/Area6Files/Area6_LevelSelection.unity
+    guid: 728b249c549a92142ada5df0364833ad
   m_configObjects: {}

@@ -22,11 +22,11 @@ public bool instantiated = false;
   public Project goal1_project;
   public Project goal2_project;
 
-  public int goal1_requiredAmount=2; //can be randomized
+  public int goal1_requiredAmount = 2; //can be randomized
   public int goal1_currentAmount;
   
 
-  public int goal2_requiredAmount=2; //can be randomized
+  public int goal2_requiredAmount = 3; //can be randomized
   public int goal2_currentAmount;
 
 //   public GameObject submit_off;

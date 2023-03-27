@@ -14,12 +14,5 @@ public class ChooseScene : GameScene
         public string text;
         public StoryScene nextScene;
         public Speaker character;
-        public bool liked; 
-    }
-
-    public void LikedByCharacter(ChooseLabel chooseLabel){
-        if(chooseLabel.liked == true){
-
-        }
     }
 }

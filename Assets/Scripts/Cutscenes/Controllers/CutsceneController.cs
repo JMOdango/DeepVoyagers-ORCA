@@ -14,6 +14,8 @@ public class CutsceneController : MonoBehaviour
     public AudioController audioController;
     private State state = State.IDLE;
     public string Level;
+    public GameScene endscene;
+    public Scene[] BondScenes;
 
     private enum State
     {
@@ -61,7 +63,7 @@ public class CutsceneController : MonoBehaviour
     }
 
     public void enterLevel(){
-        if((currentScene as StoryScene).nextScene == null){
+        if((currentScene as StoryScene).nextScene == endscene){
             SceneManager.LoadScene(Level);
         }
     }

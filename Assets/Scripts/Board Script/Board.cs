@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Pool;
+using UnityEngine.SceneManagement;
+
 public enum GameState
 {
     wait,
@@ -63,10 +65,35 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Scene scene = SceneManager.GetActiveScene();
 
         toCollect = FindObjectOfType<RandomizeTrash>();
-        MovesLeft.Moves = Random.Range(15,25);
-        MovesLeft.TrashCollected = Random.Range(10,20);
+        //MovesLeft.Moves = Random.Range(15,25);
+        //MovesLeft.TrashCollected = Random.Range(10,20);
+
+        switch(scene.name){
+            case "Level1": 
+            MovesLeft.Moves = 6;
+            MovesLeft.TrashCollected = 4;
+            break;
+            case "Level2": 
+            MovesLeft.Moves = 8;
+            MovesLeft.TrashCollected = 8;
+            break;
+            case "Level3": 
+            MovesLeft.Moves = 10;
+            MovesLeft.TrashCollected = 12;
+            break;
+            case "Level4": 
+            MovesLeft.Moves = 12;
+            MovesLeft.TrashCollected = 16;
+            break;
+            case "Level5": 
+            MovesLeft.Moves = 14;
+            MovesLeft.TrashCollected = 20;
+            break;
+        }
+        
         moves.text = MovesLeft.Moves.ToString();
         numberToCollect.text = MovesLeft.TrashCollected.ToString();
         findAllMatches = FindObjectOfType<FindMatches>();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class OscarSkills : MonoBehaviour
 {
 
@@ -11,6 +12,7 @@ public class OscarSkills : MonoBehaviour
     public float fillSpeed = 0.5f;
     public double TargetBar = 0;
     double points;
+    string level;
 
 
     [SerializeField]
@@ -30,6 +32,7 @@ public class OscarSkills : MonoBehaviour
     public bool isOscar = false;
     public bool isDiane = false;
     public bool isMalachi = false;
+    
     void Start()
     {
         oscarImage.fillAmount = 0;
@@ -46,11 +49,21 @@ public class OscarSkills : MonoBehaviour
         }
     }
 
+    void Awake(){
+        level = SceneManager.GetActiveScene().name;
+    }
+
     public void GetPoints()
     {
         if (oscarImage.fillAmount < 1)
         {
-            points += Random.Range(0.04f, 0.08f);
+            switch(level){
+                case "Level1": points += Random.Range(0.30f, 0.50f); break;
+                case "Level2": points += Random.Range(0.30f, 0.40f); break;
+                case "Level3": points += Random.Range(0.20f, 0.40f); break;
+                case "Level4": points += Random.Range(0.20f, 0.30f); break;
+                case "Level5": points += Random.Range(0.10f, 0.30f); break;
+            }
             increaseBar(points);
             board.getPoints = false;
         }

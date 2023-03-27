@@ -6,6 +6,7 @@ using TMPro;
 public class TrashCollectionManager : MonoBehaviour
 {
     public static TrashCollectionManager trashCollectionManager;
+    InventoryManager inventory;
     [SerializeField]
     private int storePlastic, storeOrganic, storeMetal, storeGlass, storeFabric;
     [SerializeField]
@@ -32,6 +33,7 @@ public class TrashCollectionManager : MonoBehaviour
 
     void Update()
     {
+        SetProjects();
         plasticValueText.text = storePlastic.ToString();
         organicValueText.text = storeOrganic.ToString();
         metalValueText.text = storeMetal.ToString();
@@ -89,12 +91,12 @@ public class TrashCollectionManager : MonoBehaviour
         return storeFabric;
     }
 
-    public void SetProjects(int fertilizer, int birdfeeder, int clothebag, int penholder, int plasticpot){
-        storeFertilizer = fertilizer;
-        storeBirdFeeder = birdfeeder;
-        storeClotheBag = clothebag;
-        storePenHolder = penholder;
-        storePlasticPot = plasticpot;
+    public void SetProjects(){
+        storeFertilizer = InventoryManager.inventory.GetFertilizerCount();
+        storeBirdFeeder = InventoryManager.inventory.GetBirdFeederCount();
+        storeClotheBag = InventoryManager.inventory.GetClotheBagCount();
+        storePenHolder = InventoryManager.inventory.GetPenHolderCount();
+        storePlasticPot = InventoryManager.inventory.GetPlasticPotCount();
     }
 
     public int GetFertilizerLeft(){
@@ -116,29 +118,4 @@ public class TrashCollectionManager : MonoBehaviour
     public int GetPlasticPotLeft(){
         return storePlasticPot;
     }
-
-    // public void SetFertlizer(int fertilizer){
-    //     storeFertilizer = fertilizer;
-    //     return;
-    // }
-
-    // public void SetBirdFeeder(int birdfeeder){
-    //     storeBirdFeeder = birdfeeder;
-    //     return;
-    // }
-    
-    // public void SetClotheBag(int clothebag){
-    //     storeClotheBag = clothebag;
-    //     return;
-    // }
-
-    // public void SetPenHolder(int penholder){
-    //     storePenHolder = penholder;
-    //     return;
-    // }
-
-    // public void SetPlasticPot(int plasticpot){
-    //     storePlasticPot = plasticpot;
-    //     return;
-    // }
 };

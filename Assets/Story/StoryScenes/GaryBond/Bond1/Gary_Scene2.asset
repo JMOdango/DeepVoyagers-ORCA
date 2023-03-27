@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Gary_Scene2
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: 'You and Gary went to an underwater cave. On the way out, Gary tried to
+      chase something that caught his attention and ended up being lost. '
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 8300000, guid: a0ca2b756429b15468736fbec7eee8b1, type: 3}
+    sound: {fileID: 0}
+  - text: 'You spent a few hours trying to find him and found him injured. You immediately
+      took him back to ORCA to get treated. '
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: 8fff0f500fa39ac488beb2ddebcadd4a, type: 3}
+  nextScene: {fileID: 11400000, guid: 24c7e352532a2134caf6071e3a1ee6fc, type: 2}

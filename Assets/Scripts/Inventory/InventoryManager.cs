@@ -88,7 +88,6 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager inventory;
     InventoryUI inventoryUI;
-    TrashCollectionManager trashCollectionManager;
     public InventoryManager[] inventoryManager;
     
     [SerializeField]
@@ -145,7 +144,27 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void Update(){
-        TrashCollectionManager.trashCollectionManager.SetProjects(fertilizercount, birdfeedercount, clothebagcount, penholdercount, plasticpotcount);
+
+    }
+
+    public int GetFertilizerCount(){
+        return fertilizercount;
+    }
+
+    public int GetBirdFeederCount(){
+        return birdfeedercount;
+    }
+
+    public int GetClotheBagCount(){
+        return clothebagcount;
+    }
+
+    public int GetPenHolderCount(){
+        return penholdercount;
+    }
+
+    public int GetPlasticPotCount(){
+        return plasticpotcount;
     }
 
     public void SetUI()
@@ -385,19 +404,24 @@ public class InventoryManager : MonoBehaviour
     public void ReduceProjects(string item, int amount){
         switch(item){
             case "fertilizer":
-            fertilizercount -= amount;
+            int tempFertilizer = fertilizercount - amount;
+            fertilizercount = tempFertilizer;
             break;
             case "birdfeeder":
-            birdfeedercount -= amount;
+            int tempBirdFeeder = birdfeedercount - amount;
+            birdfeedercount = tempBirdFeeder;
             break;
             case "clothebag":
-            clothebagcount -= amount;
+            int tempClotheBag = clothebagcount - amount;
+            clothebagcount = tempClotheBag;
             break;
             case "penholder":
-            penholdercount -= amount;
+            int tempPenHolder = penholdercount - amount;
+            penholdercount = tempPenHolder;
             break;
             case "plasticpot":
-            plasticpotcount -= amount;
+            int tempPlasticPot = plasticpotcount - amount;
+            plasticpotcount = tempPlasticPot;
             break;
         }
     }

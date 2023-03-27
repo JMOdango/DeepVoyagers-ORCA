@@ -11,6 +11,7 @@ public class Quest : MonoBehaviour
   TrashCollectionManager trashCollectionManager;
   public int shellsReward;
   public int coinsReward;
+  public GameObject NoItemsPanel;
   
   // public bool isCompleted = false;
   // public enum Project 
@@ -486,58 +487,139 @@ public class Quest : MonoBehaviour
 
     public void DecreaseGoal1()  ///needs to reference inventory
     {
+      int fertilizerLeft = TrashCollectionManager.trashCollectionManager.GetFertilizerLeft();
+      int birdFeederLeft = TrashCollectionManager.trashCollectionManager.GetBirdFeederLeft();
+      int clotheBagLeft = TrashCollectionManager.trashCollectionManager.GetClotheBagLeft();
+      int penHolderLeft = TrashCollectionManager.trashCollectionManager.GetPenHolderLeft();
+      int plasticPotLeft = TrashCollectionManager.trashCollectionManager.GetPlasticPotLeft();
+
       if (sceneinfo.goal1_project == SceneInfo.Project.Fertilizer)
       {
-        inventory.ReduceProjects("fertilizer", sceneinfo.goal1_requiredAmount);
+        if(fertilizerLeft < sceneinfo.goal1_requiredAmount)
+        {
+          NoItemsPanel.SetActive(true);
+        }
+        else
+        {
+          InventoryManager.inventory.ReduceProjects("fertilizer", sceneinfo.goal1_requiredAmount);
+        }
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.BirdFeeder)
       {
-        inventory.ReduceProjects("birdfeeder", sceneinfo.goal1_requiredAmount);
+        if(birdFeederLeft < sceneinfo.goal1_requiredAmount)
+        {
+          NoItemsPanel.SetActive(true);
+        }
+        else
+        {
+          InventoryManager.inventory.ReduceProjects("birdfeeder", sceneinfo.goal1_requiredAmount);
+        }
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.ClotheBag)
       {
-        inventory.ReduceProjects("clothebag", sceneinfo.goal1_requiredAmount);
+        if(clotheBagLeft < sceneinfo.goal1_requiredAmount)
+        {
+          NoItemsPanel.SetActive(true);
+        }
+        else
+        {
+          InventoryManager.inventory.ReduceProjects("clothebag", sceneinfo.goal1_requiredAmount);
+        }
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.PenHolder)
       {
-        inventory.ReduceProjects("penholder", sceneinfo.goal1_requiredAmount);
+        if(penHolderLeft < sceneinfo.goal1_requiredAmount)
+        {
+          NoItemsPanel.SetActive(true);
+        }
+        else
+        {
+          InventoryManager.inventory.ReduceProjects("penholder", sceneinfo.goal1_requiredAmount);
+        }
       }
 
       if (sceneinfo.goal1_project == SceneInfo.Project.PlasticPot)
       {
-        inventory.ReduceProjects("plasticpot", sceneinfo.goal1_requiredAmount);
+        if(plasticPotLeft < sceneinfo.goal1_requiredAmount)
+        {
+          NoItemsPanel.SetActive(true);
+        }
+        else
+        {
+          InventoryManager.inventory.ReduceProjects("plasticpot", sceneinfo.goal1_requiredAmount);
+        }
       }
     }
 
     public void DecreaseGoal2()  ///needs to reference inventory
     {
+      int fertilizerLeft = TrashCollectionManager.trashCollectionManager.GetFertilizerLeft();
+      int birdFeederLeft = TrashCollectionManager.trashCollectionManager.GetBirdFeederLeft();
+      int clotheBagLeft = TrashCollectionManager.trashCollectionManager.GetClotheBagLeft();
+      int penHolderLeft = TrashCollectionManager.trashCollectionManager.GetPenHolderLeft();
+      int plasticPotLeft = TrashCollectionManager.trashCollectionManager.GetPlasticPotLeft();
+
       if (sceneinfo.goal2_project == SceneInfo.Project.Fertilizer)
       {
-        inventory.ReduceProjects("fertilizer", sceneinfo.goal2_requiredAmount);
+        if(fertilizerLeft < sceneinfo.goal1_requiredAmount)
+        {
+          NoItemsPanel.SetActive(true);
+        }
+        else
+        {
+          InventoryManager.inventory.ReduceProjects("fertilizer", sceneinfo.goal2_requiredAmount);
+        }
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.BirdFeeder)
       {
-        inventory.ReduceProjects("birdfeeder", sceneinfo.goal2_requiredAmount);
+        if(birdFeederLeft < sceneinfo.goal2_requiredAmount)
+        {
+          NoItemsPanel.SetActive(true);
+        }
+        else
+        {
+          InventoryManager.inventory.ReduceProjects("birdfeeder", sceneinfo.goal2_requiredAmount);
+        }
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.ClotheBag)
       {
-        inventory.ReduceProjects("clothebag", sceneinfo.goal2_requiredAmount);
+        if(clotheBagLeft < sceneinfo.goal2_requiredAmount)
+        {
+          NoItemsPanel.SetActive(true);
+        }
+        else
+        {
+          InventoryManager.inventory.ReduceProjects("clothebag", sceneinfo.goal2_requiredAmount);
+        }
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.PenHolder)
       {
-        inventory.ReduceProjects("penholder", sceneinfo.goal2_requiredAmount);
+        if(penHolderLeft < sceneinfo.goal1_requiredAmount)
+        {
+          NoItemsPanel.SetActive(true);
+        }
+        else
+        {
+          InventoryManager.inventory.ReduceProjects("penholder", sceneinfo.goal2_requiredAmount);
+        }
       }
 
       if (sceneinfo.goal2_project == SceneInfo.Project.PlasticPot)
       {
-        inventory.ReduceProjects("plasticpot", sceneinfo.goal2_requiredAmount);
+        if(plasticPotLeft < sceneinfo.goal1_requiredAmount)
+        {
+          NoItemsPanel.SetActive(true);
+        }
+        else
+        {
+          InventoryManager.inventory.ReduceProjects("plasticpot", sceneinfo.goal2_requiredAmount);
+        }
       }
     }
-
 }

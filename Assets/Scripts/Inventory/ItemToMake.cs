@@ -13,10 +13,10 @@ public class ItemToMake : MonoBehaviour
     public int itemReq;
     private int fertilizer, penholder, plasticpot, birdfeeder, clothebag;
     private int plasticLeft, glassLeft, metalLeft, organicLeft, fabricLeft;
-    public GameObject NoItemsPanel;
+    public GameObject NoMaterialsPanel;
 
     public void Start(){
-        NoItemsPanel.SetActive(false);
+        NoMaterialsPanel.SetActive(false);
     }
 
     public void Update(){
@@ -30,7 +30,7 @@ public class ItemToMake : MonoBehaviour
     public void MakeFertilizer(){
         if(organicLeft < itemReq)
         {
-            NoItemsPanel.SetActive(true);
+            NoMaterialsPanel.SetActive(true);
         }
         else
         {
@@ -48,7 +48,7 @@ public class ItemToMake : MonoBehaviour
     public void MakePenHolder(){
         if(metalLeft < itemReq)
         {
-            NoItemsPanel.SetActive(true);
+            NoMaterialsPanel.SetActive(true);
         }
         else
         {
@@ -66,7 +66,7 @@ public class ItemToMake : MonoBehaviour
     public void MakePlasticPot(){
         if(plasticLeft < itemReq)
         {
-            NoItemsPanel.SetActive(true);
+            NoMaterialsPanel.SetActive(true);
         }
         else
         {
@@ -84,7 +84,7 @@ public class ItemToMake : MonoBehaviour
     public void MakeBirdFeeder(){
         if(fabricLeft < itemReq || metalLeft < itemReq)
         {
-            NoItemsPanel.SetActive(true);
+            NoMaterialsPanel.SetActive(true);
         }
         else
         {
@@ -108,7 +108,7 @@ public class ItemToMake : MonoBehaviour
     public void MakeClotheBag(){
         if(fabricLeft < itemReq)
         {
-            NoItemsPanel.SetActive(true);
+            NoMaterialsPanel.SetActive(true);
         }
         else
         {
@@ -132,8 +132,8 @@ public class ItemToMake : MonoBehaviour
         Debug.Log("Error: " + error.ErrorMessage);
     }
 
-    public void CloseNoCurrency()
+    public void CloseNoMaterials()
     {
-        NoItemsPanel.SetActive(false);
+        NoMaterialsPanel.SetActive(false);
     }
 }

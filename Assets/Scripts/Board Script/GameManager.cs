@@ -9,16 +9,21 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public LevelManager level;
+    LevelUnlock levelunlock;
     [Header("Core Mechanics")]
     public GameObject gameOverCanvas;
     public GameObject completedLevel;
+    public GameObject deadlockPanel;
     [SerializeField]
     private MovesLeft moves;
     public bool GameOver = false;
     public bool Complete = false;
     public scoreBar score;
     public Board board;
-    public string nextSceneName;
+    
+    public FindMatches matches;
+    // public string sceneName;
     public enum trashEnum {PL, OR, ME, GL, FA}
 
     [Header("Rewards")]
@@ -35,47 +40,52 @@ public class GameManager : MonoBehaviour
     public GameObject trash2Icon;
     public trashEnum trash2 = trashEnum.ME;
     public int trash2Reward;
+
+    //Check if first win
+    [SerializeField]
+    int unlockedCount;
     
     private void Start()
     {
-
         gameOverCanvas.SetActive(false);
         completedLevel.SetActive(false);
-        Time.timeScale = 1;
-
+        deadlockPanel.SetActive(false);
     }
+
     private void Update()
     {
-        if (score.slider.value >= score.slider.maxValue && moves.TrashCollected <= 0)
+
+        if (score.slider.value >= score.slider.maxValue && moves.TrashCollected <= 0 && moves.Moves >= 0)
         {
             stageComplete();
         }
-
-        if (moves.Moves == 0)
+        else if (moves.Moves <= 0 && moves.TrashCollected > 0 && matches.currentMatches.Count == 0 
+        || moves.Moves <= 0 && score.slider.value < score.slider.maxValue && matches.currentMatches.Count == 0 
+        || moves.Moves <= 0 && score.slider.value >= score.slider.maxValue && moves.TrashCollected > 0
+        )
         {
-            gameOver();
+            Invoke("gameOver", 1.0f);
         }
-
-        if (score.slider.value >= score.slider.maxValue && moves.TrashCollected > 0) {
-            gameOver();
+        else if(moves.Moves <= 0 && score.slider.value < score.slider.maxValue && matches.currentMatches.Count > 0){
+            //still matching
         }
-
         if (board.isDeadlocked) {
-            gameOver();
+            deadlockPanel.SetActive(true);
+            Invoke("gameOver", 1.0f);
         }
 
         ChangeSprite();
     }
 
     public void Awake(){
-        
+        level.GetLevels();
+        unlockedCount = LevelManager.level.GetArea1Unlocked();
     }
 
     public void gameOver()
     {
         gameOverCanvas.SetActive(true);
         GameOver = true;
-        Time.timeScale = 0;
     }
 
     public void restart()
@@ -90,21 +100,47 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Area1_LevelSelection");
     }
 
-    public void nextLevel()
-    {
-        SceneManager.LoadScene(nextSceneName);
-        Complete = false;
-    }
-
     public void stageComplete()
     {
+        gameOverCanvas.SetActive(false);
         completedLevel.SetActive(true);
+        GameOver = false;
         Complete = true;
         shellsText.text = shellsReward.ToString();
         coinsText.text = coinsReward.ToString();
         trash1Text.text = trash1Reward.ToString();
         trashText2.text = trash2Reward.ToString();
-        Time.timeScale = 0;
+
+        switch(SceneManager.GetActiveScene().name){
+            case "Level1": 
+            if(LevelManager.level.GetArea1Unlocked() == 1){
+                unlockedCount = 2;
+            };
+            break; //unlock level2
+            case "Level2": 
+            if(LevelManager.level.GetArea1Unlocked() == 2){
+                unlockedCount = 3;
+            };
+            break; //unlock level3
+            case "Level3": 
+            if(LevelManager.level.GetArea1Unlocked() == 3){
+                unlockedCount = 4;
+            };
+            break; //unlock level4
+            case "Level4": 
+            if(LevelManager.level.GetArea1Unlocked() == 4){
+                unlockedCount = 5;
+            }; break; //unlock level5
+            case "Level5":
+            if(LevelManager.level.GetArea1Unlocked() == 5){
+                unlockedCount = 5;
+            }; break; //unlock level5
+        }
+        level.unlockLevel(unlockedCount);
+    }
+
+    public void unlockLevel(){
+        level.SaveLevels();
     }
 
     void OnAddCoinsSuccess(ModifyUserVirtualCurrencyResult result){

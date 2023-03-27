@@ -13,6 +13,7 @@ public class CurrencyManager : MonoBehaviour
     public float secondsLeft;
     System.TimeSpan time;
     public TextMeshProUGUI coinsValueText, shellsValueText, energyValueText, energyRechargeTimeText;
+    private int maxStamina = 100;
     
     // Start is called before the first frame update
     void Start()
@@ -66,8 +67,14 @@ public class CurrencyManager : MonoBehaviour
     }
 
     public void SetTimer(float secondsLeftToRefreshEnergy){
-        secondsLeft = secondsLeftToRefreshEnergy;
-        time = System.TimeSpan.FromSeconds(secondsLeftToRefreshEnergy);
+        if(storeStamina < maxStamina){
+            secondsLeft = secondsLeftToRefreshEnergy;
+            time = System.TimeSpan.FromSeconds(secondsLeftToRefreshEnergy);
+        }
+        else{
+            secondsLeft = 0;
+            time = System.TimeSpan.FromSeconds(0);
+        }
         return;
     }
 

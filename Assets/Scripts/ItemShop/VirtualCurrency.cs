@@ -46,6 +46,7 @@ public class VirtualCurrency : MonoBehaviour
         if(secondsLeftToRefreshEnergy <= 0){
             GetVirtualCurrencies();
         }
+
         CurrencyManager.currencyManager.SetCoins(coins);
         CurrencyManager.currencyManager.SetShells(shells);
         CurrencyManager.currencyManager.SetStamina(energy);

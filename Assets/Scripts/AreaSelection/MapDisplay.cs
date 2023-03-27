@@ -22,6 +22,6 @@ public class MapDisplay : MonoBehaviour
         playButton.interactable = mapUnlocked;
 
         playButton.onClick.RemoveAllListeners();
-        playButton.onClick.AddListener(()=> SceneManager.LoadScene(_map.sceneToLoad.name));
+        playButton.onClick.AddListener(()=> SceneManager.LoadScene("Area1_LevelSelection"));
     }
 }

@@ -5,80 +5,134 @@ using UnityEngine.UI;
 using TMPro;
 public class SelectLoungeChara : MonoBehaviour
 {
-     public GameObject iconholder;
-     public GameObject talkingsection;
-     public GameObject giftingsection;
-     public GameObject bondstats;
-     public GameObject Inventory;
+  InventoryManager inventory;
+  RelationshipManager relationship;
+  LevelManager level;
+  public GameObject iconholder;
+  public GameObject talkingsection;
+  public GameObject giftingsection;
+  public GameObject bondstats;
+  public GameObject Inventory;
 
-     public GameObject GarySprite;
-     public GameObject CoralineSprite;
-     public GameObject PamSprite;
-     public GameObject DianeSprite;
-     public GameObject MalachiSprite;
-     public GameObject OscarSprite;
-     public GameObject MariSprite;
+  public GameObject GarySprite;
+  public GameObject CoralineSprite;
+  public GameObject PamSprite;
+  public GameObject DianeSprite;
+  public GameObject MalachiSprite;
+  public GameObject OscarSprite;
+  public GameObject MariSprite;
 
-     public GameObject GaryConvo;
-     public GameObject CoralineConvo;
-     public GameObject PamConvo;
-     public GameObject DianeConvo;
-     public GameObject MalachiConvo;
-     public GameObject OscarConvo;
-     public GameObject MariConvo;
+  public GameObject GaryConvo;
+  public GameObject CoralineConvo;
+  public GameObject PamConvo;
+  public GameObject DianeConvo;
+  public GameObject MalachiConvo;
+  public GameObject OscarConvo;
+  public GameObject MariConvo;
+  
+  public GameObject GaryButtons;
+  public GameObject CoralineButtons;
+  public GameObject PamButtons;
+  public GameObject DianeButtons;
+  public GameObject MalachiButtons;
+  public GameObject OscarButtons;
+  public GameObject MariButtons;
 
-     public GameObject GaryButtons;
-     public GameObject CoralineButtons;
-     public GameObject PamButtons;
-     public GameObject DianeButtons;
-     public GameObject MalachiButtons;
-     public GameObject OscarButtons;
-     public GameObject MariButtons;
+  public GameObject GaryHearts;
+  public GameObject CoralineHearts;
+  public GameObject PamHearts;
+  public GameObject DianeHearts;
+  public GameObject MalachiHearts;
+  public GameObject OscarHearts;
+  public GameObject MariHearts;
 
-     public GameObject GaryHearts;
-     public GameObject CoralineHearts;
-     public GameObject PamHearts;
-     public GameObject DianeHearts;
-     public GameObject MalachiHearts;
-     public GameObject OscarHearts;
-     public GameObject MariHearts;
+  public GameObject[] GaryHeartsList;
+  public GameObject[] CoralineHeartsList;
+  public GameObject[] PamHeartsList;
+  public GameObject[] DianeHeartsList;
+  public GameObject[] MalachiHeartsList;
+  public GameObject[] OscarHeartsList;
+  public GameObject[] MariHeartsList;
 
-     public GameObject[] GaryHeartsList;
-     public GameObject[] CoralineHeartsList;
-     public GameObject[] PamHeartsList;
-     public GameObject[] DianeHeartsList;
-     public GameObject[] MalachiHeartsList;
-     public GameObject[] OscarHeartsList;
-     public GameObject[] MariHeartsList;
-
-     public int character = 1;
-
-     public ItemShopCloseUp item;
+  public int character = 1;
+  public ItemShopCloseUp item;
      
-     public Animator notifanim;
-     public TextMeshProUGUI notif;
+  public Animator notifanim;
+  public TextMeshProUGUI notif;
 
-     public TempBondPoints bondpoints;
+  [SerializeField]
+  private int garybondpoints;
+  private int coralinebondpoints;
+  private int pambondpoints;
+  private int dianebondpoints;
+  private int malachibondpoints;
+  private int oscarbondpoints;
+  private int maribondpoints;
+
+  public const int firstthreshold = 15;
+  public const int secondthreshold = 45;
+  public const int thirdthreshold = 150;
+
+  public Button[] GaryConvos;
+  public Button[] CharactersUnlocked;
     
 
-     void Start()
-     {
-        ItemShopCloseUp item = gameObject.GetComponent<ItemShopCloseUp>();
-        TempBondPoints bondpoints = gameObject.GetComponent<TempBondPoints>();
-        notifanim.SetBool("playNotif",false);
-     }
+  void Start()
+  {
+    ItemShopCloseUp item = gameObject.GetComponent<ItemShopCloseUp>();
+    TempBondPoints bondpoints = gameObject.GetComponent<TempBondPoints>();
+    notifanim.SetBool("playNotif",false);
 
-
-     public void ExitCharacter()
-    {
-       GarySprite.SetActive(false);
-       CoralineSprite.SetActive(false);
-       PamSprite.SetActive(false);
-       DianeSprite.SetActive(false);
-       MalachiSprite.SetActive(false);
-       OscarSprite.SetActive(false);
-       MariSprite.SetActive(false);
+    for(int i = 0; i < GaryConvos.Length; i++){
+      GaryConvos[i].interactable = false;
     }
+
+    for(int i = 0; i < CharactersUnlocked.Length; i++){
+      CharactersUnlocked[i].interactable = false;
+    }
+  }
+
+  void Update(){
+    SetRelationship();
+    UnlockCharacter();
+    UnlockConvos();
+  }
+
+  public void UnlockConvos(){
+    if (garybondpoints >= firstthreshold)
+    {
+      GaryHeartsList[0].SetActive(true);
+      GaryConvos[0].interactable = true;
+    }
+    if (garybondpoints >= secondthreshold)
+    {
+      GaryHeartsList[1].SetActive(true);
+      GaryConvos[1].interactable = true;
+    }
+    if (garybondpoints >= thirdthreshold)
+    {
+      GaryHeartsList[2].SetActive(true);
+      GaryConvos[2].interactable = true;
+    }
+  }
+
+  public void UnlockCharacter(){
+    if(LevelManager.level.GetArea1Unlocked() >= 5){
+      CharactersUnlocked[0].interactable = true;
+    }
+  }
+
+
+  public void ExitCharacter()
+  {
+    GarySprite.SetActive(false);
+    CoralineSprite.SetActive(false);
+    PamSprite.SetActive(false);
+    DianeSprite.SetActive(false);
+    MalachiSprite.SetActive(false);
+    OscarSprite.SetActive(false);
+    MariSprite.SetActive(false);
+  }
 
     public void ExitSection()
     {
@@ -396,50 +450,38 @@ public class SelectLoungeChara : MonoBehaviour
     
     public const int giftpoints = 3;
     
-    //temporary thresholds in increasing the hearts
-    public const int firstthreshold = 9;
-    public const int secondthreshold = 21;
-    public const int thirdthreshold = 30;
 
+    public void SetRelationship(){
+        garybondpoints = RelationshipManager.relationship.GetGary();
+        coralinebondpoints = RelationshipManager.relationship.GetCoraline();
+        pambondpoints = RelationshipManager.relationship.GetPam();
+        dianebondpoints = RelationshipManager.relationship.GetDiane();
+        malachibondpoints = RelationshipManager.relationship.GetMalachi();
+        oscarbondpoints = RelationshipManager.relationship.GetOscar();
+        maribondpoints = RelationshipManager.relationship.GetMari();
+    }
     
-
     public void GiveGift(int character) //this is where to increase the relationship points
     {
       character = this.character;
       switch (character) 
     {
-    case 1:
+      case 1:
        if (item.chosengift == "map")
        {
-        //increase the temp bond points, can be referenced to the actual gary bond points in the future
-        bondpoints.garybondpoints += giftpoints; 
-       
-        // these if statements can be somewhere else more appropriate
-        //temporarily here to show increase of hearts
-      
-        if (bondpoints.garybondpoints >= firstthreshold)
-        {
-          GaryHeartsList[0].SetActive(true);
-        }
-        if (bondpoints.garybondpoints >= secondthreshold)
-        {
-          GaryHeartsList[1].SetActive(true);
-        }
-        if (bondpoints.garybondpoints >= thirdthreshold)
-        {
-          GaryHeartsList[2].SetActive(true);
-        }
+        garybondpoints += giftpoints; 
+        RelationshipManager.relationship.SetGary(garybondpoints);
+        RelationshipManager.relationship.SaveRelationships();
 
-        //////
-
-        
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
        else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
         break;
 
@@ -452,11 +494,13 @@ public class SelectLoungeChara : MonoBehaviour
                                                
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
        else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
         break;
     case 3:
@@ -468,11 +512,13 @@ public class SelectLoungeChara : MonoBehaviour
 
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
       else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
         break;
     case 4:
@@ -483,11 +529,13 @@ public class SelectLoungeChara : MonoBehaviour
         DianeHeartsList[0].SetActive(true);
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
        else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
         break;
     case 5:
@@ -498,11 +546,13 @@ public class SelectLoungeChara : MonoBehaviour
         MalachiHeartsList[0].SetActive(true);
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true);
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
         else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
         break;
     case 6:
@@ -513,11 +563,13 @@ public class SelectLoungeChara : MonoBehaviour
         OscarHeartsList[0].SetActive(true);
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true);
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
         else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
         break;
     case 7:
@@ -528,16 +580,15 @@ public class SelectLoungeChara : MonoBehaviour
         MariHeartsList[0].SetActive(true);
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true);
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
         else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
+        InventoryManager.inventory.ReduceInventory(item.chosengift);
        }
         break;
     }
     }
-
-    
-
 }
