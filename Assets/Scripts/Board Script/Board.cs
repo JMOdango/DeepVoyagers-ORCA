@@ -56,6 +56,7 @@ public class Board : MonoBehaviour
     public bool destroyed = false;
     public bool getPoints = false;
     public bool isDeadlocked = false;
+    public bool completeOrFailed = false;
     public int trashDestroyed;
     public string whatTrash;
 
@@ -316,7 +317,11 @@ public class Board : MonoBehaviour
 
     private IEnumerator FillBoardCo()
     {
-        RefillBoard();
+        
+        if (completeOrFailed == false) {
+            RefillBoard();
+        }
+      
         yield return new WaitForSeconds(refillDelay);
             while (MatchesOnBoard())
             {

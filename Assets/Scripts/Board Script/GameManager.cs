@@ -55,19 +55,29 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
-        if (score.slider.value >= score.slider.maxValue && moves.TrashCollected <= 0 && moves.Moves >= 0)
+        if (score.slider.value >= score.slider.maxValue && moves.TrashCollected <= 0 && moves.Moves > 0)
         {
             stageComplete();
+            board.completeOrFailed = true;
+            board.currentState = GameState.wait;
+            Debug.Log(board.currentState);
+
         }
-        else if (moves.Moves <= 0 && moves.TrashCollected > 0 && matches.currentMatches.Count == 0 
-        || moves.Moves <= 0 && score.slider.value < score.slider.maxValue && matches.currentMatches.Count == 0 
-        || moves.Moves <= 0 && score.slider.value >= score.slider.maxValue && moves.TrashCollected > 0
-        )
+        if (moves.Moves <= 0 && moves.TrashCollected > 0 && matches.currentMatches.Count == 0
+         || moves.Moves <= 0 && score.slider.value < score.slider.maxValue && matches.currentMatches.Count == 0
+         || moves.Moves <= 0 && score.slider.value >= score.slider.maxValue && moves.TrashCollected > 0
+         )
         {
+            board.completeOrFailed = true;
+            board.currentState = GameState.wait;
+            Debug.Log(board.currentState);
             Invoke("gameOver", 1.0f);
         }
-        else if(moves.Moves <= 0 && score.slider.value < score.slider.maxValue && matches.currentMatches.Count > 0){
+        if (moves.Moves <= 0 && score.slider.value < score.slider.maxValue && matches.currentMatches.Count > 0){
             //still matching
+            Invoke("gameOver", 1.0f);
+            board.currentState = GameState.wait;
+            Debug.Log(board.currentState);
         }
         if (board.isDeadlocked) {
             deadlockPanel.SetActive(true);
