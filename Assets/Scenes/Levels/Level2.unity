@@ -401,6 +401,7 @@ MonoBehaviour:
   destroyed: 0
   getPoints: 0
   isDeadlocked: 0
+  completeOrFailed: 0
   trashDestroyed: 0
   whatTrash: 
   boardLayout:
@@ -1467,7 +1468,7 @@ PrefabInstance:
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: a09e5848c3e111a41ae5e0b0f81cd4f7, type: 3}
+      objectReference: {fileID: 8300000, guid: b6891bf38a3df44b29d9271a7acfea03, type: 3}
     - target: {fileID: 905307845024450241, guid: d10dda6eb5ba1d94a8f3f914174c1e9d, type: 3}
       propertyPath: sounds.Array.data[1].loop
       value: 0
