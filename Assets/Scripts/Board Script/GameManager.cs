@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     //Check if first win
     [SerializeField]
-    int unlockedCount;
+    int unlockedCount1, unlockedCount2;
     
     private void Start()
     {
@@ -54,31 +54,28 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
-        if (score.slider.value >= score.slider.maxValue && moves.TrashCollected <= 0 && moves.Moves > 0)
+        if (score.slider.value >= score.slider.maxValue && moves.TrashCollected <= 0 && moves.Moves >= 0)
         {
             stageComplete();
             board.completeOrFailed = true;
             board.currentState = GameState.wait;
-            Debug.Log(board.currentState);
-
         }
+        
         if (moves.Moves <= 0 && moves.TrashCollected > 0 && matches.currentMatches.Count == 0
          || moves.Moves <= 0 && score.slider.value < score.slider.maxValue && matches.currentMatches.Count == 0
-         || moves.Moves <= 0 && score.slider.value >= score.slider.maxValue && moves.TrashCollected > 0
-         )
+         || moves.Moves <= 0 && score.slider.value >= score.slider.maxValue && moves.TrashCollected > 0)
         {
             board.completeOrFailed = true;
             board.currentState = GameState.wait;
-            Debug.Log(board.currentState);
             Invoke("gameOver", 1.0f);
         }
+        
         if (moves.Moves <= 0 && score.slider.value < score.slider.maxValue && matches.currentMatches.Count > 0){
             //still matching
             Invoke("gameOver", 1.0f);
             board.currentState = GameState.wait;
-            Debug.Log(board.currentState);
         }
+        
         if (board.isDeadlocked) {
             deadlockPanel.SetActive(true);
             Invoke("gameOver", 1.0f);
@@ -89,7 +86,7 @@ public class GameManager : MonoBehaviour
 
     public void Awake(){
         level.GetLevels();
-        unlockedCount = LevelManager.level.GetArea1Unlocked();
+        unlockedCount1 = LevelManager.level.GetArea1Unlocked();
     }
 
     public void gameOver()
@@ -124,29 +121,53 @@ public class GameManager : MonoBehaviour
         switch(SceneManager.GetActiveScene().name){
             case "Level1": 
             if(LevelManager.level.GetArea1Unlocked() == 1){
-                unlockedCount = 2;
+                unlockedCount1 = 2;
+            }
+            else
+            {
+                unlockedCount1 = LevelManager.level.GetArea1Unlocked();
             };
             break; //unlock level2
             case "Level2": 
             if(LevelManager.level.GetArea1Unlocked() == 2){
-                unlockedCount = 3;
+                unlockedCount1 = 3;
+            }
+            else
+            {
+                unlockedCount1 = LevelManager.level.GetArea1Unlocked();
             };
             break; //unlock level3
             case "Level3": 
             if(LevelManager.level.GetArea1Unlocked() == 3){
-                unlockedCount = 4;
+                unlockedCount1 = 4;
+            }
+            else
+            {
+                unlockedCount1 = LevelManager.level.GetArea1Unlocked();
             };
             break; //unlock level4
             case "Level4": 
             if(LevelManager.level.GetArea1Unlocked() == 4){
-                unlockedCount = 5;
-            }; break; //unlock level5
+                unlockedCount1 = 5;
+            }
+            else
+            {
+                unlockedCount1 = LevelManager.level.GetArea1Unlocked();
+            };
+            break; //unlock level5
             case "Level5":
             if(LevelManager.level.GetArea1Unlocked() == 5){
-                unlockedCount = 5;
-            }; break; //unlock level5
+                unlockedCount1 = 5;
+                unlockedCount2 = 1;
+            }
+            else
+            {
+                unlockedCount1 = LevelManager.level.GetArea1Unlocked();
+            };
+            break; //unlock Area 2 level 1
         }
-        level.unlockLevel(unlockedCount);
+        level.unlockLevel1(unlockedCount1);
+        level.unlockLevel2(unlockedCount2);
     }
 
     public void unlockLevel(){

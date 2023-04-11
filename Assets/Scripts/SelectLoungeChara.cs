@@ -117,7 +117,7 @@ public class SelectLoungeChara : MonoBehaviour
   }
 
   public void UnlockCharacter(){
-    if(LevelManager.level.GetArea1Unlocked() >= 5){
+    if(LevelManager.level.GetArea2Unlocked() >= 1){
       CharactersUnlocked[0].interactable = true;
     }
   }
@@ -476,12 +476,14 @@ public class SelectLoungeChara : MonoBehaviour
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
        else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
         break;
 
@@ -495,12 +497,14 @@ public class SelectLoungeChara : MonoBehaviour
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
        else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
         break;
     case 3:
@@ -513,12 +517,14 @@ public class SelectLoungeChara : MonoBehaviour
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
       else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
         break;
     case 4:
@@ -530,12 +536,14 @@ public class SelectLoungeChara : MonoBehaviour
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
        else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
         break;
     case 5:
@@ -547,12 +555,14 @@ public class SelectLoungeChara : MonoBehaviour
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true);
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
         else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
         break;
     case 6:
@@ -564,12 +574,14 @@ public class SelectLoungeChara : MonoBehaviour
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true);
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
         else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
         break;
     case 7:
@@ -581,12 +593,14 @@ public class SelectLoungeChara : MonoBehaviour
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true);
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
         else
        {
         notif.text = "No Increase";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
+        item.CloseCloseUp();
        }
         break;
     }

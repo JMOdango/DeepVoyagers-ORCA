@@ -26,6 +26,8 @@ public class PanelOpener : MonoBehaviour
     public GameObject on_promo;
     public GameObject off_promo;
 
+    public GameObject warning;
+
 
     public void OpenSettings()
     {
@@ -137,5 +139,15 @@ public class PanelOpener : MonoBehaviour
     {
         PowerUpsShop.SetActive(true);
         GiftsShop.SetActive(false);
+    }
+
+    public void OpenWarning()
+    {
+        warning.SetActive(true);
+    }
+
+    public void CloseWarning()
+    {
+        warning.SetActive(false);
     }
 }

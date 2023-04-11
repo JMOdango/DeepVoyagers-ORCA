@@ -37,6 +37,7 @@ public class ItemSkills : MonoBehaviour
     board.moves.text = MovesLeft.Moves.ToString();
     inventoryManager.ReduceInventory("mysterysnack");
     closeup.CloseCloseUp();
+    FindObjectOfType<simpleAudioManager>().Play("Powerup");
     }
 
     //VoidGem
@@ -107,6 +108,7 @@ public class ItemSkills : MonoBehaviour
         board.DestroyMatches();
         inventoryManager.ReduceInventory("magnet");
         closeup.CloseCloseUp();
+        FindObjectOfType<simpleAudioManager>().Play("Powerup");
     }
 
     //UsePocketWatch - get all organic trash 4

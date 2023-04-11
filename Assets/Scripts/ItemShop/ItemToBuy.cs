@@ -4,9 +4,12 @@ using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
 using Newtonsoft.Json;
+using TMPro;
 
 public class ItemToBuy : MonoBehaviour
 {
+    public Animator notifanim;
+    public TextMeshProUGUI notif;
     InventoryManager inventory;
     public string itemName;
     public int itemPrice;
@@ -41,50 +44,74 @@ public class ItemToBuy : MonoBehaviour
                 case "smallenergy": 
                 smallenergy++;
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "mediumenergy": 
                 mediumenergy++;
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "largeenergy": 
                 largeenergy++;
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "mysterysnack": 
                 mysterysnack++;
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "magnet": 
                 magnet++;
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "neptunestrident": 
                 neptunestrident++; 
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "voidgem": 
                 voidgem++; 
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "net": 
                 net++; 
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "fungi": 
                 fungi++; 
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "pocketwatch": 
                 pocketwatch++; 
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "mermaidsorb": 
                 mermaidsorb++; 
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "basket": 
                 basket++; 
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
             }
         }
@@ -107,30 +134,44 @@ public class ItemToBuy : MonoBehaviour
                 case "stufftoy": 
                 stufftoy++;
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "waterproofcamera": 
                 waterproofcamera++;
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "map": 
                 map++;
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "historybook": 
                 historybook++;
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "seaweed": 
                 seaweed++;
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "crystals": 
                 crystals++; 
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
                 case "toyfigure": 
                 toyfigure++; 
                 InventoryManager.inventory.AddInventory(itemName);
+                notif.text = "Successfully purchased!";
+                notifanim.SetBool("playNotif",true); 
                 break;
             }
         }

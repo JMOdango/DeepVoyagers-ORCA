@@ -25,7 +25,6 @@ public class tileType {
 }
 public class Board : MonoBehaviour
 {
-    
     public GameState currentState = GameState.move;
     public int width;
     public int height;
@@ -74,24 +73,24 @@ public class Board : MonoBehaviour
 
         switch(scene.name){
             case "Level1": 
-            MovesLeft.Moves = 6;
-            MovesLeft.TrashCollected = 4;
+            MovesLeft.Moves = 7;
+            MovesLeft.TrashCollected = 2;
             break;
             case "Level2": 
-            MovesLeft.Moves = 8;
-            MovesLeft.TrashCollected = 8;
+            MovesLeft.Moves = 10;
+            MovesLeft.TrashCollected = 4;
             break;
             case "Level3": 
-            MovesLeft.Moves = 10;
-            MovesLeft.TrashCollected = 12;
+            MovesLeft.Moves = 14;
+            MovesLeft.TrashCollected = 6;
             break;
             case "Level4": 
-            MovesLeft.Moves = 12;
-            MovesLeft.TrashCollected = 16;
+            MovesLeft.Moves = 19;
+            MovesLeft.TrashCollected = 8;
             break;
             case "Level5": 
-            MovesLeft.Moves = 14;
-            MovesLeft.TrashCollected = 20;
+            MovesLeft.Moves = 25;
+            MovesLeft.TrashCollected = 10;
             break;
         }
         
@@ -239,6 +238,7 @@ public class Board : MonoBehaviour
             ScoreBar.SetScore(x); 
             destroyed = false;
         }
+        FindObjectOfType<simpleAudioManager>().Play("DestroyObject");
         findAllMatches.currentMatches.Clear();
         StartCoroutine(DecreaseRowCo2());
         numberOfTrashDestroyed += trashDestroyed;

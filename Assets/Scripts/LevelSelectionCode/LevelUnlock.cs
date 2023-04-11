@@ -15,7 +15,23 @@ public class LevelUnlock : MonoBehaviour
 
     void Start()
     {
-        unlockedLevelsNumber = PlayerPrefs.GetInt("levelsUnlocked");
+        switch(SceneManager.GetActiveScene().name){
+            case "Area1_LevelSelection": 
+            unlockedLevelsNumber = LevelManager.level.GetArea1Unlocked();
+            break; 
+            case "Area2_LevelSelection": 
+            unlockedLevelsNumber = LevelManager.level.GetArea2Unlocked();
+            break; 
+            case "Area3_LevelSelection": 
+            unlockedLevelsNumber = LevelManager.level.GetArea3Unlocked();
+            break; 
+            case "Area4_LevelSelection": 
+            unlockedLevelsNumber = LevelManager.level.GetArea4Unlocked();
+            break; 
+            case "Area5_LevelSelection":
+            unlockedLevelsNumber = LevelManager.level.GetArea5Unlocked();
+            break;
+        }
 
         for(int i = 0; i < buttons.Length; i++){
             buttons[i].interactable = false;
@@ -40,7 +56,24 @@ public class LevelUnlock : MonoBehaviour
     {
         SetLevels();
         
-        unlockedLevelsNumber = LevelManager.level.GetArea1Unlocked();
+        switch(SceneManager.GetActiveScene().name){
+            case "Area1_LevelSelection": 
+            unlockedLevelsNumber = LevelManager.level.GetArea1Unlocked();
+            break; 
+            case "Area2_LevelSelection": 
+            unlockedLevelsNumber = LevelManager.level.GetArea2Unlocked();
+            break; 
+            case "Area3_LevelSelection": 
+            unlockedLevelsNumber = LevelManager.level.GetArea3Unlocked();
+            break; 
+            case "Area4_LevelSelection": 
+            unlockedLevelsNumber = LevelManager.level.GetArea4Unlocked();
+            break; 
+            case "Area5_LevelSelection":
+            unlockedLevelsNumber = LevelManager.level.GetArea5Unlocked();
+            break;
+        }
+        
         for (int i = 0; i < unlockedLevelsNumber; i++){
             buttons[i].interactable = true;
         }

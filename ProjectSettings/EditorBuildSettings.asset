@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/RecyclingStation.unity
     guid: bd0baee9d77cf6842bf682bbe50b76c1
   - enabled: 1
-    path: Assets/Scenes/Areas/Area1Files/Area1_LevelSelection.unity
-    guid: 5bc9f7d0cea752740a230c7113524ef5
-  - enabled: 1
     path: Assets/Scenes/Lounge.unity
     guid: 068f05ce90dc7ef429dd479d150466b0
   - enabled: 1
@@ -74,6 +71,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/GaryConvos/Gary_Bond3.unity
     guid: 6a879f47a7f18b740894b1bc2367eee1
+  - enabled: 1
+    path: Assets/Scenes/Areas/Area1Files/Area1_LevelSelection.unity
+    guid: 5bc9f7d0cea752740a230c7113524ef5
   - enabled: 1
     path: Assets/Scenes/Areas/Area2Files/Area2_LevelSelection.unity
     guid: 3e3bcec7650644242934006a9c950028

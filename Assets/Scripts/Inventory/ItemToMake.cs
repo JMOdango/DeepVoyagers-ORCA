@@ -4,9 +4,12 @@ using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
 using Newtonsoft.Json;
+using TMPro;
 
 public class ItemToMake : MonoBehaviour
 {
+    public Animator notifanim;
+    public TextMeshProUGUI notif;
     TrashCollectionManager trashCollectionManager;
     InventoryManager inventory;
     public string itemName;
@@ -42,6 +45,8 @@ public class ItemToMake : MonoBehaviour
 
             fertilizer++;
             InventoryManager.inventory.AddInventory(itemName);
+            notif.text = "Organic Fertilizer added to inventory!";
+            notifanim.SetBool("playNotif",true); 
         }
     }
 
@@ -60,6 +65,8 @@ public class ItemToMake : MonoBehaviour
 
             penholder++;
             InventoryManager.inventory.AddInventory(itemName);
+            notif.text = "Pen Holder added to inventory!";
+            notifanim.SetBool("playNotif",true); 
         }
     }
 
@@ -78,6 +85,8 @@ public class ItemToMake : MonoBehaviour
 
             plasticpot++;
             InventoryManager.inventory.AddInventory(itemName);
+            notif.text = "Plastic Pot added to inventory!";
+            notifanim.SetBool("playNotif",true); 
         }
     }
 
@@ -102,6 +111,8 @@ public class ItemToMake : MonoBehaviour
 
             birdfeeder++;
             InventoryManager.inventory.AddInventory(itemName);
+            notif.text = "Bird Feeder added to inventory!";
+            notifanim.SetBool("playNotif",true); 
         }
     }
 
@@ -120,6 +131,8 @@ public class ItemToMake : MonoBehaviour
 
             clothebag++;
             InventoryManager.inventory.AddInventory(itemName);
+            notif.text = "Clothe Bag added to inventory!";
+            notifanim.SetBool("playNotif",true); 
         }
     }
      

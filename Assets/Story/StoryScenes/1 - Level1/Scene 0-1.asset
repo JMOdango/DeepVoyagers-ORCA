@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Scene 0-1
   m_EditorClassIdentifier: 
   sentences:
-  - text: You stood in front of your new cozy home, looking around trying to see
-      what has changed in your old hometown. A burst of nostalgia hits you and a
-      faint sense of excitement.
+  - text: You're standing in front of your new cozy home, looking around trying to
+      see what has changed in your old hometown. A burst of nostalgia hits you and
+      a faint sense of excitement.
     speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
     actions: []
     music: {fileID: 8300000, guid: 12aa04f535b17434db6eaf1ffbb2456b, type: 3}

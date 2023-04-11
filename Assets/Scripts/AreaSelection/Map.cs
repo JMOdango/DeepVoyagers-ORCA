@@ -8,7 +8,7 @@ public class Map : ScriptableObject
 {
     public int mapIndex;
     public Sprite mapImage;
-    public Object sceneToLoad; 
+    public string sceneToLoad; 
     // public bool isUnlock = false;
     // public GameObject lockGo;
     // public GameObject unlockGo;

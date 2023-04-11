@@ -7,6 +7,9 @@ using PlayFab.ClientModels;
 public class EnergySkills : MonoBehaviour
 {
     public InventoryManager inventoryManager;  
+    public GameObject smallEnergyPanel;
+    public GameObject mediumEnergyPanel;
+    public GameObject largeEnergyPanel;
 
     public void Start(){
         inventoryManager = FindObjectOfType<InventoryManager>();
@@ -30,8 +33,8 @@ public class EnergySkills : MonoBehaviour
         };
         PlayFabClientAPI.AddUserVirtualCurrency(request, OnAddCoinsSuccess, OnError);
         inventoryManager.ReduceInventory("smallenergy");
+        smallEnergyPanel.SetActive(false);
     }
-
     //medium energy 
 
     public void UseMediumEnergy()
@@ -42,6 +45,7 @@ public class EnergySkills : MonoBehaviour
         };
         PlayFabClientAPI.AddUserVirtualCurrency(request, OnAddCoinsSuccess, OnError);
         inventoryManager.ReduceInventory("mediumenergy");
+        mediumEnergyPanel.SetActive(false);
     }
 
     //medium energy 
@@ -54,5 +58,6 @@ public class EnergySkills : MonoBehaviour
         };
         PlayFabClientAPI.AddUserVirtualCurrency(request, OnAddCoinsSuccess, OnError);
         inventoryManager.ReduceInventory("largeenergy");
+        largeEnergyPanel.SetActive(false);
     }
 }

@@ -57,20 +57,32 @@ public class LevelManager : MonoBehaviour
             }
         }
         GetLevels();
-        unlockLevel(1);
+        unlockLevel1(1);
     }
 
     public void Update(){
         
     }
 
-    public void unlockLevel(int unlocked){
+    public void unlockLevel1(int unlocked){
         switch(unlocked){
             case 1: area1Unlocked = 1; break;
             case 2: area1Unlocked = 2; break;
             case 3: area1Unlocked = 3; break;
             case 4: area1Unlocked = 4; break;
             case 5: area1Unlocked = 5; break;
+        }
+    }
+
+    public void unlockLevel2(int unlocked){
+        switch(unlocked){
+            case 1: area2Unlocked = 1; break;
+            case 2: area2Unlocked = 2; break;
+            case 3: area2Unlocked = 3; break;
+            case 4: area2Unlocked = 4; break;
+            case 5: area2Unlocked = 5; break;
+            case 6: area2Unlocked = 6; break;
+            case 7: area2Unlocked = 7; break;
         }
     }
 

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapIndex: 0
   mapImage: {fileID: 21300000, guid: af27ff0aaeef0b446bc95ef941ac53ee, type: 3}
-  sceneToLoad: {fileID: 102900000, guid: 5bc9f7d0cea752740a230c7113524ef5, type: 3}
+  sceneToLoad: Area1_LevelSelection
