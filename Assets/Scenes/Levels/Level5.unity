@@ -4216,8 +4216,8 @@ RectTransform:
   - {fileID: 1776790067}
   - {fileID: 1017585195}
   - {fileID: 1582091915}
-  - {fileID: 330448155}
   - {fileID: 1998656774}
+  - {fileID: 330448155}
   - {fileID: 722069304}
   - {fileID: 26384241}
   - {fileID: 1391917231}
@@ -4260,6 +4260,7 @@ MonoBehaviour:
   off_coin: {fileID: 0}
   on_promo: {fileID: 0}
   off_promo: {fileID: 0}
+  warning: {fileID: 0}
 --- !u!114 &835921526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4838,7 +4839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2904487702097209532, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2904487702097209532, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7127,7 +7128,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 835921524}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
