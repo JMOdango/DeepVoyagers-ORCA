@@ -1291,7 +1291,7 @@ Transform:
   m_GameObject: {fileID: 539568454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -959.19, y: -540.06, z: 0}
-  m_LocalScale: {x: 0.85537726, y: 0.6812767, z: 0.8673026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2034816530}
@@ -3956,6 +3956,7 @@ MonoBehaviour:
   off_coin: {fileID: 661709290071231486}
   on_promo: {fileID: 661709289018685077}
   off_promo: {fileID: 661709288631045365}
+  warning: {fileID: 0}
 --- !u!114 &2034816532
 MonoBehaviour:
   m_ObjectHideFlags: 0
