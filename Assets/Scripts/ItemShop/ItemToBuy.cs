@@ -17,9 +17,11 @@ public class ItemToBuy : MonoBehaviour
     private int stufftoy, waterproofcamera, map, historybook, seaweed, crystals, toyfigure;
     private int shellsLeft, coinsLeft;
     public GameObject NoCurrencyPanel;
+    public GameObject EnoughCurrencyPanel;
 
     public void Start(){
         NoCurrencyPanel.SetActive(false);
+        EnoughCurrencyPanel.SetActive(false);
     }
 
     public void Update(){
@@ -31,9 +33,12 @@ public class ItemToBuy : MonoBehaviour
         if(shellsLeft < itemPrice)
         {
             NoCurrencyPanel.SetActive(true);
+            EnoughCurrencyPanel.SetActive(false);
+        
         }
         else
         {
+            EnoughCurrencyPanel.SetActive(true);
             var request = new SubtractUserVirtualCurrencyRequest{
                 VirtualCurrency = "SH",
                 Amount = itemPrice
@@ -124,6 +129,7 @@ public class ItemToBuy : MonoBehaviour
         }
         else
         {
+            EnoughCurrencyPanel.SetActive(true);
             var request = new SubtractUserVirtualCurrencyRequest{
                 VirtualCurrency = "CN",
                 Amount = itemPrice
@@ -188,5 +194,10 @@ public class ItemToBuy : MonoBehaviour
     public void CloseNoCurrency()
     {
         NoCurrencyPanel.SetActive(false);
+    }
+
+    public void CloseEnoughCurrency()
+    {
+        EnoughCurrencyPanel.SetActive(false);
     }
 }

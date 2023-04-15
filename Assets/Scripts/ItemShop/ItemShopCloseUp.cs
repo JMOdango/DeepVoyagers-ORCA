@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemShopCloseUp : MonoBehaviour
 {
@@ -27,9 +28,12 @@ public class ItemShopCloseUp : MonoBehaviour
     public GameObject crystals;
     public GameObject toyfigure;
 
+    
+
     //for storing which gift was chosen or used
     public string chosengift;
 
+    
     public void CloseCloseUp()
     {
         smallenergy.SetActive(false);
