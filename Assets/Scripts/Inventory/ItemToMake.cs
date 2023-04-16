@@ -5,6 +5,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using Newtonsoft.Json;
 using TMPro;
+using UnityEngine.UI;
 
 public class ItemToMake : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class ItemToMake : MonoBehaviour
     private int fertilizer, penholder, plasticpot, birdfeeder, clothebag;
     private int plasticLeft, glassLeft, metalLeft, organicLeft, fabricLeft;
     public GameObject NoMaterialsPanel;
+    private float timeToWait = 3f;
+    public Button btn;
 
     public void Start(){
         NoMaterialsPanel.SetActive(false);
@@ -31,6 +34,8 @@ public class ItemToMake : MonoBehaviour
     }
 
     public void MakeFertilizer(){
+        ClickButton();
+        
         if(organicLeft < itemReq)
         {
             NoMaterialsPanel.SetActive(true);
@@ -51,6 +56,8 @@ public class ItemToMake : MonoBehaviour
     }
 
     public void MakePenHolder(){
+        ClickButton();
+
         if(metalLeft < itemReq)
         {
             NoMaterialsPanel.SetActive(true);
@@ -71,6 +78,8 @@ public class ItemToMake : MonoBehaviour
     }
 
     public void MakePlasticPot(){
+        ClickButton();
+
         if(plasticLeft < itemReq)
         {
             NoMaterialsPanel.SetActive(true);
@@ -91,6 +100,8 @@ public class ItemToMake : MonoBehaviour
     }
 
     public void MakeBirdFeeder(){
+        ClickButton();
+
         if(fabricLeft < itemReq || metalLeft < itemReq)
         {
             NoMaterialsPanel.SetActive(true);
@@ -117,6 +128,8 @@ public class ItemToMake : MonoBehaviour
     }
 
     public void MakeClotheBag(){
+        ClickButton();
+
         if(fabricLeft < itemReq)
         {
             NoMaterialsPanel.SetActive(true);
@@ -148,5 +161,24 @@ public class ItemToMake : MonoBehaviour
     public void CloseNoMaterials()
     {
         NoMaterialsPanel.SetActive(false);
+    }
+
+    public void ClickButton()
+    {
+        // do not start the function if we are already in the process
+        if (IsInvoking("ReEnableButton"))
+            return;
+
+        // disable our button interactability
+        btn.interactable = false;
+
+        // call our function ReenableButton in timeToWait seconds
+        Invoke("ReEnableButton", timeToWait);
+    }
+    
+    private void ReEnableButton()
+    {
+        // re-enable the button
+        btn.interactable = true;
     }
 }

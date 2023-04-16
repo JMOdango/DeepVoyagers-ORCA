@@ -20,7 +20,7 @@ public class ItemToBuy : MonoBehaviour
     private int stufftoy, waterproofcamera, map, historybook, seaweed, crystals, toyfigure;
     private int shellsLeft, coinsLeft;
     public GameObject NoCurrencyPanel;
-    private float timeToWait = 2f;
+    private float timeToWait = 3f;
 
     public void Start(){
         NoCurrencyPanel.SetActive(false);

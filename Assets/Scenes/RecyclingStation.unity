@@ -4689,6 +4689,7 @@ MonoBehaviour:
   itemName: clothebag
   itemReq: 10
   NoMaterialsPanel: {fileID: 1269788623}
+  btn: {fileID: 450155940}
 --- !u!114 &543418465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5935,6 +5936,7 @@ MonoBehaviour:
   itemName: birdfeeder
   itemReq: 10
   NoMaterialsPanel: {fileID: 1269788623}
+  btn: {fileID: 594524592}
 --- !u!114 &683830643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6856,6 +6858,7 @@ MonoBehaviour:
   itemName: penholder
   itemReq: 10
   NoMaterialsPanel: {fileID: 1269788623}
+  btn: {fileID: 440630492}
 --- !u!114 &813698386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7439,6 +7442,7 @@ MonoBehaviour:
   itemName: plasticpot
   itemReq: 10
   NoMaterialsPanel: {fileID: 1269788623}
+  btn: {fileID: 758346603}
 --- !u!114 &891569919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11330,6 +11334,7 @@ MonoBehaviour:
   itemName: fertilizer
   itemReq: 10
   NoMaterialsPanel: {fileID: 1269788623}
+  btn: {fileID: 1003650465}
 --- !u!114 &1488329199
 MonoBehaviour:
   m_ObjectHideFlags: 0
