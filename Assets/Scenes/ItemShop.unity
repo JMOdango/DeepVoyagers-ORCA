@@ -24228,7 +24228,7 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: toyfigure
   itemPrice: 1000
-  btn: {fileID: 0}
+  btn: {fileID: 1308289279}
   NoCurrencyPanel: {fileID: 756050061}
 --- !u!1 &2060608994
 GameObject:
