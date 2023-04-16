@@ -5,6 +5,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using Newtonsoft.Json;
 using TMPro;
+using UnityEngine.UI;
 
 public class ItemToBuy : MonoBehaviour
 {
@@ -13,15 +14,16 @@ public class ItemToBuy : MonoBehaviour
     InventoryManager inventory;
     public string itemName;
     public int itemPrice;
+    [SerializeField]
+    public Button btn;
     private int smallenergy, mediumenergy, largeenergy, mysterysnack, magnet, neptunestrident, voidgem, net, fungi, pocketwatch, mermaidsorb, basket;
     private int stufftoy, waterproofcamera, map, historybook, seaweed, crystals, toyfigure;
     private int shellsLeft, coinsLeft;
     public GameObject NoCurrencyPanel;
-    public GameObject EnoughCurrencyPanel;
+    private float timeToWait = 2f;
 
     public void Start(){
         NoCurrencyPanel.SetActive(false);
-        EnoughCurrencyPanel.SetActive(false);
     }
 
     public void Update(){
@@ -30,15 +32,14 @@ public class ItemToBuy : MonoBehaviour
     }
 
     public void BuyPowerup(){
+        ClickButton();
+
         if(shellsLeft < itemPrice)
         {
             NoCurrencyPanel.SetActive(true);
-            EnoughCurrencyPanel.SetActive(false);
-        
         }
         else
         {
-            EnoughCurrencyPanel.SetActive(true);
             var request = new SubtractUserVirtualCurrencyRequest{
                 VirtualCurrency = "SH",
                 Amount = itemPrice
@@ -123,13 +124,14 @@ public class ItemToBuy : MonoBehaviour
     }
 
      public void BuyGift(){
+        ClickButton();
+
         if(coinsLeft < itemPrice)
         {
             NoCurrencyPanel.SetActive(true);
         }
         else
         {
-            EnoughCurrencyPanel.SetActive(true);
             var request = new SubtractUserVirtualCurrencyRequest{
                 VirtualCurrency = "CN",
                 Amount = itemPrice
@@ -196,8 +198,22 @@ public class ItemToBuy : MonoBehaviour
         NoCurrencyPanel.SetActive(false);
     }
 
-    public void CloseEnoughCurrency()
+    public void ClickButton()
     {
-        EnoughCurrencyPanel.SetActive(false);
+        // do not start the function if we are already in the process
+        if (IsInvoking("ReEnableButton"))
+            return;
+
+        // disable our button interactability
+        btn.interactable = false;
+
+        // call our function ReenableButton in timeToWait seconds
+        Invoke("ReEnableButton", timeToWait);
+    }
+    
+    private void ReEnableButton()
+    {
+        // re-enable the button
+        btn.interactable = true;
     }
 }

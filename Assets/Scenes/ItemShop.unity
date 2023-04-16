@@ -192,9 +192,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -202,13 +202,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 22538910}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 509167785}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1599,9 +1599,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1609,13 +1609,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 140652689}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 1952474707}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2161,9 +2161,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2171,13 +2171,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 177202508}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 1438533387}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2394,9 +2394,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2404,13 +2404,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 187165589}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 1732929813}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4316,8 +4316,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: mysterysnack
   itemPrice: 150
+  btn: {fileID: 782760087}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &398858707
 GameObject:
   m_ObjectHideFlags: 0
@@ -4387,9 +4387,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -4397,11 +4397,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 398858710}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 526002208}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyGift
         m_Mode: 1
@@ -5035,9 +5035,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -5045,11 +5045,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 446369235}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 1496401829}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyGift
         m_Mode: 1
@@ -5478,8 +5478,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: pocketwatch
   itemPrice: 100
+  btn: {fileID: 22538909}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &509654586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5737,8 +5737,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: fungi
   itemPrice: 100
+  btn: {fileID: 1487177574}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &521825684
 GameObject:
   m_ObjectHideFlags: 0
@@ -6105,8 +6105,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: waterproofcamera
   itemPrice: 1000
+  btn: {fileID: 398858709}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &551365250
 GameObject:
   m_ObjectHideFlags: 0
@@ -6373,7 +6373,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -6381,13 +6381,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 568702757}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 1812720602}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8917,9 +8917,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -8927,13 +8927,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 782760088}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 376696806}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9226,9 +9226,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -9236,11 +9236,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 813221939}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 1934937854}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyGift
         m_Mode: 1
@@ -9536,8 +9536,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: neptunestrident
   itemPrice: 100
+  btn: {fileID: 977842201}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &896406426
 GameObject:
   m_ObjectHideFlags: 0
@@ -9740,9 +9740,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -9897,9 +9897,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -9907,13 +9907,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 918668273}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 2092193875}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10782,9 +10782,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -10792,13 +10792,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 977842202}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 891906645}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11376,8 +11376,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: seaweed
   itemPrice: 1000
+  btn: {fileID: 1068367267}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1044745272
 GameObject:
   m_ObjectHideFlags: 0
@@ -11599,9 +11599,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -11609,11 +11609,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 1068367268}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 1040597217}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyGift
         m_Mode: 1
@@ -11920,8 +11920,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: mermaidsorb
   itemPrice: 100
+  btn: {fileID: 1342755875}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1109515157
 GameObject:
   m_ObjectHideFlags: 0
@@ -11939,7 +11939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1109515158
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12875,7 +12875,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
@@ -12888,7 +12888,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -12896,13 +12896,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 1156119752}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 2108973519}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12939,6 +12939,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1156119754}
         m_TargetAssemblyTypeName: ChangeButton, Assembly-CSharp
         m_MethodName: ChangeSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2108973519}
+        m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
+        m_MethodName: ClickButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14486,9 +14498,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -14496,13 +14508,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 1342755876}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 1099455096}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15755,8 +15767,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: largeenergy
   itemPrice: 450
+  btn: {fileID: 177202507}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1439773420
 GameObject:
   m_ObjectHideFlags: 0
@@ -15902,9 +15914,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -15912,11 +15924,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 1448136959}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 1748787457}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
         m_MethodName: BuyGift
         m_Mode: 1
@@ -16783,9 +16795,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -16793,13 +16805,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 1480944871}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 1543719612}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17099,9 +17111,9 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f5c1fe0934874ac4e9c653fcff4a840a, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 2f9e26284e5ea414b9c2949972654cd5, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -17109,13 +17121,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 916752929}
+  m_TargetGraphic: {fileID: 1487177575}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621760606}
+      - m_Target: {fileID: 520106581}
         m_TargetAssemblyTypeName: ItemToBuy, Assembly-CSharp
-        m_MethodName: BuyGift
+        m_MethodName: BuyPowerup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17541,8 +17553,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: map
   itemPrice: 1000
+  btn: {fileID: 446369234}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1500457314
 GameObject:
   m_ObjectHideFlags: 0
@@ -18103,8 +18115,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: basket
   itemPrice: 100
+  btn: {fileID: 1480944870}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1567289173
 GameObject:
   m_ObjectHideFlags: 0
@@ -18627,8 +18639,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: stufftoy
   itemPrice: 1000
+  btn: {fileID: 916752928}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1624968658
 GameObject:
   m_ObjectHideFlags: 0
@@ -19842,8 +19854,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: voidgem
   itemPrice: 100
+  btn: {fileID: 187165588}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1740238015
 GameObject:
   m_ObjectHideFlags: 0
@@ -20212,8 +20224,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: crystals
   itemPrice: 1000
+  btn: {fileID: 1448136958}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1769622257
 GameObject:
   m_ObjectHideFlags: 0
@@ -20741,8 +20753,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: mediumenergy
   itemPrice: 180
+  btn: {fileID: 568702756}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1820170217
 GameObject:
   m_ObjectHideFlags: 0
@@ -22613,8 +22625,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: historybook
   itemPrice: 1000
+  btn: {fileID: 813221938}
   NoCurrencyPanel: {fileID: 1170822955}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1942848282
 GameObject:
   m_ObjectHideFlags: 0
@@ -22848,8 +22860,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: net
   itemPrice: 100
+  btn: {fileID: 140652688}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &1957463153
 GameObject:
   m_ObjectHideFlags: 0
@@ -24216,8 +24228,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: toyfigure
   itemPrice: 1000
+  btn: {fileID: 0}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &2060608994
 GameObject:
   m_ObjectHideFlags: 0
@@ -24584,8 +24596,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: magnet
   itemPrice: 100
+  btn: {fileID: 918668272}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 0}
 --- !u!1 &2108973515
 GameObject:
   m_ObjectHideFlags: 0
@@ -24684,8 +24696,8 @@ MonoBehaviour:
   notif: {fileID: 2026913136}
   itemName: smallenergy
   itemPrice: 90
+  btn: {fileID: 1156119751}
   NoCurrencyPanel: {fileID: 756050061}
-  EnoughCurrencyPanel: {fileID: 55785358}
 --- !u!1 &2117710877
 GameObject:
   m_ObjectHideFlags: 0
