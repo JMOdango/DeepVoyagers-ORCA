@@ -82,6 +82,7 @@ public class CutsceneController : MonoBehaviour
         state = State.ANIMATE;
         currentScene = scene;
         textBox.Hide();
+        FindObjectOfType<simpleAudioManager>().Stop("Type");
         yield return new WaitForSeconds(1f);
         if (scene is StoryScene)
         {

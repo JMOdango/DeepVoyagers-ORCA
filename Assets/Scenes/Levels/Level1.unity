@@ -531,6 +531,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &463918807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3568302464584311154, guid: 2cddcc5695534e64aa0c2ff87e3ea095, type: 3}
+  m_PrefabInstance: {fileID: 2071889637}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &513878410 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6323235938169851510, guid: c6fef59767505fd4fa21691bc9bab464, type: 3}
@@ -1791,6 +1796,7 @@ MonoBehaviour:
   off_coin: {fileID: 0}
   on_promo: {fileID: 0}
   off_promo: {fileID: 0}
+  tutorial: {fileID: 463918807}
   warning: {fileID: 0}
 --- !u!114 &965794707
 MonoBehaviour:

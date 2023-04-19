@@ -134,12 +134,4 @@ public class ItemSkills : MonoBehaviour
         inventoryManager.ReduceInventory("fungi");
         closeup.CloseCloseUp();
     }
-
-    
-
-
-
-
-    
-    
 }

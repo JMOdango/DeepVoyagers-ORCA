@@ -1068,9 +1068,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 850665250}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: StaminaRequirement
+      - m_Target: {fileID: 1714620352}
+        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
+        m_MethodName: PlaySFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1080,9 +1080,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1714620352}
-        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
-        m_MethodName: PlaySFX
+      - m_Target: {fileID: 850665250}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: OpenScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1412,9 +1412,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 929405238}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: StaminaRequirement
+      - m_Target: {fileID: 1714620352}
+        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
+        m_MethodName: PlaySFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1424,9 +1424,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1714620352}
-        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
-        m_MethodName: PlaySFX
+      - m_Target: {fileID: 929405238}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: OpenScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2052,9 +2052,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1282642991}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: StaminaRequirement
+      - m_Target: {fileID: 1714620352}
+        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
+        m_MethodName: PlaySFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2064,9 +2064,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1714620352}
-        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
-        m_MethodName: PlaySFX
+      - m_Target: {fileID: 1282642991}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: OpenScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2215,9 +2215,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287964738}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: StaminaRequirement
+      - m_Target: {fileID: 1714620352}
+        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
+        m_MethodName: PlaySFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2227,9 +2227,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1714620352}
-        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
-        m_MethodName: PlaySFX
+      - m_Target: {fileID: 1287964738}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: OpenScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2658,9 +2658,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1580016650}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
-        m_MethodName: StaminaRequirement
+      - m_Target: {fileID: 1714620352}
+        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
+        m_MethodName: PlaySFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2670,9 +2670,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1714620352}
-        m_TargetAssemblyTypeName: ButtonsSFX, Assembly-CSharp
-        m_MethodName: PlaySFX
+      - m_Target: {fileID: 1580016650}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: OpenScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

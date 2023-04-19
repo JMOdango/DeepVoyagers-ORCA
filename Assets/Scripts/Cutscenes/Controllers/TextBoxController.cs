@@ -81,6 +81,7 @@ public class TextBoxController : MonoBehaviour
     {
         state = State.SPEEDED_UP;
         speedFactor = 0.25f;
+        FindObjectOfType<simpleAudioManager>().Play("Fast");
     }
 
     public void StopTyping(){
@@ -94,6 +95,8 @@ public class TextBoxController : MonoBehaviour
         state = State.PLAYING;
         int wordIndex = 0;
 
+        FindObjectOfType<simpleAudioManager>().Play("Type");
+
         while (state != State.COMPLETED)
         {
             dialogueText.text += text[wordIndex];
@@ -101,6 +104,7 @@ public class TextBoxController : MonoBehaviour
             if(++wordIndex == text.Length)
             {
                 state = State.COMPLETED;
+                FindObjectOfType<simpleAudioManager>().Stop("Type");
                 break;
             }
         }

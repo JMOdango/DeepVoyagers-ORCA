@@ -102,7 +102,7 @@ public class ItemToMake : MonoBehaviour
     public void MakeBirdFeeder(){
         ClickButton();
 
-        if(fabricLeft < itemReq || metalLeft < itemReq)
+        if(fabricLeft < itemReq && metalLeft < itemReq)
         {
             NoMaterialsPanel.SetActive(true);
         }

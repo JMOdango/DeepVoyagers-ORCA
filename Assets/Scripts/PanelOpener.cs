@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PanelOpener : MonoBehaviour
 {
@@ -26,7 +27,15 @@ public class PanelOpener : MonoBehaviour
     public GameObject on_promo;
     public GameObject off_promo;
 
+    public GameObject tutorial;
+
     public GameObject warning;
+
+    public void Awake(){
+        if( SceneManager.GetActiveScene().name == "Level1"){
+            tutorial.SetActive(true);
+        }
+    }
 
 
     public void OpenSettings()
