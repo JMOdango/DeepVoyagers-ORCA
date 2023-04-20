@@ -44,13 +44,18 @@ public class Board : MonoBehaviour
     public RandomizeTrash toCollect;
     public GivePointsToChar givePoints;
     public ObjectPool pool;
-    public float refillDelay = 0.5f;
     private int i;
     private int j;
     public int firstScore = 0;
     public int x;
     public int numberOfTrashDestroyed;
 
+    public float refillDelay = 1f;
+    private float checkRefillMatchesDelay = .75f;
+    private float destroyEffectDelay = 1.2f;
+    private WaitForSeconds delay;
+    private WaitForSeconds CheckRefillMatchesDelay;
+    private WaitForSeconds DestroyEffectDelay;
 
     public bool destroyed = false;
     public bool getPoints = false;
@@ -61,12 +66,14 @@ public class Board : MonoBehaviour
 
     public tileType[] boardLayout;
 
-   
     // Start is called before the first frame update
     void Start()
     {
+        
         Scene scene = SceneManager.GetActiveScene();
-
+        delay = new WaitForSeconds(refillDelay);
+        CheckRefillMatchesDelay = new WaitForSeconds(checkRefillMatchesDelay);
+        DestroyEffectDelay = new WaitForSeconds(destroyEffectDelay);
         toCollect = FindObjectOfType<RandomizeTrash>();
         //MovesLeft.Moves = Random.Range(15,25);
         //MovesLeft.TrashCollected = Random.Range(10,20);
@@ -102,7 +109,6 @@ public class Board : MonoBehaviour
         SetUp();
 
     }
-
 
     public void generateBlank() {
         for (int i = 0; i < boardLayout.Length; i++)
@@ -264,7 +270,7 @@ public class Board : MonoBehaviour
                 }
             }
         }
-        yield return new WaitForSeconds(refillDelay * 0.5f);
+        yield return (delay);
         StartCoroutine(FillBoardCo());
     }
    
@@ -289,7 +295,6 @@ public class Board : MonoBehaviour
                         trashToRefill.GetComponent<DotController>().row = j;
                         trashToRefill.GetComponent<DotController>().column = i;
                         pool.shufflePool();
-                       
                     }
                 }
             }
@@ -314,7 +319,6 @@ public class Board : MonoBehaviour
         }
         return false;
     }
-
     private IEnumerator FillBoardCo()
     {
         
@@ -322,12 +326,13 @@ public class Board : MonoBehaviour
             RefillBoard();
         }
       
-        yield return new WaitForSeconds(refillDelay);
+        yield return new WaitForSeconds (.8f);
             while (MatchesOnBoard())
             {
+            currentState = GameState.wait;
+            yield return CheckRefillMatchesDelay;
             DestroyMatches();
-            yield return new WaitForSeconds(2 * refillDelay);
-                
+
             }
         findAllMatches.currentMatches.Clear();
         currentDot = null;
@@ -337,7 +342,7 @@ public class Board : MonoBehaviour
             isDeadlocked = true;
             Debug.Log("DEADLOCKED!!");
         }
-        yield return new WaitForSeconds(refillDelay);
+        yield return delay;
         currentState = GameState.move;
 
     }
@@ -365,7 +370,7 @@ public class Board : MonoBehaviour
             destroy.transform.position = allDots[column, row].transform.position;
             destroy.SetActive(true);
         }
-        yield return new WaitForSeconds(.45f);
+        yield return DestroyEffectDelay;
         destroy.SetActive(false);
     }
     public void DestoryChild(GameObject dotsWithChild) {

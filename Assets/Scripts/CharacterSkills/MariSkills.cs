@@ -64,7 +64,6 @@ public class MariSkills : MonoBehaviour
             points = 0;
             TargetBar = 0;
         }
-            
-        
+
     }
 }

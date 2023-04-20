@@ -126,6 +126,7 @@ public class OscarSkills : MonoBehaviour
             points = 0;
             TargetBar = 0;
         }
+
     }
 
     public void checkChars() {

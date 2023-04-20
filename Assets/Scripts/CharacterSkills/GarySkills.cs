@@ -31,6 +31,7 @@ public class GarySkills : MonoBehaviour
         {
             garyImage.fillAmount += fillSpeed * Time.deltaTime;
         }
+    
     }
 
     void Awake(){
@@ -91,7 +92,6 @@ public class GarySkills : MonoBehaviour
             points = 0;
             TargetBar = 0;
         }
-
 
     }
 }

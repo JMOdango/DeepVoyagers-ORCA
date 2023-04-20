@@ -8,16 +8,21 @@ public class FindMatches : MonoBehaviour
 
     private Board board;
     public List<GameObject> currentMatches = new List<GameObject>();
-
+    private WaitForSeconds delayRoutine;
+    private float delay = .7f;
 
     // Start is called before the first frame update
     void Start()
     {
         board = FindObjectOfType<Board>();
+        delayRoutine = new WaitForSeconds(delay);
     }
 
-
-    public void FindAllMatches()
+    private void Update()
+    {
+        findallmatches();
+    }
+    public void findallmatches()
     {
         StartCoroutine(FindAllMatchesCo());
     }
@@ -90,7 +95,7 @@ public class FindMatches : MonoBehaviour
     }
     public IEnumerator FindAllMatchesCo()
     {
-        yield return new WaitForSeconds(.4f);
+        yield return delayRoutine;
 
         for (int i = 0; i < board.width; i++)
         {

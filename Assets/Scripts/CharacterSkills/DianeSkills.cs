@@ -73,8 +73,6 @@ public class DianeSkills : MonoBehaviour
             points = 0;
             TargetBar = 0;
         }
-
-
     }
 
 }

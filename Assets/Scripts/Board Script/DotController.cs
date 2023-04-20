@@ -27,7 +27,9 @@ public class DotController : MonoBehaviour
 
     public float swipeAngle = 0;
     public float swipeResist = 1f;
+    private float delay = .6f;
 
+    private WaitForSeconds checkDelay;
 
     public bool isColumnBomb;
     public bool isRowBomb;
@@ -49,6 +51,7 @@ public class DotController : MonoBehaviour
         board = FindObjectOfType<Board>();
         manager = FindObjectOfType<GameManager>();
         findAllMatches = FindObjectOfType<FindMatches>();
+        checkDelay = new WaitForSeconds(delay);
     }
 
     //for testing and debug only
@@ -75,7 +78,7 @@ public class DotController : MonoBehaviour
             {
                 board.allDots[column, row] = this.gameObject;
             }
-            findAllMatches.FindAllMatches();
+            findAllMatches.findallmatches();
         }
         else
         {
@@ -91,7 +94,7 @@ public class DotController : MonoBehaviour
             {
                 board.allDots[column, row] = this.gameObject;
             }
-            findAllMatches.FindAllMatches();
+            findAllMatches.findallmatches();
         }
         else
         {
@@ -220,7 +223,7 @@ public class DotController : MonoBehaviour
             findAllMatches.matchPiecesOfColor(this.gameObject.tag);
             otherDot.GetComponent<DotController>().isMatched = true;
         }
-        yield return new WaitForSeconds(.5f);
+        yield return checkDelay;
         if (otherDot != null)
         {
             if (!isMatched && otherDot.GetComponent<DotController>().isMatched == false)
@@ -229,7 +232,7 @@ public class DotController : MonoBehaviour
                 otherDot.GetComponent<DotController>().column = column;
                 row = previousRow;
                 column = previousColumn;
-                yield return new WaitForSeconds(.5f);
+                yield return checkDelay;
                 board.currentDot = null;
                 board.currentState = GameState.move;
             }
