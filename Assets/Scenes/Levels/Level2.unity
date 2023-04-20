@@ -689,10 +689,10 @@ MonoBehaviour:
   toCollect: {fileID: 924085936}
   givePoints: {fileID: 2105652343}
   pool: {fileID: 1203656097}
-  refillDelay: 0.1
   firstScore: 0
   x: 0
   numberOfTrashDestroyed: 0
+  refillDelay: 0.1
   destroyed: 0
   getPoints: 0
   isDeadlocked: 0
@@ -2446,6 +2446,7 @@ MonoBehaviour:
   off_coin: {fileID: 0}
   on_promo: {fileID: 0}
   off_promo: {fileID: 0}
+  tutorial: {fileID: 0}
   warning: {fileID: 0}
 --- !u!114 &965794707
 MonoBehaviour:
@@ -4773,6 +4774,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7779519114868850066, guid: f5e0d461d810c2f49bf4dd20f33f8316, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779519114868850066, guid: f5e0d461d810c2f49bf4dd20f33f8316, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f0ea43c672def5541ab0aa2ea12cd928, type: 3}
     - target: {fileID: 7779519114868850066, guid: f5e0d461d810c2f49bf4dd20f33f8316, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
