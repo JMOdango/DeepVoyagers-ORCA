@@ -20,4 +20,8 @@ public class ScriptableObjectChanger : MonoBehaviour
         else if(currentIndex > scriptableObjects.Length - 1) currentIndex = 0;
         if(mapDisplay != null) mapDisplay.DisplayMap((Map)scriptableObjects[currentIndex]);
     }
+
+    public int GetCurrentIndex(){
+        return currentIndex;
+    }
 }

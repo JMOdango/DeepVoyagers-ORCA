@@ -2936,6 +2936,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Remove trash from a random column
       objectReference: {fileID: 0}
+    - target: {fileID: 6532978549784478743, guid: 28137944abc489f41ae8f3bb49fd44e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6532978549927045726, guid: 28137944abc489f41ae8f3bb49fd44e4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2

@@ -88,6 +88,116 @@ public class InfoLockManager : MonoBehaviour
         SaveBondsUnlocked();
     }
 
+
+    public void unlockCoralineBonds(int unlocked){
+        switch(unlocked){
+            case 1: 
+                if(coralineBondUnlocked == 0)
+                coralineBondUnlocked = 1; 
+            break;
+            case 2: 
+                if(coralineBondUnlocked <= 1)
+                coralineBondUnlocked = 2; 
+            break;
+            case 3: 
+                if(coralineBondUnlocked <= 2)
+                coralineBondUnlocked = 3;  
+            break;
+        }
+        SaveBondsUnlocked();
+    }
+
+    public void unlockPamBonds(int unlocked){
+        switch(unlocked){
+            case 1: 
+                if(pamBondUnlocked == 0)
+                pamBondUnlocked = 1; 
+            break;
+            case 2: 
+                if(pamBondUnlocked <= 1)
+                pamBondUnlocked = 2; 
+            break;
+            case 3: 
+                if(pamBondUnlocked <= 2)
+                pamBondUnlocked = 3;  
+            break;
+        }
+        SaveBondsUnlocked();
+    }
+
+    public void unlockDianeBonds(int unlocked){
+        switch(unlocked){
+            case 1: 
+                if(dianeBondUnlocked == 0)
+                dianeBondUnlocked = 1; 
+            break;
+            case 2: 
+                if(dianeBondUnlocked <= 1)
+                dianeBondUnlocked = 2; 
+            break;
+            case 3: 
+                if(dianeBondUnlocked <= 2)
+                dianeBondUnlocked = 3;  
+            break;
+        }
+        SaveBondsUnlocked();
+    }
+
+    public void unlockMalachiBonds(int unlocked){
+        switch(unlocked){
+            case 1: 
+                if(malachiBondUnlocked == 0)
+                malachiBondUnlocked = 1; 
+            break;
+            case 2: 
+                if(malachiBondUnlocked <= 1)
+                malachiBondUnlocked = 2; 
+            break;
+            case 3: 
+                if(malachiBondUnlocked <= 2)
+                malachiBondUnlocked = 3;  
+            break;
+        }
+        SaveBondsUnlocked();
+    }
+
+    public void unlockOscarBonds(int unlocked){
+        switch(unlocked){
+            case 1: 
+                if(oscarBondUnlocked == 0)
+                oscarBondUnlocked = 1; 
+            break;
+            case 2: 
+                if(oscarBondUnlocked <= 1)
+                oscarBondUnlocked = 2; 
+            break;
+            case 3: 
+                if(oscarBondUnlocked <= 2)
+                oscarBondUnlocked = 3;  
+            break;
+        }
+        SaveBondsUnlocked();
+    }
+
+    public void unlockMariBonds(int unlocked){
+        switch(unlocked){
+            case 1: 
+                if(mariBondUnlocked == 0)
+                mariBondUnlocked = 1; 
+            break;
+            case 2: 
+                if(mariBondUnlocked <= 1)
+                mariBondUnlocked = 2; 
+            break;
+            case 3: 
+                if(mariBondUnlocked <= 2)
+                mariBondUnlocked = 3;  
+            break;
+        }
+        SaveBondsUnlocked();
+    }
+
+
     public void SetCount(BondsCompleted infoLock){
         garyBondUnlocked = infoLock.garyBond;
         coralineBondUnlocked = infoLock.coralineBond;
@@ -100,6 +210,30 @@ public class InfoLockManager : MonoBehaviour
 
     public int GetGaryBondUnlocked(){
         return garyBondUnlocked;
+    }
+
+    public int GetCoralineBondUnlocked(){
+        return coralineBondUnlocked;
+    }
+
+    public int GetPamBondUnlocked(){
+        return pamBondUnlocked;
+    }
+
+    public int GetDianeBondUnlocked(){
+        return dianeBondUnlocked;
+    }
+
+    public int GetMalachiBondUnlocked(){
+        return malachiBondUnlocked;
+    }
+
+    public int GetOscarBondUnlocked(){
+        return oscarBondUnlocked;
+    }
+
+    public int GetMariBondUnlocked(){
+        return mariBondUnlocked;
     }
 
     public void SaveBondsUnlocked(){
