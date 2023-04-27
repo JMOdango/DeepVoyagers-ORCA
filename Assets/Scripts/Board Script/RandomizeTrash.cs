@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RandomizeTrash : MonoBehaviour
 {
     public GameObject[] randomTrashCollect;
     public Transform spawnPoint;
     public string whatToCollect;
-
     public Transform[] goalSpawnpoint = new Transform[3];
     public string[] goalToCollect = new string[3];
     private List<int> uniqueNumbers = new List<int>();

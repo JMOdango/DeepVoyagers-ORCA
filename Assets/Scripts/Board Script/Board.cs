@@ -37,7 +37,7 @@ public class Board : MonoBehaviour
     public DotController currentDot;
     private FindMatches findAllMatches;
     public TextMeshProUGUI moves;
-    public TextMeshProUGUI numberToCollect;
+    public TextMeshProUGUI[] numberToCollect; // stores the texts that needs to be changed -JM 
     public scoreBar ScoreBar;
     [SerializeField]
     public MovesLeft MovesLeft;
@@ -64,45 +64,54 @@ public class Board : MonoBehaviour
     public int trashDestroyed;
     public string whatTrash;
 
+    [Header("Assign Here Amount of Trash to be Collected, Number of Moves")] //-JM
+    public int assignGoal1;
+    public int assignGoal2;
+    public int assignGoal3;
+    public int assignMoves;
+
+    public enum GoalsForThisLevel {one, two, three}; //Pick how many goals the level has. This will hide the text and icon of other goals that are not needed. -JM
+    public GoalsForThisLevel goalAmount = GoalsForThisLevel.one;
+
     public tileType[] boardLayout;
 
     // Start is called before the first frame update
     void Start()
     {
         
-        Scene scene = SceneManager.GetActiveScene();
+
         delay = new WaitForSeconds(refillDelay);
         CheckRefillMatchesDelay = new WaitForSeconds(checkRefillMatchesDelay);
         DestroyEffectDelay = new WaitForSeconds(destroyEffectDelay);
         goals = FindObjectOfType<RandomizeTrash>();
-        //MovesLeft.Moves = Random.Range(15,25);
-        //MovesLeft.TrashCollected = Random.Range(10,20);
+        // MovesLeft.Moves = Random.Range(15,25); //randomize amount of moves
 
-        switch(scene.name){
-            case "Area2_level1": 
-            MovesLeft.Moves = 7;
-            MovesLeft.TrashCollected = 2;
-            break;
-            case "Level2": 
-            MovesLeft.Moves = 10;
-            MovesLeft.TrashCollected = 4;
-            break;
-            case "Level3": 
-            MovesLeft.Moves = 14;
-            MovesLeft.TrashCollected = 6;
-            break;
-            case "Level4": 
-            MovesLeft.Moves = 19;
-            MovesLeft.TrashCollected = 8;
-            break;
-            case "Level5": 
-            MovesLeft.Moves = 25;
-            MovesLeft.TrashCollected = 10;
-            break;
-        }
+        // these are a public variable where you write down manually the amount you want to collect -JM
+        MovesLeft.Moves = assignMoves;
+        MovesLeft.TrashCollected1 = assignGoal1;
+        MovesLeft.TrashCollected2 = assignGoal2;
+        MovesLeft.TrashCollected3 = assignGoal3;
         
         moves.text = MovesLeft.Moves.ToString();
-        numberToCollect.text = MovesLeft.TrashCollected.ToString();
+
+        switch(goalAmount.ToString()){
+            case "one": 
+                numberToCollect[0].text = MovesLeft.TrashCollected1.ToString(); 
+                numberToCollect[1].text = "";
+                numberToCollect[2].text = "";
+            break;
+            case "two": 
+                numberToCollect[0].text = MovesLeft.TrashCollected1.ToString(); 
+                numberToCollect[1].text = MovesLeft.TrashCollected2.ToString(); 
+                numberToCollect[2].text = "";
+            break;
+            case "three": 
+                numberToCollect[0].text = MovesLeft.TrashCollected1.ToString(); 
+                numberToCollect[1].text = MovesLeft.TrashCollected2.ToString(); 
+                numberToCollect[2].text = MovesLeft.TrashCollected3.ToString(); 
+            break;
+        }
+
         findAllMatches = FindObjectOfType<FindMatches>();
         blankSpaces = new bool[width, height];
         allDots = new GameObject[width, height];
@@ -211,14 +220,43 @@ public class Board : MonoBehaviour
 
             trashDestroyed++;
 
-            if (whatTrash == goals.whatToCollect) {
-                if (MovesLeft.TrashCollected > 0)
+            // if (whatTrash == goals.whatToCollect) {
+            //     if (MovesLeft.TrashCollected1 > 0)
+            //     {
+            //         MovesLeft.TrashCollected1--;
+            //         numberToCollect[0].text = MovesLeft.TrashCollected1.ToString();
+            //     }
+                
+            // } 
+            // initial code changed it to the one below -JM
+
+            if (whatTrash == goals.goalToCollect[0]) {
+                if (MovesLeft.TrashCollected1 > 0)
                 {
-                    MovesLeft.TrashCollected--;
-                    numberToCollect.text = MovesLeft.TrashCollected.ToString();
+                    MovesLeft.TrashCollected1--;
+                    numberToCollect[0].text = MovesLeft.TrashCollected1.ToString();
                 }
                 
             }
+
+            if (whatTrash == goals.goalToCollect[1]) {
+                if (MovesLeft.TrashCollected2 > 0)
+                {
+                    MovesLeft.TrashCollected2--;
+                    numberToCollect[1].text = MovesLeft.TrashCollected2.ToString();
+                }
+                
+            }
+
+            if (whatTrash == goals.goalToCollect[2]) {
+                if (MovesLeft.TrashCollected3 > 0)
+                {
+                    MovesLeft.TrashCollected3--;
+                    numberToCollect[2].text = MovesLeft.TrashCollected3.ToString();
+                }
+                
+            }
+
             allDots[column, row] = null;
 
         }

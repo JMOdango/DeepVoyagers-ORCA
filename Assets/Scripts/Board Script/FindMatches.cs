@@ -203,9 +203,17 @@ public class FindMatches : MonoBehaviour
                 if (board.allDots[i,j] != null) {
                     if (board.allDots[i,j].tag == color) {
                         board.allDots[i, j].GetComponent<DotController>().isMatched = true;
-                        if (board.MovesLeft.TrashCollected > 0) {
-                            board.MovesLeft.TrashCollected--;
-                            board.numberToCollect.text = board.MovesLeft.TrashCollected.ToString();
+                        if (board.MovesLeft.TrashCollected1 > 0) {
+                            board.MovesLeft.TrashCollected1--;
+                            board.numberToCollect[0].text = board.MovesLeft.TrashCollected1.ToString();
+                        }
+                        if (board.MovesLeft.TrashCollected2 > 0) {
+                            board.MovesLeft.TrashCollected2--;
+                            board.numberToCollect[1].text = board.MovesLeft.TrashCollected2.ToString();
+                        }
+                        if (board.MovesLeft.TrashCollected3 > 0) {
+                            board.MovesLeft.TrashCollected3--;
+                            board.numberToCollect[2].text = board.MovesLeft.TrashCollected3.ToString();
                         }
                         
                     }
