@@ -36,31 +36,31 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscenes/CS-Level1.unity
     guid: 208296d8c534b5742baef51eb24c9b85
   - enabled: 1
-    path: Assets/Scenes/Levels/Level1.unity
+    path: Assets/Scenes/Area 1 levels/Level1.unity
     guid: e2e549d62b628c1408ce590c52a8f2d5
   - enabled: 1
     path: Assets/Scenes/Cutscenes/CS-Level2.unity
     guid: 880b9601a6f68b6478baa06531e8c172
   - enabled: 1
-    path: Assets/Scenes/Levels/Level2.unity
+    path: Assets/Scenes/Area 1 levels/Level2.unity
     guid: 7a4d34a70eaab8d44b90df40990f2275
   - enabled: 1
     path: Assets/Scenes/Cutscenes/CS-Level3.unity
     guid: ef4a14c38af1d064293f433b4171cb69
   - enabled: 1
-    path: Assets/Scenes/Levels/Level3.unity
+    path: Assets/Scenes/Area 1 levels/Level3.unity
     guid: d8be04aaaba07f74ba3e8e8b7f794e58
   - enabled: 1
     path: Assets/Scenes/Cutscenes/CS-Level4.unity
     guid: b4ac1e10ce8e7154a984a0fde0ae40b3
   - enabled: 1
-    path: Assets/Scenes/Levels/Level4.unity
+    path: Assets/Scenes/Area 1 levels/Level4.unity
     guid: e983a38036566fa40850231297ff9da8
   - enabled: 1
     path: Assets/Scenes/Cutscenes/CS-Level5.unity
     guid: c7bcf3c80e84e394cb386b11a49277fb
   - enabled: 1
-    path: Assets/Scenes/Levels/Level5.unity
+    path: Assets/Scenes/Area 1 levels/Level5.unity
     guid: 579028cf5e3a7cd4e9c0cbddbbdb85d3
   - enabled: 1
     path: Assets/Scenes/Cutscenes/GaryConvos/Gary_Bond1.unity

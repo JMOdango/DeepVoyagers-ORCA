@@ -41,7 +41,7 @@ public class Board : MonoBehaviour
     public scoreBar ScoreBar;
     [SerializeField]
     public MovesLeft MovesLeft;
-    public RandomizeTrash toCollect;
+    public RandomizeTrash goals;
     public GivePointsToChar givePoints;
     public ObjectPool pool;
     private int i;
@@ -74,12 +74,12 @@ public class Board : MonoBehaviour
         delay = new WaitForSeconds(refillDelay);
         CheckRefillMatchesDelay = new WaitForSeconds(checkRefillMatchesDelay);
         DestroyEffectDelay = new WaitForSeconds(destroyEffectDelay);
-        toCollect = FindObjectOfType<RandomizeTrash>();
+        goals = FindObjectOfType<RandomizeTrash>();
         //MovesLeft.Moves = Random.Range(15,25);
         //MovesLeft.TrashCollected = Random.Range(10,20);
 
         switch(scene.name){
-            case "Level1": 
+            case "Area2_level1": 
             MovesLeft.Moves = 7;
             MovesLeft.TrashCollected = 2;
             break;
@@ -210,7 +210,8 @@ public class Board : MonoBehaviour
             givePoints.checkInstantiate();
 
             trashDestroyed++;
-            if (whatTrash == toCollect.whatToCollect) {
+
+            if (whatTrash == goals.whatToCollect) {
                 if (MovesLeft.TrashCollected > 0)
                 {
                     MovesLeft.TrashCollected--;

@@ -203,7 +203,7 @@ public class FindMatches : MonoBehaviour
                 if (board.allDots[i,j] != null) {
                     if (board.allDots[i,j].tag == color) {
                         board.allDots[i, j].GetComponent<DotController>().isMatched = true;
-                        if (board.MovesLeft.TrashCollected >0) {
+                        if (board.MovesLeft.TrashCollected > 0) {
                             board.MovesLeft.TrashCollected--;
                             board.numberToCollect.text = board.MovesLeft.TrashCollected.ToString();
                         }
