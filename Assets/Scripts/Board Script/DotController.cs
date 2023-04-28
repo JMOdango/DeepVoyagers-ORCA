@@ -159,7 +159,6 @@ public class DotController : MonoBehaviour
             column += (int)direction.x;
             row += (int)direction.y;
             isMoving = true;
-            moved();
             StartCoroutine(CheckMoveCo());
         }
         else {
@@ -204,16 +203,16 @@ public class DotController : MonoBehaviour
         
     }
 
-    public void moved()
-    {
-        if (isMoving == true) {
-            if (movesLeft.Moves > 0) {
-                movesLeft.Moves--;
-                board.moves.text = movesLeft.Moves.ToString();
-            }
-        }
-        isMoving = false;
-    }
+    //public void moved()
+    //{
+    //    if (isMoving == true) {
+    //        if (movesLeft.Moves > 0) {
+    //            movesLeft.Moves--;
+    //            board.moves.text = movesLeft.Moves.ToString();
+    //        }
+    //    }
+    //    isMoving = false;
+    //}
     public IEnumerator CheckMoveCo()
     {
         if (isColorBomb) {
@@ -238,6 +237,11 @@ public class DotController : MonoBehaviour
             }
             else
             {
+                if (movesLeft.Moves > 0)
+                {
+                    movesLeft.Moves--;
+                    board.moves.text = movesLeft.Moves.ToString();
+                }
                 board.DestroyMatches();
             }
             //otherDot = null;
