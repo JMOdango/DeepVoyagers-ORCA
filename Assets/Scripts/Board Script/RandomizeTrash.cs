@@ -9,16 +9,18 @@ public class RandomizeTrash : MonoBehaviour
     public Transform spawnPoint;
     public string whatToCollect;
     public Transform[] goalSpawnpoint = new Transform[3];
-    public string[] goalToCollect = new string[3];
+    public string[] goalToCollect;
     private List<int> uniqueNumbers = new List<int>();
-    public int[] spawnTrashArray = new int[3];
+    public int[] spawnTrashArray;
     void Start()
     {
         uniqueNumbers.Clear();
         generateUniqueNumber();
         trashGoalToCollect();
         spawnGoal();
+       
     }
+
     public void spawnGoal() {
         for (int i = 0; i < goalSpawnpoint.Length; i++)
         {
@@ -92,6 +94,7 @@ public class RandomizeTrash : MonoBehaviour
         {
             spawnTrashArray[j] = uniqueNumbers[j];
         }
+       
     }
 
 
