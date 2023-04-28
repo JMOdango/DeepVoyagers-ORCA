@@ -22,6 +22,6 @@ public class BackgroundMover : MonoBehaviour
 
         Vector3 tempPosition = new Vector3(x / 2, y / 2, backgroundOffset);
         transform.position = tempPosition;
-        randomTrash.spawnTrash();
+        //randomTrash.spawnTrash();
     }
 }

@@ -9,12 +9,14 @@ public class FindMatches : MonoBehaviour
     private Board board;
     public List<GameObject> currentMatches = new List<GameObject>();
     private WaitForSeconds delayRoutine;
+    private TextGoal goal;
     private float delay = .7f;
 
     // Start is called before the first frame update
     void Start()
     {
         board = FindObjectOfType<Board>();
+        goal = FindObjectOfType<TextGoal>();
         delayRoutine = new WaitForSeconds(delay);
     }
 
@@ -203,15 +205,13 @@ public class FindMatches : MonoBehaviour
                 if (board.allDots[i,j] != null) {
                     if (board.allDots[i,j].tag == color) {
                         board.allDots[i, j].GetComponent<DotController>().isMatched = true;
-                        if (board.MovesLeft.TrashCollected >0) {
-                            board.MovesLeft.TrashCollected--;
-                            board.numberToCollect.text = board.MovesLeft.TrashCollected.ToString();
-                        }
-                        
+                        goal.minusCollect(board.allDots[i,j].GetComponent<DotController>().tag);
                     }
                 }
             }
         }
+
+      
     }
 
     List<GameObject> GetRowPieces(int row)

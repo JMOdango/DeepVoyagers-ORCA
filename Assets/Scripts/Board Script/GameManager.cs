@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public bool Complete = false;
     public scoreBar score;
     public Board board;
+    public TextGoal goalComplete;
     
     public FindMatches matches;
     // public string sceneName;
@@ -47,6 +48,7 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
+        goalComplete = FindObjectOfType<TextGoal>();
         gameOverCanvas.SetActive(false);
         completedLevel.SetActive(false);
         deadlockPanel.SetActive(false);
@@ -54,26 +56,33 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (score.slider.value >= score.slider.maxValue && moves.TrashCollected <= 0 && moves.Moves >= 0)
+        if (score.slider.value >= score.slider.maxValue && goalComplete.allGoalComplete && moves.Moves >= 0)
         {
             stageComplete();
             board.completeOrFailed = true;
             board.currentState = GameState.wait;
+            Debug.Log("Complete");
         }
-        
-        if (moves.Moves <= 0 && moves.TrashCollected > 0 && matches.currentMatches.Count == 0
-         || moves.Moves <= 0 && score.slider.value < score.slider.maxValue && matches.currentMatches.Count == 0
-         || moves.Moves <= 0 && score.slider.value >= score.slider.maxValue && moves.TrashCollected > 0)
+
+        if (score.slider.value <= score.slider.maxValue && !goalComplete.allGoalComplete && moves.Moves == 0)
         {
             board.completeOrFailed = true;
             board.currentState = GameState.wait;
             Invoke("gameOver", 1.0f);
         }
-        
-        if (moves.Moves <= 0 && score.slider.value < score.slider.maxValue && matches.currentMatches.Count > 0){
-            //still matching
-            Invoke("gameOver", 1.0f);
+
+        if (score.slider.value >= score.slider.maxValue && !goalComplete.allGoalComplete && moves.Moves == 0)
+        {
+            board.completeOrFailed = true;
             board.currentState = GameState.wait;
+            Invoke("gameOver", 1.0f);
+        }
+
+        if (score.slider.value <= score.slider.maxValue && goalComplete.allGoalComplete && moves.Moves == 0)
+        {
+            board.completeOrFailed = true;
+            board.currentState = GameState.wait;
+            Invoke("gameOver", 1.0f);
         }
         
         if (board.isDeadlocked) {

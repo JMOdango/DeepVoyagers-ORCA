@@ -86,6 +86,18 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void unlockLevel3(int unlocked){
+        switch(unlocked){
+            case 1: area2Unlocked = 1; break;
+            case 2: area2Unlocked = 2; break;
+            case 3: area2Unlocked = 3; break;
+            case 4: area2Unlocked = 4; break;
+            case 5: area2Unlocked = 5; break;
+            case 6: area2Unlocked = 6; break;
+            case 7: area2Unlocked = 7; break;
+        }
+    }
+
     public void SetCount(Level level){
         area1Unlocked = level.area1;
         area2Unlocked = level.area2;

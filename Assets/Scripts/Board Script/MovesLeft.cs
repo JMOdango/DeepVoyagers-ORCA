@@ -14,6 +14,7 @@ public class MovesLeft : ScriptableObject
     }
 
     private int trashCollected;
+    
 
     public int TrashCollected
     {

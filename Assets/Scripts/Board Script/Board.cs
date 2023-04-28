@@ -37,11 +37,11 @@ public class Board : MonoBehaviour
     public DotController currentDot;
     private FindMatches findAllMatches;
     public TextMeshProUGUI moves;
-    public TextMeshProUGUI numberToCollect;
     public scoreBar ScoreBar;
     [SerializeField]
     public MovesLeft MovesLeft;
-    public RandomizeTrash toCollect;
+    public RandomizeTrash goals;
+    public TextGoal setGoalHere;
     public GivePointsToChar givePoints;
     public ObjectPool pool;
     private int i;
@@ -69,40 +69,34 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
         Scene scene = SceneManager.GetActiveScene();
+        setGoalHere = FindObjectOfType<TextGoal>();
         delay = new WaitForSeconds(refillDelay);
         CheckRefillMatchesDelay = new WaitForSeconds(checkRefillMatchesDelay);
         DestroyEffectDelay = new WaitForSeconds(destroyEffectDelay);
-        toCollect = FindObjectOfType<RandomizeTrash>();
+        goals = FindObjectOfType<RandomizeTrash>();
         //MovesLeft.Moves = Random.Range(15,25);
         //MovesLeft.TrashCollected = Random.Range(10,20);
 
-        switch(scene.name){
-            case "Level1": 
-            MovesLeft.Moves = 7;
-            MovesLeft.TrashCollected = 2;
-            break;
-            case "Level2": 
-            MovesLeft.Moves = 10;
-            MovesLeft.TrashCollected = 4;
-            break;
-            case "Level3": 
-            MovesLeft.Moves = 14;
-            MovesLeft.TrashCollected = 6;
-            break;
-            case "Level4": 
-            MovesLeft.Moves = 19;
-            MovesLeft.TrashCollected = 8;
-            break;
-            case "Level5": 
-            MovesLeft.Moves = 25;
-            MovesLeft.TrashCollected = 10;
-            break;
+        switch (scene.name)
+        {
+            case "Level1":
+                MovesLeft.Moves = 7;
+                break;
+            case "Level2":
+                MovesLeft.Moves = 10;
+                break;
+            case "Level3":
+                MovesLeft.Moves = 14;
+                break;
+            case "Level4":
+                MovesLeft.Moves = 19;
+                break;
+            case "Level5":
+                MovesLeft.Moves = 25;
+                break;
         }
-        
         moves.text = MovesLeft.Moves.ToString();
-        numberToCollect.text = MovesLeft.TrashCollected.ToString();
         findAllMatches = FindObjectOfType<FindMatches>();
         blankSpaces = new bool[width, height];
         allDots = new GameObject[width, height];
@@ -208,18 +202,9 @@ public class Board : MonoBehaviour
             dotReuse(column,row);
             StartCoroutine(DestroyReuse(column,row));
             givePoints.checkInstantiate();
-
             trashDestroyed++;
-            if (whatTrash == toCollect.whatToCollect) {
-                if (MovesLeft.TrashCollected > 0)
-                {
-                    MovesLeft.TrashCollected--;
-                    numberToCollect.text = MovesLeft.TrashCollected.ToString();
-                }
-                
-            }
+            setGoalHere.minusCollect(whatTrash);
             allDots[column, row] = null;
-
         }
    
     }
@@ -243,6 +228,7 @@ public class Board : MonoBehaviour
             givePoints.givePoints();
             ScoreBar.SetScore(x); 
             destroyed = false;
+            setGoalHere.checkGoalComplete();
         }
         FindObjectOfType<simpleAudioManager>().Play("DestroyObject");
         findAllMatches.currentMatches.Clear();
