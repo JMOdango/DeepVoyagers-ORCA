@@ -5,7 +5,7 @@ using System.Linq;
 
 public class FindMatches : MonoBehaviour
 {
-
+    TextGoal textgoal;
     private Board board;
     public List<GameObject> currentMatches = new List<GameObject>();
     private WaitForSeconds delayRoutine;
@@ -15,6 +15,7 @@ public class FindMatches : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        textgoal = FindObjectOfType<TextGoal>();
         board = FindObjectOfType<Board>();
         goal = FindObjectOfType<TextGoal>();
         delayRoutine = new WaitForSeconds(delay);
@@ -118,12 +119,16 @@ public class FindMatches : MonoBehaviour
                         {
                             DotController leftDotDot = leftDot.GetComponent<DotController>();
                             DotController rightDotDot = rightDot.GetComponent<DotController>();
-                            if (leftDot.tag == currentDot.tag && rightDot.tag == currentDot.tag)
+                            if (!currentDotDot.GetComponent<DotController>().notMatchable)
                             {
-                                currentMatches.Union(isRowBomb(leftDotDot, currentDotDot, rightDotDot));
-                                currentMatches.Union(isColumnBomb(leftDotDot, currentDotDot, rightDotDot));
-                                currentMatches.Union(isAdjacentBomb(leftDotDot, currentDotDot, rightDotDot));
-                                getNearbyPieces(leftDot, currentDot, rightDot);
+
+                                if (leftDot.tag == currentDot.tag && rightDot.tag == currentDot.tag)
+                                {
+                                    currentMatches.Union(isRowBomb(leftDotDot, currentDotDot, rightDotDot));
+                                    currentMatches.Union(isColumnBomb(leftDotDot, currentDotDot, rightDotDot));
+                                    currentMatches.Union(isAdjacentBomb(leftDotDot, currentDotDot, rightDotDot));
+                                    getNearbyPieces(leftDot, currentDot, rightDot);
+                                }
                             }
                         }
                         
@@ -139,14 +144,17 @@ public class FindMatches : MonoBehaviour
                         {
                             DotController upDotDot = upDot.GetComponent<DotController>();
                             DotController downDotDot = downDot.GetComponent<DotController>();
-                            if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag)
+                            if (!currentDotDot.GetComponent<DotController>().notMatchable)
                             {
+                                if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag)
+                                {
 
-                                currentMatches.Union(isColumnBomb(upDotDot, currentDotDot, downDotDot));
-                                currentMatches.Union(isRowBomb(upDotDot, currentDotDot, downDotDot));
-                                currentMatches.Union(isAdjacentBomb(upDotDot, currentDotDot, downDotDot));
-                                getNearbyPieces(upDot, currentDot, downDot);
-                               
+                                    currentMatches.Union(isColumnBomb(upDotDot, currentDotDot, downDotDot));
+                                    currentMatches.Union(isRowBomb(upDotDot, currentDotDot, downDotDot));
+                                    currentMatches.Union(isAdjacentBomb(upDotDot, currentDotDot, downDotDot));
+                                    getNearbyPieces(upDot, currentDot, downDot);
+
+                                }
                             }
                         }
                     }
