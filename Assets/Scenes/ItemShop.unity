@@ -11004,7 +11004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a6c9749631dac0c4a8843b836de0e092, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c47222c8101680a41ac2c8bb86ed017f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15278,7 +15278,6 @@ MonoBehaviour:
   off_coin: {fileID: 1473189090}
   on_promo: {fileID: 1473189089}
   off_promo: {fileID: 1473189088}
-  tutorial: {fileID: 0}
   warning: {fileID: 0}
 --- !u!114 &1369048073
 MonoBehaviour:

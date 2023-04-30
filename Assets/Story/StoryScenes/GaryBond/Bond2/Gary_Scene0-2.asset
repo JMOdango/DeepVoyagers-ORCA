@@ -20,5 +20,5 @@ MonoBehaviour:
     actions: []
     music: {fileID: 8300000, guid: e86d398c643687e43a522087e63f0f78, type: 3}
     sound: {fileID: 0}
-  background: {fileID: 21300000, guid: dca2251f62083e948b3a3ba93ec953f1, type: 3}
+  background: {fileID: 21300000, guid: a946cf9e397aa724d9d2f4db8dc6110e, type: 3}
   nextScene: {fileID: 11400000, guid: 964cf4a892659ed4d9da03dbcac13094, type: 2}

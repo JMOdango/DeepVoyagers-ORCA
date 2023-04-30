@@ -31,8 +31,6 @@ public class PanelOpener : MonoBehaviour
 
     public GameObject warning;
 
-    public GameObject secretAreas;
-
     public void Awake(){
         if( SceneManager.GetActiveScene().name == "Level1"){
             tutorial.SetActive(true);
@@ -160,15 +158,5 @@ public class PanelOpener : MonoBehaviour
     public void CloseWarning()
     {
         warning.SetActive(false);
-    }
-
-    public void OpenSecretAreas()
-    {
-        secretAreas.SetActive(true);
-    }
-
-    public void CloseSecretAreas()
-    {
-        secretAreas.SetActive(false);
     }
 }

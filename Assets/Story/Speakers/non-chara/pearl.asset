@@ -15,5 +15,5 @@ MonoBehaviour:
   speakerName: 
   textColor: {r: 0, g: 0, b: 0, a: 0}
   sprites:
-  - {fileID: 21300000, guid: ef06c041cba26844b830a11c53331776, type: 3}
+  - {fileID: 21300000, guid: 65573bd56e6a6424f84ca951029ef7b1, type: 3}
   prefab: {fileID: 1447476766146847419, guid: daa4b997eb7f062498e6b29a63eaf74f, type: 3}
