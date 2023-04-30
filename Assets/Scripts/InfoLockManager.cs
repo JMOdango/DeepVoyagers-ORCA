@@ -102,6 +102,32 @@ public class InfoLockManager : MonoBehaviour
         return garyBondUnlocked;
     }
 
+    public int GetCoralineBondUnlocked(){
+        return coralineBondUnlocked;
+    }
+
+    public int GetPamBondUnlocked(){
+        return pamBondUnlocked;
+    }
+
+    public int GetDianeBondUnlocked(){
+        return dianeBondUnlocked;
+    }
+
+    public int GetMalachiBondUnlocked(){
+        return malachiBondUnlocked;
+    }
+
+    public int GetOscarBondUnlocked(){
+        return oscarBondUnlocked;
+    }
+
+    public int GetMariBondUnlocked(){
+        return mariBondUnlocked;
+    }
+
+    
+
     public void SaveBondsUnlocked(){
         List<BondsCompleted> bonds = new List<BondsCompleted>();
         foreach (var infoLock in infoLockManager){

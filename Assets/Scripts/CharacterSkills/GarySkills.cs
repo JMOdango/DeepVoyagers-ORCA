@@ -5,11 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GarySkills : MonoBehaviour
 {
-    RelationshipManager relationship;
-    public const int firstthreshold = 15;
-    public const int secondthreshold = 45;
-    public const int thirdthreshold = 150;
-
+    InfoLockManager infoLock;
     public FindMatches selectRandomRow;
     private Board board;
     public Image garyImage;
@@ -24,6 +20,7 @@ public class GarySkills : MonoBehaviour
         garyImage.fillAmount = 0;
         board = FindObjectOfType<Board>();
         selectRandomRow = FindObjectOfType<FindMatches>();
+        infoLock = FindObjectOfType<InfoLockManager>();
     }
     void Update()
     {
@@ -53,6 +50,23 @@ public class GarySkills : MonoBehaviour
             board.getPoints = false;
         }
     }
+
+     public void ReceivePointsFromOscar(int oscarBondLevel)
+    {
+        if (garyImage.fillAmount < 1)
+        {
+            switch(oscarBondLevel){
+                case 3: points +=0.50f; break;
+                case 2: points +=0.30f; break;
+                case 1: points += 0.20f; break;
+                case 0: points += 0.10f; break;
+                
+            }
+            increaseBar(points);
+            board.getPoints = false;
+        }
+    }
+
     public void increaseBar(double score)
     {
         TargetBar = score;
@@ -60,8 +74,7 @@ public class GarySkills : MonoBehaviour
 
     public void destroyRandomRow()
     {
-        int GaryBond = RelationshipManager.relationship.GetGary();
-        if (garyImage.fillAmount == 1 && GaryBond < secondthreshold)
+        if (garyImage.fillAmount == 1 && infoLock.GetGaryBondUnlocked() < 1)
         {
             int randomRow = Random.Range(0, 6);
             selectRandomRow.randomDestroyRow(randomRow);
@@ -70,9 +83,9 @@ public class GarySkills : MonoBehaviour
             points = 0;
             TargetBar = 0;
         }
-        else if(garyImage.fillAmount == 1 && GaryBond >= secondthreshold && GaryBond < thirdthreshold){
-            int randomRow = Random.Range(0, 6);
-            int randomRow2 = Random.Range(0, 6);
+        else if(garyImage.fillAmount == 1 && infoLock.GetGaryBondUnlocked() >= 1 && infoLock.GetGaryBondUnlocked() < 2){
+            int randomRow = Random.Range(0, 3);
+            int randomRow2 = Random.Range(4, 6);
             selectRandomRow.randomDestroyRow(randomRow);
             selectRandomRow.randomDestroyRow(randomRow2);
             board.DestroyMatches();
@@ -80,10 +93,20 @@ public class GarySkills : MonoBehaviour
             points = 0;
             TargetBar = 0;
         }
-        else if(garyImage.fillAmount == 1 && GaryBond >= thirdthreshold){
-            int randomRow = Random.Range(0, 6);
-            int randomRow2 = Random.Range(0, 6);
-            int randomRow3 = Random.Range(0, 6);
+        else if(garyImage.fillAmount == 1 && infoLock.GetGaryBondUnlocked() >= 1 && infoLock.GetGaryBondUnlocked() < 2){
+            int randomRow = Random.Range(0, 3);
+            int randomRow2 = Random.Range(4, 6);
+            selectRandomRow.randomDestroyRow(randomRow);
+            selectRandomRow.randomDestroyRow(randomRow2);
+            board.DestroyMatches();
+            garyImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
+        }
+        else if(garyImage.fillAmount == 1 && infoLock.GetGaryBondUnlocked() >= 2  && infoLock.GetGaryBondUnlocked() < 3){
+            int randomRow = Random.Range(0, 2);
+            int randomRow2 = Random.Range(3, 4);
+            int randomRow3 = Random.Range(5, 6);
             selectRandomRow.randomDestroyRow(randomRow);
             selectRandomRow.randomDestroyRow(randomRow2);
             selectRandomRow.randomDestroyRow(randomRow3);
@@ -92,6 +115,19 @@ public class GarySkills : MonoBehaviour
             points = 0;
             TargetBar = 0;
         }
-
+        else if(garyImage.fillAmount == 1 && infoLock.GetGaryBondUnlocked() >= 3){
+            int randomRow = Random.Range(0, 1);
+            int randomRow2 = Random.Range(2, 3);
+            int randomRow3 = Random.Range(4, 5);
+            int randomRow4 = Random.Range(6, 6);
+            selectRandomRow.randomDestroyRow(randomRow);
+            selectRandomRow.randomDestroyRow(randomRow2);
+            selectRandomRow.randomDestroyRow(randomRow3);
+            selectRandomRow.randomDestroyRow(randomRow4);
+            board.DestroyMatches();
+            garyImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
+        }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CoralineSkills : MonoBehaviour
 {
+    InfoLockManager infoLock;
     public FindMatches selectRandomSquare;
     private Board board;
     public Image coralineImage;
@@ -20,6 +21,7 @@ public class CoralineSkills : MonoBehaviour
         coralineImage.fillAmount = 0;
         board = FindObjectOfType<Board>();
         selectRandomSquare = FindObjectOfType<FindMatches>();
+        infoLock = FindObjectOfType<InfoLockManager>();
     }
     void Update()
     {
@@ -48,6 +50,23 @@ public class CoralineSkills : MonoBehaviour
         }
         
     }
+
+    public void ReceivePointsFromOscar(int oscarBondLevel)
+    {
+        if (coralineImage.fillAmount < 1)
+        {
+            switch(oscarBondLevel){
+                case 3: points +=0.50f; break;
+                case 2: points +=0.30f; break;
+                case 1: points += 0.20f; break;
+                case 0: points += 0.10f; break;
+                
+            }
+            increaseBar(points);
+            board.getPoints = false;
+        }
+    }
+
     public void increaseBar(double score)
     {
         TargetBar = score;
@@ -55,7 +74,18 @@ public class CoralineSkills : MonoBehaviour
 
     public void destroyRandomSquare()
     {
-        if (coralineImage.fillAmount == 1)
+        // if (coralineImage.fillAmount == 1)
+        // {
+        //     int randomRow = Random.Range(1, 5);
+        //     int randomColumn = Random.Range(1, 7);
+        //     selectRandomSquare.randomDestroySquare(randomColumn, randomRow);
+        //     board.DestroyMatches();
+        //     coralineImage.fillAmount = 0;
+        //     points = 0;
+        //     TargetBar = 0;
+        // }
+
+        if (coralineImage.fillAmount == 1 && infoLock.GetCoralineBondUnlocked() < 1)
         {
             int randomRow = Random.Range(1, 5);
             int randomColumn = Random.Range(1, 7);
@@ -65,5 +95,61 @@ public class CoralineSkills : MonoBehaviour
             points = 0;
             TargetBar = 0;
         }
+        else if(coralineImage.fillAmount == 1 && infoLock.GetCoralineBondUnlocked() >= 1 && infoLock.GetCoralineBondUnlocked() < 2){
+            int randomRow = Random.Range(1, 2);
+            int randomColumn = Random.Range(1, 4);
+            selectRandomSquare.randomDestroySquare(randomColumn, randomRow);
+
+            int randomRow2 = Random.Range(3, 5);
+            int randomColumn2 = Random.Range(5, 7);
+            selectRandomSquare.randomDestroySquare(randomColumn2, randomRow2);
+            
+            board.DestroyMatches();
+            coralineImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
+        }
+        else if(coralineImage.fillAmount == 1 && infoLock.GetCoralineBondUnlocked() >= 2 && infoLock.GetCoralineBondUnlocked() < 3){
+            int randomRow = Random.Range(1, 2);
+            int randomColumn = Random.Range(1, 2);
+            selectRandomSquare.randomDestroySquare(randomColumn, randomRow);
+
+            int randomRow2 = Random.Range(3, 4);
+            int randomColumn2 = Random.Range(3, 4);
+            selectRandomSquare.randomDestroySquare(randomColumn2, randomRow2);
+
+            int randomRow3 = Random.Range(5, 6);
+            int randomColumn3 = Random.Range(5, 7);
+            selectRandomSquare.randomDestroySquare(randomColumn3, randomRow3);
+
+            board.DestroyMatches();
+            coralineImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
+        }
+        else if(coralineImage.fillAmount == 1 && infoLock.GetCoralineBondUnlocked() >= 3){
+            int randomRow = Random.Range(1, 2);
+            int randomColumn = Random.Range(1, 2);
+            selectRandomSquare.randomDestroySquare(randomColumn, randomRow);
+
+            int randomRow2 = Random.Range(3, 4);
+            int randomColumn2 = Random.Range(3, 4);
+            selectRandomSquare.randomDestroySquare(randomColumn2, randomRow2);
+
+            int randomRow3 = Random.Range(5, 5);
+            int randomColumn3 = Random.Range(5, 6);
+            selectRandomSquare.randomDestroySquare(randomColumn3, randomRow3);
+
+            int randomRow4 = Random.Range(6, 6);
+            int randomColumn4 = Random.Range(7, 7);
+            selectRandomSquare.randomDestroySquare(randomColumn4, randomRow4);
+
+            board.DestroyMatches();
+            coralineImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
+        }
+
+
     }
 }

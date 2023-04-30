@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class OscarSkills : MonoBehaviour
 {
-
+   InfoLockManager infoLock;
     private Board board;
 
     public Image oscarImage;
@@ -39,6 +39,7 @@ public class OscarSkills : MonoBehaviour
         board = FindObjectOfType<Board>();
         checkChars();
         checkInstantiate();
+        infoLock = FindObjectOfType<InfoLockManager>();
     }
 
     void Update()
@@ -72,6 +73,23 @@ public class OscarSkills : MonoBehaviour
     {
         TargetBar = score;
     }
+
+    public void ReceivePointsFromOscar(int oscarBondLevel)
+    {
+        if (oscarImage.fillAmount < 1)
+        {
+            switch(oscarBondLevel){
+                case 3: points +=0.50f; break;
+                case 2: points +=0.30f; break;
+                case 1: points += 0.20f; break;
+                case 0: points += 0.10f; break;
+                
+            }
+            increaseBar(points);
+            board.getPoints = false;
+        }
+    }
+
     public void checkInstantiate()
     {
 
@@ -88,32 +106,32 @@ public class OscarSkills : MonoBehaviour
     {
         if (isCoraline)
         {
-            coraline.GetPoints();
+            coraline.ReceivePointsFromOscar(infoLock.GetGaryBondUnlocked());
         }
         if (isGary)
         {
-            gary.GetPoints();
+            gary.ReceivePointsFromOscar(infoLock.GetGaryBondUnlocked());
         }
         if (isMari)
         {
-            mari.GetPoints();
+            mari.ReceivePointsFromOscar(infoLock.GetGaryBondUnlocked());
         }
 
         if (isPam)
         {
-            pam.GetPoints();
+            pam.ReceivePointsFromOscar(infoLock.GetGaryBondUnlocked());
         }
         if (isOscar)
         {
-            oscar.GetPoints();
+            oscar.ReceivePointsFromOscar(infoLock.GetGaryBondUnlocked());
         }
         if (isMalachi)
         {
-            malachi.GetPoints();
+            malachi.ReceivePointsFromOscar(infoLock.GetGaryBondUnlocked());
         }
         if (isDiane)
         {
-            diane.GetPoints();
+            diane.ReceivePointsFromOscar(infoLock.GetGaryBondUnlocked());
         }
 
     }
