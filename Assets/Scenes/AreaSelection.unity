@@ -225,7 +225,6 @@ RectTransform:
   - {fileID: 1384204872}
   - {fileID: 984146367}
   - {fileID: 123213243}
-  - {fileID: 1545123848}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -297,7 +296,7 @@ MonoBehaviour:
   off_promo: {fileID: 0}
   tutorial: {fileID: 0}
   warning: {fileID: 0}
-  secretAreas: {fileID: 984146366}
+  secretAreas: {fileID: 123213242}
 --- !u!1 &73070342
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,6 +465,7 @@ RectTransform:
   m_Children:
   - {fileID: 1667377882}
   - {fileID: 964292822}
+  - {fileID: 1545123848}
   m_Father: {fileID: 50719553}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -642,8 +642,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 184849ea12061a640879710f7a234b0b, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 184849ea12061a640879710f7a234b0b, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: a131d32e98422cc41b2f161b1a5d1274, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: a131d32e98422cc41b2f161b1a5d1274, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 984146369}
   - component: {fileID: 984146368}
   m_Layer: 5
-  m_Name: SecretArea
+  m_Name: SecretAreaBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1533,7 +1533,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 50719553}
+    m_TransformParent: {fileID: 123213243}
     m_Modifications:
     - target: {fileID: 5326043829465420764, guid: ba1de5da19b6a154798f06bc5aa260ac, type: 3}
       propertyPath: m_Name
@@ -1549,7 +1549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5326043829465420765, guid: ba1de5da19b6a154798f06bc5aa260ac, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5326043829465420765, guid: ba1de5da19b6a154798f06bc5aa260ac, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2222,8 +2222,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 2e2d4ad46c2aed148bbec6a70a7e3fb9, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: 2e2d4ad46c2aed148bbec6a70a7e3fb9, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 184849ea12061a640879710f7a234b0b, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 184849ea12061a640879710f7a234b0b, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
