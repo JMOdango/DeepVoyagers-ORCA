@@ -13,6 +13,10 @@ public class DotController : MonoBehaviour
     public int targetY;
     public bool isMatched = false;
     public bool isMoving = false;
+    public bool isMechanic = false;
+    public bool notMovable = false;
+    public bool isBottom = false;
+    public bool notMatchable = false;
     private FindMatches findAllMatches;
     private Board board;
     public GameObject otherDot;
@@ -57,13 +61,14 @@ public class DotController : MonoBehaviour
     //for testing and debug only
     //private void OnMouseOver()
     //{
-    //    if (Input.GetMouseButtonDown(1)) {
-    //        isColorBomb = true;
-    //        GameObject color = Instantiate(colorBomb, transform.position, Quaternion.identity);
+    //    if (Input.GetMouseButtonDown(1))
+    //    {
+    //        isRowBomb = true;
+    //        GameObject color = Instantiate(rowArrow, transform.position, Quaternion.identity);
     //        color.transform.parent = this.transform;
     //    }
     //}
- 
+
 
     // Update is called once per frame
     void Update()
@@ -151,7 +156,7 @@ public class DotController : MonoBehaviour
         otherDot = board.allDots[column + (int)direction.x, row + (int)direction.y];
         previousRow = row;
         previousColumn = column;
-        if (otherDot != null)
+        if (!notMovable && otherDot != null && !otherDot.GetComponent<DotController>().notMovable)
         {
 
             otherDot.GetComponent<DotController>().column += -1 * (int)direction.x;

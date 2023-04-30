@@ -386,7 +386,8 @@ MonoBehaviour:
   width: 9
   height: 7
   offSet: 20
-  tilePrefab: {fileID: 7526852590140538889, guid: 8b8b08ad1920a4242835e82622c39ec4, type: 3}
+  tilePrefab: {fileID: 5302146948996280167, guid: bffc8a4526262214dad1448c90eaa287, type: 3}
+  oilSpillPrefab: {fileID: 0}
   dots:
   - {fileID: 1294335184767604550, guid: fbbeba60582e5464383c99c2951f349b, type: 3}
   - {fileID: 5969722425752513661, guid: fcbb43d65c87403449501a6230645714, type: 3}
@@ -402,6 +403,8 @@ MonoBehaviour:
   setGoalHere: {fileID: 0}
   givePoints: {fileID: 2105652343}
   pool: {fileID: 1203656097}
+  mechanicCounter: 0
+  playerMoves: 5
   firstScore: 0
   x: 0
   numberOfTrashDestroyed: 0
@@ -410,6 +413,7 @@ MonoBehaviour:
   getPoints: 0
   isDeadlocked: 0
   completeOrFailed: 0
+  hasMechanics: 0
   trashDestroyed: 0
   whatTrash: 
   boardLayout:
@@ -5576,6 +5580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20617d304306fe4296574137f049498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mechanicArrayPlace: 0
   randomTrashCollect:
   - {fileID: 4600518994076044220, guid: 06a99d2ce692fb340bf2bedbf23f7156, type: 3}
   - {fileID: 443828763273601951, guid: 24a27a5684be8fc47b8c97e02bb94fa1, type: 3}
