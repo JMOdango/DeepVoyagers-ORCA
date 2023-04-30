@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MalachiSkills : MonoBehaviour
 {
   
-
+    InfoLockManager infoLock;
     private Board board;
 
     public Image malachiImage;
@@ -17,12 +17,14 @@ public class MalachiSkills : MonoBehaviour
     string level;
 
     public scoreBar ScoreBar;
-    public int pointGive = 250;
+    public int pointGive = 0;
+    //public int pointGive = 250;
     void Start()
     {
         malachiImage.fillAmount = 0;
         board = FindObjectOfType<Board>();
         ScoreBar = FindObjectOfType<scoreBar>();
+        infoLock = FindObjectOfType<InfoLockManager>();
     }
 
     void Awake(){
@@ -52,14 +54,57 @@ public class MalachiSkills : MonoBehaviour
             board.getPoints = false;
         }
     }
+
+    public void ReceivePointsFromOscar(int oscarBondLevel)
+    {
+        if (malachiImage.fillAmount < 1)
+        {
+            switch(oscarBondLevel){
+                case 3: points +=0.50f; break;
+                case 2: points +=0.30f; break;
+                case 1: points += 0.20f; break;
+                case 0: points += 0.10f; break;
+                
+            }
+            increaseBar(points);
+            board.getPoints = false;
+        }
+    }
+
+
     public void increaseBar(double score)
     {
         TargetBar = score;
     }
 
     public void giveScore() {
-        if (malachiImage.fillAmount == 1)
+        if (malachiImage.fillAmount == 1 && infoLock.GetMalachiBondUnlocked() < 1)
         {
+            pointGive = 250;
+            ScoreBar.SetScore(pointGive);
+            malachiImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
+        }
+        else if (malachiImage.fillAmount == 1 && infoLock.GetMalachiBondUnlocked() >= 1 && infoLock.GetMalachiBondUnlocked() < 2)
+        {
+            pointGive = 300;
+            ScoreBar.SetScore(pointGive);
+            malachiImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
+        }
+        else if (malachiImage.fillAmount == 1 && infoLock.GetMalachiBondUnlocked() >= 2 && infoLock.GetMalachiBondUnlocked() < 3)
+        {
+            pointGive = 350;
+            ScoreBar.SetScore(pointGive);
+            malachiImage.fillAmount = 0;
+            points = 0;
+            TargetBar = 0;
+        }
+        else if (malachiImage.fillAmount == 1 && infoLock.GetMalachiBondUnlocked() >= 3)
+        {
+            pointGive = 400;
             ScoreBar.SetScore(pointGive);
             malachiImage.fillAmount = 0;
             points = 0;

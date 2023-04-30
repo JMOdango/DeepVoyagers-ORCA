@@ -223,6 +223,15 @@ public class SelectLoungeChara : MonoBehaviour
   public void UnlockCharacter(){
     if(LevelManager.level.GetArea2Unlocked() >= 1){
       CharactersUnlocked[0].interactable = true;
+
+      // temp code so I can interact with all characters upon only unlocking area 2
+      CharactersUnlocked[1].interactable = true;
+      CharactersUnlocked[2].interactable = true;
+      CharactersUnlocked[3].interactable = true;
+      CharactersUnlocked[4].interactable = true;
+      CharactersUnlocked[5].interactable = true;
+      CharactersUnlocked[6].interactable = true;
+
     }
     if(LevelManager.level.GetArea3Unlocked() >= 1){
       CharactersUnlocked[1].interactable = true;
