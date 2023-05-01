@@ -419,47 +419,53 @@ MonoBehaviour:
   trashDestroyed: 0
   whatTrash: 
   boardLayout:
-  - x: 0
-    y: 0
-    tileClass: 1
-  - x: 0
+  - x: 4
     y: 6
     tileClass: 1
-  - x: 8
-    y: 6
-    tileClass: 1
-  - x: 8
-    y: 0
-    tileClass: 1
-  - x: 1
-    y: 3
-    tileClass: 1
-  - x: 2
-    y: 3
+  - x: 4
+    y: 5
     tileClass: 1
   - x: 3
     y: 3
     tileClass: 1
-  - x: 6
-    y: 4
-    tileClass: 1
-  - x: 6
+  - x: 4
     y: 3
-    tileClass: 1
-  - x: 6
-    y: 2
-    tileClass: 1
-  - x: 6
-    y: 1
     tileClass: 1
   - x: 5
+    y: 3
+    tileClass: 1
+  - x: 4
+    y: 0
+    tileClass: 1
+  - x: 4
     y: 1
     tileClass: 1
-  - x: 3
+  - x: 0
     y: 4
+    tileClass: 1
+  - x: 0
+    y: 2
+    tileClass: 1
+  - x: 8
+    y: 2
+    tileClass: 1
+  - x: 8
+    y: 4
+    tileClass: 1
+  - x: 1
+    y: 5
     tileClass: 0
-  - x: 2
-    y: 4
+  - x: 7
+    y: 5
+    tileClass: 0
+  - x: 1
+    y: 1
+    tileClass: 0
+  - x: 7
+    y: 1
+    tileClass: 0
+  - x: 4
+    y: 2
     tileClass: 0
 --- !u!4 &252130372
 Transform:
@@ -529,7 +535,7 @@ MonoBehaviour:
   goalText:
   - {fileID: 644320791}
   - {fileID: 2115789185}
-  goalTextValue: 0f0000000f0000000f000000
+  goalTextValue: 0a000000140000000f000000
   trash1: 0
   trash2: 0
   trash3: 0

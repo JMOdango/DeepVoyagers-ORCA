@@ -403,6 +403,7 @@ MonoBehaviour:
   setGoalHere: {fileID: 0}
   givePoints: {fileID: 2105652343}
   pool: {fileID: 1203656097}
+  oilCounter: 0
   mechanicCounter: 0
   playerMoves: 10
   firstScore: 0
@@ -413,45 +414,43 @@ MonoBehaviour:
   getPoints: 0
   isDeadlocked: 0
   completeOrFailed: 0
+  hasOilSpill: 0
   hasMechanics: 0
   trashDestroyed: 0
   whatTrash: 
   boardLayout:
-  - x: 0
-    y: 0
+  - x: 3
+    y: 5
     tileClass: 1
-  - x: 0
-    y: 6
-    tileClass: 1
-  - x: 8
-    y: 6
-    tileClass: 1
-  - x: 8
-    y: 0
-    tileClass: 1
-  - x: 1
-    y: 3
-    tileClass: 1
-  - x: 2
-    y: 3
+  - x: 4
+    y: 5
     tileClass: 1
   - x: 3
-    y: 3
-    tileClass: 1
-  - x: 6
     y: 4
     tileClass: 1
-  - x: 6
-    y: 3
+  - x: 4
+    y: 4
     tileClass: 1
-  - x: 6
+  - x: 1
     y: 2
     tileClass: 1
-  - x: 6
+  - x: 1
+    y: 2
+    tileClass: 1
+  - x: 7
+    y: 2
+    tileClass: 1
+  - x: 3
+    y: 1
+    tileClass: 1
+  - x: 4
     y: 1
     tileClass: 1
   - x: 5
-    y: 1
+    y: 5
+    tileClass: 1
+  - x: 5
+    y: 4
     tileClass: 1
 --- !u!4 &252130372
 Transform:
@@ -608,7 +607,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 401302821
-  m_SortingLayer: -5
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6ee42a791435b4e489c9a6a2f94ad449, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

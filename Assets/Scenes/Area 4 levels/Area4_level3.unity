@@ -406,7 +406,7 @@ MonoBehaviour:
   pool: {fileID: 1203656097}
   oilCounter: 0
   mechanicCounter: 0
-  playerMoves: 25
+  playerMoves: 10
   firstScore: 0
   x: 0
   numberOfTrashDestroyed: 0
@@ -420,41 +420,41 @@ MonoBehaviour:
   trashDestroyed: 0
   whatTrash: 
   boardLayout:
-  - x: 0
-    y: 0
-    tileClass: 1
-  - x: 0
+  - x: 6
     y: 6
     tileClass: 1
-  - x: 8
+  - x: 7
     y: 6
     tileClass: 1
-  - x: 8
-    y: 0
+  - x: 5
+    y: 5
     tileClass: 1
-  - x: 1
-    y: 3
-    tileClass: 1
-  - x: 2
-    y: 3
+  - x: 3
+    y: 5
     tileClass: 1
   - x: 3
     y: 3
     tileClass: 1
-  - x: 6
-    y: 4
-    tileClass: 1
-  - x: 6
+  - x: 5
     y: 3
-    tileClass: 1
-  - x: 6
-    y: 2
-    tileClass: 1
-  - x: 6
-    y: 1
     tileClass: 1
   - x: 5
     y: 1
+    tileClass: 1
+  - x: 1
+    y: 0
+    tileClass: 1
+  - x: 6
+    y: 0
+    tileClass: 1
+  - x: 0
+    y: 3
+    tileClass: 1
+  - x: 0
+    y: 6
+    tileClass: 1
+  - x: 8
+    y: 6
     tileClass: 1
 --- !u!4 &252130372
 Transform:
