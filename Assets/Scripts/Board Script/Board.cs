@@ -90,6 +90,11 @@ public class Board : MonoBehaviour
         SetUp();
     }
 
+    private void Update()
+    {
+        setGoalHere.checkGoalComplete();
+
+    }
     public void generateBlank() {
         for (int i = 0; i < boardLayout.Length; i++)
         {
@@ -119,14 +124,17 @@ public class Board : MonoBehaviour
             case "Level1":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
+                ScoreBar.maxScore = 2000;
                 break;
             case "Level2":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
+                ScoreBar.maxScore = 2500;
                 break;
             case "Level3":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
+                ScoreBar.maxScore = 3000;
                 break;
             case "Level4":
                 MovesLeft.Moves = playerMoves;
@@ -134,6 +142,7 @@ public class Board : MonoBehaviour
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 5;
                 hasMechanics = true;
+                ScoreBar.maxScore = 3500;
                 break;
             case "Level5":
                 MovesLeft.Moves = playerMoves;
@@ -141,20 +150,24 @@ public class Board : MonoBehaviour
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 5;
                 hasMechanics = true;
+                ScoreBar.maxScore = 4000;
                 break;
             case "Area2_level1":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
+                ScoreBar.maxScore = 2500;
                 break;
             case "Area2_level2":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
+                ScoreBar.maxScore = 3000;
                 break;
             case "Area2_level3":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 7;
+                ScoreBar.maxScore = 3500;
                 hasMechanics = true;
                 break;
             case "Area2_level4":
@@ -162,6 +175,7 @@ public class Board : MonoBehaviour
                 moves.text = MovesLeft.Moves.ToString();
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 7;
+                ScoreBar.maxScore = 4000;
                 hasMechanics = true;
                 break;
             case "Area2_level5":
@@ -169,29 +183,35 @@ public class Board : MonoBehaviour
                 moves.text = MovesLeft.Moves.ToString();
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 7;
+                ScoreBar.maxScore = 4500;
                 hasMechanics = true;
                 break;
             case "Area3_level1":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
+                ScoreBar.maxScore = 3500;
                 break;
             case "Area3_level2":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
+                ScoreBar.maxScore = 4000;
                 break;
             case "Area3_level3":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
+                ScoreBar.maxScore = 4500;
                 hasOilSpill = true;
                 break;
             case "Area3_level4":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
+                ScoreBar.maxScore = 5000;
                 hasOilSpill = true;
                 break;
             case "Area3_level5":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
+                ScoreBar.maxScore = 5500;
                 hasOilSpill = true;
                 break;
             case "Area4_level1":
@@ -200,6 +220,7 @@ public class Board : MonoBehaviour
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 6;
                 hasMechanics = true;
+                ScoreBar.maxScore = 3700;
                 break;
             case "Area4_level2":
                 MovesLeft.Moves = playerMoves;
@@ -207,12 +228,14 @@ public class Board : MonoBehaviour
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 6;
                 hasMechanics = true;
+                ScoreBar.maxScore = 3900;
                 break;
             case "Area4_level3":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 6;
+                ScoreBar.maxScore = 4100;
                 hasMechanics = true;
                 break;
             case "Area4_level4":
@@ -220,6 +243,7 @@ public class Board : MonoBehaviour
                 moves.text = MovesLeft.Moves.ToString();
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 6;
+                ScoreBar.maxScore = 4300;
                 hasMechanics = true;
                 break;
             case "Area4_level5":
@@ -227,12 +251,14 @@ public class Board : MonoBehaviour
                 moves.text = MovesLeft.Moves.ToString();
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 6;
+                ScoreBar.maxScore = 4500;
                 hasMechanics = true;
                 break;
             case "Area5_level1":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
                 hasOilSpill = true;
+                ScoreBar.maxScore = 3900;
                 break;
             case "Area5_level2":
                 MovesLeft.Moves = playerMoves;
@@ -240,6 +266,7 @@ public class Board : MonoBehaviour
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 6;
                 hasMechanics = true;
+                ScoreBar.maxScore = 4200;
                 break;
             case "Area5_level3":
                 MovesLeft.Moves = playerMoves;
@@ -247,12 +274,14 @@ public class Board : MonoBehaviour
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 7;
                 hasMechanics = true;
+                ScoreBar.maxScore = 4500;
                 break;
             case "Area5_level4":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 6;
+                ScoreBar.maxScore = 4800;
                 hasMechanics = true;
                 hasOilSpill = true;
                 break;
@@ -261,10 +290,52 @@ public class Board : MonoBehaviour
                 moves.text = MovesLeft.Moves.ToString();
                 mechanicDotNumber = 5;
                 goals.mechanicArrayPlace = 6;
+                ScoreBar.maxScore = 5100;
                 hasMechanics = true;
                 hasOilSpill = true;
                 break;
-
+            case "Final_level1":
+                MovesLeft.Moves = playerMoves;
+                moves.text = MovesLeft.Moves.ToString();
+                mechanicDotNumber = 5;
+                goals.mechanicArrayPlace = 6;
+                ScoreBar.maxScore = 3700;
+                hasMechanics = true;
+                hasOilSpill = true;
+                break;
+            case "Final_level2":
+                MovesLeft.Moves = playerMoves;
+                moves.text = MovesLeft.Moves.ToString();
+                mechanicDotNumber = 5;
+                goals.mechanicArrayPlace = 7;
+                ScoreBar.maxScore = 4700;
+                hasMechanics = true;
+                hasOilSpill = true;
+                break;
+            case "Final_level3":
+                MovesLeft.Moves = playerMoves;
+                moves.text = MovesLeft.Moves.ToString();
+                mechanicDotNumber = 5;
+                goals.mechanicArrayPlace = 6;
+                ScoreBar.maxScore = 5700;
+                hasMechanics = true;
+                hasOilSpill = true;
+                break;
+            case "Final_level4":
+                MovesLeft.Moves = playerMoves;
+                moves.text = MovesLeft.Moves.ToString();
+                hasOilSpill = true;
+                ScoreBar.maxScore = 6700;
+                break;
+            case "Final_level5":
+                MovesLeft.Moves = playerMoves;
+                moves.text = MovesLeft.Moves.ToString();
+                mechanicDotNumber = 5;
+                goals.mechanicArrayPlace = 7;
+                ScoreBar.maxScore = 7700;
+                hasMechanics = true;
+                hasOilSpill = true;
+                break;
         }
     }
     private void SetUp() {
@@ -282,7 +353,7 @@ public class Board : MonoBehaviour
                     backgroundTile.name = "( " + i + "," + j + ")";
 
                     if (hasMechanics) {
-                        int randomNumber = Random.Range(0, 13);
+                        int randomNumber = Random.Range(0, 8);
 
                         if (randomNumber == 5 && j >= 2) {
                             mechanicCounter++;
@@ -439,7 +510,7 @@ public class Board : MonoBehaviour
             givePoints.givePoints();
             ScoreBar.SetScore(x); 
             destroyed = false;
-            setGoalHere.checkGoalComplete();
+
         }
         FindObjectOfType<simpleAudioManager>().Play("DestroyObject");
         findAllMatches.currentMatches.Clear();
@@ -543,7 +614,7 @@ public class Board : MonoBehaviour
             yield return CheckRefillMatchesDelay;
             DestroyMatches();
             }
-        yield return new WaitForSeconds(.8f);
+        yield return new WaitForSeconds(.4f);
 
         while (mechanicIsBottom())
         {

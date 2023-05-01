@@ -387,14 +387,14 @@ MonoBehaviour:
   height: 7
   offSet: 20
   tilePrefab: {fileID: 5302146948996280167, guid: bffc8a4526262214dad1448c90eaa287, type: 3}
-  oilSpillPrefab: {fileID: 0}
+  oilSpillPrefab: {fileID: 8846349645819088553, guid: 7786f78029348f44cbfeaa8690a73131, type: 3}
   dots:
   - {fileID: 1294335184767604550, guid: fbbeba60582e5464383c99c2951f349b, type: 3}
   - {fileID: 5969722425752513661, guid: fcbb43d65c87403449501a6230645714, type: 3}
   - {fileID: 1000834971372035029, guid: 26297452ba3dcb94fa9897e5b884d7dc, type: 3}
   - {fileID: 1012102478597110983, guid: b141614b6e40cf043aa8bb24c1d62ae4, type: 3}
   - {fileID: 6432900883747000298, guid: 3e8be1c8c3c556745af7e51f9eea152a, type: 3}
-  - {fileID: 8422669082527481540, guid: fc3103cd0b5247f4ca7bca97ca6681a0, type: 3}
+  - {fileID: 8576130708363297005, guid: 178268d0748ec5745b5ee8a006b6abc9, type: 3}
   destroyEffect: {fileID: 108822091385477503, guid: 452576777f22ebe438fbb593b67fc250, type: 3}
   currentDot: {fileID: 0}
   moves: {fileID: 416405096}
@@ -406,7 +406,7 @@ MonoBehaviour:
   pool: {fileID: 1203656097}
   oilCounter: 0
   mechanicCounter: 0
-  playerMoves: 12
+  playerMoves: 25
   firstScore: 0
   x: 0
   numberOfTrashDestroyed: 0
@@ -420,39 +420,54 @@ MonoBehaviour:
   trashDestroyed: 0
   whatTrash: 
   boardLayout:
-  - x: 6
-    y: 6
+  - x: 3
+    y: 4
+    tileClass: 1
+  - x: 5
+    y: 4
+    tileClass: 1
+  - x: 3
+    y: 2
+    tileClass: 1
+  - x: 5
+    y: 2
+    tileClass: 1
+  - x: 1
+    y: 5
+    tileClass: 1
+  - x: 1
+    y: 1
     tileClass: 1
   - x: 7
-    y: 6
+    y: 1
     tileClass: 1
-  - x: 4
+  - x: 7
     y: 5
-    tileClass: 1
-  - x: 3
-    y: 5
-    tileClass: 1
-  - x: 2
-    y: 3
-    tileClass: 1
-  - x: 3
-    y: 2
-    tileClass: 1
-  - x: 4
-    y: 2
     tileClass: 1
   - x: 0
-    y: 1
+    y: 6
     tileClass: 1
-  - x: 7
-    y: 1
-    tileClass: 1
-  - x: 3
-    y: 0
+  - x: 8
+    y: 6
     tileClass: 1
   - x: 4
+    y: 3
+    tileClass: 0
+  - x: 1
+    y: 3
+    tileClass: 0
+  - x: 7
+    y: 3
+    tileClass: 0
+  - x: 1
     y: 0
-    tileClass: 1
+    tileClass: 0
+  - x: 7
+    y: 0
+    tileClass: 0
+  - x: 4
+    y: 0
+    tileClass: 0
 --- !u!4 &252130372
 Transform:
   m_ObjectHideFlags: 0
@@ -955,7 +970,7 @@ MonoBehaviour:
   - {fileID: 1332684058}
   - {fileID: 860736446}
   - {fileID: 814823908}
-  goalTextValue: 1e0000000f0000000a000000
+  goalTextValue: 0a0000001e0000000a000000
   trash1: 0
   trash2: 0
   trash3: 0
