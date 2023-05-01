@@ -5,6 +5,8 @@ using TMPro;
 
 public class RandomizeTrash : MonoBehaviour
 {
+    Board board;
+    public int mechanicArrayPlace;
     public GameObject[] randomTrashCollect;
     public Transform spawnPoint;
     public string whatToCollect;
@@ -14,6 +16,7 @@ public class RandomizeTrash : MonoBehaviour
     public int[] spawnTrashArray;
     void Start()
     {
+        board = FindObjectOfType<Board>();
         uniqueNumbers.Clear();
         generateUniqueNumber();
         trashGoalToCollect();
@@ -30,71 +33,104 @@ public class RandomizeTrash : MonoBehaviour
         }
     }
     public void trashGoalToCollect() {
-        for (int i = 0; i < spawnTrashArray.Length; i++)
-        {
-            int x = spawnTrashArray[i];
-            if (x == 0) {
-                goalToCollect[i] = "Trash1";
+        if (board.hasMechanics) {
+            if (spawnTrashArray.Length == 1) {
+                spawnTrashArray[0] = mechanicArrayPlace;
             }
-            if (x == 1)
+            else if (spawnTrashArray.Length == 2)
             {
-                goalToCollect[i] = "Trash2";
+                spawnTrashArray[1] = mechanicArrayPlace;
             }
-            if (x == 2)
+            else if (spawnTrashArray.Length == 3)
             {
-                goalToCollect[i] = "Trash3";
+                spawnTrashArray[2] = mechanicArrayPlace;
             }
-            if (x == 3)
+
+            for (int i = 0; i < spawnTrashArray.Length; i++)
             {
-                goalToCollect[i] = "Trash4";
-            }
-            if (x == 4)
-            {
-                goalToCollect[i] = "Trash5";
+                int x = spawnTrashArray[i];
+                if (x == 0)
+                {
+                    goalToCollect[i] = "Trash1";
+                }
+                if (x == 1)
+                {
+                    goalToCollect[i] = "Trash2";
+                }
+                if (x == 2)
+                {
+                    goalToCollect[i] = "Trash3";
+                }
+                if (x == 3)
+                {
+                    goalToCollect[i] = "Trash4";
+                }
+                if (x == 4)
+                {
+                    goalToCollect[i] = "Trash5";
+                }
+                if (x == 5)
+                {
+                    goalToCollect[i] = "SubmarinePart";
+                }
+                if (x == 6)
+                {
+                    goalToCollect[i] = "Ghostnet";
+                }
+                if (x == 7)
+                {
+                    goalToCollect[i] = "Algae";
+                }
             }
         }
+        if (!board.hasMechanics) {
+            for (int i = 0; i < spawnTrashArray.Length; i++)
+            {
+                int x = spawnTrashArray[i];
+                if (x == 0)
+                {
+                    goalToCollect[i] = "Trash1";
+                }
+                if (x == 1)
+                {
+                    goalToCollect[i] = "Trash2";
+                }
+                if (x == 2)
+                {
+                    goalToCollect[i] = "Trash3";
+                }
+                if (x == 3)
+                {
+                    goalToCollect[i] = "Trash4";
+                }
+                if (x == 4)
+                {
+                    goalToCollect[i] = "Trash5";
+                }
+            }
+        }
+
+        
     }
-    //public void spawnTrash()
-    //{
-    //    int trashToUse = Random.Range(0, randomTrashCollect.Length);
-    //    Instantiate(randomTrashCollect[trashToUse], spawnPoint.position, spawnPoint.rotation);
-
-    //    switch (trashToUse)
-    //    {
-    //        case 0:
-    //            whatToCollect = "Trash1";
-    //            break;
-    //        case 1:
-    //            whatToCollect = "Trash2";
-    //            break;
-    //        case 2:
-    //            whatToCollect = "Trash3";
-    //            break;
-    //        case 3:
-    //            whatToCollect = "Trash4";
-    //            break;
-    //        case 4:
-    //            whatToCollect = "Trash5";
-    //            break;
-
-    //    }
-    //}
 
     public void generateUniqueNumber() {
         for (int i = 0; i < randomTrashCollect.Length; i++)
         {
-            int v = Random.Range(0, randomTrashCollect.Length);
-            if (!uniqueNumbers.Contains(v))
-            {
-                uniqueNumbers.Add(v);
+            int v = Random.Range(0, 4);
+            if (v != 6 && v != 7 && v != 5) {
+                if (!uniqueNumbers.Contains(v))
+                {
+                    uniqueNumbers.Add(v);
+                }
             }
+           
         }
 
         for (int j = 0; j < spawnTrashArray.Length; j++)
         {
             spawnTrashArray[j] = uniqueNumbers[j];
         }
-       
+
     }
 
 

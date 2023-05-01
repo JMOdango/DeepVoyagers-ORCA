@@ -22,6 +22,9 @@ TagManager:
   - ClotheBag
   - PenHolder
   - PlasticPot
+  - SubmarinePart
+  - Algae
+  - Ghostnet
   layers:
   - Default
   - TransparentFX
@@ -70,6 +73,9 @@ TagManager:
     locked: 0
   - name: ForeGround2
     uniqueID: 2689345729
+    locked: 0
+  - name: ForeGround3
+    uniqueID: 2215896955
     locked: 0
   - name: Default
     uniqueID: 0

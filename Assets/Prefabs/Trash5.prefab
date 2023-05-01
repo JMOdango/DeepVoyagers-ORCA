@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1715304399
+  m_SortingLayer: -3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 94bb8dcd61225e047adb4b18fae33f15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,14 +131,19 @@ MonoBehaviour:
   targetX: 0
   targetY: 0
   isMatched: 0
+  isMoving: 0
+  isMechanic: 0
+  notMovable: 0
+  isBottom: 0
+  notMatchable: 0
   otherDot: {fileID: 0}
   movesLeft: {fileID: 11400000, guid: c33d418135a09ec4c98c41121f0e9495, type: 2}
   swipeAngle: 0
   swipeResist: 1
-  isColorBomb: 0
   isColumnBomb: 0
   isRowBomb: 0
   isAdjacentBomb: 0
+  isColorBomb: 0
   adjacentMarker: {fileID: 4639032010356163809, guid: 274971ab843032d4c9da7832a31e2fcd, type: 3}
   rowArrow: {fileID: 4068688158057564039, guid: e086c0222c7c9134b857c3c048c9cbca, type: 3}
   columnArrow: {fileID: 3270470235470717053, guid: abdcf9bca10f5e6448b95fa30d5946bf, type: 3}

@@ -29,7 +29,7 @@ public class scoreBar : MonoBehaviour
     }
     
 
-    private void SetMaxScore(int score) {
+    public void SetMaxScore(int score) {
         slider.maxValue = score;
     }
     
