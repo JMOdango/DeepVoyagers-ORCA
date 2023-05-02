@@ -707,11 +707,11 @@ MonoBehaviour:
   coinsReward: 30
   trash1Text: {fileID: 1018949052}
   trash1Icon: {fileID: 1018949051}
-  trash1: 2
+  trash1: 1
   trash1Reward: 10
   trashText2: {fileID: 1018949049}
   trash2Icon: {fileID: 1018949050}
-  trash2: 0
+  trash2: 2
   trash2Reward: 5
   unlockedCount1: 0
   unlockedCount2: 0

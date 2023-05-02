@@ -491,11 +491,11 @@ MonoBehaviour:
   coinsReward: 40
   trash1Text: {fileID: 1684857099}
   trash1Icon: {fileID: 1684857100}
-  trash1: 1
+  trash1: 0
   trash1Reward: 10
   trashText2: {fileID: 1684857097}
   trash2Icon: {fileID: 1684857098}
-  trash2: 0
+  trash2: 1
   trash2Reward: 5
   unlockedCount1: 0
   unlockedCount2: 0

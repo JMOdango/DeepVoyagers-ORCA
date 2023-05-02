@@ -212,17 +212,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 76c0f37054903a64aa16c242358278fa, type: 3}
   - {fileID: 21300000, guid: 2bd665005138b874b8d955d13829ca97, type: 3}
   shellsText: {fileID: 2101163560}
-  shellsReward: 10
+  shellsReward: 90
   coinsText: {fileID: 2101163559}
-  coinsReward: 10
+  coinsReward: 90
   trash1Text: {fileID: 2101163557}
   trash1Icon: {fileID: 2101163558}
-  trash1: 2
-  trash1Reward: 10
+  trash1: 3
+  trash1Reward: 35
   trashText2: {fileID: 2101163555}
   trash2Icon: {fileID: 2101163556}
-  trash2: 0
-  trash2Reward: 5
+  trash2: 3
+  trash2Reward: 30
   unlockedCount1: 0
   unlockedCount2: 0
   unlockedCount3: 0
