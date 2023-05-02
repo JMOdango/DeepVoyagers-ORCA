@@ -787,7 +787,7 @@ PrefabInstance:
       objectReference: {fileID: 573987649}
     - target: {fileID: 4752971131875487317, guid: 16decc6da2e63ec4e8fcd9eeff6831ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Return
+      value: ReturnArea1
       objectReference: {fileID: 0}
     - target: {fileID: 4752971131875487317, guid: 16decc6da2e63ec4e8fcd9eeff6831ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -872,6 +872,7 @@ MonoBehaviour:
   off_promo: {fileID: 0}
   tutorial: {fileID: 0}
   warning: {fileID: 0}
+  secretAreas: {fileID: 0}
 --- !u!114 &573987651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -891,7 +892,6 @@ MonoBehaviour:
   audioController: {fileID: 1485685274}
   Level: Level4
   endscene: {fileID: 11400000, guid: 91dce41a6b8b00d4a87a5e7cb33ef331, type: 2}
-  BondScenes: []
 --- !u!114 &573987652
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -235,13 +235,15 @@ public class SelectLoungeChara : MonoBehaviour
     }
     if(LevelManager.level.GetFinalAreaUnlocked() >= 1){
       CharactersUnlocked[4].interactable = true;
-    }
-    if(LevelManager.level.GetSecretArea1Unlocked() >= 1){
       CharactersUnlocked[5].interactable = true;
-    }
-    if(LevelManager.level.GetSecretArea2Unlocked() >= 1){
       CharactersUnlocked[6].interactable = true;
     }
+    // if(LevelManager.level.GetSecretArea1Unlocked() >= 1){
+    //   CharactersUnlocked[5].interactable = true;
+    // }
+    // if(LevelManager.level.GetSecretArea2Unlocked() >= 1){
+    //   CharactersUnlocked[6].interactable = true;
+    // }
   }
 
   public void ExitCharacter()
