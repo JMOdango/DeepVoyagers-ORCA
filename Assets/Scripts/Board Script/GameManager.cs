@@ -246,8 +246,8 @@ public class GameManager : MonoBehaviour
             break; //unlock Area 2 level 4
             case "Area2_Level5":
             if(LevelManager.level.GetArea2Unlocked() == 5){
-                unlockedCount2 = 5;
-                level.unlockLevel2(unlockedCount2);
+                unlockedCount3 = 1;
+                level.unlockLevel3(unlockedCount3);
             }
             else
             {
@@ -257,7 +257,7 @@ public class GameManager : MonoBehaviour
             break; //unlock Area 2 level 5
             case "Area3_Level1":
             if(LevelManager.level.GetArea3Unlocked() == 1){
-                unlockedCount3 = 1;
+                unlockedCount3 = 2;
                 level.unlockLevel3(unlockedCount3);
             }
             else
