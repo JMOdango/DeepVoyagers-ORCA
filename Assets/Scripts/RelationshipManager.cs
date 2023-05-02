@@ -80,6 +80,30 @@ public class RelationshipManager : MonoBehaviour
         garyRelationship = garybondpoints;
     }
 
+    public void SetCoraline(int coralinebondpoints){
+        coralineRelationship = coralinebondpoints;
+    }
+
+    public void SetPam(int pambondpoints){
+        pamRelationship = pambondpoints;
+    }
+
+    public void SetDiane(int dianebondpoints){
+        dianeRelationship = dianebondpoints;
+    }
+
+    public void SetMalachi(int malachibondpoints){
+        malachiRelationship = malachibondpoints;
+    }
+
+    public void SetOscar(int oscarbondpoints){
+        oscarRelationship = oscarbondpoints;
+    }
+
+    public void SetMari(int maribondpoints){
+        mariRelationship = maribondpoints;
+    }
+
     public int GetGary(){
         return garyRelationship;
     }

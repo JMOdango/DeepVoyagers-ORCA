@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Scene20
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: "I\u2019m so glad we acquired that thing, now we can explore deeper into
+      the ocean and help more of my subjects."
+    speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "That\u2019s right\u2026 It looks like some new garbage is piling up today.
+      Let\u2019s clean up the beach a little bit before heading home."
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 1
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: 7b3f73cc651cde6499cc8bab300ff13e, type: 3}
+  nextScene: {fileID: 11400000, guid: 9c0540034cad1cc419145f4ca7d79fe7, type: 2}

@@ -1143,7 +1143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staminaRequirementScreen: {fileID: 1959577962}
-  sceneName: CS-Level5
+  sceneName: CS-A1L5
   staminaReq: 20
   staminaLeft: 0
   noStaminaPanel: {fileID: 1777547262}
@@ -1487,7 +1487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staminaRequirementScreen: {fileID: 2024433469}
-  sceneName: CS-Level3
+  sceneName: CS-A1L3
   staminaReq: 20
   staminaLeft: 0
   noStaminaPanel: {fileID: 1777547262}
@@ -2127,7 +2127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staminaRequirementScreen: {fileID: 6080692347677696533}
-  sceneName: CS-Level1
+  sceneName: CS-A1L1
   staminaReq: 20
   staminaLeft: 0
   noStaminaPanel: {fileID: 1777547262}
@@ -2290,7 +2290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staminaRequirementScreen: {fileID: 94122673}
-  sceneName: CS-Level4
+  sceneName: CS-A1L4
   staminaReq: 20
   staminaLeft: 0
   noStaminaPanel: {fileID: 1777547262}
@@ -2733,7 +2733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staminaRequirementScreen: {fileID: 671364899}
-  sceneName: CS-Level2
+  sceneName: CS-A1L2
   staminaReq: 20
   staminaLeft: 0
   noStaminaPanel: {fileID: 1777547262}

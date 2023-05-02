@@ -7,20 +7,26 @@ using Newtonsoft.Json;
 
 public class Level
 {
-    public int area1, area2, area3, area4, area5;
+    public int area1, area2, area3, area4, area5, finalArea, secretArea1, secretArea2;
 
     public Level(
         int area1,
         int area2, 
         int area3, 
         int area4, 
-        int area5
+        int area5,
+        int finalArea,
+        int secretArea1,
+        int secretArea2
     ){
         this.area1 = area1;
         this.area2 = area2;
         this.area3 = area3;
         this.area4 = area4;
         this.area5 = area5;
+        this.finalArea = finalArea;
+        this.secretArea1 = secretArea1; 
+        this.secretArea2 = secretArea2;
     }
 }
 
@@ -30,14 +36,18 @@ public class LevelManager : MonoBehaviour
     public LevelManager[] levelManager;
     
     [SerializeField]
-    private int area1Unlocked, area2Unlocked, area3Unlocked, area4Unlocked, area5Unlocked;
+    private int area1Unlocked, area2Unlocked, area3Unlocked, area4Unlocked, area5Unlocked, 
+    finalAreaUnlocked, secretArea1Unlocked, secretArea2Unlocked;
 
     public Level ReturnClass(){
         return new Level(area1Unlocked,
         area2Unlocked,
         area3Unlocked,
         area4Unlocked,
-        area5Unlocked
+        area5Unlocked,
+        finalAreaUnlocked,
+        secretArea1Unlocked,
+        secretArea2Unlocked
         );
     }
 
@@ -81,20 +91,66 @@ public class LevelManager : MonoBehaviour
             case 3: area2Unlocked = 3; break;
             case 4: area2Unlocked = 4; break;
             case 5: area2Unlocked = 5; break;
-            case 6: area2Unlocked = 6; break;
-            case 7: area2Unlocked = 7; break;
         }
     }
 
     public void unlockLevel3(int unlocked){
         switch(unlocked){
-            case 1: area2Unlocked = 1; break;
-            case 2: area2Unlocked = 2; break;
-            case 3: area2Unlocked = 3; break;
-            case 4: area2Unlocked = 4; break;
-            case 5: area2Unlocked = 5; break;
-            case 6: area2Unlocked = 6; break;
-            case 7: area2Unlocked = 7; break;
+            case 1: area3Unlocked = 1; break;
+            case 2: area3Unlocked = 2; break;
+            case 3: area3Unlocked = 3; break;
+            case 4: area3Unlocked = 4; break;
+            case 5: area3Unlocked = 5; break;
+        }
+    }
+
+    public void unlockLevel4(int unlocked){
+        switch(unlocked){
+            case 1: area4Unlocked = 1; break;
+            case 2: area4Unlocked = 2; break;
+            case 3: area4Unlocked = 3; break;
+            case 4: area4Unlocked = 4; break;
+            case 5: area4Unlocked = 5; break;
+        }
+    }
+
+    public void unlockLevel5(int unlocked){
+        switch(unlocked){
+            case 1: area5Unlocked = 1; break;
+            case 2: area5Unlocked = 2; break;
+            case 3: area5Unlocked = 3; break;
+            case 4: area5Unlocked = 4; break;
+            case 5: area5Unlocked = 5; break;
+        }
+    }
+
+    public void unlockFinal(int unlocked){
+        switch(unlocked){
+            case 1: finalAreaUnlocked = 1; break;
+            case 2: finalAreaUnlocked = 2; break;
+            case 3: finalAreaUnlocked = 3; break;
+            case 4: finalAreaUnlocked = 4; break;
+            case 5: finalAreaUnlocked = 5; break;
+        }
+    }
+
+    public void unlockSA1(int unlocked){
+        switch(unlocked){
+            case 1: secretArea1Unlocked = 1; break;
+            case 2: secretArea1Unlocked = 2; break;
+            case 3: secretArea1Unlocked = 3; break;
+            case 4: secretArea1Unlocked = 4; break;
+            case 5: secretArea1Unlocked = 5; break;
+        }
+    }
+
+    public void unlockSA2(int unlocked){
+        switch(unlocked){
+            case 1: secretArea2Unlocked = 1; break;
+            case 2: secretArea2Unlocked = 2; break;
+            case 3: secretArea2Unlocked = 3; break;
+            case 4: secretArea2Unlocked = 4; break;
+            case 5: secretArea2Unlocked = 5; break;
         }
     }
 
@@ -104,6 +160,9 @@ public class LevelManager : MonoBehaviour
         area3Unlocked = level.area3;
         area4Unlocked = level.area4;
         area5Unlocked = level.area5;
+        finalAreaUnlocked = level.finalArea;
+        secretArea1Unlocked = level.secretArea1;
+        secretArea2Unlocked = level.secretArea2;
     }
 
     public int GetArea1Unlocked(){
@@ -125,6 +184,19 @@ public class LevelManager : MonoBehaviour
     public int GetArea5Unlocked(){
         return area5Unlocked;
     }
+
+    public int GetFinalAreaUnlocked(){
+        return finalAreaUnlocked;
+    }
+
+    public int GetSecretArea1Unlocked(){
+        return secretArea1Unlocked;
+    }
+
+    public int GetSecretArea2Unlocked(){
+        return secretArea2Unlocked;
+    }
+
 
     public void SaveLevels(){
         List<Level> levels = new List<Level>();

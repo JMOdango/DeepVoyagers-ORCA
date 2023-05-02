@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Scene23
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: 'You easily maneuvered the submarine due to your previous training and
+      finally reached a few kilometers below the water. Suddenly you noticed there
+      was something wrong with Sea. '
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Ugh!
+    speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 5
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Sea! Are you alright?
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 5
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I feel immense negativity just nearby. It\u2019s making me shiver all
+      over, there must be something wrong."
+    speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'Tell me where to go. '
+    speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'The Sea Guardian nods and tells you the directions where to go. '
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 5
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "P-please\u2026help\u2026me\u2026"
+    speaker: {fileID: 11400000, guid: b2b0e3608fe7c944980ce0f9d5012484, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Sea, do you hear that?
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 5
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Over there\u2026"
+    speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 7
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'A coral reef? And looks like it has been bleached. '
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I\u2019m\u2026so\u2026hungry\u2026"
+    speaker: {fileID: 11400000, guid: b2b0e3608fe7c944980ce0f9d5012484, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Let\u2019s go, Sea."
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "You activated the submarine\u2019s self-driving mode added by Ludwig and
+      donned your driving gear preparing yourself to head out into the waters with
+      Sea. "
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'You swam near the coral reef looking for the voice. The Sea Guardian tapped
+      you on the shoulder and pointed out towards a lone coral. '
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 7
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: 9ec598f78d100f740bf18574a8501bd5, type: 3}
+  nextScene: {fileID: 11400000, guid: 6cac2efe4d3111f42b83b4fbc04f7846, type: 2}

@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Scene21
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: When you arrived at work you can see Sheila waving at you.
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: It looks like Ludwig did a pretty good job. The submarine looked the same
+      as it did when it got here.
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "By the way\u2026 Did you tell anyone else about the pearl?"
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I haven\u2019t told anyone else except for you. "
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: I see... Since you already gained the task of saving the ocean, can you
+      help me with a little favor?
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Sure, how can I help?
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'I want you to interview and observe every marine species you encounter
+      and write down every new information in a journal. '
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "That\u2019s already in your job description anyways but with your new
+      friend, it would be much easier for you to communicate with marine animals
+      and gain something new about them. "
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Also, it would also be nice if you could bring some with you here to ORCA.
+      Only if they consent to it of course\u2026"
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'It would be helpful for us if you served as our interpreter so we could
+      understand more about them. '
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "That sounds easy enough, I\u2019ll do it."
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Thanks a lot, that would be such a huge help to our organization. Why
+      don\u2019t we go to the docking station right now and test out the submarine
+      in the waters? "
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Sounds like a plan!
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 1
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: dca2251f62083e948b3a3ba93ec953f1, type: 3}
+  nextScene: {fileID: 11400000, guid: f97d4de9df67d7d42adaf15009157580, type: 2}

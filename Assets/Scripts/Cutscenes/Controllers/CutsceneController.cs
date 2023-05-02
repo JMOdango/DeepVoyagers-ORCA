@@ -15,7 +15,6 @@ public class CutsceneController : MonoBehaviour
     private State state = State.IDLE;
     public string Level;
     public GameScene endscene;
-    public Scene[] BondScenes;
 
     private enum State
     {
