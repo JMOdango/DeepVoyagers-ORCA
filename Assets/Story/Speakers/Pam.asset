@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd88a8ae081a3e249a931b4f4a0526f1, type: 3}
+  m_Name: Pam
+  m_EditorClassIdentifier: 
+  speakerName: Pam
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  sprites:
+  - {fileID: 21300000, guid: debc570f198e8774d9e5b1b3c81e5c8e, type: 3}
+  - {fileID: 21300000, guid: d0facf51da239ee4ea01c6c7fc58eb61, type: 3}
+  - {fileID: 21300000, guid: 10ec07460a7936a44a6fe5fb2135fa63, type: 3}
+  - {fileID: 21300000, guid: a7e218dd18b4e5748adaf718cb051d57, type: 3}
+  - {fileID: 21300000, guid: 0756d5ccf0f2e8a4b8b1f38454d8dfa8, type: 3}
+  - {fileID: 21300000, guid: 6084f6e05d4b42544ae333e9e7248cad, type: 3}
+  - {fileID: 21300000, guid: 8312dc6200443144fa60a6e81ed0a8da, type: 3}
+  prefab: {fileID: 710253362323849916, guid: daa37c6008b6423458899c36ce1fa84e, type: 3}

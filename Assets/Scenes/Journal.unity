@@ -181,10 +181,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'I met Mari when she asked me for help to save her kingdom. She saw how
+    I was helping other creatures so she went to me. She guided me to her kingdom
+    where only few could enter. And here I thought mermaids were just fairy tales. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
-  m_sharedMaterial: {fileID: -1123561846508238766, guid: 130a169b290f4344585a1d2702d0358a, type: 2}
+  m_sharedMaterial: {fileID: -3716599042538372531, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -247,7 +249,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &8026516
@@ -2455,10 +2457,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Mari was actually a princess and told me her people had been sick for a
+    long time so she went out to find a cure. Unfortunately, she couldn't find anything
+    of help. We soon discovered it was a nearby chemical disposal that caused it.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
-  m_sharedMaterial: {fileID: -1123561846508238766, guid: 130a169b290f4344585a1d2702d0358a, type: 2}
+  m_sharedMaterial: {fileID: -3716599042538372531, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2521,7 +2525,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &264427754
@@ -4305,10 +4309,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Oscar told me that he inherited all of his ancestor's knowledge, which
+    should also be passed down to their offsprings. However, due to them being endangered,
+    he has not been able to meet another shark like him.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
-  m_sharedMaterial: {fileID: -1123561846508238766, guid: 130a169b290f4344585a1d2702d0358a, type: 2}
+  m_sharedMaterial: {fileID: -3716599042538372531, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4371,7 +4377,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &394082493
@@ -5159,7 +5165,7 @@ MonoBehaviour:
   m_text: INFORMATION 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72b4ea4bdffbaf2478a4b234e2d7666e, type: 2}
-  m_sharedMaterial: {fileID: 1540181359909702955, guid: a7cec205831f9924fbf483c7e3a21a78, type: 2}
+  m_sharedMaterial: {fileID: -7293246326094026647, guid: 72b4ea4bdffbaf2478a4b234e2d7666e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5660,7 +5666,7 @@ MonoBehaviour:
   m_text: INFORMATION 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72b4ea4bdffbaf2478a4b234e2d7666e, type: 2}
-  m_sharedMaterial: {fileID: 1540181359909702955, guid: a7cec205831f9924fbf483c7e3a21a78, type: 2}
+  m_sharedMaterial: {fileID: -7293246326094026647, guid: 72b4ea4bdffbaf2478a4b234e2d7666e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5871,10 +5877,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: We removed away all the chemicals and used the powers of the Sea Guardian
+    to help cure the merpeople. They were all thankful to us and told us we were
+    welcome to visit them any time. Mari offered to give me their assistance whenever
+    I need it.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
-  m_sharedMaterial: {fileID: -1123561846508238766, guid: 130a169b290f4344585a1d2702d0358a, type: 2}
+  m_sharedMaterial: {fileID: -3716599042538372531, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5937,7 +5946,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &571228801
@@ -7060,7 +7069,7 @@ MonoBehaviour:
   m_text: INFORMATION 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72b4ea4bdffbaf2478a4b234e2d7666e, type: 2}
-  m_sharedMaterial: {fileID: 1540181359909702955, guid: a7cec205831f9924fbf483c7e3a21a78, type: 2}
+  m_sharedMaterial: {fileID: -7293246326094026647, guid: 72b4ea4bdffbaf2478a4b234e2d7666e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7192,7 +7201,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Oscar...
+  m_text: I met Oscar in an underwater cave while we were trying to reach the Bermuda
+    Triangle. He said he had lived for hundreds of years.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
   m_sharedMaterial: {fileID: -3716599042538372531, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
@@ -12516,7 +12526,7 @@ MonoBehaviour:
   m_text: INFORMATION 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72b4ea4bdffbaf2478a4b234e2d7666e, type: 2}
-  m_sharedMaterial: {fileID: 1540181359909702955, guid: a7cec205831f9924fbf483c7e3a21a78, type: 2}
+  m_sharedMaterial: {fileID: -7293246326094026647, guid: 72b4ea4bdffbaf2478a4b234e2d7666e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12727,10 +12737,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Oscar said he trusted me enough and offered to give me his knowledge. I
+    appreaciate the kind offer, but I thought it would be better if one of his kind
+    received it instead of me so I refused the offer. I promised  I would find him
+    his successor.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
-  m_sharedMaterial: {fileID: -1123561846508238766, guid: 130a169b290f4344585a1d2702d0358a, type: 2}
+  m_sharedMaterial: {fileID: -3716599042538372531, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12793,7 +12806,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1291099860
@@ -14394,10 +14407,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pam thinks it is weird that ''ORCA'' is named after a scary predator and
+  m_text: Pam thinks it is weird that 'ORCA' is named after a scary predator and
     it makes her uncomfortable. Gary pointed out that she is a predator too and a
-    small argument broke out. We had a serious talk afterwards which changed her
-    perspective. '
+    small argument broke out. She suddenly disappeared which made us worry.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
   m_sharedMaterial: {fileID: -3716599042538372531, guid: 386c899dd9cf0134098d3e0fb81e5cc8, type: 2}
@@ -22221,7 +22233,7 @@ MonoBehaviour:
   m_text: INFORMATION 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 72b4ea4bdffbaf2478a4b234e2d7666e, type: 2}
-  m_sharedMaterial: {fileID: 1540181359909702955, guid: a7cec205831f9924fbf483c7e3a21a78, type: 2}
+  m_sharedMaterial: {fileID: -7293246326094026647, guid: 72b4ea4bdffbaf2478a4b234e2d7666e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
