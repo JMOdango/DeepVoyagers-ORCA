@@ -25,7 +25,12 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: Follow me.
     speaker: {fileID: 11400000, guid: b7562871347e2d74a8fe51fa999e5029, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: b7562871347e2d74a8fe51fa999e5029, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: ' '

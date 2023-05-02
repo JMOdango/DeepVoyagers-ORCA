@@ -76,12 +76,16 @@ public class SelectLoungeChara : MonoBehaviour
   public Button[] OscarConvos;
   public Button[] MariConvos;     
   public Button[] CharactersUnlocked;
+
+  public GameObject newBondNotif;
+  private bool notifInvoked;
     
 
   void Start()
   {
     ItemShopCloseUp item = gameObject.GetComponent<ItemShopCloseUp>();
     TempBondPoints bondpoints = gameObject.GetComponent<TempBondPoints>();
+    newBondNotif.SetActive(false);
     notifanim.SetBool("playNotif",false);
 
     for(int i = 0; i < 3; i++){
@@ -103,6 +107,29 @@ public class SelectLoungeChara : MonoBehaviour
     SetRelationship();
     UnlockCharacter();
     UnlockConvos();
+
+    if(notifInvoked){
+      newBondNotif.SetActive(true);
+      notifInvoked = false;
+    }
+  }
+
+  public void InvokeNotif(){
+    foreach(GameObject x in GaryHeartsList){
+      if(x == true){
+        notifInvoked = true;
+      }
+    }
+    foreach(GameObject x in CoralineHeartsList){
+      if(x == true){
+        notifInvoked = true;
+      }
+    }
+    foreach(GameObject x in PamHeartsList){
+      if(x == true){
+        notifInvoked = true;
+      }
+    }
   }
 
   public void UnlockConvos(){
@@ -222,21 +249,23 @@ public class SelectLoungeChara : MonoBehaviour
 
   public void UnlockCharacter(){
     if(LevelManager.level.GetArea2Unlocked() >= 1){
-      CharactersUnlocked[0].interactable = true;
+      CharactersUnlocked[0].interactable = true; //Gary
     }
     if(LevelManager.level.GetArea3Unlocked() >= 1){
-      CharactersUnlocked[1].interactable = true;
+      CharactersUnlocked[1].interactable = true; // Coraline
     }
     if(LevelManager.level.GetArea4Unlocked() >= 1){
-      CharactersUnlocked[2].interactable = true;
+      CharactersUnlocked[2].interactable = true; // Pam
     }
     if(LevelManager.level.GetArea5Unlocked() >= 1){
-      CharactersUnlocked[3].interactable = true;
+      CharactersUnlocked[3].interactable = true; // Diane
     }
     if(LevelManager.level.GetFinalAreaUnlocked() >= 1){
-      CharactersUnlocked[4].interactable = true;
-      CharactersUnlocked[5].interactable = true;
-      CharactersUnlocked[6].interactable = true;
+      CharactersUnlocked[4].interactable = true; //Malachi
+    }
+    if(LevelManager.level.GetFinalAreaUnlocked() == 5){
+      CharactersUnlocked[5].interactable = true; //Oscar
+      CharactersUnlocked[6].interactable = true; //Mari
     }
     // if(LevelManager.level.GetSecretArea1Unlocked() >= 1){
     //   CharactersUnlocked[5].interactable = true;
@@ -625,7 +654,7 @@ public class SelectLoungeChara : MonoBehaviour
       if (item.chosengift == "stufftoy")
        {
         pambondpoints += giftpoints; 
-        RelationshipManager.relationship.SetCoraline(pambondpoints);
+        RelationshipManager.relationship.SetPam(pambondpoints);
         RelationshipManager.relationship.SaveRelationships();
         
         PamHeartsList[0].SetActive(true);
@@ -647,7 +676,7 @@ public class SelectLoungeChara : MonoBehaviour
        if (item.chosengift == "waterproofcamera")
        {
         dianebondpoints += giftpoints; 
-        RelationshipManager.relationship.SetCoraline(dianebondpoints);
+        RelationshipManager.relationship.SetDiane(dianebondpoints);
         RelationshipManager.relationship.SaveRelationships();
         
         DianeHeartsList[0].SetActive(true);
@@ -668,7 +697,7 @@ public class SelectLoungeChara : MonoBehaviour
        if (item.chosengift == "toyfigure")
        {
         malachibondpoints += giftpoints; 
-        RelationshipManager.relationship.SetCoraline(malachibondpoints);
+        RelationshipManager.relationship.SetMalachi(malachibondpoints);
         RelationshipManager.relationship.SaveRelationships();
         
         MalachiHeartsList[0].SetActive(true);
@@ -689,7 +718,7 @@ public class SelectLoungeChara : MonoBehaviour
        if (item.chosengift == "historybook")
        {
         oscarbondpoints += giftpoints; 
-        RelationshipManager.relationship.SetCoraline(oscarbondpoints);
+        RelationshipManager.relationship.SetOscar(oscarbondpoints);
         RelationshipManager.relationship.SaveRelationships();
         
         OscarHeartsList[0].SetActive(true);
@@ -710,7 +739,7 @@ public class SelectLoungeChara : MonoBehaviour
       if (item.chosengift == "seaweed")
        {
         maribondpoints += giftpoints; 
-        RelationshipManager.relationship.SetCoraline(maribondpoints);
+        RelationshipManager.relationship.SetMari(maribondpoints);
         RelationshipManager.relationship.SaveRelationships();
         
         MariHeartsList[0].SetActive(true);

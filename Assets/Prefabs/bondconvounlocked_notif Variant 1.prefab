@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5629177225982438042
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -4493.2476
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -2824.6284
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -369
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 359346577808292404, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652382092588828976, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_text
+      value: You have unlocked new a bond conversation!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652382092588828976, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652382092588828976, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_fontStyle
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652382092588828976, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124547116033264133, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_Name
+      value: bondconvounlocked_notif
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852821540507364925, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}
+      propertyPath: m_text
+      value: BOND LEVEL INREASED!
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d24779d1d549bb049bc781b1acc58f81, type: 3}

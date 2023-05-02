@@ -13,12 +13,6 @@ MonoBehaviour:
   m_Name: Scene 15
   m_EditorClassIdentifier: 
   sentences:
-  - text: With the help of Gary and the Sea Guardian, you were able to collect enough
-      materials for the submarine.
-    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
-    actions: []
-    music: {fileID: 0}
-    sound: {fileID: 0}
   - text: "This should be enough, let\u2019s bring these to Ludwig."
     speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
     actions: []

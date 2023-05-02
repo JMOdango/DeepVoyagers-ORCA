@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84535a1a97e24c4eb6d5331262f9e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: {fileID: 11400000, guid: f83f0a3bc8d889e4b8f894e63236ab70, type: 2}
+  currentScene: {fileID: 11400000, guid: 3a143fef9c0f2ce47aa634013491f698, type: 2}
   textBox: {fileID: 1091745511}
   backgroundController: {fileID: 453805405}
   chooseController: {fileID: 660558102}

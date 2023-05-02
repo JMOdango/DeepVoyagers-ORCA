@@ -11,7 +11,7 @@ public class LevelUnlock : MonoBehaviour
     [SerializeField] Button[] buttons;
     int unlockedLevelsNumber;
     [SerializeField]
-    int area1, area2, area3, area4, area5;
+    int area1, area2, area3, area4, area5, finalArea;
 
     void Start()
     {
@@ -30,6 +30,9 @@ public class LevelUnlock : MonoBehaviour
             break; 
             case "Area5_LevelSelection":
             unlockedLevelsNumber = LevelManager.level.GetArea5Unlocked();
+            break;
+            case "Area6_LevelSelection":
+            unlockedLevelsNumber = LevelManager.level.GetFinalAreaUnlocked();
             break;
         }
 
@@ -72,6 +75,9 @@ public class LevelUnlock : MonoBehaviour
             case "Area5_LevelSelection":
             unlockedLevelsNumber = LevelManager.level.GetArea5Unlocked();
             break;
+            case "Area6_LevelSelection":
+            unlockedLevelsNumber = LevelManager.level.GetFinalAreaUnlocked();
+            break;
         }
         
         for (int i = 0; i < unlockedLevelsNumber; i++){
@@ -85,5 +91,6 @@ public class LevelUnlock : MonoBehaviour
         area3 = LevelManager.level.GetArea3Unlocked();
         area4 = LevelManager.level.GetArea4Unlocked();
         area5 = LevelManager.level.GetArea5Unlocked();
+        finalArea = LevelManager.level.GetFinalAreaUnlocked();
     }
 }

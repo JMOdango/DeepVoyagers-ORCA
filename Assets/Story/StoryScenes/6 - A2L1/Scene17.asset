@@ -25,7 +25,12 @@ MonoBehaviour:
     sound: {fileID: 0}
   - text: Woah! It looks even better than the last time I saw it.
     speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
-    actions: []
+    actions:
+    - speaker: {fileID: 11400000, guid: b7562871347e2d74a8fe51fa999e5029, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
     music: {fileID: 0}
     sound: {fileID: 0}
   - text: "I\u2019ve also made some upgrades to it, why don\u2019t you check the

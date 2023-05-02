@@ -75,10 +75,6 @@ public class GarySkills : MonoBehaviour
                 case "Final_level3": points += Random.Range(0.10f, 0.30f); break;
                 case "Final_level4": points += Random.Range(0.10f, 0.30f); break;
                 case "Final_level5": points += Random.Range(0.10f, 0.30f); break;
-
-
-
-
             }
             increaseBar(points);
             board.getPoints = false;
@@ -112,16 +108,6 @@ public class GarySkills : MonoBehaviour
         {
             int randomRow = Random.Range(0, 6);
             selectRandomRow.randomDestroyRow(randomRow);
-            board.DestroyMatches();
-            garyImage.fillAmount = 0;
-            points = 0;
-            TargetBar = 0;
-        }
-        else if(garyImage.fillAmount == 1 && infoLock.GetGaryBondUnlocked() >= 1 && infoLock.GetGaryBondUnlocked() < 2){
-            int randomRow = Random.Range(0, 3);
-            int randomRow2 = Random.Range(4, 6);
-            selectRandomRow.randomDestroyRow(randomRow);
-            selectRandomRow.randomDestroyRow(randomRow2);
             board.DestroyMatches();
             garyImage.fillAmount = 0;
             points = 0;

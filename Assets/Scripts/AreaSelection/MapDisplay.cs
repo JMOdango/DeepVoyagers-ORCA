@@ -19,8 +19,20 @@ public class MapDisplay : MonoBehaviour
     }
 
     void Update(){
-        if(LevelManager.level.GetArea2Unlocked() >= 1){
+        if(LevelManager.level.GetArea2Unlocked() >= 1 && LevelManager.level.GetArea3Unlocked() == 0){
             currentScene = 1;
+        }
+        else if(LevelManager.level.GetArea3Unlocked() >= 1 && LevelManager.level.GetArea4Unlocked() == 0){
+            currentScene = 2;
+        }
+        else if(LevelManager.level.GetArea4Unlocked() >= 1 && LevelManager.level.GetArea5Unlocked() == 0){
+            currentScene = 3;
+        }
+        else if(LevelManager.level.GetArea5Unlocked() >= 1 && LevelManager.level.GetFinalAreaUnlocked() == 0){
+            currentScene = 4;
+        }
+        else if(LevelManager.level.GetFinalAreaUnlocked() >= 1){
+            currentScene = 5;
         }
     }
 
