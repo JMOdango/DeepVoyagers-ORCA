@@ -78,13 +78,12 @@ public class SelectLoungeChara : MonoBehaviour
   public Button[] CharactersUnlocked;
 
   public GameObject newBondNotif;
-  private bool notifInvoked;
+  private bool isEnabled = false;
     
 
   void Start()
   {
     ItemShopCloseUp item = gameObject.GetComponent<ItemShopCloseUp>();
-    TempBondPoints bondpoints = gameObject.GetComponent<TempBondPoints>();
     newBondNotif.SetActive(false);
     notifanim.SetBool("playNotif",false);
 
@@ -107,29 +106,12 @@ public class SelectLoungeChara : MonoBehaviour
     SetRelationship();
     UnlockCharacter();
     UnlockConvos();
-
-    if(notifInvoked){
-      newBondNotif.SetActive(true);
-      notifInvoked = false;
-    }
   }
 
-  public void InvokeNotif(){
-    foreach(GameObject x in GaryHeartsList){
-      if(x == true){
-        notifInvoked = true;
-      }
-    }
-    foreach(GameObject x in CoralineHeartsList){
-      if(x == true){
-        notifInvoked = true;
-      }
-    }
-    foreach(GameObject x in PamHeartsList){
-      if(x == true){
-        notifInvoked = true;
-      }
-    }
+  public void CloseNotif()
+  {
+    newBondNotif.SetActive(false);
+    isEnabled = false;
   }
 
   public void UnlockConvos(){
@@ -138,112 +120,238 @@ public class SelectLoungeChara : MonoBehaviour
     {
       GaryHeartsList[0].SetActive(true);
       GaryConvos[0].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter1") == 0)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter1", 1);
+      }
     }
     if (garybondpoints >= secondthreshold)
     {
       GaryHeartsList[1].SetActive(true);
       GaryConvos[1].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter1") == 1)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter1", 2);
+      }
     }
     if (garybondpoints >= thirdthreshold)
     {
       GaryHeartsList[2].SetActive(true);
       GaryConvos[2].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter1") == 2)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter1", 3);
+      }
     }
     //Coraline
     if (coralinebondpoints >= firstthreshold)
     {
       CoralineHeartsList[0].SetActive(true);
       CoralineConvos[0].interactable = true;
+      if(!isEnabled  && PlayerPrefs.GetInt("newBondCounter2") == 0)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter2", 1);
+      }
     }
     if (coralinebondpoints >= secondthreshold)
     {
       CoralineHeartsList[1].SetActive(true);
       CoralineConvos[1].interactable = true;
+      if(!isEnabled  && PlayerPrefs.GetInt("newBondCounter2") == 1)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter2", 2);
+      }
     }
     if (coralinebondpoints >= thirdthreshold)
     {
       CoralineHeartsList[2].SetActive(true);
       CoralineConvos[2].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter2") == 2)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter2", 3);
+      }
     }
     //Pam 
     if (pambondpoints >= firstthreshold)
     {
       PamHeartsList[0].SetActive(true);
       PamConvos[0].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter3") == 0)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter3", 1);
+      }
     }
     if (pambondpoints >= secondthreshold)
     {
       PamHeartsList[1].SetActive(true);
       PamConvos[1].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter3") == 1)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter3", 2);
+      }
     }
     if (pambondpoints >= thirdthreshold)
     {
       PamHeartsList[2].SetActive(true);
       PamConvos[2].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter3") == 2)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter3", 3);
+      }
     }
     //Diane 
     if (dianebondpoints >= firstthreshold)
     {
       DianeHeartsList[0].SetActive(true);
       DianeConvos[0].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter4") == 0)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter4", 1);
+      }
     }
     if (dianebondpoints >= secondthreshold)
     {
       DianeHeartsList[1].SetActive(true);
       DianeConvos[1].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter4") == 1)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter4", 2);
+      }   
     }
     if (dianebondpoints >= thirdthreshold)
     {
       DianeHeartsList[2].SetActive(true);
       DianeConvos[2].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter4") == 2)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter4", 3);
+      }
     }
     //Malachi 
     if (malachibondpoints >= firstthreshold)
     {
       MalachiHeartsList[0].SetActive(true);
       MalachiConvos[0].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter5") == 0)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter5", 1);
+      }
     }
     if (malachibondpoints >= secondthreshold)
     {
       MalachiHeartsList[1].SetActive(true);
       MalachiConvos[1].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter5") == 1)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter5", 2);
+      }
     }
     if (malachibondpoints >= thirdthreshold)
     {
       MalachiHeartsList[2].SetActive(true);
       MalachiConvos[2].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter5") == 2)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter5", 3);
+      }
     }
     //Oscar 
     if (oscarbondpoints >= firstthreshold)
     {
       OscarHeartsList[0].SetActive(true);
       OscarConvos[0].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter6") == 0)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter6", 1);
+      }
     }
     if (oscarbondpoints >= secondthreshold)
     {
       OscarHeartsList[1].SetActive(true);
       OscarConvos[1].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter6") == 1)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter6", 2);
+      }
     }
     if (oscarbondpoints >= thirdthreshold)
     {
       OscarHeartsList[2].SetActive(true);
       OscarConvos[2].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter6") == 2)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter6", 3);
+      }
     }
     //Mari 
     if (maribondpoints >= firstthreshold)
     {
       MariHeartsList[0].SetActive(true);
       MariConvos[0].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter7") == 0)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter7", 1);
+      }
     }
     if (maribondpoints >= secondthreshold)
     {
       MariHeartsList[1].SetActive(true);
       MariConvos[1].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter7") == 1)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter7", 2);
+      }
     }
     if (maribondpoints >= thirdthreshold)
     {
       MariHeartsList[2].SetActive(true);
       MariConvos[2].interactable = true;
+      if(!isEnabled && PlayerPrefs.GetInt("newBondCounter7") == 2)
+      {
+        newBondNotif.SetActive(true);
+        isEnabled = true;
+        PlayerPrefs.SetInt("newBondCounter7", 3);
+      }
     }
   }
 
@@ -591,7 +699,7 @@ public class SelectLoungeChara : MonoBehaviour
     }
 
     
-    public const int giftpoints = 3;
+    public const int giftpoints = 5;
     
 
     public void SetRelationship(){
@@ -656,8 +764,6 @@ public class SelectLoungeChara : MonoBehaviour
         pambondpoints += giftpoints; 
         RelationshipManager.relationship.SetPam(pambondpoints);
         RelationshipManager.relationship.SaveRelationships();
-        
-        PamHeartsList[0].SetActive(true);
 
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true); 
@@ -679,7 +785,6 @@ public class SelectLoungeChara : MonoBehaviour
         RelationshipManager.relationship.SetDiane(dianebondpoints);
         RelationshipManager.relationship.SaveRelationships();
         
-        DianeHeartsList[0].SetActive(true);
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true); 
         InventoryManager.inventory.ReduceInventory(item.chosengift);
@@ -700,7 +805,6 @@ public class SelectLoungeChara : MonoBehaviour
         RelationshipManager.relationship.SetMalachi(malachibondpoints);
         RelationshipManager.relationship.SaveRelationships();
         
-        MalachiHeartsList[0].SetActive(true);
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true);
         InventoryManager.inventory.ReduceInventory(item.chosengift);
@@ -721,7 +825,6 @@ public class SelectLoungeChara : MonoBehaviour
         RelationshipManager.relationship.SetOscar(oscarbondpoints);
         RelationshipManager.relationship.SaveRelationships();
         
-        OscarHeartsList[0].SetActive(true);
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true);
         InventoryManager.inventory.ReduceInventory(item.chosengift);
@@ -742,7 +845,6 @@ public class SelectLoungeChara : MonoBehaviour
         RelationshipManager.relationship.SetMari(maribondpoints);
         RelationshipManager.relationship.SaveRelationships();
         
-        MariHeartsList[0].SetActive(true);
         notif.text = "Relationship Increased!";
         notifanim.SetBool("playNotif",true);
         InventoryManager.inventory.ReduceInventory(item.chosengift);

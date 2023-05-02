@@ -537,7 +537,7 @@ MonoBehaviour:
   backgroundController: {fileID: 2025415336}
   chooseController: {fileID: 198699532}
   audioController: {fileID: 1006945449}
-  Level: Area6_Level3
+  Level: Final_Level3
   endscene: {fileID: 11400000, guid: 91dce41a6b8b00d4a87a5e7cb33ef331, type: 2}
 --- !u!114 &292310287
 MonoBehaviour:

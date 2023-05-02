@@ -1405,10 +1405,14 @@ PrefabInstance:
     - target: {fileID: 5112035889033412729, guid: 10e25c7a48fe9c945b82defd65f9d653, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 50719549}
+      objectReference: {fileID: 1954041328}
     - target: {fileID: 5112035889033412729, guid: 10e25c7a48fe9c945b82defd65f9d653, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: closeNotif
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112035889033412729, guid: 10e25c7a48fe9c945b82defd65f9d653, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: newCharNotif, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10e25c7a48fe9c945b82defd65f9d653, type: 3}
