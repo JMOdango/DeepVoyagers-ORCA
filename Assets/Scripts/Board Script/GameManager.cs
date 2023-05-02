@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     
     private void Start()
     {
-        SetUnlockedValues();
+        GetUnlockedValues();
         goalComplete = FindObjectOfType<TextGoal>();
         gameOverCanvas.SetActive(false);
         completedLevel.SetActive(false);
@@ -134,6 +134,69 @@ public class GameManager : MonoBehaviour
         level.unlockSA2(unlockedCount8);
     }
 
+        //     public void stageComplete()
+    // {
+    //     gameOverCanvas.SetActive(false);
+    //     completedLevel.SetActive(true);
+    //     GameOver = false;
+    //     Complete = true;
+    //     shellsText.text = shellsReward.ToString();
+    //     coinsText.text = coinsReward.ToString();
+    //     trash1Text.text = trash1Reward.ToString();
+    //     trashText2.text = trash2Reward.ToString();
+
+    //     switch(SceneManager.GetActiveScene().name){
+    //         case "Level1": 
+    //         if(LevelManager.level.GetArea1Unlocked() == 1){
+    //             unlockedCount1 = 2;
+    //         }
+    //         else
+    //         {
+    //             unlockedCount1 = LevelManager.level.GetArea1Unlocked();
+    //         };
+    //         break; //unlock level2
+    //         case "Level2": 
+    //         if(LevelManager.level.GetArea1Unlocked() == 2){
+    //             unlockedCount1 = 3;
+    //         }
+    //         else
+    //         {
+    //             unlockedCount1 = LevelManager.level.GetArea1Unlocked();
+    //         };
+    //         break; //unlock level3
+    //         case "Level3": 
+    //         if(LevelManager.level.GetArea1Unlocked() == 3){
+    //             unlockedCount1 = 4;
+    //         }
+    //         else
+    //         {
+    //             unlockedCount1 = LevelManager.level.GetArea1Unlocked();
+    //         };
+    //         break; //unlock level4
+    //         case "Level4": 
+    //         if(LevelManager.level.GetArea1Unlocked() == 4){
+    //             unlockedCount1 = 5;
+    //         }
+    //         else
+    //         {
+    //             unlockedCount1 = LevelManager.level.GetArea1Unlocked();
+    //         };
+    //         break; //unlock level5
+    //         case "Level5":
+    //         if(LevelManager.level.GetArea1Unlocked() == 5){
+    //             unlockedCount1 = 5;
+    //             unlockedCount2 = 1;
+    //         }
+    //         else
+    //         {
+    //             unlockedCount1 = LevelManager.level.GetArea1Unlocked();
+    //         };
+    //         break; //unlock Area 2 level 1
+    //     }
+    //     level.unlockLevel1(unlockedCount1);
+    //     level.unlockLevel2(unlockedCount2);
+    // }
+
     public void stageComplete()
     {
         gameOverCanvas.SetActive(false);
@@ -149,132 +212,232 @@ public class GameManager : MonoBehaviour
             case "Level1": 
             if(LevelManager.level.GetArea1Unlocked() == 1){
                 unlockedCount1 = 2;
-                level.unlockLevel1(unlockedCount1);
             }
             else
             {
                 GetUnlockedValues();
-                SetUnlockedValues(); //.
             };
             break; //unlock level2
             case "Level2": 
             if(LevelManager.level.GetArea1Unlocked() == 2){
                 unlockedCount1 = 3;
-                level.unlockLevel1(unlockedCount1);
             }
             else
             {
                 GetUnlockedValues();
-                SetUnlockedValues();
             };
             break; //unlock level3
             case "Level3": 
             if(LevelManager.level.GetArea1Unlocked() == 3){
                 unlockedCount1 = 4;
-                level.unlockLevel1(unlockedCount1);
             }
             else
             {
                 GetUnlockedValues();
-                SetUnlockedValues();
             };
             break; //unlock level4
             case "Level4": 
             if(LevelManager.level.GetArea1Unlocked() == 4){
                 unlockedCount1 = 5;
-                level.unlockLevel1(unlockedCount1);
             }
             else
             {
                 GetUnlockedValues();
-                SetUnlockedValues();
             };
             break; //unlock level5
             case "Level5":
             if(LevelManager.level.GetArea1Unlocked() == 5){
+                unlockedCount1 = 5;
                 unlockedCount2 = 1;
-                level.unlockLevel2(unlockedCount2);
             }
             else
             {
                 GetUnlockedValues();
-                SetUnlockedValues();
             };
             break; //unlock Area 2 level 1
             case "Area2_Level1":
             if(LevelManager.level.GetArea2Unlocked() == 1){
+                unlockedCount1 = 5;
                 unlockedCount2 = 2;
-                level.unlockLevel2(unlockedCount2);
             }
             else
             {
                 GetUnlockedValues();
-                SetUnlockedValues();
             };
             break; //unlock Area 2 level 2
             case "Area2_Level2":
             if(LevelManager.level.GetArea2Unlocked() == 2){
+                unlockedCount1 = 5;
                 unlockedCount2 = 3;
-                level.unlockLevel2(unlockedCount2);
             }
             else
             {
                 GetUnlockedValues();
-                SetUnlockedValues();
             };
             break; //unlock Area 2 level 3
             case "Area2_Level3":
             if(LevelManager.level.GetArea2Unlocked() == 3){
+                unlockedCount1 = 5;
                 unlockedCount2 = 4;
-                level.unlockLevel2(unlockedCount2);
-            }
-            else
-            {
-                GetUnlockedValues();
-                SetUnlockedValues();
-            };
-            break; //unlock Area 2 level 3
-            case "Area2_Level4":
-            if(LevelManager.level.GetArea2Unlocked() == 4){
-                unlockedCount2 = 4;
-                level.unlockLevel2(unlockedCount2);
             }
             else
             {
                 GetUnlockedValues();
             };
             break; //unlock Area 2 level 4
+            case "Area2_Level4":
+            if(LevelManager.level.GetArea2Unlocked() == 4){
+                unlockedCount1 = 5;
+                unlockedCount2 = 4;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 2 level 5
             case "Area2_Level5":
             if(LevelManager.level.GetArea2Unlocked() == 5){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
                 unlockedCount3 = 1;
-                level.unlockLevel3(unlockedCount3);
             }
             else
             {
-                SetUnlockedValues();
-                SetUnlockedValues();
+                GetUnlockedValues();
             };
-            break; //unlock Area 2 level 5
+            break; //unlock Area 3 level 1
             case "Area3_Level1":
             if(LevelManager.level.GetArea3Unlocked() == 1){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
                 unlockedCount3 = 2;
-                level.unlockLevel3(unlockedCount3);
             }
             else
             {
-                SetUnlockedValues();
-                SetUnlockedValues();
+                GetUnlockedValues();
             };
-            break; //unlock Area 2 level 5
+            break; //unlock Area 3 level 2
+            case "Area3_Level2":
+            if(LevelManager.level.GetArea3Unlocked() == 2){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
+                unlockedCount3 = 3;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 3 level 3
+            case "Area3_Level3":
+            if(LevelManager.level.GetArea3Unlocked() == 3){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
+                unlockedCount3 = 4;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 3 level 4
+            case "Area3_Level4":
+            if(LevelManager.level.GetArea3Unlocked() == 4){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
+                unlockedCount3 = 5;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 3 level 5
+            case "Area3_Level5":
+            if(LevelManager.level.GetArea3Unlocked() == 5){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
+                unlockedCount3 = 5;
+                unlockedCount4 = 1;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 4 level 1
+            case "Area4_Level1":
+            if(LevelManager.level.GetArea4Unlocked() == 1){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
+                unlockedCount3 = 5;
+                unlockedCount4 = 2;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 4 level 2
+            case "Area4_Level2":
+            if(LevelManager.level.GetArea4Unlocked() == 2){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
+                unlockedCount3 = 5;
+                unlockedCount4 = 3;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 4 level 3
+            case "Area4_Level3":
+            if(LevelManager.level.GetArea4Unlocked() == 3){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
+                unlockedCount3 = 5;
+                unlockedCount4 = 4;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 4 level 4
+            case "Area4_Level4":
+            if(LevelManager.level.GetArea4Unlocked() == 4){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
+                unlockedCount3 = 5;
+                unlockedCount4 = 5;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 4 level 5
+            case "Area4_Level5":
+            if(LevelManager.level.GetArea4Unlocked() == 5){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
+                unlockedCount3 = 5;
+                unlockedCount4 = 5;
+                unlockedCount5 = 1;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 4 level 5
+            case "Area5_Level1":
+            if(LevelManager.level.GetArea5Unlocked() == 1){
+                unlockedCount1 = 5;
+                unlockedCount2 = 5;
+                unlockedCount3 = 5;
+                unlockedCount4 = 5;
+                unlockedCount5 = 1;
+            }
+            else
+            {
+                GetUnlockedValues();
+            };
+            break; //unlock Area 5 level 1
         }
-        // level.unlockLevel1(unlockedCount1);
-        // level.unlockLevel2(unlockedCount2);
-        // level.unlockLevel3(unlockedCount3);
-        // level.unlockLevel4(unlockedCount4);
-        // level.unlockLevel5(unlockedCount5);
-        // level.unlockFinal(unlockedCount6);
-        // level.unlockSA1(unlockedCount7);
-        // level.unlockSA2(unlockedCount8);
+        SetUnlockedValues();
     }
 
     public void unlockLevel(){
