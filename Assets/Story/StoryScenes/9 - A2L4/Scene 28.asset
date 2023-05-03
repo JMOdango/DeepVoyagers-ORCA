@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Scene 28
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: "Good job collecting this, we\u2019ll start working on it as soon as possible
+      but it might take four to twelve months for these fragments to fully form back. "
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 1
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Even then\u2026 We still need to restart the process multiple times to
+      fully restore the coral reef. "
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: That long!?
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'Well normally it would take a hundred years but thanks to science, we
+      can do it in a much shorter time. '
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 2
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'Well normally it would take a hundred years but thanks to science, we
+      can do it in a much shorter time. '
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 2
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Your little friend over here might need to wait a few years until it can
+      return to the ocean.
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'We still need you to collect more of those algae, we still need to study
+      more about it and culture some here in the lab. '
+    speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'Looks like we still need to wait before we can talk to Coraline again. '
+    speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    - speaker: {fileID: 11400000, guid: 4d3d837e322c27e4887c47353aedbacd, type: 2}
+      spriteIndex: 0
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "That seems to be the case, I\u2019m just glad we were able to do something.
+      It\u2019s getting late\u2026 Let\u2019s head home, shall we?"
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 0
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: dca2251f62083e948b3a3ba93ec953f1, type: 3}
+  nextScene: {fileID: 11400000, guid: 9c0540034cad1cc419145f4ca7d79fe7, type: 2}
