@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
-  m_Name: Scene 0-7
+  m_Name: Scene 0-9
   m_EditorClassIdentifier: 
   sentences:
-  - text: You woke up fresh and excited to try out the newly fixed submarine today
-      and so was the Sea Guardian.
+  - text: After getting some healthy zooxanthellae from the nearby coral reef, you
+      returned to the reef where Coraline was so you could ask for a piece of their
+      fragment.
     speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
     actions: []
-    music: {fileID: 8300000, guid: 12aa04f535b17434db6eaf1ffbb2456b, type: 3}
+    music: {fileID: 8300000, guid: 66b3daaa0ff0cee4caa62af338ae3b4c, type: 3}
     sound: {fileID: 0}
-  background: {fileID: 21300000, guid: 368c313acb0322f4d9d7ea6da2f18f1c, type: 3}
-  nextScene: {fileID: 11400000, guid: 649edd7d3a24cd542b9a63ca6e9a1d50, type: 2}
+  background: {fileID: 21300000, guid: a6c9749631dac0c4a8843b836de0e092, type: 3}
+  nextScene: {fileID: 11400000, guid: 0db80a050957df0488f1b6b265343be1, type: 2}

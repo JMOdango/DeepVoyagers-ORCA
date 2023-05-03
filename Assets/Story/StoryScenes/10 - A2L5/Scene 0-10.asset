@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
-  m_Name: Scene 0-7
+  m_Name: Scene 0-10
   m_EditorClassIdentifier: 
   sentences:
-  - text: You woke up fresh and excited to try out the newly fixed submarine today
-      and so was the Sea Guardian.
+  - text: "After a few months of waiting, you can finally see Coraline\u2019s fragments
+      starting to form into an adult coral. You constantly communicated with it hoping
+      to get a response to no avail."
     speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
     actions: []
-    music: {fileID: 8300000, guid: 12aa04f535b17434db6eaf1ffbb2456b, type: 3}
+    music: {fileID: 8300000, guid: e86d398c643687e43a522087e63f0f78, type: 3}
     sound: {fileID: 0}
-  background: {fileID: 21300000, guid: 368c313acb0322f4d9d7ea6da2f18f1c, type: 3}
-  nextScene: {fileID: 11400000, guid: 649edd7d3a24cd542b9a63ca6e9a1d50, type: 2}
+  background: {fileID: 21300000, guid: dca2251f62083e948b3a3ba93ec953f1, type: 3}
+  nextScene: {fileID: 11400000, guid: be23e8331eebe2243b4bb8d5f7be17b7, type: 2}

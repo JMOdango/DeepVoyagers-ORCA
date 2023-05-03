@@ -17,7 +17,7 @@ MonoBehaviour:
       materials for the submarine.
     speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
     actions: []
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: 12aa04f535b17434db6eaf1ffbb2456b, type: 3}
     sound: {fileID: 0}
   background: {fileID: 21300000, guid: 6084531fb94268b42b1561280bc89417, type: 3}
   nextScene: {fileID: 11400000, guid: f83f0a3bc8d889e4b8f894e63236ab70, type: 2}
