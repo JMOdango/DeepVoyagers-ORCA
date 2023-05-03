@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Coraline_Scene0-3
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Coraline was overjoyed when the Sea Guardian granted them their temporary
+      human shape, so you decided to bring them to the mall.
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Coraline was staring closely at something inside the shop, and when you
+      went to investigate, you discovered it was a crystal necklace.
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "You went inside the shop and bought the necklace. You immediately gave
+      it to Coraline who couldn\u2019t believe it at first."
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: 415df38fac243a942860934d857f7d12, type: 3}
+  nextScene: {fileID: 11400000, guid: bf7fd6437793e5c4389053f2c9c49107, type: 2}

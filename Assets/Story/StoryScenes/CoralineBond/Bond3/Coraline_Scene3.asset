@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Coraline_Scene3
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: 'Is this really for me? '
+    speaker: {fileID: 11400000, guid: 9903c34f3fefc79499d102b04215a59d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9903c34f3fefc79499d102b04215a59d, type: 2}
+      spriteIndex: 6
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: You nod and went to assist them in putting it on.
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9903c34f3fefc79499d102b04215a59d, type: 2}
+      spriteIndex: 6
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'Thank you... It''s the first time I''ve ever received a present. '
+    speaker: {fileID: 11400000, guid: 9903c34f3fefc79499d102b04215a59d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9903c34f3fefc79499d102b04215a59d, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "It\u2019s so bright and shiny like a star. "
+    speaker: {fileID: 11400000, guid: 9903c34f3fefc79499d102b04215a59d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9903c34f3fefc79499d102b04215a59d, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I\u2019m glad you like my present. Let's go, there's still a lot to see
+      and do."
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9903c34f3fefc79499d102b04215a59d, type: 2}
+      spriteIndex: 1
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: 415df38fac243a942860934d857f7d12, type: 3}
+  nextScene: {fileID: 11400000, guid: 9c0540034cad1cc419145f4ca7d79fe7, type: 2}

@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Pam_Scene1
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: "So\u2026 and sooooo\u2026 and then!"
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 5
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: The conversation continued for more than an hour, then Pam suddenly went
+      quiet.
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Pam?
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "You\u2019re different, you know that? The other seals used to find me
+      very annoying, but you listen to me all the time. I\u2019m glad you\u2019re
+      my friend."
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 1
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Pam's abrupt statements caught you off guard, yet you couldn\u2019t help
+      but smile."
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "It\u2019s because you tell such interesting stories. That\u2019s why I
+      like listening to them."
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Pam couldn\u2019t help but blush at your words. "
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "O-of course I do\u2026 I\u2019m one of the best storytellers out there."
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "You\u2019re right\u2026 So please tell me more next time, okay?"
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 1
+      actionType: 3
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: dca2251f62083e948b3a3ba93ec953f1, type: 3}
+  nextScene: {fileID: 11400000, guid: 9c0540034cad1cc419145f4ca7d79fe7, type: 2}

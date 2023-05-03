@@ -1,0 +1,270 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Pam_Scene2
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: "There\u2019s one thing I do not understand."
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 6
+      actionType: 1
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: 'What is it, Pam? '
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 6
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Why is the organization you\u2019re working for named after such a terrifying
+      creature? "
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 6
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "It\u2019s an abbreviation. Short for \u2018Ocean Restoration and Conservation
+      Association.\u2019"
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 6
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Eh? But it\u2019s still scary."
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 4
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Why do you think it\u2019s scary?"
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 4
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Well\u2026 Orcas are predators, and predators are mean and scary. They
+      like to feast on innocent seals like me. "
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 2
+      actionType: 0
+      coords: {x: 0, y: 0}
+      moveSpeed: 0
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "But you\u2019re a predator too, Pam. Don\u2019t you eat fish and other
+      animals? "
+    speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 2
+      actionType: 2
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 1
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: What are you saying, Gary!?
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 3
+      actionType: 0
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Am I wrong? To them, you\u2019re the predator. So that means you\u2019re
+      mean and scary too."
+    speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 3
+      actionType: 0
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: You take that back!
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 3
+      actionType: 0
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "Now\u2026 now\u2026 Don\u2019t fight. "
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 3
+      actionType: 0
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: But he started it!
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 3
+      actionType: 0
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I\u2019m sorry Pam, but he is right. And we don\u2019t blame you for that
+      since that\u2019s just part of nature. You also shouldn\u2019t label someone
+      as terrifying and mean because of that."
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 3
+      actionType: 0
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "I can\u2019t believe you would take his side! "
+    speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 2
+      actionType: 0
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Pam immediately leaves with tears in her eyes.
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 9b1dbb39fab9dca4cb83082998c6a01d, type: 2}
+      spriteIndex: 2
+      actionType: 3
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: Pam!
+    speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: We should give her some space. She might have her own reason for saying
+      those things.
+    speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 0
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 5
+      actionType: 1
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: "You\u2019re right\u2026 I\u2019ll talk to her again once she calms down. "
+    speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+    actions:
+    - speaker: {fileID: 11400000, guid: 77ffaadeb2c71db4ab2c58f7bf3ed672, type: 2}
+      spriteIndex: 0
+      actionType: 3
+      coords: {x: -450, y: 0}
+      moveSpeed: 1
+    - speaker: {fileID: 11400000, guid: e7f818e81a9ca2940813631374875cef, type: 2}
+      spriteIndex: 5
+      actionType: 3
+      coords: {x: 450, y: 0}
+      moveSpeed: 1
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: 6133e933f87d3ae4580bfb0fff7565d7, type: 3}
+  nextScene: {fileID: 11400000, guid: 9c0540034cad1cc419145f4ca7d79fe7, type: 2}
