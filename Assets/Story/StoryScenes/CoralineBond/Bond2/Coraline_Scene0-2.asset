@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
-  m_Name: Scene 0-7
+  m_Name: Coraline_Scene0-2
   m_EditorClassIdentifier: 
   sentences:
-  - text: You woke up fresh and excited to try out the newly fixed submarine today
-      and so was the Sea Guardian.
+  - text: "You looked at Coraline and felt a little bit guilty for carelessly choosing
+      their name. You thought should\u2019ve chosen a more neutral name since corals
+      are hermaphrodites. You tried asking Coraline about their opinion."
     speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  background: {fileID: 21300000, guid: 368c313acb0322f4d9d7ea6da2f18f1c, type: 3}
-  nextScene: {fileID: 11400000, guid: 649edd7d3a24cd542b9a63ca6e9a1d50, type: 2}
+  background: {fileID: 21300000, guid: dca2251f62083e948b3a3ba93ec953f1, type: 3}
+  nextScene: {fileID: 11400000, guid: 8fe5e89f3c262f747bf06b2502a79817, type: 2}

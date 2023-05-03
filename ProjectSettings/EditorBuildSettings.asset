@@ -239,4 +239,58 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cutscenes/CS-A6L5.unity
     guid: add6b1e072ffe4a4caa9238ceee0788d
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/CoralineConvos/Coraline_Bond1.unity
+    guid: 2ec5eb1f7f2fad641a80acf72ed97d22
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/CoralineConvos/Coraline_Bond2.unity
+    guid: c870d39db93b0bd449004931c505e5eb
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/CoralineConvos/Coraline_Bond3.unity
+    guid: 2436a542c14be4d478dcdeb2585d164a
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/DianeConvos/Diane_Bond1.unity
+    guid: 9ae1a49c79b9c274dae598cfbd95b0a8
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/DianeConvos/Diane_Bond2.unity
+    guid: 4dbe5f3050a33e04c8d79c00b154fe46
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/DianeConvos/Diane_Bond3.unity
+    guid: 51a41b231b6713e4da59eae254dfaa1b
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/MalachiConvos/Malachi_Bond1.unity
+    guid: 87f57b891714a9344a7baa000f2e8579
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/MalachiConvos/Malachi_Bond2.unity
+    guid: 8c40fa230be4ee145a2b018050609690
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/MalachiConvos/Malachi_Bond3.unity
+    guid: b106f9d3a0adbbc40931a4de6623c092
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/MariConvos/Mari_Bond1.unity
+    guid: 3d4713f8accf33549b79b9d998d18451
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/MariConvos/Mari_Bond2.unity
+    guid: eef96464c115b45478124510403eb5dc
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/MariConvos/Mari_Bond3.unity
+    guid: 1d93bcb004cad1944b115515d5d7dd41
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/OscarConvos/Oscar_Bond1.unity
+    guid: 829a96cc96039474386fd6e29f118404
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/OscarConvos/Oscar_Bond2.unity
+    guid: 75b2c4a82b1d0224e9dc899773709b90
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/OscarConvos/Oscar_Bond3.unity
+    guid: 64ef543c6d22f6b45adcb3ebbc1f7ef7
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/PamConvos/Pam_Bond1.unity
+    guid: 7e687c1bba5be354392132564ef53639
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/PamConvos/Pam_Bond2.unity
+    guid: c3b155f931cff294f9f8acf9a461df3c
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/PamConvos/Pam_Bond3.unity
+    guid: 52aeeb99c9fb9574eaed75359385f39f
   m_configObjects: {}

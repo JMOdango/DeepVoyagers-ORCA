@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
+  m_Name: Pam_Scene0-3
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: "You all waited for Pam to return even when it\u2019s almost nighttime.
+      You wondered if you should\u2019ve just chased her instead as you are now getting
+      more worried about where they went. "
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  - text: You soon see a familiar figure in the distance. Pam was walking towards
+      you with their head facing downwards.
+    speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
+    actions: []
+    music: {fileID: 0}
+    sound: {fileID: 0}
+  background: {fileID: 21300000, guid: 7b3f73cc651cde6499cc8bab300ff13e, type: 3}
+  nextScene: {fileID: 11400000, guid: e3b044fcc91803245b1a6d798f727e08, type: 2}

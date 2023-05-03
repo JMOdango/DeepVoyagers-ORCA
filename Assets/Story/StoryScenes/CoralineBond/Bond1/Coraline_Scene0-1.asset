@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bb8a32495379f649afdd4398a8407d3, type: 3}
-  m_Name: Scene 0-7
+  m_Name: Coraline_Scene0-1
   m_EditorClassIdentifier: 
   sentences:
-  - text: You woke up fresh and excited to try out the newly fixed submarine today
-      and so was the Sea Guardian.
+  - text: You took Coraline around town with you, which they seem to enjoy so far
+      despite their limited ability to move around. When night came, you both decided
+      to sit in the park and watch the night sky full of stars.
     speaker: {fileID: 11400000, guid: 1d5042fb7c5b1aa44830898f228f5c62, type: 2}
     actions: []
     music: {fileID: 0}
     sound: {fileID: 0}
-  background: {fileID: 21300000, guid: 368c313acb0322f4d9d7ea6da2f18f1c, type: 3}
-  nextScene: {fileID: 11400000, guid: 649edd7d3a24cd542b9a63ca6e9a1d50, type: 2}
+  background: {fileID: 21300000, guid: 4a6874846d0290943861de4f9bb38595, type: 3}
+  nextScene: {fileID: 11400000, guid: c2cb480e3220f0f41b412c84898764cf, type: 2}
