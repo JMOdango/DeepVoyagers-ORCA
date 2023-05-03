@@ -603,7 +603,7 @@ MonoBehaviour:
   goalText:
   - {fileID: 644320791}
   - {fileID: 2115789185}
-  goalTextValue: 0a000000140000000f000000
+  goalTextValue: 0a00000014000000
   trash1: 0
   trash2: 0
   trash3: 0
