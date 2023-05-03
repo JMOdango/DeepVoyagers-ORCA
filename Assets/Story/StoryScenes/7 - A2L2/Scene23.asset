@@ -28,7 +28,7 @@ MonoBehaviour:
       actionType: 1
       coords: {x: 0, y: 0}
       moveSpeed: 0
-    music: {fileID: 0}
+    music: {fileID: 8300000, guid: a0ca2b756429b15468736fbec7eee8b1, type: 3}
     sound: {fileID: 0}
   - text: Sea! Are you alright?
     speaker: {fileID: 11400000, guid: 180dd5c3abf0a0c45b2ba75479ffb1d1, type: 2}

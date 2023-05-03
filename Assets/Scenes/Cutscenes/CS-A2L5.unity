@@ -751,7 +751,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6084531fb94268b42b1561280bc89417, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dca2251f62083e948b3a3ba93ec953f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84535a1a97e24c4eb6d5331262f9e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: {fileID: 11400000, guid: d7b4d903e9fc3a948a2672d3ed46fac3, type: 2}
+  currentScene: {fileID: 11400000, guid: d3c8dccff3025b34fb312748acb91054, type: 2}
   textBox: {fileID: 1672581712}
   backgroundController: {fileID: 396000022}
   chooseController: {fileID: 257700641}
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0ecae5349ac98794981eebdba043dc62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dca2251f62083e948b3a3ba93ec953f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
