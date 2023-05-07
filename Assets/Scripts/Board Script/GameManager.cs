@@ -84,11 +84,13 @@ public class GameManager : MonoBehaviour
             board.currentState = GameState.wait;
             Invoke("gameOver", 1.0f);
         }
-        
-        if (board.isDeadlocked) {
-            deadlockPanel.SetActive(true);
-            Invoke("gameOver", 1.0f);
-        }
+
+        //if (board.isDeadlocked)
+        //{
+        //    deadlockPanel.SetActive(true);
+        //    board.shuffleBoard();
+        //    deadlockPanel.SetActive(false);
+        //}
 
         ChangeSprite();
     }

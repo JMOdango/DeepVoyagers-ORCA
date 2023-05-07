@@ -17,6 +17,7 @@ public class DotController : MonoBehaviour
     public bool notMovable = false;
     public bool isBottom = false;
     public bool notMatchable = false;
+    public bool isLast = false;
     private FindMatches findAllMatches;
     private Board board;
     public GameObject otherDot;

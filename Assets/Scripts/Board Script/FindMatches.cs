@@ -170,7 +170,10 @@ public class FindMatches : MonoBehaviour
                 if (i >= 0 && i < board.width && j >= 0 && j < board.height) {
                     if (board.allDots[i,j]!= null) {
                         dots.Add(board.allDots[i, j]);
-                        board.allDots[i, j].GetComponent<DotController>().isMatched = true;
+                        if (!board.allDots[i, j].GetComponent<DotController>().isMechanic) {
+                            board.allDots[i, j].GetComponent<DotController>().isMatched = true;
+                        }
+                        
                     }
                 }
             }
@@ -185,7 +188,10 @@ public class FindMatches : MonoBehaviour
             if (board.allDots[column,i] != null)
             {               
                 dots.Add(board.allDots[column, i]);
-                board.allDots[column, i].GetComponent<DotController>().isMatched = true;
+                if (!board.allDots[column, i].GetComponent<DotController>().isMechanic) {
+                    board.allDots[column, i].GetComponent<DotController>().isMatched = true;
+                }
+                
             }
         }
         return dots;
@@ -199,7 +205,10 @@ public class FindMatches : MonoBehaviour
                     if (board.allDots[i, j] != null)
                     {
                         dots.Add(board.allDots[i, j]);
-                        board.allDots[i, j].GetComponent<DotController>().isMatched = true;
+                        if (!board.allDots[i, j].GetComponent<DotController>().isMechanic) {
+                            board.allDots[i, j].GetComponent<DotController>().isMatched = true;
+                        }
+                        
                     }
                 }
             }
@@ -230,7 +239,10 @@ public class FindMatches : MonoBehaviour
             if (board.allDots[i, row] != null)
             {                
                 dots.Add(board.allDots[i, row]);
-                board.allDots[i, row].GetComponent<DotController>().isMatched = true;
+                if (!board.allDots[i, row].GetComponent<DotController>().isMechanic) {
+                    board.allDots[i, row].GetComponent<DotController>().isMatched = true;
+                }
+                
             }
         }
         return dots;

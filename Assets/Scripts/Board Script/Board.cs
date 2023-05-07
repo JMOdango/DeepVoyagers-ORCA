@@ -16,12 +16,18 @@ public enum Tileclass {
     Blank,
     Normal
 }
-
+public enum IfLast
+{
+    Last,
+    Normal
+}
 [System.Serializable]
 public class tileType {
     public int x;
     public int y;
     public Tileclass tileClass;
+    public IfLast ifLast;
+
 }
 public class Board : MonoBehaviour
 {
@@ -32,6 +38,7 @@ public class Board : MonoBehaviour
     public GameObject tilePrefab;
     public GameObject oilSpillPrefab;
     private bool[,] blankSpaces;
+    private bool[,] lastSpaces;
     public BackgroundTile[,] oilSpill;
     public GameObject[] dots;
     public GameObject destroyEffect;
@@ -85,21 +92,35 @@ public class Board : MonoBehaviour
         goals = FindObjectOfType<RandomizeTrash>();
         findAllMatches = FindObjectOfType<FindMatches>();
         blankSpaces = new bool[width, height];
+        lastSpaces = new bool[width, height];
         allDots = new GameObject[width, height];
         levelMechanics();
         SetUp();
+        StartCoroutine(destroyIfLast());
     }
 
     private void Update()
     {
         setGoalHere.checkGoalComplete();
-
+        
+        
     }
     public void generateBlank() {
         for (int i = 0; i < boardLayout.Length; i++)
         {
             if (boardLayout[i].tileClass == Tileclass.Blank) {
                 blankSpaces[boardLayout[i].x, boardLayout[i].y] = true;
+            }
+        }
+
+    }
+    public void generateLast()
+    {
+        for (int i = 0; i < boardLayout.Length; i++)
+        {
+            if (boardLayout[i].ifLast == IfLast.Last)
+            {
+                lastSpaces[boardLayout[i].x, boardLayout[i].y] = true;
             }
         }
 
@@ -111,7 +132,7 @@ public class Board : MonoBehaviour
             if (boardLayout[i].tileClass == Tileclass.Breakable)
             {
                 Vector2 tempPosition = new Vector2(boardLayout[i].x, boardLayout[i].y);
-                GameObject tile = Instantiate(oilSpillPrefab,tempPosition, Quaternion.identity);
+                GameObject tile = Instantiate(oilSpillPrefab, tempPosition, Quaternion.identity);
                 oilSpill[boardLayout[i].x, boardLayout[i].y] = tile.GetComponent<BackgroundTile>();
                 oilCounter++;
             }
@@ -145,6 +166,14 @@ public class Board : MonoBehaviour
                 ScoreBar.maxScore = 3500;
                 break;
             case "Level5":
+                MovesLeft.Moves = playerMoves;
+                moves.text = MovesLeft.Moves.ToString();
+                mechanicDotNumber = 5;
+                goals.mechanicArrayPlace = 5;
+                hasMechanics = true;
+                ScoreBar.maxScore = 4000;
+                break;
+            case "Level5 1":
                 MovesLeft.Moves = playerMoves;
                 moves.text = MovesLeft.Moves.ToString();
                 mechanicDotNumber = 5;
@@ -341,6 +370,7 @@ public class Board : MonoBehaviour
     private void SetUp() {
         generateBlank();
         generateOilSpill();
+        generateLast();
         for (i = 0; i < width; i++)
         {
             for (j = 0; j < height; j++)
@@ -472,23 +502,23 @@ public class Board : MonoBehaviour
     private void DestroyMatchesAt(int column, int row)
     {
         destroyed = true;
-        if (allDots[column, row].GetComponent<DotController>().isMatched || allDots[column, row].GetComponent<DotController>().isBottom)
+        if (allDots[column, row].GetComponent<DotController>().isMatched || allDots[column, row].GetComponent<DotController>().isBottom || allDots[column, row].GetComponent<DotController>().isLast)
         {
             if (findAllMatches.currentMatches.Count == 4 || findAllMatches.currentMatches.Count == 7) {
                 findAllMatches.checkBombs();
             }
-            if (oilSpill[column,row] != null)
+            if (oilSpill[column, row] != null)
             {
                 oilSpill[column, row].takeDamage(1);
             }
-            dotReuse(column,row);
-            StartCoroutine(DestroyReuse(column,row));
+            dotReuse(column, row);
+            StartCoroutine(DestroyReuse(column, row));
             givePoints.checkInstantiate();
             trashDestroyed++;
             setGoalHere.minusCollect(whatTrash);
             allDots[column, row] = null;
         }
-   
+
     }
 
     public void DestroyMatches()
@@ -500,7 +530,7 @@ public class Board : MonoBehaviour
                 if (allDots[i, j] != null)
                 {
                     DestroyMatchesAt(i, j);
-                  
+
                 }
             }
         }
@@ -508,7 +538,7 @@ public class Board : MonoBehaviour
         {
             x += (trashDestroyed * 100);
             givePoints.givePoints();
-            ScoreBar.SetScore(x); 
+            ScoreBar.SetScore(x);
             destroyed = false;
 
         }
@@ -526,13 +556,13 @@ public class Board : MonoBehaviour
         {
             for (int j = 0; j < height; j++)
             {
-                if (!blankSpaces[i,j] && allDots[i,j] == null) {
-                    for (int k = j+1; k < height; k++)
+                if (!blankSpaces[i, j] && allDots[i, j] == null) {
+                    for (int k = j + 1; k < height; k++)
                     {
-                        if (allDots[i,k] != null) {
+                        if (allDots[i, k] != null) {
                             allDots[i, k].GetComponent<DotController>().row = j;
                             allDots[i, k] = null;
-                             break;
+                            break;
                         }
                     }
                 }
@@ -540,18 +570,19 @@ public class Board : MonoBehaviour
         }
         yield return (delay);
         StartCoroutine(FillBoardCo());
+        StartCoroutine(destroyIfLast());
     }
-   
+
 
     private void RefillBoard()
     {
         for (int i = 0; i < width; i++)
         {
-            for (int j =0; j < height; j++)
+            for (int j = 0; j < height; j++)
             {
-                if (allDots[i,j] == null && !blankSpaces[i,j])
+                if (allDots[i, j] == null && !blankSpaces[i, j])
                 {
-                    
+
                     GameObject trashToRefill = ObjectPool.instance.getPooledObject();
                     if (trashToRefill != null) {
                         Vector2 tempPosition = new Vector2(i, j + offSet);
@@ -576,7 +607,7 @@ public class Board : MonoBehaviour
         {
             for (int j = 0; j < height; j++)
             {
-                if (allDots[i,j] != null)
+                if (allDots[i, j] != null)
                 {
                     if (allDots[i, j].GetComponent<DotController>().isMatched)
                     {
@@ -591,15 +622,30 @@ public class Board : MonoBehaviour
     private bool mechanicIsBottom() {
         for (int i = 0; i < width; i++)
         {
-            if (allDots[i,0] != null)
+            if (allDots[i, 0] != null)
             {
-                if (allDots[i,0].GetComponent<DotController>().isMechanic) {
+                if (allDots[i, 0].GetComponent<DotController>().isMechanic) {
                     return true;
                 }
             }
         }
         return false;
     }
+
+    public IEnumerator destroyIfLast() {
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (lastSpaces[i, j] && allDots[i, j].GetComponent<DotController>().isMechanic) {
+                    allDots[i, j].GetComponent<DotController>().isLast = true;
+                    yield return new WaitForSeconds(.7f);
+                    DestroyMatches();
+                }
+            }
+        }
+    }
+  
     private IEnumerator FillBoardCo()
     {
         
@@ -613,7 +659,7 @@ public class Board : MonoBehaviour
             currentState = GameState.wait;
             yield return CheckRefillMatchesDelay;
             DestroyMatches();
-            }
+        }
         yield return new WaitForSeconds(.4f);
 
         while (mechanicIsBottom())
@@ -622,14 +668,15 @@ public class Board : MonoBehaviour
             yield return CheckRefillMatchesDelay;
             checkMechanic();
             DestroyMatches();
-
         }
+
         findAllMatches.currentMatches.Clear();
         currentDot = null;
         
 
         if (DeadLocked()) {
             isDeadlocked = true;
+            shuffleBoard();
             Debug.Log("DEADLOCKED!!");
         }
         yield return delay;
@@ -757,6 +804,46 @@ public class Board : MonoBehaviour
         return true;
     }
 
+    public void shuffleBoard() {
+        List<GameObject> newBoard = new List<GameObject>();
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (allDots[i,j] != null) {
+                    newBoard.Add(allDots[i,j]);
+                }
+            }
+        }
+
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (!blankSpaces[i,j])
+                {
+                    int pieceToUse = Random.Range(0,newBoard.Count);
+                    int maxIterations = 0;
+                    while (MatchesAt(i, j, newBoard[pieceToUse]) && maxIterations < 100)
+                    {
+                        pieceToUse = Random.Range(0, newBoard.Count);
+                        maxIterations++;
+                    }
+                    DotController piece = newBoard[pieceToUse].GetComponent<DotController>();
+                    maxIterations = 0;
+                    piece.column = i;
+                    piece.row = j;
+                    allDots[i, j] = newBoard[pieceToUse];
+                    newBoard.Remove(newBoard[pieceToUse]);
+                }
+            }
+        }
+
+        if (DeadLocked()) {
+            shuffleBoard();
+            Debug.Log("Entered Shuffle");
+        }
+    }
     public void checkMechanic() {
         for (int i = 0; i < width; i++)
         {

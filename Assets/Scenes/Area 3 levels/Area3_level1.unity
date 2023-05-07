@@ -428,33 +428,43 @@ MonoBehaviour:
   - x: 4
     y: 4
     tileClass: 1
+    ifLast: 1
   - x: 4
     y: 3
     tileClass: 1
+    ifLast: 1
   - x: 4
     y: 2
     tileClass: 1
+    ifLast: 1
   - x: 4
     y: 1
     tileClass: 1
+    ifLast: 1
   - x: 4
     y: 0
     tileClass: 1
+    ifLast: 1
   - x: 4
     y: 0
     tileClass: 1
+    ifLast: 1
   - x: 0
     y: 3
     tileClass: 1
+    ifLast: 1
   - x: 0
     y: 2
     tileClass: 1
+    ifLast: 1
   - x: 8
     y: 3
     tileClass: 1
+    ifLast: 1
   - x: 8
     y: 2
     tileClass: 1
+    ifLast: 1
 --- !u!4 &252130372
 Transform:
   m_ObjectHideFlags: 0

@@ -428,39 +428,51 @@ MonoBehaviour:
   - x: 0
     y: 0
     tileClass: 1
+    ifLast: 1
   - x: 0
     y: 6
     tileClass: 1
+    ifLast: 1
   - x: 8
     y: 6
     tileClass: 1
+    ifLast: 1
   - x: 8
     y: 0
     tileClass: 1
+    ifLast: 1
   - x: 1
     y: 3
     tileClass: 1
+    ifLast: 1
   - x: 2
     y: 3
     tileClass: 1
+    ifLast: 1
   - x: 3
     y: 3
     tileClass: 1
+    ifLast: 1
   - x: 6
     y: 4
     tileClass: 1
+    ifLast: 1
   - x: 6
     y: 3
     tileClass: 1
+    ifLast: 1
   - x: 6
     y: 2
     tileClass: 1
+    ifLast: 1
   - x: 6
     y: 1
     tileClass: 1
+    ifLast: 1
   - x: 5
     y: 1
     tileClass: 1
+    ifLast: 1
 --- !u!4 &252130372
 Transform:
   m_ObjectHideFlags: 0
